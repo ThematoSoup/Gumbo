@@ -21,6 +21,34 @@ and Blueprint http://www.blueprintcss.org/
 */
 
 
+/*--------------------------------------------------------------
+
+	Table of contents
+	
+	* Reset
+	* Global
+		- Headings
+		- Text elements
+		- Links
+		- Alignment
+		- Screen reader text
+		- Clearing
+	* Layout
+	* Menus
+		- Main menu
+		- Small menu
+	* Content
+	* Asides (post format)
+	* Media
+	* Navigation
+	* Comments
+	* Widgets
+	* Infinite scroll (Jetpack module)
+	
+---------------------------------------------------------------*/
+
+
+
 /* =Reset
 -------------------------------------------------------------- */
 
@@ -380,6 +408,102 @@ a:active {
 [class*="content"]:after,
 [class*="site"]:after {
 	clear: both;
+}
+
+
+/* =Layout
+----------------------------------------------- */
+
+#page {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+/* Content - Sidebar */
+.layout-cp .content-area {
+	float: left;
+	margin: 0 -25% 0 0;
+	width: 100%;
+}
+.layout-cp .site-content {
+	margin: 0 25% 0 0;
+}
+.layout-cp .site-main .widget-area {
+	float: right;
+	overflow: hidden;
+	width: 25%;
+}
+
+/* Sidebar - Content */
+.layout-pc .content-area {
+	float: right;
+	margin: 0 0 0 -25%;
+	width: 100%;
+}
+.layout-pc .site-content {
+	margin: 0 0 0 25%;
+}
+.layout-pc .site-main .widget-area {
+	float: left;
+	overflow: hidden;
+	width: 25%;
+}
+
+/* Content - Sidebar - Sidebar */
+.layout-cps .content-area {
+	float: left;
+	width: 100%;
+}
+.layout-cps .site-content {
+	margin: 0 40% 0 0;
+}
+.layout-cps .site-main .widget-area {
+	float: left;
+	margin: 0 0 0 -40%;
+	overflow: hidden;
+	width: 20%;
+}
+.layout-cps .site-main #tertiary {
+	margin-left: -20%;
+}
+
+/* Sidebar - Content - Sidebar */
+.layout-pcs .content-area {
+	float: left;
+	width: 100%;
+}
+.layout-pcs .site-content {
+	margin: 0 20%;
+}
+.layout-pcs .site-main .widget-area {
+	float: left;
+	margin: 0 0 0 -100%;
+	overflow: hidden;
+	width: 20%;
+}
+.layout-pcs .site-main #tertiary {
+	margin-left: -20%;
+}
+
+/* Sidebar - Sidebar - Content */
+.layout-psc .content-area {
+	float: right;
+	margin: 0 0 0 -40%;
+	width: 100%;
+}
+.layout-psc .site-content {
+	margin: 0 0 0 40%;
+}
+.layout-psc .site-main .widget-area {
+	float: left;
+	overflow: hidden;
+	width: 20%;
+}
+
+/* Footer */
+.site-footer {
+	clear: both;
+	width: 100%;
 }
 
 

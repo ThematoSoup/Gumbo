@@ -4,7 +4,7 @@
  *
  * The area of the page that contains both current comments
  * and the comment form. The actual display of comments is
- * handled by a callback to gumbo_comment() which is
+ * handled by a callback to thsp_comment() which is
  * located in the inc/template-tags.php file.
  *
  * @package Gumbo
@@ -44,12 +44,12 @@
 		<ol class="comment-list">
 			<?php
 				/* Loop through and list the comments. Tell wp_list_comments()
-				 * to use gumbo_comment() to format the comments.
+				 * to use thsp_comment() to format the comments.
 				 * If you want to overload this in a child theme then you can
-				 * define gumbo_comment() and that will be used instead.
-				 * See gumbo_comment() in inc/template-tags.php for more.
+				 * define thsp_comment() and that will be used instead.
+				 * See thsp_comment() in inc/template-tags.php for more.
 				 */
-				wp_list_comments( array( 'callback' => 'gumbo_comment' ) );
+				wp_list_comments( array( 'callback' => 'thsp_comment' ) );
 			?>
 		</ol><!-- .comment-list -->
 

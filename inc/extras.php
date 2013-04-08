@@ -2,7 +2,15 @@
 /**
  * Custom functions that act independently of the theme templates
  *
- * Eventually, some of the functionality here could be replaced by core features
+ * ========
+ * Contents
+ * ========
+ *
+ * - Add Home link to wp_page_menu()
+ * - Custom body classes
+ * - Add custom body classes for layout and typography options
+ * - Enhanced image navigation
+ * - Custom wp_title, using filter hook
  *
  * @package Gumbo
  */
@@ -10,29 +18,75 @@
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  */
-function gumbo_page_menu_args( $args ) {
+function thsp_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'gumbo_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'thsp_page_menu_args' );
 
 /**
  * Adds custom classes to the array of body classes.
  */
-function gumbo_body_classes( $classes ) {
+function thsp_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
 
+	// Get current theme options
+	$thsp_theme_options = thsp_cbp_get_options_values();
+	$thsp_body_classes = array();
+
+	// Get layout classes and add them to body_class array
+	$thsp_current_layout = thsp_get_current_layout();
+	foreach ( $thsp_current_layout as $thsp_current_layout_value ) {
+		$thsp_body_classes[] = $thsp_current_layout_value;
+	}
+	
+	$classes = array_merge( $classes, $thsp_body_classes );
 	return $classes;
 }
-add_filter( 'body_class', 'gumbo_body_classes' );
+add_filter( 'body_class', 'thsp_body_classes' );
+
+/**
+ * Gets current layout for page being displayed
+ *
+ * @uses	thsp_cbp_get_options_values()		defined in /customizer-boilerplate/helpers.php
+ * @return	array	$current_layout				Layout options for current page
+ * @since	Cazuela 1.0
+ */
+function thsp_get_current_layout() {
+	global $post;
+
+	// Get current theme options values
+	$theme_options = thsp_cbp_get_options_values();
+
+	// Check if in single post/page view and if layout custom field value exists
+	if ( is_singular() && get_post_meta( $post->ID, '_thsp_post_layout', true ) ) {
+		$current_layout['default_layout'] = get_post_meta( $post->ID, '_thsp_post_layout', true );
+	} else {
+		$current_layout['default_layout'] = $theme_options['default_layout'];
+	}
+
+	if( is_singular() && get_post_meta( $post->ID, '_post_layout_type', true ) ) {
+		$current_layout['default_layout'] = get_post_meta( $post->ID, '_post_layout_type', true );
+	} else {
+		$current_layout['layout_type'] = $theme_options['layout_type'];
+	}
+
+	/*
+	 * Returns an array with two values that can be changed using
+	 * 'thsp_current_layout' filter hook:
+	 * $current_layout['default-layout']	- determines number and placement of sidebars
+	 * $current_layout['layout_type']		- boxed or full width
+	 */
+	return apply_filters( 'thsp_current_layout', $current_layout );
+}
 
 /**
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
  */
-function gumbo_enhanced_image_navigation( $url, $id ) {
+function thsp_enhanced_image_navigation( $url, $id ) {
 	if ( ! is_attachment() && ! wp_attachment_is_image( $id ) )
 		return $url;
 
@@ -42,12 +96,12 @@ function gumbo_enhanced_image_navigation( $url, $id ) {
 
 	return $url;
 }
-add_filter( 'attachment_link', 'gumbo_enhanced_image_navigation', 10, 2 );
+add_filter( 'attachment_link', 'thsp_enhanced_image_navigation', 10, 2 );
 
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
  */
-function gumbo_wp_title( $title, $sep ) {
+function thsp_wp_title( $title, $sep ) {
 	global $page, $paged;
 
 	if ( is_feed() )
@@ -67,4 +121,4 @@ function gumbo_wp_title( $title, $sep ) {
 
 	return $title;
 }
-add_filter( 'wp_title', 'gumbo_wp_title', 10, 2 );
+add_filter( 'wp_title', 'thsp_wp_title', 10, 2 );

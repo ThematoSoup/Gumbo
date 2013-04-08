@@ -2,6 +2,24 @@
 /**
  * Gumbo functions and definitions
  *
+ * ========
+ * Contents
+ * ========
+ *
+ * - Content width
+ * - Theme setup
+ *   -- Template tags
+ *   -- Extras
+ *   -- Customizer
+ *   -- Languages
+ *   -- Feed links
+ *   -- Post thumbnail support
+ *   -- Register menus
+ *   -- Post formats support
+ * - Register custom background
+ * - Enqueue scripts and styles
+ * - Register custom header
+ *
  * @package Gumbo
  */
 
@@ -16,7 +34,7 @@ if ( ! isset( $content_width ) )
  */
 require( get_template_directory() . '/inc/jetpack.php' );
 
-if ( ! function_exists( 'gumbo_setup' ) ) :
+if ( ! function_exists( 'thsp_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -24,7 +42,7 @@ if ( ! function_exists( 'gumbo_setup' ) ) :
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  */
-function gumbo_setup() {
+function thsp_setup() {
 
 	/**
 	 * Custom template tags for this theme.
@@ -37,6 +55,11 @@ function gumbo_setup() {
 	require( get_template_directory() . '/inc/extras.php' );
 
 	/**
+	 * Theme Customizer boilerplate
+	 */
+	require( get_template_directory() . '/inc/customizer-boilerplate/customizer.php' );
+
+	/**
 	 * Customizer additions
 	 */
 	require( get_template_directory() . '/inc/customizer.php' );
@@ -44,8 +67,6 @@ function gumbo_setup() {
 	/**
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
-	 * If you're building a theme based on Gumbo, use a find and replace
-	 * to change 'gumbo' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'gumbo', get_template_directory() . '/languages' );
 
@@ -71,8 +92,8 @@ function gumbo_setup() {
 	 */
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 }
-endif; // gumbo_setup
-add_action( 'after_setup_theme', 'gumbo_setup' );
+endif; // thsp_setup
+add_action( 'after_setup_theme', 'thsp_setup' );
 
 /**
  * Setup the WordPress core custom background feature.
@@ -86,13 +107,13 @@ add_action( 'after_setup_theme', 'gumbo_setup' );
  *
  * Hooks into the after_setup_theme action.
  */
-function gumbo_register_custom_background() {
+function thsp_register_custom_background() {
 	$args = array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	);
 
-	$args = apply_filters( 'gumbo_custom_background_args', $args );
+	$args = apply_filters( 'thsp_custom_background_args', $args );
 
 	if ( function_exists( 'wp_get_theme' ) ) {
 		add_theme_support( 'custom-background', $args );
@@ -103,42 +124,50 @@ function gumbo_register_custom_background() {
 		add_custom_background();
 	}
 }
-add_action( 'after_setup_theme', 'gumbo_register_custom_background' );
+add_action( 'after_setup_theme', 'thsp_register_custom_background' );
 
 /**
  * Register widgetized area and update sidebar with default widgets
  */
-function gumbo_widgets_init() {
+function thsp_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'gumbo' ),
+		'name'          => __( 'Primary Sidebar', 'gumbo' ),
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
+	register_sidebar( array(
+		'name'          => __( 'Secondary Sidebar', 'gumbo' ),
+		'id'            => 'sidebar-2',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
 }
-add_action( 'widgets_init', 'gumbo_widgets_init' );
+add_action( 'widgets_init', 'thsp_widgets_init' );
 
 /**
  * Enqueue scripts and styles
  */
-function gumbo_scripts() {
-	wp_enqueue_style( 'Gumbo-style', get_stylesheet_uri() );
+function thsp_scripts() {
+	wp_enqueue_style( 'gumbo-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'Gumbo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'gumbo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'Gumbo-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'gumbo-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'Gumbo-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
+		wp_enqueue_script( 'gumbo-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'gumbo_scripts' );
+add_action( 'wp_enqueue_scripts', 'thsp_scripts' );
 
 /**
  * Implement the Custom Header feature

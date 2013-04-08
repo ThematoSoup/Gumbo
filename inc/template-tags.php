@@ -1,17 +1,25 @@
 <?php
 /**
- * Custom template tags for this theme.
+ * Custom template tags for Gumbo theme.
  *
- * Eventually, some of the functionality here could be replaced by core features
+ * ========
+ * Contents
+ * ========
+ *
+ * - Content navigation
+ * - Comment callback
+ * - Posted on
+ * - Categorized blog check
+ * - Categorized blog transient flusher
  *
  * @package Gumbo
  */
 
-if ( ! function_exists( 'gumbo_content_nav' ) ) :
+if ( ! function_exists( 'thsp_content_nav' ) ) :
 /**
  * Display navigation to next/previous pages when applicable
  */
-function gumbo_content_nav( $nav_id ) {
+function thsp_content_nav( $nav_id ) {
 	global $wp_query, $post;
 
 	// Don't print empty markup on single pages if there's nowhere to navigate.
@@ -53,15 +61,15 @@ function gumbo_content_nav( $nav_id ) {
 	</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
 	<?php
 }
-endif; // gumbo_content_nav
+endif; // thsp_content_nav
 
-if ( ! function_exists( 'gumbo_comment' ) ) :
+if ( ! function_exists( 'thsp_comment' ) ) :
 /**
  * Template for comments and pingbacks.
  *
  * Used as a callback by wp_list_comments() for displaying the comments.
  */
-function gumbo_comment( $comment, $args, $depth ) {
+function thsp_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
@@ -104,13 +112,13 @@ function gumbo_comment( $comment, $args, $depth ) {
 			break;
 	endswitch;
 }
-endif; // ends check for gumbo_comment()
+endif; // ends check for thsp_comment()
 
-if ( ! function_exists( 'gumbo_posted_on' ) ) :
+if ( ! function_exists( 'thsp_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function gumbo_posted_on() {
+function thsp_posted_on() {
 	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'gumbo' ),
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
@@ -125,7 +133,7 @@ endif;
 /**
  * Returns true if a blog has more than 1 category
  */
-function gumbo_categorized_blog() {
+function thsp_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
 		// Create an array of all the categories that are attached to posts
 		$all_the_cool_cats = get_categories( array(
@@ -139,20 +147,20 @@ function gumbo_categorized_blog() {
 	}
 
 	if ( '1' != $all_the_cool_cats ) {
-		// This blog has more than 1 category so gumbo_categorized_blog should return true
+		// This blog has more than 1 category so thsp_categorized_blog should return true
 		return true;
 	} else {
-		// This blog has only 1 category so gumbo_categorized_blog should return false
+		// This blog has only 1 category so thsp_categorized_blog should return false
 		return false;
 	}
 }
 
 /**
- * Flush out the transients used in gumbo_categorized_blog
+ * Flush out the transients used in thsp_categorized_blog
  */
-function gumbo_category_transient_flusher() {
+function thsp_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( 'all_the_cool_cats' );
 }
-add_action( 'edit_category', 'gumbo_category_transient_flusher' );
-add_action( 'save_post', 'gumbo_category_transient_flusher' );
+add_action( 'edit_category', 'thsp_category_transient_flusher' );
+add_action( 'save_post', 'thsp_category_transient_flusher' );
