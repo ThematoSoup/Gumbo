@@ -111,7 +111,6 @@ function thsp_theme_options_array() {
 
 		// Section ID
 		'title_tagline' => array(
-		
 			'existing_section' => true,
 			'fields' => array(
 				
@@ -173,29 +172,6 @@ function thsp_theme_options_array() {
 				'priority' => 10
 			),
 			'fields' => array(
-				'layout_type' => array(
-					'setting_args' => array(
-						'default' => 'layout-full-width',
-						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
-						'transport' => 'refresh',
-					), // End setting args			
-					'control_args' => array(
-						'label' => __( 'Layout type', 'cazuela' ),
-						'type' => 'images_radio', // Image radio replacement
-						'choices' => array(
-							'layout-full-width' => array(
-								'label' => __( 'Full width', 'cazuela' ),
-								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-full-width.png'
-							),
-							'layout-boxed' => array(
-								'label' => __( 'Boxed', 'cazuela' ),
-								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-boxed.png'
-							)
-						),					
-						'priority' => 1
-					) // End control args
-				),
 				'default_layout' => array(
 					'setting_args' => array(
 						'default' => 'layout-cp',

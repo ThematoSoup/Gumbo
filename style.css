@@ -124,6 +124,11 @@ a img {
 /* =Global
 ----------------------------------------------- */
 
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	box-sizing:         border-box;
+}
 body,
 button,
 input,
@@ -422,31 +427,31 @@ a:active {
 /* Content - Sidebar */
 .layout-cp .content-area {
 	float: left;
-	margin: 0 -25% 0 0;
+	margin: 0 -30% 0 0;
 	width: 100%;
 }
 .layout-cp .site-content {
-	margin: 0 25% 0 0;
+	margin: 0 30% 0 0;
 }
 .layout-cp .site-main .widget-area {
 	float: right;
 	overflow: hidden;
-	width: 25%;
+	width: 30%;
 }
 
 /* Sidebar - Content */
 .layout-pc .content-area {
 	float: right;
-	margin: 0 0 0 -25%;
+	margin: 0 0 0 -30%;
 	width: 100%;
 }
 .layout-pc .site-content {
-	margin: 0 0 0 25%;
+	margin: 0 0 0 30%;
 }
 .layout-pc .site-main .widget-area {
 	float: left;
 	overflow: hidden;
-	width: 25%;
+	width: 30%;
 }
 
 /* Content - Sidebar - Sidebar */
