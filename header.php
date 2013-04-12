@@ -23,7 +23,11 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<?php do_action( 'before' ); ?>
+	<?php
+		// Before Header theme hook callback
+		thsp_hook_before_header();
+	?>
+		
 	<header id="masthead" class="site-header" role="banner">
 		<hgroup>
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -38,4 +42,9 @@
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
+	<?php
+		// After Header theme hook callback
+		thsp_hook_after_header();
+	?>
+	
 	<div id="main" class="site-main">

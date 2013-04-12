@@ -33,6 +33,7 @@ and Blueprint http://www.blueprintcss.org/
 		- Alignment
 		- Screen reader text
 		- Clearing
+	* Typography
 	* Layout
 	* Menus
 		- Main menu
@@ -416,6 +417,133 @@ a:active {
 }
 
 
+/* =Typography
+----------------------------------------------- */
+
+/* Body font */
+body.body-font-helvetica,
+.body-font-helvetica button,
+.body-font-helvetica input,
+.body-font-helvetica select,
+.body-font-helvetica textarea {
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	font-weight: 300;
+}
+body.body-font-open-sans,
+.body-font-open-sans button,
+.body-font-open-sans input,
+.body-font-open-sans select,
+.body-font-open-sans textarea {
+	font-family: "Open Sans", sans-serif;
+	font-weight: 300;
+}
+body.body-font-lato,
+.body-font-lato button,
+.body-font-lato input,
+.body-font-lato select,
+.body-font-lato textarea {
+	font-family: Lato, sans-serif;
+	font-weight: 300;
+}
+body.body-font-source-sans-pro,
+.body-font-source-sans-pro button,
+.body-font-source-sans-pro input,
+.body-font-source-sans-pro select,
+.body-font-source-sans-pro textarea {
+	font-family: "Source Sans Pro", sans-serif;
+	font-weight: 300;
+}
+body.body-font-raleway,
+.body-font-raleway button,
+.body-font-raleway input,
+.body-font-raleway select,
+.body-font-raleway textarea {
+	font-family: Raleway, sans-serif;
+	font-weight: 300;
+}
+body.body-font-roboto,
+.body-font-roboto button,
+.body-font-roboto input,
+.body-font-roboto select,
+.body-font-roboto textarea {
+	font-family: Roboto, sans-serif;
+	font-weight: 300;
+}
+body.body-font-titillium-web,
+.body-font-titillium-web button,
+.body-font-titillium-web input,
+.body-font-titillium-web select,
+.body-font-titillium-web textarea {
+	font-family: "Titillium Web", sans-serif;
+	font-weight: 300;
+}
+
+/* Heading font */
+.heading-font-helvetica h1,
+.heading-font-helvetica h2,
+.heading-font-helvetica h3,
+.heading-font-helvetica h4,
+.heading-font-helvetica h5,
+.heading-font-helvetica h6 {
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	font-weight: bold;
+}
+.heading-font-open-sans h1,
+.heading-font-open-sans h2,
+.heading-font-open-sans h3,
+.heading-font-open-sans h4,
+.heading-font-open-sans h5,
+.heading-font-open-sans h6 {
+	font-family: "Open Sans", sans-serif;
+	font-weight: bold;
+}
+.heading-font-lato h1,
+.heading-font-lato h2,
+.heading-font-lato h3,
+.heading-font-lato h4,
+.heading-font-lato h5,
+.heading-font-lato h6 {
+	font-family: Lato, sans-serif;
+	font-weight: bold;
+}
+.heading-font-source-sans-pro h1,
+.heading-font-source-sans-pro h2,
+.heading-font-source-sans-pro h3,
+.heading-font-source-sans-pro h4,
+.heading-font-source-sans-pro h5,
+.heading-font-source-sans-pro h6 {
+	font-family: "Source Sans Pro", sans-serif;
+	font-weight: bold;
+}
+.heading-font-raleway h1,
+.heading-font-raleway h2,
+.heading-font-raleway h3,
+.heading-font-raleway h4,
+.heading-font-raleway h5,
+.heading-font-raleway h6 {
+	font-family: Raleway, sans-serif;
+	font-weight: bold;
+}
+.heading-font-roboto h1,
+.heading-font-roboto h2,
+.heading-font-roboto h3,
+.heading-font-roboto h4,
+.heading-font-roboto h5,
+.heading-font-roboto h6 {
+	font-family: Roboto, sans-serif;
+	font-weight: bold;
+}
+.heading-font-titillium-web h1,
+.heading-font-titillium-web h2,
+.heading-font-titillium-web h3,
+.heading-font-titillium-web h4,
+.heading-font-titillium-web h5,
+.heading-font-titillium-web h6 {
+	font-family: "Titillium Web", sans-serif;
+	font-weight: bold;
+}
+
+
 /* =Layout
 ----------------------------------------------- */
 
@@ -505,6 +633,20 @@ a:active {
 	width: 20%;
 }
 
+/* Header */
+#masthead {
+	padding: 20px;
+	padding-bottom: 2rem;
+}
+#masthead hgroup {
+	float: left;
+	width: 30%:
+}
+#masthead #site-navigation {
+	float: right;
+	width: 70%;
+}
+
 /* Footer */
 .site-footer {
 	clear: both;
@@ -516,10 +658,7 @@ a:active {
 ----------------------------------------------- */
 
 .navigation-main {
-	clear: both;
 	display: block;
-	float: left;
-	width: 100%;
 }
 .navigation-main ul {
 	list-style: none;

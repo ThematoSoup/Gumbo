@@ -42,7 +42,11 @@ function thsp_body_classes( $classes ) {
 	foreach ( $thsp_current_layout as $thsp_current_layout_value ) {
 		$thsp_body_classes[] = $thsp_current_layout_value;
 	}
-	
+
+	// Typography classes
+	$thsp_body_classes[] = 'body-font-' . $thsp_theme_options['body_font'];
+	$thsp_body_classes[] = 'heading-font-' . $thsp_theme_options['heading_font'];
+		
 	$classes = array_merge( $classes, $thsp_body_classes );
 	return $classes;
 }

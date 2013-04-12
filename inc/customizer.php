@@ -71,7 +71,7 @@ function thsp_edit_cbp_directory_uri() {
  */
 add_filter( 'thsp_cbp_menu_link_text', 'thsp_customizer_menu_link_text', 1 );
 function thsp_customizer_menu_link_text() {
-	return __( 'Theme Customizer', 'cazuela' );
+	return __( 'Theme Customizer', 'gumbo' );
 }
 
 
@@ -93,7 +93,28 @@ function thsp_theme_options_array() {
 		'colors' => array(
 			'existing_section' => true,
 			'fields' => array(
-				'links_color' => array(
+				'page_background' => array(
+					'setting_args' => array(
+						'default' => 'light',
+						'type' => 'option',
+						'capability' => $thsp_cbp_capability,
+						'transport' => 'refresh',
+					), // End setting args			
+					'control_args' => array(
+						'label' => __( 'Page background', 'gumbo' ),
+						'type' => 'select', // Select control
+						'choices' => array(
+							'light' => array(
+								'label' => 'Light',
+							),
+							'dark' => array(
+								'label' => 'Dark'
+							)
+						),					
+						'priority' => 2
+					) // End control args
+				),
+				'primary_color' => array(
 					'setting_args' => array(
 						'default' => '#1e559b',
 						'type' => 'option',
@@ -101,7 +122,7 @@ function thsp_theme_options_array() {
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
-						'label' => __( 'Links color', 'cazuela' ),
+						'label' => __( 'Primary color', 'gumbo' ),
 						'type' => 'color', // Color picker field control
 						'priority' => 3
 					)
@@ -121,7 +142,7 @@ function thsp_theme_options_array() {
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
-						'label' => __( 'Logo', 'cazuela' ),
+						'label' => __( 'Logo', 'gumbo' ),
 						'type' => 'image', // Image upload field control
 						'priority' => 20
 					)
@@ -142,7 +163,7 @@ function thsp_theme_options_array() {
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
-						'label' => __( 'Navigation above posts', 'cazuela' ),
+						'label' => __( 'Navigation above posts', 'gumbo' ),
 						'type' => 'checkbox', // Checkbox field control
 						'priority' => 20
 					)
@@ -155,7 +176,7 @@ function thsp_theme_options_array() {
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
-						'label' => __( 'Navigation below posts', 'cazuela' ),
+						'label' => __( 'Navigation below posts', 'gumbo' ),
 						'type' => 'checkbox', // Checkbox field control
 						'priority' => 21
 					)
@@ -167,8 +188,8 @@ function thsp_theme_options_array() {
 		'thsp_layout_section' => array(
 			'existing_section' => false,
 			'args' => array(
-				'title' => __( 'Layout', 'cazuela' ),
-				'description' => __( 'Set default page layout', 'cazuela' ),
+				'title' => __( 'Layout', 'gumbo' ),
+				'description' => __( 'Set default page layout', 'gumbo' ),
 				'priority' => 10
 			),
 			'fields' => array(
@@ -180,31 +201,31 @@ function thsp_theme_options_array() {
 						'transport' => 'refresh',
 					), // End setting args			
 					'control_args' => array(
-						'label' => __( 'Default layout', 'cazuela' ),
+						'label' => __( 'Default layout', 'gumbo' ),
 						'type' => 'images_radio', // Image radio replacement
 						'choices' => array(
 							'layout-c' => array(
-								'label' => __( 'Content', 'cazuela' ),
+								'label' => __( 'Content', 'gumbo' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-c.png'
 							),
 							'layout-cp' =>  array(
-								'label' => __( 'Content - Primary Sidebar', 'cazuela' ),
+								'label' => __( 'Content - Primary Sidebar', 'gumbo' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-cp.png'
 							),
 							'layout-pc' => array(
-								'label' => __( 'Primary Sidebar - Content', 'cazuela' ),
+								'label' => __( 'Primary Sidebar - Content', 'gumbo' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-pc.png'
 							),
 							'layout-cps' => array(
-								'label' => __( 'Content - Primary Sidebar - Secondary Sidebar', 'cazuela' ),
+								'label' => __( 'Content - Primary Sidebar - Secondary Sidebar', 'gumbo' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-cps.png'
 							),
 							'layout-psc' => array(
-								'label' => __( 'Primary Sidebar - Secondary Sidebar - Content', 'cazuela' ),
+								'label' => __( 'Primary Sidebar - Secondary Sidebar - Content', 'gumbo' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-psc.png'
 							),
 							'layout-pcs' => array(
-								'label' => __( 'Primary Sidebar - Content - Secondary Sidebar', 'cazuela' ),
+								'label' => __( 'Primary Sidebar - Content - Secondary Sidebar', 'gumbo' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-pcs.png'
 							)
 						),					
@@ -218,11 +239,95 @@ function thsp_theme_options_array() {
 		'thsp_typography_section' => array(
 			'existing_section' => false,
 			'args' => array(
-				'title' => __( 'Typography', 'cazuela' ),
-				'description' => __( 'Select fonts', 'cazuela' ),
+				'title' => __( 'Typography', 'gumbo' ),
+				'description' => __( 'Select fonts', 'gumbo' ),
 				'priority' => 20
 			),
 			'fields' => array(
+				'body_font' => array(
+					'setting_args' => array(
+						'default' => 'titillium-web',
+						'type' => 'option',
+						'capability' => $thsp_cbp_capability,
+						'transport' => 'refresh',
+					), // End setting args			
+					'control_args' => array(
+						'label' => __( 'Body font', 'gumbo' ),
+						'type' => 'select', // Select control
+						'choices' => array(
+							'helvetica' => array(
+								'label' => 'Helvetica'
+							),
+							'open-sans' => array(
+								'label' => 'Open Sans',
+								'google_font' => 'Open+Sans:300italic,700italic,300,700'
+							),
+							'lato' => array(
+								'label' => 'Lato',
+								'google_font' => 'Lato:300,700,300italic,700italic'
+							),
+							'source-sans-pro' => array(
+								'label' => 'Source Sans Pro',
+								'google_font' => 'Source+Sans+Pro:300,700,300italic,700italic'
+							),
+							'raleway' => array(
+								'label' => 'Raleway',
+								'google_font' => 'Raleway:300,700'
+							),
+							'roboto' => array(
+								'label' => 'Roboto',
+								'google_font' => 'Roboto:300italic,300,700,700italic'
+							),
+							'titillium-web' => array(
+								'label' => 'Titillium Web',
+								'google_font' => 'Titillium+Web:300italic,300,700,700italic'
+							)
+						),
+						'priority' => 1
+					) // End control args
+				),
+				'heading_font' => array(
+					'setting_args' => array(
+						'default' => 'titillium-web',
+						'type' => 'option',
+						'capability' => $thsp_cbp_capability,
+						'transport' => 'refresh',
+					), // End setting args			
+					'control_args' => array(
+						'label' => __( 'Heading font', 'gumbo' ),
+						'type' => 'select', // Select control
+						'choices' => array(
+							'helvetica' => array(
+								'label' => 'Helvetica'
+							),
+							'open-sans' => array(
+								'label' => 'Open Sans',
+								'google_font' => 'Open+Sans:700italic,700'
+							),
+							'lato' => array(
+								'label' => 'Lato',
+								'google_font' => 'Lato:700,700italic'
+							),
+							'source-sans-pro' => array(
+								'label' => 'Source Sans Pro',
+								'google_font' => 'Source+Sans+Pro:700,700italic'
+							),
+							'raleway' => array(
+								'label' => 'Raleway',
+								'google_font' => 'Raleway:700'
+							),
+							'roboto' => array(
+								'label' => 'Roboto',
+								'google_font' => 'Roboto:700,700italic'
+							),
+							'titillium-web' => array(
+								'label' => 'Titillium Web',
+								'google_font' => 'Titillium+Web:700,700italic'
+							)
+						),
+						'priority' => 1
+					) // End control args
+				),
 			) // End fields
 		)
 	);
@@ -236,11 +341,14 @@ function thsp_theme_options_array() {
  *
  * @link	https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate
  * @return	array	Built-in controls that need to be removed from Theme Customizer
- * @since Cazuela 1.0
+ * @since	Cazuela 1.0
  */
 add_filter( 'tshp_cbp_remove_controls', 'thsp_theme_options_remove_controls', 1 );
 function thsp_theme_options_remove_controls() {
-	$thsp_cbp_remove_controls = array( 'header_textcolor' );
+	$thsp_cbp_remove_controls = array(
+		'header_textcolor',
+		'background_color'
+	);
 	
 	return $thsp_cbp_remove_controls;
 }

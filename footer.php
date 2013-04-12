@@ -10,6 +10,11 @@
 
 	</div><!-- #main -->
 
+	<?php
+		// Before Footer theme hook callback
+		thsp_hook_before_footer();
+	?>
+	
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
 			<?php do_action( 'gumbo_credits' ); ?>
@@ -18,6 +23,11 @@
 			<?php printf( __( 'Theme: %1$s by %2$s.', 'gumbo' ), 'Gumbo', '<a href="http://thematosoup.com" rel="designer">ThematoSoup</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
+
+	<?php
+		// Before Footer theme hook callback
+		thsp_hook_after_footer();
+	?>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

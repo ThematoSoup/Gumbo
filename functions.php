@@ -153,6 +153,34 @@ add_action( 'widgets_init', 'thsp_widgets_init' );
  * Enqueue scripts and styles
  */
 function thsp_scripts() {
+	/*
+	 * Enqueue Google Fonts
+	 *
+	 * Check if fonts set in theme options require loading
+	 * of Google scripts
+	 */
+	$theme_options = thsp_cbp_get_options_values();
+	$theme_options_fields = thsp_cbp_get_fields();
+	$body_font_value = $theme_options['body_font'];
+	$heading_font_value = $theme_options['heading_font'];
+	$body_font_options = $theme_options_fields['thsp_typography_section']['fields']['body_font']['control_args']['choices'];
+	$heading_font_options = $theme_options_fields['thsp_typography_section']['fields']['heading_font']['control_args']['choices'];
+
+	// Check if it's a Google Font
+	if( isset( $body_font_options[$body_font_value]['google_font'] ) ) {
+		wp_enqueue_style(
+			'body_font_' . $body_font_value,
+			'http://fonts.googleapis.com/css?family=' . $body_font_options[$body_font_value]['google_font']
+		);
+	}	
+	// Check if it's a Google Font
+	if( isset( $heading_font_options[$heading_font_value]['google_font'] ) ) {
+		wp_enqueue_style(
+			'heading_font_' . $heading_font_value,
+			'http://fonts.googleapis.com/css?family=' . $heading_font_options[$heading_font_value]['google_font']
+		);
+	}
+	
 	wp_enqueue_style( 'gumbo-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'gumbo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
