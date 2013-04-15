@@ -87,6 +87,9 @@ function thsp_theme_options_array() {
 	// Using helper function to get default required capability
 	$thsp_cbp_capability = thsp_cbp_capability();
 
+	// Get current theme options
+	$thsp_body_font_weight = $thsp_theme_options['body_font_weight'];
+
 	$options = array(
 
 		// Section ID
@@ -232,6 +235,27 @@ function thsp_theme_options_array() {
 						'priority' => 2
 					) // End control args
 				),
+				'main_nav_placement' => array(
+					'setting_args' => array(
+						'default' => 'floated',
+						'type' => 'option',
+						'capability' => $thsp_cbp_capability,
+						'transport' => 'refresh',
+					), // End setting args			
+					'control_args' => array(
+						'label' => __( 'Main navigation placement', 'gumbo' ),
+						'type' => 'radio', // Image radio replacement
+						'choices' => array(
+							'floated' => array(
+								'label' => __( 'Next to title and tagline', 'gumbo' )
+							),
+							'below' =>  array(
+								'label' => __( 'Below title and tagline', 'gumbo' )
+							),
+						),					
+						'priority' => 2
+					) // End control args
+				),
 			) // End fields
 		),
 		
@@ -260,28 +284,45 @@ function thsp_theme_options_array() {
 							),
 							'open-sans' => array(
 								'label' => 'Open Sans',
-								'google_font' => 'Open+Sans:300italic,700italic,300,700'
+								'google_font' => 'Open+Sans:400italic,700italic,400,700'
 							),
 							'lato' => array(
 								'label' => 'Lato',
-								'google_font' => 'Lato:300,700,300italic,700italic'
+								'google_font' => 'Lato:400,700,400italic,700italic'
 							),
 							'source-sans-pro' => array(
 								'label' => 'Source Sans Pro',
-								'google_font' => 'Source+Sans+Pro:300,700,300italic,700italic'
-							),
-							'raleway' => array(
-								'label' => 'Raleway',
-								'google_font' => 'Raleway:300,700'
+								'google_font' => 'Source+Sans+Pro:400,700,400italic,700italic'
 							),
 							'roboto' => array(
 								'label' => 'Roboto',
-								'google_font' => 'Roboto:300italic,300,700,700italic'
+								'google_font' => 'Roboto:400italic,400,700,700italic'
 							),
 							'titillium-web' => array(
 								'label' => 'Titillium Web',
-								'google_font' => 'Titillium+Web:300italic,300,700,700italic'
+								'google_font' => 'Titillium+Web:400italic,400,700,700italic'
 							)
+						),
+						'priority' => 1
+					) // End control args
+				),
+				'body_font_weight' => array(
+					'setting_args' => array(
+						'default' => 'regular',
+						'type' => 'option',
+						'capability' => $thsp_cbp_capability,
+						'transport' => 'refresh',
+					), // End setting args			
+					'control_args' => array(
+						'label' => __( 'Body font weight', 'gumbo' ),
+						'type' => 'radio', // Radio control
+						'choices' => array(
+							'regular' => array(
+								'label' => 'Regular'
+							),
+							'thin' => array(
+								'label' => 'Thin'
+							),
 						),
 						'priority' => 1
 					) // End control args
@@ -311,10 +352,6 @@ function thsp_theme_options_array() {
 							'source-sans-pro' => array(
 								'label' => 'Source Sans Pro',
 								'google_font' => 'Source+Sans+Pro:700,700italic'
-							),
-							'raleway' => array(
-								'label' => 'Raleway',
-								'google_font' => 'Raleway:700'
 							),
 							'roboto' => array(
 								'label' => 'Roboto',

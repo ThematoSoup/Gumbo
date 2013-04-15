@@ -45,6 +45,7 @@ function thsp_body_classes( $classes ) {
 
 	// Typography classes
 	$thsp_body_classes[] = 'body-font-' . $thsp_theme_options['body_font'];
+	$thsp_body_classes[] = 'body-font-weight-' . $thsp_theme_options['body_font_weight'];
 	$thsp_body_classes[] = 'heading-font-' . $thsp_theme_options['heading_font'];
 		
 	$classes = array_merge( $classes, $thsp_body_classes );
@@ -63,19 +64,19 @@ function thsp_get_current_layout() {
 	global $post;
 
 	// Get current theme options values
-	$theme_options = thsp_cbp_get_options_values();
+	$thsp_theme_options = thsp_cbp_get_options_values();
 
 	// Check if in single post/page view and if layout custom field value exists
 	if ( is_singular() && get_post_meta( $post->ID, '_thsp_post_layout', true ) ) {
 		$current_layout['default_layout'] = get_post_meta( $post->ID, '_thsp_post_layout', true );
 	} else {
-		$current_layout['default_layout'] = $theme_options['default_layout'];
+		$current_layout['default_layout'] = $thsp_theme_options['default_layout'];
 	}
 
 	if( is_singular() && get_post_meta( $post->ID, '_post_layout_type', true ) ) {
 		$current_layout['default_layout'] = get_post_meta( $post->ID, '_post_layout_type', true );
 	} else {
-		$current_layout['layout_type'] = $theme_options['layout_type'];
+		$current_layout['layout_type'] = $thsp_theme_options['layout_type'];
 	}
 
 	/*

@@ -159,25 +159,34 @@ function thsp_scripts() {
 	 * Check if fonts set in theme options require loading
 	 * of Google scripts
 	 */
-	$theme_options = thsp_cbp_get_options_values();
-	$theme_options_fields = thsp_cbp_get_fields();
-	$body_font_value = $theme_options['body_font'];
-	$heading_font_value = $theme_options['heading_font'];
-	$body_font_options = $theme_options_fields['thsp_typography_section']['fields']['body_font']['control_args']['choices'];
-	$heading_font_options = $theme_options_fields['thsp_typography_section']['fields']['heading_font']['control_args']['choices'];
+	$theme_options			= thsp_cbp_get_options_values();
+	$theme_options_fields	= thsp_cbp_get_fields();
+	$body_font_value		= $theme_options['body_font'];
+	$body_font_weight		= $theme_options['body_font_weight'];
+	$heading_font_value		= $theme_options['heading_font'];
+	$body_font_options		= $theme_options_fields['thsp_typography_section']['fields']['body_font']['control_args']['choices'];
+	$heading_font_options	= $theme_options_fields['thsp_typography_section']['fields']['heading_font']['control_args']['choices'];
 
-	// Check if it's a Google Font
+	// Check protocol
+	$protocol = is_ssl() ? 'https' : 'http';
+    
+    // Check if it's a Google Font
 	if( isset( $body_font_options[$body_font_value]['google_font'] ) ) {
+		// Check body font weight
+		if ( 'thin' == $body_font_weight ) {
+			$body_font_options[$body_font_value]['google_font'] = str_replace( '400', '300', $body_font_options[$body_font_value]['google_font'] );
+		}
+		
 		wp_enqueue_style(
 			'body_font_' . $body_font_value,
-			'http://fonts.googleapis.com/css?family=' . $body_font_options[$body_font_value]['google_font']
+			$protocol . '://fonts.googleapis.com/css?family=' . $body_font_options[$body_font_value]['google_font']
 		);
 	}	
-	// Check if it's a Google Font
-	if( isset( $heading_font_options[$heading_font_value]['google_font'] ) ) {
+	// Check if it's a Google Font and different than body font so it's not loaded twice
+	if( isset( $heading_font_options[$heading_font_value]['google_font'] ) && $body_font_value != $heading_font_value ) {
 		wp_enqueue_style(
 			'heading_font_' . $heading_font_value,
-			'http://fonts.googleapis.com/css?family=' . $heading_font_options[$heading_font_value]['google_font']
+			$protocol . '://fonts.googleapis.com/css?family=' . $heading_font_options[$heading_font_value]['google_font']
 		);
 	}
 	
@@ -201,3 +210,8 @@ add_action( 'wp_enqueue_scripts', 'thsp_scripts' );
  * Implement the Custom Header feature
  */
 //require( get_template_directory() . '/inc/custom-header.php' );
+
+/**
+ * Theme hooks
+ */
+require( get_template_directory() . '/inc/tha/tha-theme-hooks.php' );

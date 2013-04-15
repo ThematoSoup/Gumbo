@@ -135,16 +135,20 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
+	color: #303030;
 	font-family: sans-serif;
 	font-size: 16px;
 	font-size: 1.6rem;
+	font-weight: normal;
 	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
 }
 
 /* Headings */
 h1,h2,h3,h4,h5,h6 {
 	clear: both;
+	font-weight: bold;
+	-webkit-font-smoothing: antialiased;
 }
 hr {
 	background-color: #ccc;
@@ -427,7 +431,6 @@ body.body-font-helvetica,
 .body-font-helvetica select,
 .body-font-helvetica textarea {
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
-	font-weight: 300;
 }
 body.body-font-open-sans,
 .body-font-open-sans button,
@@ -435,7 +438,6 @@ body.body-font-open-sans,
 .body-font-open-sans select,
 .body-font-open-sans textarea {
 	font-family: "Open Sans", sans-serif;
-	font-weight: 300;
 }
 body.body-font-lato,
 .body-font-lato button,
@@ -443,7 +445,6 @@ body.body-font-lato,
 .body-font-lato select,
 .body-font-lato textarea {
 	font-family: Lato, sans-serif;
-	font-weight: 300;
 }
 body.body-font-source-sans-pro,
 .body-font-source-sans-pro button,
@@ -451,7 +452,6 @@ body.body-font-source-sans-pro,
 .body-font-source-sans-pro select,
 .body-font-source-sans-pro textarea {
 	font-family: "Source Sans Pro", sans-serif;
-	font-weight: 300;
 }
 body.body-font-raleway,
 .body-font-raleway button,
@@ -459,7 +459,6 @@ body.body-font-raleway,
 .body-font-raleway select,
 .body-font-raleway textarea {
 	font-family: Raleway, sans-serif;
-	font-weight: 300;
 }
 body.body-font-roboto,
 .body-font-roboto button,
@@ -467,7 +466,6 @@ body.body-font-roboto,
 .body-font-roboto select,
 .body-font-roboto textarea {
 	font-family: Roboto, sans-serif;
-	font-weight: 300;
 }
 body.body-font-titillium-web,
 .body-font-titillium-web button,
@@ -475,8 +473,18 @@ body.body-font-titillium-web,
 .body-font-titillium-web select,
 .body-font-titillium-web textarea {
 	font-family: "Titillium Web", sans-serif;
-	font-weight: 300;
 }
+
+/* Body font weight */
+body.body-font-weight-thin,
+.body-font-weight-thin button,
+.body-font-weight-thin input,
+.body-font-weight-thin select,
+.body-font-weight-thin textarea {
+	font-weight: 300;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
 
 /* Heading font */
 .heading-font-helvetica h1,
@@ -486,7 +494,6 @@ body.body-font-titillium-web,
 .heading-font-helvetica h5,
 .heading-font-helvetica h6 {
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
-	font-weight: bold;
 }
 .heading-font-open-sans h1,
 .heading-font-open-sans h2,
@@ -495,7 +502,6 @@ body.body-font-titillium-web,
 .heading-font-open-sans h5,
 .heading-font-open-sans h6 {
 	font-family: "Open Sans", sans-serif;
-	font-weight: bold;
 }
 .heading-font-lato h1,
 .heading-font-lato h2,
@@ -504,7 +510,6 @@ body.body-font-titillium-web,
 .heading-font-lato h5,
 .heading-font-lato h6 {
 	font-family: Lato, sans-serif;
-	font-weight: bold;
 }
 .heading-font-source-sans-pro h1,
 .heading-font-source-sans-pro h2,
@@ -513,7 +518,6 @@ body.body-font-titillium-web,
 .heading-font-source-sans-pro h5,
 .heading-font-source-sans-pro h6 {
 	font-family: "Source Sans Pro", sans-serif;
-	font-weight: bold;
 }
 .heading-font-raleway h1,
 .heading-font-raleway h2,
@@ -522,7 +526,6 @@ body.body-font-titillium-web,
 .heading-font-raleway h5,
 .heading-font-raleway h6 {
 	font-family: Raleway, sans-serif;
-	font-weight: bold;
 }
 .heading-font-roboto h1,
 .heading-font-roboto h2,
@@ -531,7 +534,6 @@ body.body-font-titillium-web,
 .heading-font-roboto h5,
 .heading-font-roboto h6 {
 	font-family: Roboto, sans-serif;
-	font-weight: bold;
 }
 .heading-font-titillium-web h1,
 .heading-font-titillium-web h2,
@@ -540,7 +542,6 @@ body.body-font-titillium-web,
 .heading-font-titillium-web h5,
 .heading-font-titillium-web h6 {
 	font-family: "Titillium Web", sans-serif;
-	font-weight: bold;
 }
 
 
@@ -635,8 +636,8 @@ body.body-font-titillium-web,
 
 /* Header */
 #masthead {
-	padding: 20px;
-	padding-bottom: 2rem;
+	padding: 20px 0;
+	padding-bottom: 2rem 0;
 }
 #masthead hgroup {
 	float: left;
@@ -645,6 +646,11 @@ body.body-font-titillium-web,
 #masthead #site-navigation {
 	float: right;
 	width: 70%;
+}
+#masthead.below hgroup,
+#masthead.below #site-navigation {
+	float: none;
+	width: 100%;
 }
 
 /* Footer */
