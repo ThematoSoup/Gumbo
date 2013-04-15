@@ -60,7 +60,7 @@ function thsp_setup() {
 	require( get_template_directory() . '/inc/customizer-boilerplate/customizer.php' );
 
 	/**
-	 * Customizer additions
+	 * Customizer options
 	 */
 	require( get_template_directory() . '/inc/customizer.php' );
 
@@ -90,7 +90,21 @@ function thsp_setup() {
 	/**
 	 * Enable support for Post Formats
 	 */
-	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+	add_theme_support( 'post-formats', array(
+		'aside',
+		'chat',
+		'link',
+		'gallery',
+		'status',
+		'quote',
+		'image',
+		'video'
+	) );
+
+	/**
+	 * Enable support for Theme Hook Alliance hooks
+	 */
+	add_theme_support( 'tha_hooks', array( 'all' ) );
 }
 endif; // thsp_setup
 add_action( 'after_setup_theme', 'thsp_setup' );

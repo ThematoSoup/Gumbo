@@ -8,7 +8,9 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
+		<?php tha_content_before(); ?>
 		<div id="content" class="site-content" role="main">
+			<?php tha_content_top(); ?>
 
 			<article id="post-0" class="post error404 not-found">
 				<header class="entry-header">
@@ -42,7 +44,9 @@ get_header(); ?>
 				</div><!-- .entry-content -->
 			</article><!-- #post-0 .post .error404 .not-found -->
 
+			<?php tha_content_bottom(); ?>
 		</div><!-- #content -->
+		<?php tha_content_after(); ?>
 	</div><!-- #primary -->
 
 <?php get_footer(); ?>
