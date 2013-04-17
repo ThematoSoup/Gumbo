@@ -47,6 +47,7 @@ function thsp_body_classes( $classes ) {
 	$thsp_body_classes[] = 'body-font-' . $thsp_theme_options['body_font'];
 	$thsp_body_classes[] = 'body-font-weight-' . $thsp_theme_options['body_font_weight'];
 	$thsp_body_classes[] = 'heading-font-' . $thsp_theme_options['heading_font'];
+	$thsp_body_classes[] = 'font-size-' . $thsp_theme_options['font_size'];
 		
 	$classes = array_merge( $classes, $thsp_body_classes );
 	return $classes;

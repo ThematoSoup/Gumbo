@@ -143,13 +143,117 @@ textarea {
 	line-height: 1.5;
 	-webkit-font-smoothing: antialiased;
 }
+	body.font-size-small,
+	.font-size-small button,
+	.font-size-small input,
+	.font-size-small select,
+	.font-size-small textarea {
+		font-size: 14px;
+		font-size: 1.4rem;
+	}
+	body.font-size-large,
+	.font-size-large button,
+	.font-size-large input,
+	.font-size-large select,
+	.font-size-large textarea {
+		font-size: 18px;
+		font-size: 1.8rem;
+	}
 
 /* Headings */
 h1,h2,h3,h4,h5,h6 {
 	clear: both;
+	line-height: 1.2;
+	margin: 1.5em 0 0.5em;
+	color: #2e2e2e;
 	font-weight: bold;
 	-webkit-font-smoothing: antialiased;
 }
+/* No need for top margin if :first-child */
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+	margin-top: 0;
+}
+h1 {
+	font-size: 36px;
+	font-size: 3.6rem;
+}
+h2 {
+	font-size: 28px;
+	font-size: 2.8rem;
+}
+h3 {
+	font-size: 24px;
+	font-size: 2.4rem;
+}
+h4 {
+	font-size: 20px;
+	font-size: 2rem;
+}
+h5 {
+	font-size: 16px;
+	font-size: 2rem;
+}
+h6 {
+	font-size: 14px;
+	font-size: 1.4rem;
+}
+	/* Small fonts */
+	.font-size-small h1 {
+		font-size: 32px;
+		font-size: 3.2rem;
+	}
+	.font-size-small h2 {
+		font-size: 26px;
+		font-size: 2.6rem;
+	}
+	.font-size-small h3 {
+		font-size: 22px;
+		font-size: 2.2rem;
+	}
+	.font-size-small h4 {
+		font-size: 18px;
+		font-size: 1.8rem;
+	}
+	.font-size-small h5 {
+		font-size: 14px;
+		font-size: 1.4rem;
+	}
+	.font-size-small h6 {
+		font-size: 12px;
+		font-size: 1.2rem;
+	}
+	/* Large fonts */
+	.font-size-large h1 {
+		font-size: 40px;
+		font-size: 4.0rem;
+	}
+	.font-size-large h2 {
+		font-size: 32px;
+		font-size: 3.2rem;
+	}
+	.font-size-large h3 {
+		font-size: 26px;
+		font-size: 2.6rem;
+	}
+	.font-size-large h4 {
+		font-size: 22px;
+		font-size: 2.2rem;
+	}
+	.font-size-large h5 {
+		font-size: 18px;
+		font-size: 1.8rem;
+	}
+	.font-size-large h6 {
+		font-size: 14px;
+		font-size: 1.4rem;
+	}
+
+
 hr {
 	background-color: #ccc;
 	border: 0;
@@ -482,7 +586,7 @@ body.body-font-weight-thin,
 .body-font-weight-thin select,
 .body-font-weight-thin textarea {
 	font-weight: 300;
-	-webkit-font-smoothing: subpixel-antialiased;
+	-webkit-font-smoothing: antialiased;
 }
 
 
@@ -641,11 +745,11 @@ body.body-font-weight-thin,
 }
 #masthead hgroup {
 	float: left;
-	width: 30%:
+	width: 40%;
 }
 #masthead #site-navigation {
 	float: right;
-	width: 70%;
+	width: 60%;
 }
 #masthead.below hgroup,
 #masthead.below #site-navigation {

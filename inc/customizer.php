@@ -365,6 +365,30 @@ function thsp_theme_options_array() {
 						'priority' => 1
 					) // End control args
 				),
+				'font_size' => array(
+					'setting_args' => array(
+						'default' => 'medium',
+						'type' => 'option',
+						'capability' => $thsp_cbp_capability,
+						'transport' => 'refresh',
+					), // End setting args			
+					'control_args' => array(
+						'label' => __( 'Font size', 'gumbo' ),
+						'type' => 'radio', // Radio control
+						'choices' => array(
+							'small' => array(
+								'label' => 'Small'
+							),
+							'medium' => array(
+								'label' => 'Medium'
+							),
+							'large' => array(
+								'label' => 'Large'
+							)
+						),
+						'priority' => 1
+					) // End control args
+				)
 			) // End fields
 		)
 	);

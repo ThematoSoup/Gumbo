@@ -229,3 +229,8 @@ add_action( 'wp_enqueue_scripts', 'thsp_scripts' );
  * Theme hooks
  */
 require( get_template_directory() . '/inc/tha/tha-theme-hooks.php' );
+
+/**
+ * WooCommerce support
+ */
+require( get_template_directory() . '/inc/woocommerce.php' );
