@@ -33,6 +33,7 @@ and Blueprint http://www.blueprintcss.org/
 		- Alignment
 		- Screen reader text
 		- Clearing
+	* Dark color scheme
 	* Typography
 	* Layout
 	* Menus
@@ -164,7 +165,7 @@ textarea {
 h1,h2,h3,h4,h5,h6 {
 	clear: both;
 	line-height: 1.2;
-	margin: 1.5em 0 0.5em;
+	margin: 1.25em 0 0.5em;
 	color: #2e2e2e;
 	font-weight: bold;
 	-webkit-font-smoothing: antialiased;
@@ -190,7 +191,8 @@ h3 {
 	font-size: 24px;
 	font-size: 2.4rem;
 }
-h4 {
+h4,
+.widget-title {
 	font-size: 20px;
 	font-size: 2rem;
 }
@@ -215,7 +217,8 @@ h6 {
 		font-size: 22px;
 		font-size: 2.2rem;
 	}
-	.font-size-small h4 {
+	.font-size-small h4,
+	.font-size-small .widget-title {
 		font-size: 18px;
 		font-size: 1.8rem;
 	}
@@ -240,7 +243,8 @@ h6 {
 		font-size: 26px;
 		font-size: 2.6rem;
 	}
-	.font-size-large h4 {
+	.font-size-large h4,
+	.font-size-large .widget-title {
 		font-size: 22px;
 		font-size: 2.2rem;
 	}
@@ -455,12 +459,12 @@ a {
 	color: royalblue;
 }
 a:visited {
-	color: purple;
+	color: #757575;
 }
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color: #111;
 }
 
 /* Alignment */
@@ -523,6 +527,31 @@ a:active {
 [class*="site"]:after {
 	clear: both;
 }
+
+
+/* =Dark color scheme
+----------------------------------------------- */
+body.background-dark {
+	background-color: #242424;
+	color: #ccc;
+}
+.background-dark a:visited {
+	color: #888;
+}
+.background-dark a:hover,
+.background-dark a:focus,
+.background-dark a:active {
+	color: #fff;
+}
+.background-dark h1,
+.background-dark h2,
+.background-dark h3,
+.background-dark h4,
+.background-dark h5,
+.background-dark h6 {
+	color: #f3f3f3;
+}
+
 
 
 /* =Typography

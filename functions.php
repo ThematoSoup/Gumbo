@@ -16,7 +16,7 @@
  *   -- Post thumbnail support
  *   -- Register menus
  *   -- Post formats support
- * - Register custom background
+ * - Register custom background (commented out)
  * - Enqueue scripts and styles
  * - Register custom header
  *
@@ -138,7 +138,7 @@ function thsp_register_custom_background() {
 		add_custom_background();
 	}
 }
-add_action( 'after_setup_theme', 'thsp_register_custom_background' );
+// add_action( 'after_setup_theme', 'thsp_register_custom_background' );
 
 /**
  * Register widgetized area and update sidebar with default widgets

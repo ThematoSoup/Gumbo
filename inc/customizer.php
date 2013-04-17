@@ -158,19 +158,6 @@ function thsp_theme_options_array() {
 		'nav' => array(
 			'existing_section' => true,
 			'fields' => array(
-				'post_navigation_above' => array(
-					'setting_args' => array(
-						'default' => false,
-						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
-						'transport' => 'refresh',
-					),					
-					'control_args' => array(
-						'label' => __( 'Navigation above posts', 'gumbo' ),
-						'type' => 'checkbox', // Checkbox field control
-						'priority' => 20
-					)
-				),
 				'post_navigation_below' => array(
 					'setting_args' => array(
 						'default' => true,

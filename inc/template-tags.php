@@ -22,6 +22,9 @@ if ( ! function_exists( 'thsp_content_nav' ) ) :
 function thsp_content_nav( $nav_id ) {
 	global $wp_query, $post;
 
+	// Get current theme options
+	$theme_options = thsp_cbp_get_options_values();
+	
 	// Don't print empty markup on single pages if there's nowhere to navigate.
 	if ( is_single() ) {
 		$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
@@ -33,6 +36,9 @@ function thsp_content_nav( $nav_id ) {
 
 	// Don't print empty markup in archives if there's only one page.
 	if ( $wp_query->max_num_pages < 2 && ( is_home() || is_archive() || is_search() ) )
+		return;
+		
+	if ( 'nav-below' == $nav_id && ! $theme_options['post_navigation_below'] )
 		return;
 
 	$nav_class = ( is_single() ) ? 'navigation-post' : 'navigation-paging';

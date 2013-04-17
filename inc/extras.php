@@ -48,6 +48,7 @@ function thsp_body_classes( $classes ) {
 	$thsp_body_classes[] = 'body-font-weight-' . $thsp_theme_options['body_font_weight'];
 	$thsp_body_classes[] = 'heading-font-' . $thsp_theme_options['heading_font'];
 	$thsp_body_classes[] = 'font-size-' . $thsp_theme_options['font_size'];
+	$thsp_body_classes[] = 'background-' . $thsp_theme_options['page_background'];
 		
 	$classes = array_merge( $classes, $thsp_body_classes );
 	return $classes;
@@ -128,3 +129,18 @@ function thsp_wp_title( $title, $sep ) {
 	return $title;
 }
 add_filter( 'wp_title', 'thsp_wp_title', 10, 2 );
+
+/**
+ * Internal CSS for accent color
+ */
+function thsp_internal_css() {
+	// Get current theme options
+	$thsp_theme_options = thsp_cbp_get_options_values();
+	$thsp_primary_color = $thsp_theme_options['primary_color'];
+	?>
+	<style type="text/css">
+		a { color: <?php echo $thsp_primary_color; ?> }
+	</style>
+	<?php
+}
+add_action( 'wp_head', 'thsp_internal_css' );
