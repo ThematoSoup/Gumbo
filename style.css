@@ -162,7 +162,12 @@ textarea {
 	}
 
 /* Headings */
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	clear: both;
 	line-height: 1;
 	margin: 1.25em 0 0.5em;
@@ -677,6 +682,9 @@ body.body-font-weight-thin,
 	font-family: "Titillium Web", sans-serif;
 }
 
+.widget-area {
+	font-size: 0.9em;
+}
 
 /* =Layout
 ----------------------------------------------- */
@@ -810,6 +818,10 @@ body.body-font-weight-thin,
 	margin: 0 0 0.25em;
 	font-size: 36px;
 	font-size: 3.6rem;
+}
+#masthead .site-title a {
+	color: #2e2e2e;
+	text-decoration: none;
 }
 #masthead .site-description {
 	margin: 0;
@@ -947,6 +959,25 @@ body.body-font-weight-thin,
 }
 .hentry {
 	margin: 0 0 1.5em;
+}
+.entry-thumbnail {
+	display: block;
+	margin: 0 auto;
+}
+.entry-thumbnail img {
+	display: block;
+	margin: 0 auto 20px;
+	margin: 0 auto 2rem;
+}
+.entry-title {
+	margin-top: 0;
+}
+.entry-title a {
+	color: #2e2e2e;
+	text-decoration: none;
+}
+.entry-meta a {
+	color: #999;
 }
 .byline {
 	display: none;

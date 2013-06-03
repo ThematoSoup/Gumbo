@@ -7,6 +7,7 @@
  * ========
  *
  * - Content width
+ * - Add image size(s)
  * - Theme setup
  *   -- Template tags
  *   -- Extras
@@ -27,7 +28,14 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) )
-	$content_width = 640; /* pixels */
+	$content_width = 660; /* pixels */
+
+/**
+ * Add custom image size(s)
+ */
+if ( function_exists( 'add_image_size' ) ) { 
+	add_image_size( 'thsp-archives-featured', 660, 220, true );
+}
 
 /*
  * Load Jetpack compatibility file.
