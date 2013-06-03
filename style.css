@@ -865,6 +865,8 @@ body.body-font-weight-thin,
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
+	font-size: 14px;
+	font-size: 1.4rem;
 }
 .navigation-main .menu > li {
 	display: inline-block;
@@ -888,10 +890,11 @@ body.body-font-weight-thin,
 	padding: 0.75em 0;
 }
 .navigation-main .sub-menu a {
-	padding: 0.5em 0.25em;
+	padding: 0.5 0.25em;
 }
 .navigation-main ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+	background: #fff;
 	display: none;
 	position: absolute;
 		top: 2.5em;
