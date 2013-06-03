@@ -682,9 +682,6 @@ body.body-font-weight-thin,
 	font-family: "Titillium Web", sans-serif;
 }
 
-.widget-area {
-	font-size: 0.9em;
-}
 
 /* =Layout
 ----------------------------------------------- */
@@ -958,7 +955,8 @@ body.body-font-weight-thin,
 .sticky {
 }
 .hentry {
-	margin: 0 0 1.5em;
+	margin: 0 0 40px;
+	margin: 0 0 4rem;
 }
 .entry-thumbnail {
 	display: block;
@@ -1064,14 +1062,18 @@ object {
 	margin: 0 0 1.5em;
 	overflow: hidden;
 }
-[class*="navigation"] .previous {
+[class*="navigation"] .prev {
 	float: left;
-	width: 50%;
+	width: 25%;
+	text-align: left;
 }
 [class*="navigation"] .next {
 	float: right;
 	text-align: right;
-	width: 50%;
+	width: 25%;
+}
+.navigation-paging {
+	text-align: center;
 }
 
 /* =Comments

@@ -48,21 +48,19 @@ function thsp_content_nav( $nav_id ) {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'gumbo' ); ?></h1>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
-
 		<?php previous_post_link( '<div class="previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'gumbo' ) . '</span> %title' ); ?>
 		<?php next_post_link( '<div class="next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'gumbo' ) . '</span>' ); ?>
-
-	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
-
-		<?php if ( get_next_posts_link() ) : ?>
-		<div class="previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'gumbo' ) ); ?></div>
-		<?php endif; ?>
-
-		<?php if ( get_previous_posts_link() ) : ?>
-		<div class="next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'gumbo' ) ); ?></div>
-		<?php endif; ?>
-
-	<?php endif; ?>
+	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages
+		global $wp_query;
+		$big = 999999999; // need an unlikely integer
+		
+		echo paginate_links( array(
+			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format' => '?paged=%#%',
+			'current' => max( 1, get_query_var('paged') ),
+			'total' => $wp_query->max_num_pages
+		) );
+	endif; ?>
 
 	</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
 	<?php
