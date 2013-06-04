@@ -42,9 +42,7 @@ add_action( 'customize_preview_init', 'gumbo_customize_preview_js' );
  */
 add_filter( 'thsp_cbp_option', 'thsp_edit_cbp_option_name', 1 );
 function thsp_edit_cbp_option_name() {
-	
 	return 'thsp_gumbo_options';
-	
 }
 
 
@@ -241,6 +239,30 @@ function thsp_theme_options_array() {
 							),
 						),					
 						'priority' => 2
+					) // End control args
+				),
+				'archives_layout' => array(
+					'setting_args' => array(
+						'default' => 'layout-1',
+						'type' => 'option',
+						'capability' => $thsp_cbp_capability,
+						'transport' => 'refresh',
+					), // End setting args			
+					'control_args' => array(
+						'label' => __( 'Blog archives layout', 'gumbo' ),
+						'type' => 'radio', // Image radio replacement
+						'choices' => array(
+							'layout-1' => array(
+								'label' => __( 'Archives Layout 1', 'gumbo' )
+							),
+							'layout-2' => array(
+								'label' => __( 'Archives Layout 2', 'gumbo' )
+							),
+							'layout-3' => array(
+								'label' => __( 'Archives Layout 3', 'gumbo' )
+							),
+						),					
+						'priority' => 3
 					) // End control args
 				),
 			) // End fields

@@ -40,6 +40,7 @@ and Blueprint http://www.blueprintcss.org/
 		- Main menu
 		- Small menu
 	* Content
+		- Different archives layouts
 	* Asides (post format)
 	* Media
 	* Navigation
@@ -79,7 +80,7 @@ html {
 	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
 body {
-	background: #fff;
+	background: #fdfdfd;
 }
 article,
 aside,
@@ -209,6 +210,10 @@ h6 {
 	font-size: 14px;
 	font-size: 1.4rem;
 }
+.archives-layout-3 .entry-title {
+	font-size: 26px;
+	font-size: 2.6rem;
+}
 	/* Small fonts */
 	.font-size-small h1 {
 		font-size: 32px;
@@ -234,6 +239,10 @@ h6 {
 	.font-size-small h6 {
 		font-size: 12px;
 		font-size: 1.2rem;
+	}
+	.font-size-small.archives-layout-3 .entry-title {
+		font-size: 22px;
+		font-size: 2.2rem;
 	}
 	/* Large fonts */
 	.font-size-large h1 {
@@ -261,7 +270,10 @@ h6 {
 		font-size: 14px;
 		font-size: 1.4rem;
 	}
-
+	.font-size-large.archives-layout-3 .entry-title {
+		font-size: 30px;
+		font-size: 3rem;
+	}
 
 hr {
 	background-color: #ccc;
@@ -567,49 +579,56 @@ body.body-font-helvetica,
 .body-font-helvetica button,
 .body-font-helvetica input,
 .body-font-helvetica select,
-.body-font-helvetica textarea {
+.body-font-helvetica textarea,
+.body-font-helvetica .site-description {
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
 body.body-font-open-sans,
 .body-font-open-sans button,
 .body-font-open-sans input,
 .body-font-open-sans select,
-.body-font-open-sans textarea {
+.body-font-open-sans textarea,
+.body-font-open-sans .site-description {
 	font-family: "Open Sans", sans-serif;
 }
 body.body-font-lato,
 .body-font-lato button,
 .body-font-lato input,
 .body-font-lato select,
-.body-font-lato textarea {
+.body-font-lato textarea,
+.body-font-lato .site-description {
 	font-family: Lato, sans-serif;
 }
 body.body-font-source-sans-pro,
 .body-font-source-sans-pro button,
 .body-font-source-sans-pro input,
 .body-font-source-sans-pro select,
-.body-font-source-sans-pro textarea {
+.body-font-source-sans-pro textarea,
+.body-font-source-sans-pro .site-description {
 	font-family: "Source Sans Pro", sans-serif;
 }
 body.body-font-raleway,
 .body-font-raleway button,
 .body-font-raleway input,
 .body-font-raleway select,
-.body-font-raleway textarea {
+.body-font-raleway textarea,
+.body-font-raleway .site-description {
 	font-family: Raleway, sans-serif;
 }
 body.body-font-roboto,
 .body-font-roboto button,
 .body-font-roboto input,
 .body-font-roboto select,
-.body-font-roboto textarea {
+.body-font-roboto textarea,
+.body-font-roboto .site-description {
 	font-family: Roboto, sans-serif;
 }
 body.body-font-titillium-web,
 .body-font-titillium-web button,
 .body-font-titillium-web input,
 .body-font-titillium-web select,
-.body-font-titillium-web textarea {
+.body-font-titillium-web textarea,
+.body-font-titillium-web .site-description {
 	font-family: "Titillium Web", sans-serif;
 }
 
@@ -618,7 +637,8 @@ body.body-font-weight-thin,
 .body-font-weight-thin button,
 .body-font-weight-thin input,
 .body-font-weight-thin select,
-.body-font-weight-thin textarea {
+.body-font-weight-thin textarea,
+.body-font-weight-thin .site-description {
 	font-weight: 300;
 	-webkit-font-smoothing: antialiased;
 }
@@ -686,9 +706,15 @@ body.body-font-weight-thin,
 /* =Layout
 ----------------------------------------------- */
 
-#page {
+#page,
+.inner {
 	max-width: 1000px;
 	margin: 0 auto;
+}
+#primary,
+#secondary,
+#tertiary {
+	word-wrap: break-word;
 }
 
 /* Layout: Content - Primary Sidebar */
@@ -795,8 +821,12 @@ body.body-font-weight-thin,
 
 /* Header */
 #masthead {
-	padding: 20px 0;
-	padding-bottom: 2rem 0;
+	background: #fff;
+	padding: 20px 0 0;
+	padding: 2rem 0 0;
+	margin-bottom: 30px;
+	margin-bottom: 3rem;
+	box-shadow: 0 0 2px rgba(0,0,0,0.3);
 }
 #masthead hgroup {
 	float: left;
@@ -822,24 +852,25 @@ body.body-font-weight-thin,
 }
 #masthead .site-description {
 	margin: 0;
-	font-size: 20px;
-	font-size: 2rem;
+	font-size: 16px;
+	font-size: 1.6rem;
+	font-weight: normal;
 }
 	.font-size-small #masthead .site-title {
 		font-size: 32px;
 		font-size: 3.2rem;
 	}
 	.font-size-small #masthead .site-description {
-		font-size: 18px;
-		font-size: 1.8rem;
+		font-size: 14px;
+		font-size: 1.4rem;
 	}
 	.font-size-large #masthead .site-title {
 		font-size: 40px;
 		font-size: 4rem;
 	}
 	.font-size-large #masthead .site-description {
-		font-size: 22px;
-		font-size: 2.2rem;
+		font-size: 18px;
+		font-size: 1.8rem;
 	}
 
 /* Footer */
@@ -890,11 +921,11 @@ body.body-font-weight-thin,
 	padding: 0.75em 0;
 }
 .navigation-main .sub-menu a {
-	padding: 0.5 0.25em;
+	padding: 0.5em 0.75em;
 }
 .navigation-main ul ul {
-	box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-	background: #fff;
+	background: #eee;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 	display: none;
 	position: absolute;
 		top: 2.5em;
@@ -906,6 +937,7 @@ body.body-font-weight-thin,
 		left: 0;
 	}
 .navigation-main ul ul ul {
+	background: #ddd;
 	right: 100%;
 	top: 0;
 }
@@ -915,6 +947,9 @@ body.body-font-weight-thin,
 	}
 .navigation-main ul ul a {
 	width: 200px;
+}
+.navigation-main ul ul ul ul {
+	background: #ccc;
 }
 .navigation-main ul ul li {
 }
@@ -996,6 +1031,18 @@ body.body-font-weight-thin,
 	margin: 0 0 1.5em;
 }
 
+/* Different archives layouts */
+.archives-layout-3 .hentry {
+	float: left;
+	width: 50%;
+}
+.archives-layout-3 .post:nth-child(2n+1) {
+	clear: left;
+	padding-right: 20px;
+}
+.archives-layout-3 .post:nth-child(2n) {
+	padding-left: 20px;
+}
 
 /* =Asides
 ----------------------------------------------- */

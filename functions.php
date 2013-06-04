@@ -34,7 +34,7 @@ if ( ! isset( $content_width ) )
  * Add custom image size(s)
  */
 if ( function_exists( 'add_image_size' ) ) { 
-	add_image_size( 'thsp-archives-featured', 660, 220, true );
+	add_image_size( 'thsp-archives-featured', 660, 9999 );
 }
 
 /*

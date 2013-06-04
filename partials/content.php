@@ -4,13 +4,19 @@
  */
 ?>
 
+<?php 
+	// Get theme options
+	$thsp_theme_options = thsp_cbp_get_options_values(); 
+?>
 <?php tha_entry_before(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php tha_entry_top(); ?>
 	<header class="entry-header">
-		<?php if( has_post_thumbnail() ) { ?>
-		<a class="entry-thumbnail" href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'gumbo' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_post_thumbnail( 'thsp-archives-featured' ); ?></a>
-		<?php } ?>
+		<?php /* if( has_post_thumbnail() ) { ?>
+			<a class="entry-thumbnail" href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'gumbo' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_post_thumbnail( 'thsp-archives-featured' ); ?></a>
+		<?php } else { */ ?>
+			<a class="entry-thumbnail" href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'gumbo' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><img src="http://lorempixel.com/660/330" /></a>
+		<?php // } ?>
 
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'gumbo' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
@@ -21,7 +27,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
+	<?php if ( is_search() || 'layout-3' == $thsp_theme_options['archives_layout'] ) : // Only display Excerpts for Search and if that option is selected ?>
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
@@ -59,10 +65,10 @@
 		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
 		<span class="sep"> | </span>
 		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'gumbo' ), __( '1 Comment', 'gumbo' ), __( '% Comments', 'gumbo' ) ); ?></span>
-		<?php endif; ?>
+		<?php endif; // 'post' == get_post_type() ?>
 
 		<?php edit_post_link( __( 'Edit', 'gumbo' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 	<?php tha_entry_bottom(); ?>
-</article><!-- #post-## -->
+</article><!-- #post-<?php the_ID(); ?> -->
 <?php tha_entry_after(); ?>

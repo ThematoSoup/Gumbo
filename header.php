@@ -24,27 +24,30 @@
 
 <body <?php body_class(); ?>>
 <?php tha_body_top(); ?>
-<div id="page" class="hfeed site">
-	<?php tha_header_before(); ?>		
-	<?php
+
+<?php tha_header_before(); ?>		
+<?php
 	$thsp_theme_options = thsp_cbp_get_options_values();
 	$thsp_header_class = $thsp_theme_options['main_nav_placement'];
-	?>
-	<header id="masthead" class="site-header <?php echo $thsp_header_class; ?>" role="banner">
+?>
+<header id="masthead" class="site-header <?php echo $thsp_header_class; ?>" role="banner">
+	<div class="inner">
 		<?php tha_header_top(); ?>
 		<hgroup>
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</hgroup>
-
+	
 		<nav id="site-navigation" class="navigation-main" role="navigation">
 			<h1 class="menu-toggle"><?php _e( 'Menu', 'gumbo' ); ?></h1>
 			<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'gumbo' ); ?>"><?php _e( 'Skip to content', 'gumbo' ); ?></a></div>
-
+	
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
 		<?php tha_header_bottom(); ?>
-	</header><!-- #masthead -->
-	<?php tha_header_after(); ?>
-	
+	</div><!-- .inner -->
+</header><!-- #masthead -->
+<?php tha_header_after(); ?>
+
+<div id="page" class="hfeed site">	
 	<div id="main" class="site-main">

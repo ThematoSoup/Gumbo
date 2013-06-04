@@ -20,6 +20,7 @@ get_header(); ?>
 
 			<?php if ( have_posts() ) : ?>
 	
+				<div class="archive-posts">
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 	
@@ -32,6 +33,7 @@ get_header(); ?>
 					?>
 	
 				<?php endwhile; ?>
+				</div><!-- .archive-posts -->
 	
 				<?php thsp_content_nav( 'nav-below' ); ?>
 	
