@@ -134,6 +134,29 @@ function thsp_posted_on() {
 	);
 }
 endif;
+
+if ( ! function_exists( 'thsp_posted_on_floated' ) ) :
+/**
+ * Prints HTML with meta information for the current post-date/time and author.
+ */
+function thsp_posted_on_floated() {
+	printf( __( '
+		%1$s
+		<span class="byline"> by <span class="author vcard"><a class="url fn n" href="%2$s" title="%3$s" rel="author">%4$s</a></span></span>
+		<a href="%5$s" title="%6$s" rel="bookmark"><time class="entry-date" datetime="%7$s">%8$s</time></a>',
+		'gumbo' ),
+		get_avatar( get_the_author_meta('ID'), 128 ),
+		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'gumbo' ), get_the_author() ) ),
+		get_the_author(),
+		esc_url( get_permalink() ),
+		esc_attr( get_the_time() ),
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() )
+	);
+}
+endif;
+
 /**
  * Returns true if a blog has more than 1 category
  */

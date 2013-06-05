@@ -1,5 +1,10 @@
 <?php
 /**
+ * The template part that displays a single post in archives.
+ *
+ * Based on theme settings one of three possible layouts is shown.
+ * Excerpt or full content is shown, also based on theme settings.
+ *
  * @package Gumbo
  */
 ?>
@@ -11,13 +16,18 @@
 <?php tha_entry_before(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php tha_entry_top(); ?>
+	
 	<header class="entry-header">
-		<?php /* if( has_post_thumbnail() ) { ?>
-			<a class="entry-thumbnail" href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'gumbo' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_post_thumbnail( 'thsp-archives-featured' ); ?></a>
-		<?php } else { */ ?>
-			<a class="entry-thumbnail" href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'gumbo' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><img src="http://lorempixel.com/660/330" /></a>
-		<?php // } ?>
+		<?php if ( ( 'layout_1' == $thsp_theme_options['post_layout'] || 'layout_2' == $thsp_theme_options['post_layout'] ) && has_post_thumbnail() ) : ?>
+			<a class="entry-thumbnail" href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'gumbo' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><img src="http://lorempixel.com/660/300" /></a>
+		<?php endif; // has_post_thumbnail() and post layout check ?>
 
+		<?php if ( 'layout-3' == $thsp_theme_options['post_layout'] || 'layout-4' == $thsp_theme_options['post_layout'] ) : ?>
+			<div class="entry-aside">
+				Lalal
+			</div><!-- .entry aside -->
+		<?php endif; // post layout check ?>
+	
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'gumbo' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
@@ -27,7 +37,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( is_search() || 'layout-3' == $thsp_theme_options['archives_layout'] ) : // Only display Excerpts for Search and if that option is selected ?>
+	<?php if ( is_search() ) : // Only display Excerpts for Search and if that option is selected ?>
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
@@ -36,7 +46,7 @@
 		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'gumbo' ) ); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'gumbo' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
-	<?php endif; ?>
+	<?php endif; // is_search() ?>
 
 	<footer class="entry-meta">
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
@@ -69,6 +79,7 @@
 
 		<?php edit_post_link( __( 'Edit', 'gumbo' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
+	
 	<?php tha_entry_bottom(); ?>
 </article><!-- #post-<?php the_ID(); ?> -->
 <?php tha_entry_after(); ?>

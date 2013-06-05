@@ -1007,6 +1007,7 @@ body.body-font-weight-thin,
 }
 .entry-title {
 	margin-top: 0;
+	clear: none;
 }
 .entry-title a {
 	color: #2e2e2e;
@@ -1030,19 +1031,11 @@ body.body-font-weight-thin,
 	clear: both;
 	margin: 0 0 1.5em;
 }
-
-/* Different archives layouts */
-.archives-layout-3 .hentry {
+.entry-aside {
 	float: left;
-	width: 50%;
+	width: 180px;
 }
-.archives-layout-3 .post:nth-child(2n+1) {
-	clear: left;
-	padding-right: 20px;
-}
-.archives-layout-3 .post:nth-child(2n) {
-	padding-left: 20px;
-}
+
 
 /* =Asides
 ----------------------------------------------- */

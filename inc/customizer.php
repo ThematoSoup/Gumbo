@@ -241,30 +241,54 @@ function thsp_theme_options_array() {
 						'priority' => 2
 					) // End control args
 				),
-				'archives_layout' => array(
+				'post_layout' => array(
 					'setting_args' => array(
-						'default' => 'layout-1',
+						'default' => 'layout_1',
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',
 					), // End setting args			
 					'control_args' => array(
-						'label' => __( 'Blog archives layout', 'gumbo' ),
+						'label' => __( 'Blog post layout', 'gumbo' ),
 						'type' => 'radio', // Image radio replacement
 						'choices' => array(
-							'layout-1' => array(
-								'label' => __( 'Archives Layout 1', 'gumbo' )
+							'layout_1' => array(
+								'label' => __( 'Post Layout 1', 'gumbo' )
 							),
-							'layout-2' => array(
-								'label' => __( 'Archives Layout 2', 'gumbo' )
+							'layout_2' => array(
+								'label' => __( 'Post Layout 2', 'gumbo' )
 							),
-							'layout-3' => array(
-								'label' => __( 'Archives Layout 3', 'gumbo' )
+							'layout_3' => array(
+								'label' => __( 'Post Layout 3', 'gumbo' )
 							),
+							'layout_4' => array(
+								'label' => __( 'Post Layout 4', 'gumbo' )
+							)
 						),					
 						'priority' => 3
 					) // End control args
 				),
+				'post_archives_show' => array(
+					'setting_args' => array(
+						'default' => 'full_content',
+						'type' => 'option',
+						'capability' => $thsp_cbp_capability,
+						'transport' => 'refresh',
+					), // End setting args			
+					'control_args' => array(
+						'label' => __( 'Post in archives show', 'gumbo' ),
+						'type' => 'radio', // Image radio replacement
+						'choices' => array(
+							'full_content' => array(
+								'label' => __( 'Full content', 'gumbo' )
+							),
+							'excerpt' => array(
+								'label' => __( 'Excerpt', 'gumbo' )
+							),
+						),					
+						'priority' => 3
+					) // End control args
+				)
 			) // End fields
 		),
 		
