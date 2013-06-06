@@ -260,9 +260,6 @@ function thsp_theme_options_array() {
 							),
 							'layout_3' => array(
 								'label' => __( 'Post Layout 3', 'gumbo' )
-							),
-							'layout_4' => array(
-								'label' => __( 'Post Layout 4', 'gumbo' )
 							)
 						),					
 						'priority' => 3

@@ -998,12 +998,11 @@ body.body-font-weight-thin,
 }
 .entry-thumbnail {
 	display: block;
-	margin: 0 auto;
+	margin: 0 auto 30px;
+	margin: 0 auto 3rem;
 }
 .entry-thumbnail img {
 	display: block;
-	margin: 0 auto 20px;
-	margin: 0 auto 2rem;
 }
 .entry-title {
 	margin-top: 0;
@@ -1033,7 +1032,13 @@ body.body-font-weight-thin,
 }
 .entry-aside {
 	float: left;
-	width: 180px;
+	width: 96px;
+}
+.entry-aside img {
+	display: block;
+}
+.entry-main {
+	margin-left: 126px;
 }
 
 
