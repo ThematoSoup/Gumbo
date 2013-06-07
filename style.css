@@ -993,13 +993,13 @@ body.body-font-weight-thin,
 .sticky {
 }
 .hentry {
-	margin: 0 0 40px;
-	margin: 0 0 4rem;
+	margin: 0 0 60px;
+	margin: 0 0 6rem;
 }
 .entry-thumbnail {
 	display: block;
-	margin: 0 auto 30px;
-	margin: 0 auto 3rem;
+	margin: 0 auto 20px;
+	margin: 0 auto 2rem;
 }
 .entry-thumbnail img {
 	display: block;
@@ -1038,7 +1038,7 @@ body.body-font-weight-thin,
 	display: block;
 }
 .entry-main {
-	margin-left: 126px;
+	margin-left: 116px;
 }
 
 
