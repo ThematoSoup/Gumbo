@@ -80,7 +80,7 @@ html {
 	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
 body {
-	background: #fdfdfd;
+	background: #fff;
 }
 article,
 aside,
@@ -706,7 +706,6 @@ body.body-font-weight-300,
 /* =Layout
 ----------------------------------------------- */
 
-#page,
 .inner {
 	max-width: 1000px;
 	margin: 0 auto;
@@ -821,12 +820,10 @@ body.body-font-weight-300,
 
 /* Header */
 #masthead {
-	background: #fff;
 	padding: 20px 0 0;
 	padding: 2rem 0 0;
 	margin-bottom: 30px;
 	margin-bottom: 3rem;
-	border-bottom: 1px solid rgba(0,0,0,0.075);
 }
 #masthead hgroup {
 	float: left;
@@ -872,6 +869,16 @@ body.body-font-weight-300,
 		font-size: 18px;
 		font-size: 1.8rem;
 	}
+#masthead.below {
+	text-align: center;
+}
+#sub-header {
+	padding: 30px;
+	margin-bottom: 30px;
+	background: #fcfcfc;
+	border-top: 1px solid rgba(0,0,0,0.025);
+	border-bottom: 1px solid rgba(0,0,0,0.025);
+}
 
 /* Footer */
 .site-footer {
@@ -888,7 +895,7 @@ body.body-font-weight-300,
 	text-align: right;
 }
 	.below .navigation-main {
-		text-align: left;
+		text-align: center;
 		margin-top: 5px;
 		margin-top: 0.5rem;
 	}
@@ -936,6 +943,7 @@ body.body-font-weight-300,
 	.below .navigation-main ul ul {
 		right: auto;
 		left: 0;
+		text-align: left;
 	}
 .navigation-main ul ul ul {
 	right: 100%;
