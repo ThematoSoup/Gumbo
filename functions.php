@@ -192,36 +192,44 @@ function thsp_scripts() {
 	// Check protocol
 	$protocol = is_ssl() ? 'https' : 'http';
     
-    // Check if it's a Google Font
-	if( isset( $body_font_options[$body_font_value]['google_font'] ) ) {
-		// Check body font weight
-		if ( 'thin' == $body_font_weight ) {
-			$body_font_options[$body_font_value]['google_font'] = str_replace( '400', '300', $body_font_options[$body_font_value]['google_font'] );
+	// Check if body and heading fonts are the same and Google Fonts
+	$font_subset = '&subset=latin,latin-ext';
+	if ( $body_font_value == $heading_font_value && isset( $body_font_options[$body_font_value]['google_font'] ) ) {
+		$font_style = $body_font_weight . ',' . $body_font_weight . 'italic,700,700italic';
+		$font_url = $protocol . '://fonts.googleapis.com/css?family=' . $body_font_options[$body_font_value]['google_font'] . ':' . $font_style . $font_subset;
+		// Enqueue the font
+		wp_enqueue_style(
+			'gumbo_font_' . $body_font_value,
+			$font_url
+		);
+	} else {
+		// Check if body font is Google Font
+		if ( isset( $body_font_options[$body_font_value]['google_font'] ) ) {
+			$body_font_style = $body_font_weight . ',' . $body_font_weight . 'italic,700,700italic';
+			$body_font_url = $protocol . '://fonts.googleapis.com/css?family=' . $body_font_options[$body_font_value]['google_font'] . ':' . $body_font_style . $font_subset;
+			// Enqueue the font
+			wp_enqueue_style(
+				'gumbo_body_font_' . $body_font_value,
+				$body_font_url
+			);
 		}
-		
-		wp_enqueue_style(
-			'body_font_' . $body_font_value,
-			$protocol . '://fonts.googleapis.com/css?family=' . $body_font_options[$body_font_value]['google_font']
-		);
-	}	
-	// Check if it's a Google Font and different than body font so it's not loaded twice
-	if( isset( $heading_font_options[$heading_font_value]['google_font'] ) && $body_font_value != $heading_font_value ) {
-		wp_enqueue_style(
-			'heading_font_' . $heading_font_value,
-			$protocol . '://fonts.googleapis.com/css?family=' . $heading_font_options[$heading_font_value]['google_font']
-		);
+		// Check if heading font is Google Font	
+		if ( isset( $body_font_options[$body_font_value]['google_font'] ) ) {
+			$heading_font_url = $protocol . '://fonts.googleapis.com/css?family=' . $heading_font_options[$heading_font_value]['google_font'] . ':700,700italic' . $font_subset;
+			// Enqueue the font
+			wp_enqueue_style(
+				'gumbo_heading_font_' . $heading_font_value,
+				$heading_font_url
+			);
+		}
 	}
 	
 	wp_enqueue_style( 'gumbo-style', get_stylesheet_uri() );
-
 	wp_enqueue_script( 'gumbo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-
 	wp_enqueue_script( 'gumbo-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-
 	if ( is_singular() && wp_attachment_is_image() ) {
 		wp_enqueue_script( 'gumbo-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
@@ -237,8 +245,3 @@ add_action( 'wp_enqueue_scripts', 'thsp_scripts' );
  * Theme hooks
  */
 require( get_template_directory() . '/inc/tha/tha-theme-hooks.php' );
-
-/**
- * WooCommerce support
- */
-require( get_template_directory() . '/inc/woocommerce.php' );

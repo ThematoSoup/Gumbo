@@ -633,12 +633,12 @@ body.body-font-titillium-web,
 }
 
 /* Body font weight */
-body.body-font-weight-thin,
-.body-font-weight-thin button,
-.body-font-weight-thin input,
-.body-font-weight-thin select,
-.body-font-weight-thin textarea,
-.body-font-weight-thin .site-description {
+body.body-font-weight-300,
+.body-font-weight-300 button,
+.body-font-weight-300 input,
+.body-font-weight-300 select,
+.body-font-weight-300 textarea,
+.body-font-weight-300 .site-description {
 	font-weight: 300;
 	-webkit-font-smoothing: antialiased;
 }
@@ -826,7 +826,7 @@ body.body-font-weight-thin,
 	padding: 2rem 0 0;
 	margin-bottom: 30px;
 	margin-bottom: 3rem;
-	box-shadow: 0 0 2px rgba(0,0,0,0.3);
+	border-bottom: 1px solid rgba(0,0,0,0.075);
 }
 #masthead hgroup {
 	float: left;
@@ -924,9 +924,10 @@ body.body-font-weight-thin,
 	padding: 0.5em 0.75em;
 }
 .navigation-main ul ul {
-	background: #eee;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	background: #fff;
 	display: none;
+	border: 1px solid rgba(0,0,0,0.075);
+	border-top: none;
 	position: absolute;
 		top: 2.5em;
 		right: 0;
@@ -937,7 +938,6 @@ body.body-font-weight-thin,
 		left: 0;
 	}
 .navigation-main ul ul ul {
-	background: #ddd;
 	right: 100%;
 	top: 0;
 }
@@ -949,7 +949,6 @@ body.body-font-weight-thin,
 	width: 200px;
 }
 .navigation-main ul ul ul ul {
-	background: #ccc;
 }
 .navigation-main ul ul li {
 }

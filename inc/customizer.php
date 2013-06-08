@@ -314,23 +314,23 @@ function thsp_theme_options_array() {
 							),
 							'open-sans' => array(
 								'label' => 'Open Sans',
-								'google_font' => 'Open+Sans:400italic,700italic,400,700'
+								'google_font' => 'Open+Sans'
 							),
 							'lato' => array(
 								'label' => 'Lato',
-								'google_font' => 'Lato:400,700,400italic,700italic'
+								'google_font' => 'Lato'
 							),
 							'source-sans-pro' => array(
 								'label' => 'Source Sans Pro',
-								'google_font' => 'Source+Sans+Pro:400,700,400italic,700italic'
+								'google_font' => 'Source+Sans+Pro'
 							),
 							'roboto' => array(
 								'label' => 'Roboto',
-								'google_font' => 'Roboto:400italic,400,700,700italic'
+								'google_font' => 'Roboto'
 							),
 							'titillium-web' => array(
 								'label' => 'Titillium Web',
-								'google_font' => 'Titillium+Web:400italic,400,700,700italic'
+								'google_font' => 'Titillium+Web'
 							)
 						),
 						'priority' => 1
@@ -347,10 +347,10 @@ function thsp_theme_options_array() {
 						'label' => __( 'Body font weight', 'gumbo' ),
 						'type' => 'radio', // Radio control
 						'choices' => array(
-							'regular' => array(
+							'400' => array(
 								'label' => 'Regular'
 							),
-							'thin' => array(
+							'300' => array(
 								'label' => 'Thin'
 							),
 						),
@@ -373,23 +373,23 @@ function thsp_theme_options_array() {
 							),
 							'open-sans' => array(
 								'label' => 'Open Sans',
-								'google_font' => 'Open+Sans:700italic,700'
+								'google_font' => 'Open+Sans'
 							),
 							'lato' => array(
 								'label' => 'Lato',
-								'google_font' => 'Lato:700,700italic'
+								'google_font' => 'Lato'
 							),
 							'source-sans-pro' => array(
 								'label' => 'Source Sans Pro',
-								'google_font' => 'Source+Sans+Pro:700,700italic'
+								'google_font' => 'Source+Sans+Pro'
 							),
 							'roboto' => array(
 								'label' => 'Roboto',
-								'google_font' => 'Roboto:700,700italic'
+								'google_font' => 'Roboto'
 							),
 							'titillium-web' => array(
 								'label' => 'Titillium Web',
-								'google_font' => 'Titillium+Web:700,700italic'
+								'google_font' => 'Titillium+Web'
 							)
 						),
 						'priority' => 1
