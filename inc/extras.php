@@ -8,6 +8,7 @@
  *
  * - Add Home link to wp_page_menu()
  * - Custom body classes
+ * - Custom post classes
  * - Add custom body classes for layout and typography options
  * - Enhanced image navigation
  * - Custom wp_title, using filter hook
@@ -33,6 +34,11 @@ function thsp_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
+	// Adds a class id Post Aside is active
+	if ( is_single() && is_active_sidebar( 'post-aside' ) ) {
+		$classes[] = 'post-aside';
+	}
+
 	// Get current theme options
 	$thsp_theme_options = thsp_cbp_get_options_values();
 	$thsp_body_classes = array();
@@ -48,13 +54,23 @@ function thsp_body_classes( $classes ) {
 	$thsp_body_classes[] = 'body-font-weight-' . $thsp_theme_options['body_font_weight'];
 	$thsp_body_classes[] = 'heading-font-' . $thsp_theme_options['heading_font'];
 	$thsp_body_classes[] = 'font-size-' . $thsp_theme_options['font_size'];
-	$thsp_body_classes[] = 'background-' . $thsp_theme_options['page_background'];
-	$thsp_body_classes[] = 'post-' . $thsp_theme_options['post_layout'];		
 		
 	$classes = array_merge( $classes, $thsp_body_classes );
 	return $classes;
 }
 add_filter( 'body_class', 'thsp_body_classes' );
+
+/**
+ * Adds custom classes to the array of post classes.
+ */
+function thsp_post_classes( $classes ) {
+	if( current_theme_supports('post-thumbnails' ) )
+		if( has_post_thumbnail() )
+			$classes[] = "has-featured-image";
+	
+	return $classes;
+}
+add_filter( 'post_class', 'thsp_post_classes' );
 
 /**
  * Gets current layout for page being displayed
@@ -141,6 +157,7 @@ function thsp_internal_css() {
 	?>
 	<style type="text/css">
 		a { color: <?php echo $thsp_primary_color; ?> }
+		#commentform #submit { background: <?php echo $thsp_primary_color; ?>; }
 	</style>
 	<?php
 }

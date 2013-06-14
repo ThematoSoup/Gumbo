@@ -241,30 +241,6 @@ function thsp_theme_options_array() {
 						'priority' => 2
 					) // End control args
 				),
-				'post_layout' => array(
-					'setting_args' => array(
-						'default' => 'layout_1',
-						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
-						'transport' => 'refresh',
-					), // End setting args			
-					'control_args' => array(
-						'label' => __( 'Blog post layout', 'gumbo' ),
-						'type' => 'radio', // Image radio replacement
-						'choices' => array(
-							'layout_1' => array(
-								'label' => __( 'Post Layout 1', 'gumbo' )
-							),
-							'layout_2' => array(
-								'label' => __( 'Post Layout 2', 'gumbo' )
-							),
-							'layout_3' => array(
-								'label' => __( 'Post Layout 3', 'gumbo' )
-							)
-						),					
-						'priority' => 3
-					) // End control args
-				),
 				'post_archives_show' => array(
 					'setting_args' => array(
 						'default' => 'full_content',

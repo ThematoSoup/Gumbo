@@ -934,7 +934,6 @@ body.body-font-weight-300,
 	background: #fff;
 	display: none;
 	border: 1px solid rgba(0,0,0,0.075);
-	border-top: none;
 	position: absolute;
 		top: 2.5em;
 		right: 0;
@@ -1003,24 +1002,23 @@ body.body-font-weight-300,
 	margin: 0 0 60px;
 	margin: 0 0 6rem;
 }
-.entry-thumbnail {
-	display: block;
-	margin: 0 auto 20px;
-	margin: 0 auto 2rem;
+.entry-header {
+	position: relative;
+	margin-bottom: 15px;
+	margin-bottom: 1.5rem;
 }
-.entry-thumbnail img {
+.entry-header .wp-post-image {
 	display: block;
 }
 .entry-title {
-	margin-top: 0;
+	margin: 0.75em 0 0.5em;
 	clear: none;
+	font-size: 30px;
+	font-size: 3rem;
 }
 .entry-title a {
 	color: #2e2e2e;
 	text-decoration: none;
-}
-.entry-meta a {
-	color: #999;
 }
 .byline {
 	display: none;
@@ -1029,23 +1027,70 @@ body.body-font-weight-300,
 .group-blog .byline {
 	display: inline;
 }
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
 }
+/* Post layout */
 .entry-aside {
 	float: left;
-	width: 96px;
+	width: 21.969696%; /* 145px */
 }
-.entry-aside img {
-	display: block;
+.entry-aside .widget {
+	margin-bottom: 1.5em;
+	font-size: 14px;
+	font-size: 1.4rem;
 }
-.entry-main {
-	margin-left: 116px;
+.entry-aside .widget-title {
+	font-size: 16px;
+	font-size: 1.6rem;
+	margin: 0.5em 0;
+}
+.entry-meta,
+.entry-aside {
+	font-size: 14px;
+	font-size: 1.4rem;
+	color: #aaa;
+	margin-bottom: 10px;
+	margin-bottom: 1rem;
+	line-height: 1.5;
+}
+.entry-meta a,
+.entry-aside a {
+	color: #aaa;
+}
+.layout-cp .entry-aside + .entry-main {
+	margin-left: 25%;
+}
+.post-aside.layout-cp .has-featured-image .entry-title {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 75%; /* 165px */
+	margin: 0;
+	padding: 15px 0 0 20px;
+	padding: 1.5rem 0 0 2rem;
+	background: #fff;
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
+}
+.layout-pc .entry-aside {
+	float: right;
+}
+.layout-pc .entry-aside + .entry-main {
+	margin: 0 25% 0 0;
+}
+.post-aside.layout-pc .has-featured-image .entry-title {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 75%; /* 165px */
+	margin: 0;
+	padding: 15px 20px 0 0;
+	padding: 1.5rem 2rem 0 0;
+	background: #fff;
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
 }
 
 
@@ -1138,6 +1183,50 @@ object {
 	word-wrap: break-word;
 }
 .bypostauthor {
+}
+/* Comment form */
+#commentform label {
+	display: block;
+}
+#commentform input[type="text"],
+#commentform inpyt[type="email"] {
+	width: 50%;
+}
+#commentform input[type="text"],
+#commentform inpyt[type="email"],
+#commentform textarea {
+	border: 1px solid #ddd;
+	border-radius: 0;
+	padding: 0.3em;
+}
+#commentform textarea {
+	width: 100%;
+}
+#commentform input[type="text"]:focus,
+#commentform inpyt[type="email"]:focus,
+#commentform textarea:focus {
+	outline: none;
+	border-color: #bbb;
+	background: #fdfdfd;
+}
+#commentform #submit {
+	border: 1px solid rgba(0,0,0,0.1);
+	border-radius: 0;
+	background: #999;
+	box-shadow: none;
+	color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	font-size: 1.6rem;
+	line-height: 1;
+	padding: 0.75em 1.25em;
+	text-shadow: none;
+}
+#commentform #submit:hover {
+	box-shadow: inset 0 0 5em rgba(0,0,0,0.25);
+}
+#commentform #submit:active {
+	background: #444;
 }
 
 /* =Widgets

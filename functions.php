@@ -149,7 +149,7 @@ function thsp_register_custom_background() {
 // add_action( 'after_setup_theme', 'thsp_register_custom_background' );
 
 /**
- * Register widgetized area and update sidebar with default widgets
+ * Register widgetized areas and update sidebar with default widgets
  */
 function thsp_widgets_init() {
 	register_sidebar( array(
@@ -167,6 +167,14 @@ function thsp_widgets_init() {
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Post Aside', 'gumbo' ),
+		'id'            => 'post-aside',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 }
 add_action( 'widgets_init', 'thsp_widgets_init' );
@@ -214,7 +222,7 @@ function thsp_scripts() {
 			);
 		}
 		// Check if heading font is Google Font	
-		if ( isset( $body_font_options[$body_font_value]['google_font'] ) ) {
+		if ( isset( $heading_font_options[$heading_font_value]['google_font'] ) ) {
 			$heading_font_url = $protocol . '://fonts.googleapis.com/css?family=' . $heading_font_options[$heading_font_value]['google_font'] . ':700,700italic' . $font_subset;
 			// Enqueue the font
 			wp_enqueue_style(
