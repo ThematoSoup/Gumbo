@@ -449,7 +449,7 @@ input[type="search"],
 textarea {
 	color: #666;
 	border: 1px solid #ccc;
-	border-radius: 3px;
+	border-radius: 0;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -457,6 +457,7 @@ input[type="password"]:focus,
 input[type="search"]:focus,
 textarea:focus {
 	color: #111;
+	outline: none;
 }
 input[type="text"],
 input[type="email"],
@@ -709,6 +710,7 @@ body.body-font-weight-300,
 .inner {
 	max-width: 1000px;
 	margin: 0 auto;
+	padding: 0 20px;
 }
 #primary,
 #secondary,
@@ -1009,6 +1011,7 @@ body.body-font-weight-300,
 }
 .entry-header .wp-post-image {
 	display: block;
+	width: 100%;
 }
 .entry-title {
 	margin: 0.75em 0 0.5em;
@@ -1179,6 +1182,20 @@ object {
 /* =Comments
 ----------------------------------------------- */
 
+.comment-list {
+	margin: 0 0 40px;
+	list-style: none;
+}
+article.comment {
+	position: relative;
+	padding-left: 80px;
+	min-height: 64px;
+}
+.comment-author .avatar {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
 .comment-content a {
 	word-wrap: break-word;
 }
@@ -1242,6 +1259,15 @@ object {
 }
 
 /* Search widget */
+.widget_search #s {
+	width: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.widget_search #s:focus {
+	border-color: #bbb;
+	background: #fdfdfd;
+}
 .widget_search .submit {
 	display: none;
 }

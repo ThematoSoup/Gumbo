@@ -32,7 +32,7 @@
 		$thsp_header_class = $thsp_theme_options['main_nav_placement'];
 	?>
 	<header id="masthead" class="site-header <?php echo $thsp_header_class; ?>" role="banner">
-		<div class="inner">
+		<div class="inner clear">
 			<?php tha_header_top(); ?>
 			<hgroup>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -54,4 +54,4 @@
 	</div><!-- #sub-header -->
 
 	<div id="main" class="site-main">
-		<div class="inner">
+		<div class="inner clear">

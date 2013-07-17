@@ -13,7 +13,7 @@
 
 	<?php tha_footer_before(); ?>
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="inner">
+		<div class="inner clear">
 			<?php tha_footer_top(); ?>
 			<div class="site-info">
 				<?php do_action( 'gumbo_credits' ); ?>
