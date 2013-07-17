@@ -77,7 +77,7 @@ add_filter( 'post_class', 'thsp_post_classes' );
  *
  * @uses	thsp_cbp_get_options_values()		defined in /customizer-boilerplate/helpers.php
  * @return	array	$current_layout				Layout options for current page
- * @since	Cazuela 1.0
+ * @since	Gumbo 1.0
  */
 function thsp_get_current_layout() {
 	global $post;
@@ -105,6 +105,20 @@ function thsp_get_current_layout() {
 	 * $current_layout['layout_type']		- boxed or full width
 	 */
 	return apply_filters( 'thsp_current_layout', $current_layout );
+}
+
+/**
+ * Checks if current layout has three columns and secondary sidebar needs to be rendered
+ *
+ * @uses	thsp_get_current_layout()			defined in /inc/extras.php
+ * @return	boolean
+ * @since	Gumbo 1.0
+ */
+function thsp_check_secondary_sidebar() {
+	$current_layout = thsp_get_current_layout();
+	if ( in_array( $current_layout['default_layout'], array( 'layout-pcs', 'layout-cps', 'layout-psc' ) ) ) {
+		return true;
+	} else return false;
 }
 
 /**

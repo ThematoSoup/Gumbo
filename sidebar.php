@@ -24,6 +24,7 @@
 	<?php tha_sidebar_bottom(); ?>
 </div><!-- #secondary -->
 
+<?php if ( thsp_check_secondary_sidebar() ) : // Only render this sidebar in 3 column layouts ?>
 <div id="tertiary" class="widget-area" role="complementary">
 	<?php tha_sidebar_top(); ?>
 	<?php if ( ! dynamic_sidebar( 'sidebar-2' ) ) : ?>
@@ -38,4 +39,5 @@
 	<?php endif; // end sidebar widget area ?>
 	<?php tha_sidebar_bottom(); ?>
 </div><!-- #secondary -->
+<?php endif; // Check if sidebar needs to be rendered ?>
 <?php tha_sidebars_before(); ?>
