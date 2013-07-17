@@ -10,7 +10,7 @@
 	float: left;
 }
 .image-radio + label img {
-	border: 1px solid #bbb;
+	border: 1px solid #ddd;
 	margin: 0 10px 10px 0;
 	display: block;
 }
@@ -18,7 +18,7 @@
 	border-color: #333;
 	opacity: 1;
 	
-	-webkit-box-shadow: 0 0 5px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0 0 5px rgba(0,0,0,0.75);
-	box-shadow: 0 0 5px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 0 0 2px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0 0 2px rgba(0,0,0,0.75);
+	box-shadow: 0 0 2px rgba(0,0,0,0.75);
 }
