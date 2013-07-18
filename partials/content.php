@@ -21,16 +21,12 @@
 		<a class="entry-thumbnail" href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'gumbo' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_post_thumbnail( 'thsp-archives-featured', array( 'class' => 'entry-featured') ); ?></a>
 	<?php endif; // has_post_thumbnail() ?>
 
-	<?php if ( 'post' == get_post_type() ) : ?>
+	<?php if ( is_active_sidebar( 'post-aside' ) ) : ?>
 	<div class="entry-aside">
-		<div class="entry-meta">
-			<time class="entry-date" datetime="<?php echo get_the_date( 'c' ); ?>"><?php echo get_the_date(); ?></time>
-			<span class="byline"> by <span class="author vcard"><a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( sprintf( __( 'View all posts by %s', 'gumbo' ), get_the_author() ) ); ?>" rel="author"><?php the_author(); ?></a></span></span>
-			<?php // thsp_posted_on(); ?>
-		</div><!-- .entry-meta -->
+		<?php dynamic_sidebar( 'post-aside' ); ?>
 	</div><!-- .entry-aside -->
-	<?php endif; ?>
-	
+	<?php endif; // is_active_sidebar(); ?>
+
 	<div class="entry-main">
 		<header class="entry-header">
 			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'gumbo' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>

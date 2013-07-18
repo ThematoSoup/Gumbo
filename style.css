@@ -822,6 +822,22 @@ body.body-font-weight-300,
 	margin-left: 2%;
 }
 
+/* Full-width attachment template */
+.attachment #primary,
+.attachment #content {
+	margin: 0;
+	width: auto;
+	float: none;
+}
+.attachment #primary .attachment img {
+	display: block;
+	margin: 0 auto 10px;
+}
+.attachment .entry-caption {
+	font-size: 14px;
+	font-size: 1.4rem;
+}
+
 .site-footer {
 	clear: both;
 	width: 100%;
@@ -829,10 +845,8 @@ body.body-font-weight-300,
 
 /* Header */
 #masthead {
-	padding: 20px 0 0;
-	padding: 2rem 0 0;
-	margin-bottom: 30px;
-	margin-bottom: 3rem;
+	padding: 20px 0;
+	padding: 2rem 0;
 }
 #masthead hgroup {
 	float: left;
@@ -922,8 +936,7 @@ body.body-font-weight-300,
 	margin-left: 1.5rem;
 }
 	.below .navigation-main .menu > li {
-		margin: 0 15px 0 0;
-		margin: 0 1.5rem 0 0;
+		margin: 0 1.2em;
 	}
 .navigation-main .sub-menu li {
 	display: block;
@@ -937,7 +950,7 @@ body.body-font-weight-300,
 	padding: 0.75em 0;
 }
 .navigation-main .sub-menu a {
-	padding: 0.5em 0.75em;
+	padding: 8px 10px;
 }
 .navigation-main ul ul {
 	background: #fff;
@@ -951,7 +964,8 @@ body.body-font-weight-300,
 	.below .navigation-main ul ul {
 		right: auto;
 		left: 0;
-		text-align: left;
+		text-align: center;
+		margin-left: -90px;
 	}
 .navigation-main ul ul ul {
 	right: 100%;
@@ -1142,7 +1156,7 @@ object {
 	margin: 0 0 1.5em;
 	overflow: hidden;
 }
-[class*="navigation"] .prev {
+[class*="navigation"] .previous {
 	float: left;
 	width: 25%;
 	text-align: left;
