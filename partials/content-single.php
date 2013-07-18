@@ -8,13 +8,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php tha_entry_top(); ?>
 
-	<header class="entry-header">
-		<?php if ( has_post_thumbnail() ) : ?>
-			<?php the_post_thumbnail( 'thsp-archives-featured' ); ?>
-		<?php endif; // has_post_thumbnail() ?>
-
-		<h1 class="entry-title"><?php the_title(); ?></h1>
-	</header><!-- .entry-header -->
+	<?php if ( has_post_thumbnail() ) : ?>
+		<?php the_post_thumbnail( 'thsp-archives-featured', array( 'class' => 'entry-featured') ); ?>
+	<?php endif; // has_post_thumbnail() ?>
 
 	<?php if ( is_active_sidebar( 'post-aside' ) ) : ?>
 	<div class="entry-aside">
@@ -23,9 +19,13 @@
 	<?php endif; // is_active_sidebar(); ?>
 	
 	<div class="entry-main">
-		<div class="entry-meta">
-			<?php thsp_posted_on(); ?>
-		</div><!-- .entry-meta -->
+		<header class="entry-header">
+			<h1 class="entry-title"><?php the_title(); ?></h1>
+	
+			<div class="entry-meta">
+				<?php thsp_posted_on(); ?>
+			</div><!-- .entry-meta -->
+		</header><!-- .entry-header -->
 
 		<div class="entry-content">
 			<?php the_content(); ?>

@@ -17,32 +17,32 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php tha_entry_top(); ?>
 	
-	<header class="entry-header">
-		<?php if ( has_post_thumbnail() ) : ?>
-		<a class="entry-thumbnail" href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'gumbo' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><img src="http://lorempixel.com/660/300" /></a>
-		<?php endif; // has_post_thumbnail() ?>
-		
-		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'gumbo' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
-	</header><!-- .entry-header -->
+	<?php if ( has_post_thumbnail() ) : ?>
+		<a class="entry-thumbnail" href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'gumbo' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_post_thumbnail( 'thsp-archives-featured', array( 'class' => 'entry-featured') ); ?></a>
+	<?php endif; // has_post_thumbnail() ?>
 
+	<?php if ( 'post' == get_post_type() ) : ?>
 	<div class="entry-aside">
-		<?php // if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
 			<time class="entry-date" datetime="<?php echo get_the_date( 'c' ); ?>"><?php echo get_the_date(); ?></time>
 			<span class="byline"> by <span class="author vcard"><a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( sprintf( __( 'View all posts by %s', 'gumbo' ), get_the_author() ) ); ?>" rel="author"><?php the_author(); ?></a></span></span>
 			<?php // thsp_posted_on(); ?>
 		</div><!-- .entry-meta -->
-		<?php // endif; ?>
 	</div><!-- .entry-aside -->
+	<?php endif; ?>
 	
 	<div class="entry-main">
-		<?php // if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
-			<time class="entry-date" datetime="<?php echo get_the_date( 'c' ); ?>"><?php echo get_the_date(); ?></time>
-			<span class="byline"> by <span class="author vcard"><a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( sprintf( __( 'View all posts by %s', 'gumbo' ), get_the_author() ) ); ?>" rel="author"><?php the_author(); ?></a></span></span>
-			<?php // thsp_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php // endif; ?>
+		<header class="entry-header">
+			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'gumbo' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+	
+			<?php if ( 'post' == get_post_type() ) : ?>
+			<div class="entry-meta">
+				<time class="entry-date" datetime="<?php echo get_the_date( 'c' ); ?>"><?php echo get_the_date(); ?></time>
+				<span class="byline"> by <span class="author vcard"><a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( sprintf( __( 'View all posts by %s', 'gumbo' ), get_the_author() ) ); ?>" rel="author"><?php the_author(); ?></a></span></span>
+				<?php // thsp_posted_on(); ?>
+			</div><!-- .entry-meta -->
+			<?php endif; ?>
+		</header><!-- .entry-header -->
 	
 		<?php if ( is_search() || 'excerpt' == $thsp_theme_options['post_archives_show'] ) : // Only display Excerpts for Search and if that option is selected ?>
 			<div class="entry-summary">

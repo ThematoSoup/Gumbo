@@ -285,7 +285,7 @@ hr {
 
 /* Text elements */
 p {
-	margin-bottom: 1em;
+	margin-bottom: 1.4em;
 }
 ul, ol {
 	margin: 0 0 1.5em 3em;
@@ -1012,16 +1012,17 @@ body.body-font-weight-300,
 	margin: 0 0 6rem;
 }
 .entry-header {
-	position: relative;
 	margin-bottom: 15px;
 	margin-bottom: 1.5rem;
 }
-.entry-header .wp-post-image {
+.entry-featured {
 	display: block;
 	width: 100%;
+	height: auto;
+	margin-bottom: 20px;
 }
 .entry-title {
-	margin: 0.75em 0 0.5em;
+	margin: 0 0 0.25em;
 	clear: none;
 	font-size: 30px;
 	font-size: 3rem;
@@ -1072,36 +1073,6 @@ body.body-font-weight-300,
 .layout-cp .entry-aside + .entry-main {
 	margin-left: 25%;
 }
-.post-aside.layout-cp .has-featured-image .entry-title {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	width: 75%; /* 165px */
-	margin: 0;
-	padding: 15px 0 0 20px;
-	padding: 1.5rem 0 0 2rem;
-	background: #fff;
-	box-sizing: content-box;
-	-moz-box-sizing: content-box;
-}
-.layout-pc .entry-aside {
-	float: right;
-}
-.layout-pc .entry-aside + .entry-main {
-	margin: 0 25% 0 0;
-}
-.post-aside.layout-pc .has-featured-image .entry-title {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 75%; /* 165px */
-	margin: 0;
-	padding: 15px 20px 0 0;
-	padding: 1.5rem 2rem 0 0;
-	background: #fff;
-	box-sizing: content-box;
-	-moz-box-sizing: content-box;
-}
 
 
 /* =Asides
@@ -1124,7 +1095,6 @@ body.body-font-weight-300,
 	padding: 0;
 }
 .wp-caption {
-	border: 1px solid #ccc;
 	margin-bottom: 1.5em;
 	max-width: 100%;
 }
@@ -1137,7 +1107,7 @@ body.body-font-weight-300,
 	text-align: center;
 }
 .wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
+	margin: 0.5em 0;
 }
 .site-content .gallery {
 	margin-bottom: 1.5em;
