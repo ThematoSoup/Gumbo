@@ -162,6 +162,17 @@ function thsp_wp_title( $title, $sep ) {
 add_filter( 'wp_title', 'thsp_wp_title', 10, 2 );
 
 /**
+ * Change password protected form output
+ */
+function thsp_custom_password_form() {
+	global $post;
+	$label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
+	$form_output = '<form class="protected-post-form" action="' . get_option('siteurl') . '/wp-pass.php" method="post"><p>' . __( 'This post is password protected. To view it please enter your password below:', 'gumbo' ) . ' </p><label class="pass-label" for="' . $label . '">' . __( 'Password', 'gumbo' ) . ' </label><input name="post_password" id="' . $label . '" type="password" /><input type="submit" name="Submit" class="button" value="' . esc_attr__( "Submit" ) . '" /></form>';
+	return $form_output;
+}
+add_filter( 'the_password_form', 'thsp_custom_password_form' );
+
+/**
  * Internal CSS for accent color
  */
 function thsp_internal_css() {
@@ -171,7 +182,7 @@ function thsp_internal_css() {
 	?>
 	<style type="text/css">
 		a { color: <?php echo $thsp_primary_color; ?> }
-		#commentform #submit { background: <?php echo $thsp_primary_color; ?>; }
+		#commentform #submit, .comment-reply-link, .wpcf7 input[type="submit"], .protected-post-form input[type="submit"] { background: <?php echo $thsp_primary_color; ?>; }
 	</style>
 	<?php
 }

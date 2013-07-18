@@ -71,7 +71,7 @@
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'gumbo' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+	<?php comment_form( array( 'comment_notes_after' => '' ) ); ?>
 
 </div><!-- #comments -->
 <?php tha_comments_after(); ?>

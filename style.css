@@ -45,6 +45,7 @@ and Blueprint http://www.blueprintcss.org/
 	* Media
 	* Navigation
 	* Comments
+	* Forms
 	* Widgets
 	* Infinite scroll (Jetpack module)
 	
@@ -284,7 +285,7 @@ hr {
 
 /* Text elements */
 p {
-	margin-bottom: 1.5em;
+	margin-bottom: 1em;
 }
 ul, ol {
 	margin: 0 0 1.5em 3em;
@@ -314,6 +315,12 @@ dfn, cite, em, i {
 }
 blockquote {
 	margin: 0 1.5em;
+	padding-left: 1em;
+	border-left: 3px solid #666;
+	font-style: italic;
+}
+blockquote cite {
+	font-weight: bold;
 }
 address {
 	margin: 0 0 1.5em;
@@ -1186,47 +1193,103 @@ object {
 	margin: 0 0 40px;
 	list-style: none;
 }
+li.comment {
+	margin-bottom: 30px;
+}
 article.comment {
 	position: relative;
-	padding-left: 80px;
-	min-height: 64px;
+	padding-left: 60px;
+	min-height: 48px;
+}
+.comment-reply-link {
+	/* Background is equal to theme primary color and handled by embedded CSS */
+	display: inline-block;
+	color: #fff;
+	padding: 0.4em 0.5em;
+	text-decoration: none;
+	line-height: 1;
+	font-size: 14px;
+	font-size: 1.4rem;
+}
+.comment-reply-link:hover {
+	color: #fff;
+	box-shadow: inset 0 0 5em rgba(0,0,0,0.25);
+}
+.comment #respond {
+	padding-left: 60px;
+	margin-top: 20px;
 }
 .comment-author .avatar {
 	position: absolute;
 	top: 0;
 	left: 0;
 }
+.comment footer {
+	font-size: 14px;
+	line-height: 24px;
+	margin-bottom: 12px;
+}
 .comment-content a {
 	word-wrap: break-word;
 }
 .bypostauthor {
+	background: #fcfcfc;
+	padding: 12px;
+	border: 1px solid rgba(0,0,0,0.025);
 }
-/* Comment form */
-#commentform label {
+/* Child comments */
+.comment-list .children {
+	list-style: none;
+	margin-left: 60px;
+}
+.children li {
+	margin-top: 20px;
+}
+
+
+/* =Comments
+----------------------------------------------- */
+
+#commentform label,
+.wpcf7 label {
 	display: block;
 }
 #commentform input[type="text"],
-#commentform inpyt[type="email"] {
+#commentform input[type="email"],
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.protected-post-form input[type="password"] {
 	width: 50%;
 }
 #commentform input[type="text"],
-#commentform inpyt[type="email"],
-#commentform textarea {
+#commentform input[type="email"],
+#commentform textarea,
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 textarea,
+.protected-post-form input[type="password"] {
 	border: 1px solid #ddd;
 	border-radius: 0;
 	padding: 0.3em;
 }
-#commentform textarea {
+#commentform textarea,
+.wpcf7 textarea {
 	width: 100%;
 }
 #commentform input[type="text"]:focus,
-#commentform inpyt[type="email"]:focus,
-#commentform textarea:focus {
+#commentform input[type="email"]:focus,
+#commentform textarea:focus,
+.wpcf7 input[type="text"]:focus,
+.wpcf7 input[type="email"]:focus,
+.wpcf7 textarea:focus,
+.protected-post-form input[type="password"]:focus {
 	outline: none;
 	border-color: #bbb;
 	background: #fdfdfd;
 }
-#commentform #submit {
+#commentform #submit,
+.wpcf7 input[type="submit"],
+.protected-post-form input[type="submit"] {
 	border: 1px solid rgba(0,0,0,0.1);
 	border-radius: 0;
 	background: #999;
@@ -1239,12 +1302,24 @@ article.comment {
 	padding: 0.75em 1.25em;
 	text-shadow: none;
 }
-#commentform #submit:hover {
+#commentform #submit:hover,
+.wpcf7 input[type="submit"]:hover,
+.protected-post-form input[type="submit"]:hover {
 	box-shadow: inset 0 0 5em rgba(0,0,0,0.25);
 }
-#commentform #submit:active {
+#commentform #submit:active,
+.wpcf7 input[type="submit"]:active,
+.protected-post-form input[type="submit"]:focus {
 	background: #444;
 }
+.protected-post-form label {
+	display: none;
+}
+.protected-post-form input[type="submit"] {
+	padding: 0.55em;
+	margin-left: 0.5em;
+}
+
 
 /* =Widgets
 ----------------------------------------------- */
