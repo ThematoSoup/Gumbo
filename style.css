@@ -1347,6 +1347,7 @@ article.comment {
 	display: none;
 }
 
+
 /* =Infinite Scroll
 ----------------------------------------------- */
 
@@ -1359,4 +1360,34 @@ article.comment {
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
 .infinity-end.neverending .site-footer {
 	display: block;
+}
+
+
+/* =Media Queries
+----------------------------------------------- */
+
+@media screen and (max-width: 800px) {
+	/* Centered header layout */
+	#masthead hgroup,
+	#masthead #site-navigation {
+		width: auto;
+		float: none;
+		text-align: center;
+	}
+	#masthead hgroup {
+		margin-bottom: 20px;
+	}
+	/* Switch two column layouts to one column layout */
+	.layout-cp .content-area,
+	.layout-pc .content-area,
+	.layout-cp #content,
+	.layout-pc	 #content {
+		margin: 0;
+		float: none;
+	}
+	.layout-cp #secondary,
+	.layout-pc #secondary {
+		float: none;
+		width: auto;
+	}
 }
