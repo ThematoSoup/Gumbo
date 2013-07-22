@@ -43,7 +43,16 @@
 				<h1 class="menu-toggle"><?php _e( 'Menu', 'gumbo' ); ?></h1>
 				<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'gumbo' ); ?>"><?php _e( 'Skip to content', 'gumbo' ); ?></a></div>
 		
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+				<?php
+					$thsp_walker = new THSP_Menu_With_Description;
+					wp_nav_menu( array(
+						'theme_location'	=> 'primary',
+						'walker'			=> $thsp_walker,
+						'link_before'		=> '<span class="menu-item-text">',
+						'link_after'		=> '</span>',
+						'container'			=> ''
+					) );
+				?>
 			</nav><!-- #site-navigation -->
 			<?php tha_header_bottom(); ?>
 		</div><!-- .inner -->

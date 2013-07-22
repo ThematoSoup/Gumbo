@@ -73,6 +73,26 @@ function thsp_post_classes( $classes ) {
 add_filter( 'post_class', 'thsp_post_classes' );
 
 /**
+ * Adds custom classes to the array of menu item classes.
+ */
+function thsp_custom_menu_item_classes( $classes, $item, $args ) {
+	$children = get_posts( array(
+		'meta_query' => array (
+		array(
+			'key' => '_menu_item_menu_item_parent',
+			'value' => $item->ID )
+		),
+		'post_type' => $item->post_type 
+	) );
+	if (count($children) > 0) {
+		array_push( $classes, 'parent-menu-item' ); // add the class .parent-menu-item to the current menu item
+	}
+	
+	return $classes;
+}
+add_filter( 'nav_menu_css_class', 'thsp_custom_menu_item_classes', 10, 3 );
+
+/**
  * Gets current layout for page being displayed
  *
  * @uses	thsp_cbp_get_options_values()		defined in /customizer-boilerplate/helpers.php
@@ -181,8 +201,16 @@ function thsp_internal_css() {
 	$thsp_primary_color = $thsp_theme_options['primary_color'];
 	?>
 	<style type="text/css">
-		a { color: <?php echo $thsp_primary_color; ?> }
-		#commentform #submit, .comment-reply-link, .wpcf7 input[type="submit"], .protected-post-form input[type="submit"] { background: <?php echo $thsp_primary_color; ?>; }
+		a {
+			color: <?php echo $thsp_primary_color; ?>
+		}
+		#commentform #submit,
+		.comment-reply-link,
+		.wpcf7 input[type="submit"],
+		.protected-post-form input[type="submit"],
+		.navigation-main a:hover {
+			background: <?php echo $thsp_primary_color; ?>;
+		}
 	</style>
 	<?php
 }

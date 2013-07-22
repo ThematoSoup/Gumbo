@@ -850,11 +850,11 @@ body.body-font-weight-300,
 }
 #masthead hgroup {
 	float: left;
-	width: 30%;
+	width: 25%;
 }
 #masthead #site-navigation {
 	float: right;
-	width: 70%;
+	width: 75%;
 }
 #masthead.below hgroup,
 #masthead.below #site-navigation {
@@ -919,8 +919,7 @@ body.body-font-weight-300,
 }
 	.below .navigation-main {
 		text-align: center;
-		margin-top: 5px;
-		margin-top: 0.5rem;
+		margin-top: 15px;
 	}
 .navigation-main ul {
 	list-style: none;
@@ -932,40 +931,44 @@ body.body-font-weight-300,
 .navigation-main .menu > li {
 	display: inline-block;
 	position: relative;
-	margin-left: 15px;
-	margin-left: 1.5rem;
 }
 	.below .navigation-main .menu > li {
-		margin: 0 1.2em;
+		margin: 0 0.5em;
+		text-align: left;
 	}
+.navigation-main li:hover {
+	background: #303030;
+}
 .navigation-main .sub-menu li {
 	display: block;
 	position: relative;
+	border-bottom: 1px solid rgba(255,255,255,0.075);
+}
+.navigation-main .sub-menu li:last-child {
+	border-bottom: none;
 }
 .navigation-main a {
 	display: block;
 	line-height: 1;
 	text-decoration: none;
 	color: #2e2e2e;
-	padding: 0.75em 0;
+	padding: 0.75em;
 }
 .navigation-main .sub-menu a {
-	padding: 8px 10px;
+	color: #fff;
 }
 .navigation-main ul ul {
-	background: #fff;
+	background: #303030;
 	display: none;
-	border: 1px solid rgba(0,0,0,0.075);
 	position: absolute;
-		top: 2.5em;
+		top: 100%;
 		right: 0;
-	z-index: 99999;
+	z-index: 99;
 }
 	.below .navigation-main ul ul {
 		right: auto;
 		left: 0;
-		text-align: center;
-		margin-left: -90px;
+		text-align: left;
 	}
 .navigation-main ul ul ul {
 	right: 100%;
@@ -976,13 +979,14 @@ body.body-font-weight-300,
 		left: 100%;
 	}
 .navigation-main ul ul a {
-	width: 200px;
+	width: 220px;
 }
 .navigation-main ul ul ul ul {
 }
 .navigation-main ul ul li {
 }
 .navigation-main li:hover > a {
+	color: #fff;
 }
 .navigation-main ul ul :hover > a {
 }
@@ -994,7 +998,15 @@ body.body-font-weight-300,
 .navigation-main li.current_page_item a,
 .navigation-main li.current-menu-item a {
 }
-
+.navigation-main span {
+	display: block;
+}
+.navigation-main .menu-item-text {
+	font-weight: bold;
+}
+.navigation-main .menu-item-description {
+	opacity: 0.8;
+}
 /* Small menu */
 .menu-toggle {
 	display: none;
