@@ -189,7 +189,7 @@ function thsp_theme_options_array() {
 						'transport' => 'refresh',
 					), // End setting args			
 					'control_args' => array(
-						'label' => __( 'Default layout', 'gumbo' ),
+						'label' => __( 'Default page layout', 'gumbo' ),
 						'type' => 'images_radio', // Image radio replacement
 						'choices' => array(
 							'layout-c' => array(
@@ -237,6 +237,9 @@ function thsp_theme_options_array() {
 							'below' =>  array(
 								'label' => __( 'Below title and tagline', 'gumbo' )
 							),
+							'centered' =>  array(
+								'label' => __( 'Below title and tagline, centered', 'gumbo' )
+							)
 						),					
 						'priority' => 2
 					) // End control args

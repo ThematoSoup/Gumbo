@@ -49,6 +49,9 @@ function thsp_body_classes( $classes ) {
 		$thsp_body_classes[] = $thsp_current_layout_value;
 	}
 
+	// Get color scheme class and add them to body_class array
+	$thsp_body_classes[] = 'background-' . $thsp_theme_options['page_background'];
+
 	// Typography classes
 	$thsp_body_classes[] = 'body-font-' . $thsp_theme_options['body_font'];
 	$thsp_body_classes[] = 'body-font-weight-' . $thsp_theme_options['body_font_weight'];
@@ -134,11 +137,24 @@ function thsp_get_current_layout() {
  * @return	boolean
  * @since	Gumbo 1.0
  */
-function thsp_check_secondary_sidebar() {
+function thsp_check_sidebar( $sidebar ) {
 	$current_layout = thsp_get_current_layout();
-	if ( in_array( $current_layout['default_layout'], array( 'layout-pcs', 'layout-cps', 'layout-psc' ) ) ) {
-		return true;
-	} else return false;
+	
+	// Check if it's a three column layout and secondary sidebar is needed
+	if ( 'secondary' == $sidebar ) :
+		if ( in_array( $current_layout['default_layout'], array( 'layout-pcs', 'layout-cps', 'layout-psc' ) ) ) :
+			return true;
+		else :
+			return false;
+		endif;
+	// Check if it's not a single-column layout and primary sidebar is needed
+	elseif ( 'primary' == $sidebar ) :
+		if ( 'layout-c' != $current_layout['default_layout'] ) :
+			return true;
+		else :
+			return false;
+		endif;
+	endif;
 }
 
 /**
