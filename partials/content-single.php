@@ -5,27 +5,31 @@
 ?>
 
 <?php tha_entry_before(); ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php tha_entry_top(); ?>
+<?php $has_post_aside_class = ( is_active_sidebar( 'post-aside' ) ? 'has-post-aside' : '' ); ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class( $has_post_aside_class . ' clear' ); ?>>
+	
+	<header class="entry-header">
+		<h1 class="entry-title"><?php the_title(); ?></h1>
+	
+		<?php if ( has_post_thumbnail() ) : ?>
+			<?php the_post_thumbnail( 'thsp-archives-featured', array( 'class' => 'entry-featured') ); ?>
+		<?php endif; // has_post_thumbnail() ?>
+	</header><!-- .entry-header -->
 
-	<?php if ( has_post_thumbnail() ) : ?>
-		<?php the_post_thumbnail( 'thsp-archives-featured', array( 'class' => 'entry-featured') ); ?>
-	<?php endif; // has_post_thumbnail() ?>
-
-	<?php if ( is_active_sidebar( 'post-aside' ) ) : ?>
-	<div class="entry-aside">
-		<?php dynamic_sidebar( 'post-aside' ); ?>
-	</div><!-- .entry-aside -->
-	<?php endif; // is_active_sidebar(); ?>
 	
 	<div class="entry-main">
-		<header class="entry-header">
-			<h1 class="entry-title"><?php the_title(); ?></h1>
-	
-			<div class="entry-meta">
-				<?php thsp_posted_on(); ?>
-			</div><!-- .entry-meta -->
-		</header><!-- .entry-header -->
+		<?php tha_entry_top(); ?>
+		<header class="entry-meta">
+			<?php if ( is_active_sidebar( 'post-top' ) ) : ?>
+			<div class="entry-top">
+				<?php dynamic_sidebar( 'post-top' ); ?>
+			</div><!-- .entry-aside -->
+			<?php
+			else :
+				thsp_posted_on();
+			endif;
+			?>
+		</header><!-- .entry-meta -->
 
 		<div class="entry-content">
 			<?php the_content(); ?>
@@ -37,6 +41,7 @@
 			?>
 		</div><!-- .entry-content -->
 	
+		<?php tha_entry_bottom(); ?>
 		<footer class="entry-meta">
 			<?php
 				/* translators: used between list items, there is a space after the comma */
@@ -75,7 +80,12 @@
 			<?php edit_post_link( __( 'Edit', 'gumbo' ), '<span class="edit-link">', '</span>' ); ?>
 		</footer><!-- .entry-meta -->
 	</div><!-- .entry-main -->
+
+	<?php if ( is_active_sidebar( 'post-aside' ) ) : ?>
+	<div class="entry-aside">
+		<?php dynamic_sidebar( 'post-aside' ); ?>
+	</div><!-- .entry-aside -->
+	<?php endif; // is_active_sidebar(); ?>
 	
-	<?php tha_entry_bottom(); ?>
 </article><!-- #post-## -->
 <?php tha_entry_after(); ?>

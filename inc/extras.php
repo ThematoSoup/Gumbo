@@ -9,9 +9,14 @@
  * - Add Home link to wp_page_menu()
  * - Custom body classes
  * - Custom post classes
- * - Add custom body classes for layout and typography options
+ * - Custom menu item classes
+ * - Get current layout helper function
+ * - Check if a sidebar exists helper function
  * - Enhanced image navigation
  * - Custom wp_title, using filter hook
+ * - Custom password protected post form output
+ * - Embedded CSS output
+ * - Register Gumbo meta widget
  *
  * @package Gumbo
  */
@@ -159,6 +164,7 @@ function thsp_check_sidebar( $sidebar ) {
 
 /**
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
+ * @since	Gumbo 1.0
  */
 function thsp_enhanced_image_navigation( $url, $id ) {
 	if ( ! is_attachment() && ! wp_attachment_is_image( $id ) )
@@ -174,6 +180,7 @@ add_filter( 'attachment_link', 'thsp_enhanced_image_navigation', 10, 2 );
 
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
+ * @since	Gumbo 1.0
  */
 function thsp_wp_title( $title, $sep ) {
 	global $page, $paged;
@@ -199,6 +206,7 @@ add_filter( 'wp_title', 'thsp_wp_title', 10, 2 );
 
 /**
  * Change password protected form output
+ * @since	Gumbo 1.0
  */
 function thsp_custom_password_form() {
 	global $post;
@@ -210,6 +218,7 @@ add_filter( 'the_password_form', 'thsp_custom_password_form' );
 
 /**
  * Internal CSS for accent color
+ * @since	Gumbo 1.0
  */
 function thsp_internal_css() {
 	// Get current theme options
@@ -231,3 +240,76 @@ function thsp_internal_css() {
 	<?php
 }
 add_action( 'wp_head', 'thsp_internal_css' );
+
+/**
+ * Post meta widget class
+ * @since	Gumbo 1.0
+ */
+class THSP_Post_Meta_Widget extends WP_Widget {
+
+	function __construct() {
+		$widget_ops = array(
+			'classname' => 'thsp-post-meta-widget',
+			'description' => __( 'Gumbo post meta widget', 'gumbo' ) );
+		$control_ops = array(
+			'width' => 400,
+			'height' => 250
+		);
+		parent::__construct(
+			'gumbo-post-meta',
+			__( 'Gumbo Post Meta Widget', 'gumbo'),
+			$widget_ops,
+			$control_ops
+		);
+	}
+
+	function widget( $args, $instance ) {
+		extract( $args );
+		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
+		$text = apply_filters( 'widget_text', empty( $instance['text'] ) ? '' : $instance['text'], $instance );
+		echo $before_widget;
+		if ( !empty( $title ) ) { echo $before_title . $title . $after_title; } ?>
+			<?php
+			$replaced_strings = array(
+				'%%categories%%'	=> get_the_category_list( __( ', ', 'gumbo' ) ),
+				'%%tags%%'			=> get_the_tag_list( '', __( ', ', 'gumbo' ) ),
+				'%%author%%'		=> '<span class="author vcard">' . get_the_author() . '</span>',
+				'%%author_link%%'	=> '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( sprintf( __( 'View all posts by %s', 'gumbo' ), get_the_author() ) ) . '" rel="author">' . get_the_author() . '</a></span>',
+				'%%date%%'			=> esc_html( get_the_date( get_option( 'date_format' ) ) ),
+				'%%title%%'			=> esc_html( get_the_title() ),
+				'%%permalink%%'		=> '<a href="' . esc_url( get_permalink() ) . '" title="Permalink to ' . esc_html( get_the_title() ) . '" rel="bookmark">permalink</a>',
+				'%%time_ago%%'		=> human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) )
+			);
+			foreach ( $replaced_strings as $search => $replace ) :
+				$text = str_replace( $search, $replace, $text );
+			endforeach;
+			?>
+			
+			<div class="gumbo-meta-widget"><?php echo $text; ?></div>
+		<?php
+		echo $after_widget;
+	}
+
+	function update( $new_instance, $old_instance ) {
+		$instance = $old_instance;
+		$instance['title'] = strip_tags( $new_instance['title'] );
+		if ( current_user_can('unfiltered_html') )
+			$instance['text'] =  $new_instance['text'];
+		else
+			$instance['text'] = stripslashes( wp_filter_post_kses( addslashes( $new_instance['text'] ) ) ); // wp_filter_post_kses() expects slashed
+		return $instance;
+	}
+
+	function form( $instance ) {
+		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'text' => '' ) );
+		$title = strip_tags( $instance['title'] );
+		$text = esc_textarea( $instance['text'] );
+?>
+		<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
+		<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
+
+		<textarea class="widefat" rows="16" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea>
+<?php
+	}
+}
+add_action( 'widgets_init', function() { register_widget( 'THSP_Post_Meta_Widget' ); } );

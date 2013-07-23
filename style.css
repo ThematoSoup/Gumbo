@@ -211,10 +211,6 @@ h6 {
 	font-size: 14px;
 	font-size: 1.4rem;
 }
-.archives-layout-3 .entry-title {
-	font-size: 26px;
-	font-size: 2.6rem;
-}
 	/* Small fonts */
 	.font-size-small h1 {
 		font-size: 32px;
@@ -241,10 +237,6 @@ h6 {
 		font-size: 12px;
 		font-size: 1.2rem;
 	}
-	.font-size-small.archives-layout-3 .entry-title {
-		font-size: 22px;
-		font-size: 2.2rem;
-	}
 	/* Large fonts */
 	.font-size-large h1 {
 		font-size: 40px;
@@ -270,10 +262,6 @@ h6 {
 	.font-size-large h6 {
 		font-size: 14px;
 		font-size: 1.4rem;
-	}
-	.font-size-large.archives-layout-3 .entry-title {
-		font-size: 30px;
-		font-size: 3rem;
 	}
 
 hr {
@@ -1083,10 +1071,8 @@ body.body-font-weight-300,
 	margin-bottom: 20px;
 }
 .entry-title {
-	margin: 0 0 0.25em;
+	margin: 0 0 0.5em;
 	clear: none;
-	font-size: 30px;
-	font-size: 3rem;
 }
 .entry-title a {
 	color: #2e2e2e;
@@ -1131,10 +1117,10 @@ body.body-font-weight-300,
 .entry-aside a {
 	color: #aaa;
 }
-.layout-cp .entry-aside + .entry-main {
-	margin-left: 25%;
+.has-post-aside .entry-main {
+	float: right;
+	width: 75%;
 }
-
 
 /* =Asides
 ----------------------------------------------- */
