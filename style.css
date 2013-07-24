@@ -916,7 +916,7 @@ body.body-font-weight-300,
 .site-footer {
 	clear: both;
 	width: 100%;
-	border-top: 5px solid rgba(0,0,0,0.025);
+	border-top: 1px solid rgba(0,0,0,0.025);
 	background: #fcfcfc;
 	padding: 20px 0;
 }
@@ -1054,11 +1054,17 @@ body.body-font-weight-300,
 /* =Content
 ----------------------------------------------- */
 
-.sticky {
-}
 .hentry {
-	margin: 0 0 60px;
-	margin: 0 0 6rem;
+	margin: 0 0 30px;
+	margin: 0 0 3rem;
+}
+.blog .hentry,
+.archive .hentry {
+	border-bottom: 1px solid #f6f6f6;
+	padding-bottom: 30px;
+	padding-bottom: 3rem;
+}
+.sticky {
 }
 .entry-header {
 	margin-bottom: 15px;
@@ -1122,12 +1128,51 @@ body.body-font-weight-300,
 	width: 75%;
 }
 
-/* =Asides
+/* =Asides (post format)
 ----------------------------------------------- */
 
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
 	display: none;
+}
+
+/* =Images, Galleries and Videos (post format)
+----------------------------------------------- */
+
+.blog .format-image .entry-header,
+.archive .format-image .entry-header,
+.blog .format-gallery .entry-header,
+.archive .format-gallery .entry-header {
+	position: relative;
+	margin-bottom: 0.5em; 
+}
+.blog .format-image .entry-featured,
+.archive .format-image .entry-featured,
+.blog .format-image > a,
+.archive .format-image > a,
+.blog .format-gallery .entry-featured,
+.archive .format-gallery .entry-featured,
+.blog .format-gallery > a,
+.archive .format-gallery > a,
+.blog .format-video iframe,
+.archive .format-video iframe {
+	display: block;
+	margin: 0;	
+}
+.blog .format-image .entry-title,
+.archive .format-image .entry-title,
+.blog .format-gallery .entry-title,
+.archive .format-gallery .entry-title {
+	margin: 0;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 0.5em;
+	background: rgba(0,0,0,0.5);
+	color: #fff;
+	font-size: 30px;
+	font-size: 3rem;
 }
 
 

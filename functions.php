@@ -74,6 +74,11 @@ function thsp_setup() {
 	require( get_template_directory() . '/inc/customizer.php' );
 
 	/**
+	 * Post Format tools
+	 */
+	require( get_template_directory() . '/inc/post-format-tools.php' );
+
+	/**
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
 	 */
@@ -101,13 +106,11 @@ function thsp_setup() {
 	 */
 	add_theme_support( 'post-formats', array(
 		'aside',
-		'chat',
-		'link',
-		'gallery',
 		'status',
 		'quote',
 		'image',
-		'video'
+		'gallery',
+		'link'
 	) );
 
 	/**
