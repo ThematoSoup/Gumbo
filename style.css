@@ -1136,6 +1136,14 @@ body.body-font-weight-300,
 	display: none;
 }
 
+/* =Status (post format)
+----------------------------------------------- */
+
+.blog .format-status .entry-content,
+.archive .format-status .entry-content {
+	font-size: 1.25em;
+}
+
 /* =Images, Galleries and Videos (post format)
 ----------------------------------------------- */
 
