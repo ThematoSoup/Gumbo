@@ -5,13 +5,13 @@
 ?>
 
 <?php tha_entry_before(); ?>
-<?php $has_post_aside_class = ( is_active_sidebar( 'post-aside' ) ? 'has-post-aside' : '' ); ?>
+<?php $has_post_aside_class = ( 'standard' == get_post_format() && is_active_sidebar( 'post-aside' ) ? 'has-post-aside' : '' ); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( $has_post_aside_class . ' clear' ); ?>>
 	
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 	
-		<?php if ( has_post_thumbnail() ) : ?>
+		<?php if ( 'standard' == get_post_format() && has_post_thumbnail() ) : ?>
 			<?php the_post_thumbnail( 'thsp-archives-featured', array( 'class' => 'entry-featured') ); ?>
 		<?php endif; // has_post_thumbnail() ?>
 	</header><!-- .entry-header -->
@@ -81,7 +81,7 @@
 		</footer><!-- .entry-meta -->
 	</div><!-- .entry-main -->
 
-	<?php if ( is_active_sidebar( 'post-aside' ) ) : ?>
+	<?php if ( 'standard' == get_post_format() && is_active_sidebar( 'post-aside' ) ) : ?>
 	<div class="entry-aside">
 		<?php dynamic_sidebar( 'post-aside' ); ?>
 	</div><!-- .entry-aside -->
