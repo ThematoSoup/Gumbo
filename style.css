@@ -1312,7 +1312,7 @@ article.comment {
 	list-style: none;
 	margin-left: 60px;
 }
-.children li {
+.comment-list .children li {
 	margin-top: 20px;
 }
 
