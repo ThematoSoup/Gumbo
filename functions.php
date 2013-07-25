@@ -66,17 +66,23 @@ function thsp_setup() {
 	/**
 	 * Theme Customizer boilerplate
 	 */
-	require( get_template_directory() . '/inc/customizer-boilerplate/customizer.php' );
+	require( get_template_directory() . '/inc/libraries/customizer-boilerplate/customizer.php' );
+
+	/**
+	 * Post Format tools
+	 */
+	require( get_template_directory() . '/inc/libraries/post-format-tools.php' );
+	
+	/**
+	 * Theme hooks
+	 */
+	require( get_template_directory() . '/inc/libraries/tha/tha-theme-hooks.php' );
 
 	/**
 	 * Customizer options
 	 */
 	require( get_template_directory() . '/inc/customizer.php' );
 
-	/**
-	 * Post Format tools
-	 */
-	require( get_template_directory() . '/inc/post-format-tools.php' );
 
 	/**
 	 * Make theme available for translation
@@ -120,6 +126,11 @@ function thsp_setup() {
 }
 endif; // thsp_setup
 add_action( 'after_setup_theme', 'thsp_setup' );
+
+/**
+ * Custom meta boxes
+ */
+require_once get_template_directory() . '/inc/custom-meta-boxes.php';
 
 /**
  * Setup the WordPress core custom background feature.
@@ -268,11 +279,6 @@ add_action( 'wp_enqueue_scripts', 'thsp_scripts' );
  * Implement the Custom Header feature
  */
 //require( get_template_directory() . '/inc/custom-header.php' );
-
-/**
- * Theme hooks
- */
-require( get_template_directory() . '/inc/tha/tha-theme-hooks.php' );
 
 /**
  * Add menu item descriptions to main menu
