@@ -829,9 +829,11 @@ body.body-font-weight-300,
 	margin-left: 2%;
 }
 
-/* Full-width attachment template */
+/* Full-width templates (Masonry, attachment) */
 .attachment #primary,
-.attachment #content {
+.attachment #content,
+.page-template-page-templatestemplate-masonry-php #primary,
+.page-template-page-templatestemplate-masonry-php #content {
 	margin: 0;
 	width: auto;
 	float: none;
@@ -1080,7 +1082,8 @@ body.body-font-weight-300,
 	margin: 0 0 0.5em;
 	clear: none;
 }
-.entry-title a {
+.entry-title a,
+a .entry-title {
 	color: #2e2e2e;
 	text-decoration: none;
 }
@@ -1436,6 +1439,34 @@ article.comment {
 #authors-list .latest-by-author li {
   font-size: 14px;
   font-size: 1.4rem;
+}
+
+/* Masonry template */
+.masonry-brick {
+	width: 300px;
+	margin-bottom: 30px;
+}
+.masonry-brick .entry-header a {
+	text-decoration: none;
+}
+.masonry-brick .entry-title {
+	font-size: 22px;
+	font-size: 2.2rem;
+	margin-bottom: 10px;
+	margin-bottom: 1rem;
+}
+.masonry-brick .entry-summary,
+.masonry-brick .entry-footer {
+	font-size: 14px;
+}
+.masonry-brick .entry-thumb img {
+	display: block;
+	margin-bottom: 10px;
+	margin-bottom: 1rem;
+}
+.masonry-brick .entry-summary {
+	margin-bottom: 5px;
+	margin-bottom: 0.5rem;
 }
 
 /* =Widgets

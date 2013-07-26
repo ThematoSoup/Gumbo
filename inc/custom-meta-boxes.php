@@ -13,73 +13,92 @@
  * @param  array $meta_boxes
  * @return array
  */
-function cmb_sample_metaboxes( array $meta_boxes ) {
-
+function cmb_sample_metaboxes( $meta_boxes ) {
 	// Start with an underscore to hide fields from custom fields list
 	$prefix = '_thsp_';
 
+	// Authors page template metabox
 	$meta_boxes[] = array(
-		'id'         => 'authors_page_metabox',
-		'title'      => 'Authors Page',
-		'pages'      => array( 'page' ), // Post type
-		'context'    => 'normal',
-		'priority'   => 'high',
-		'show_names' => true, // Show field names on the left
-		'fields'     => array(
+		'id'			=> 'authors_page_metabox',
+		'title'			=> 'Authors Page',
+		'pages'			=> array( 'page' ), // Post type
+		'context'		=> 'normal',
+		'priority'		=> 'high',
+		'show_names'	=> true, // Show field names on the left
+		'show_on'		=> array(
+			'key'	=> 'page-template',
+			'value'	=> 'page-templates/template-authors.php',
+		),
+		'fields'		=> array(
 			array(
-				'name'    => 'Order authors by',
-				'desc'    => '',
-				'id'      => $prefix . 'authors_query_order_by',
-				'type'    => 'radio',
-				'options' => array(
+				'name'		=> 'Order authors by',
+				'desc'		=> '',
+				'id'		=> $prefix . 'authors_query_order_by',
+				'type'		=> 'radio',
+				'options'	=> array(
 					array(
-						'name' => 'Post count',
-						'value' => 'post_count'
+						'name'	=> 'Post count',
+						'value'	=> 'post_count'
 					),
 					array(
-						'name' => 'Name',
-						'value' => 'display_name'
+						'name'	=> 'Name',
+						'value'	=> 'display_name'
 					),
 				),
 			),
 			array(
-				'name'    => 'Order',
-				'desc'    => '',
-				'id'      => $prefix . 'authors_query_order',
-				'type'    => 'radio',
-				'options' => array(
+				'name'		=> 'Order',
+				'desc'		=> '',
+				'id'		=> $prefix . 'authors_query_order',
+				'type'		=> 'radio',
+				'options'	=> array(
 					array(
-						'name' => 'Ascending',
-						'value' => 'ASC'
+						'name'	=> 'Ascending',
+						'value'	=> 'ASC'
 					),
 					array(
-						'name' => 'Descending',
-						'value' => 'DESC'
+						'name'	=> 'Descending',
+						'value'	=> 'DESC'
 					),
 				),
 			),
 		),
 	);
 
+	// Masonry page template metabox
 	$meta_boxes[] = array(
-		'id'         => 'about_page_metabox',
-		'title'      => 'About Page Metabox',
-		'pages'      => array( 'page', ), // Post type
-		'context'    => 'normal',
-		'priority'   => 'high',
-		'show_names' => true, // Show field names on the left
-		'show_on'    => array( 'key' => 'id', 'value' => array( 2, ), ), // Specific post IDs to display this metabox
-		'fields' => array(
+		'id'			=> 'masonry_page_metabox',
+		'title'			=> 'Masonry Page',
+		'pages'			=> array( 'page' ), // Post type
+		'context'		=> 'normal',
+		'priority'		=> 'high',
+		'show_names'	=> true, // Show field names on the left
+		'show_on'		=> array(
+			'key'	=> 'page-template',
+			'value'	=> 'page-templates/template-masonry.php',
+		),
+		'fields'		=> array(
 			array(
-				'name' => 'Test Text',
-				'desc' => 'field description (optional)',
-				'id'   => $prefix . 'test_text',
-				'type' => 'text',
+				'name' => 'Posts per page',
+				'desc' => 'Default number of posts per page (set in General > Reading) will be used if this is empty.',
+				'id'   => $prefix . 'posts_per_page',
+				'type' => 'text_small',
 			),
-		)
+			array(
+				'name' => 'Hide page title',
+				'desc' => 'Check if you\'d like to hide this page\'s title',
+				'id'   => $prefix . 'hide_title',
+				'type' => 'checkbox',
+			),
+			array(
+				'name'		=> 'Excluded categories',
+				'desc'		=> 'Select which categories to exclude',
+				'id'		=> $prefix . 'excluded_cats',
+				'type'		=> 'taxonomy_multicheck',
+				'taxonomy'	=> 'category', // Taxonomy Slug
+			),
+		),
 	);
-
-	// Add other metaboxes as needed
 
 	return $meta_boxes;
 }
