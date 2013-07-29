@@ -100,6 +100,80 @@ function cmb_sample_metaboxes( $meta_boxes ) {
 		),
 	);
 
+	// Widgetized Homepage page template metabox
+	$meta_boxes[] = array(
+		'id'			=> 'authors_page_metabox',
+		'title'			=> 'Authors Page',
+		'pages'			=> array( 'page' ), // Post type
+		'context'		=> 'normal',
+		'priority'		=> 'high',
+		'show_names'	=> true, // Show field names on the left
+		'show_on'		=> array(
+			'key'	=> 'page-template',
+			'value'	=> 'page-templates/template-widgetized.php',
+		),
+		'fields'		=> array(
+			array(
+				'name' => 'Hide page title',
+				'desc' => 'Check if you\'d like to hide this page\'s title',
+				'id'   => $prefix . 'hide_title',
+				'type' => 'checkbox',
+			),
+			array(
+				'name'		=> __( 'Text position', 'gumbo' ),
+				'desc'		=> __( 'Relative to featured image, video or slider', 'gumbo' ),
+				'id'		=> $prefix . 'widgetized_text_position',
+				'type'		=> 'radio_inline',
+				'options'	=> array(
+					array(
+						'name'	=> __( 'Top', 'gumbo' ),
+						'value'	=> 'top'
+					),
+					array(
+						'name'	=> __( 'Right', 'gumbo' ),
+						'value'	=> 'right'
+					),
+					array(
+						'name'	=> __( 'Bottom', 'gumbo' ),
+						'value'	=> 'bottom'
+					),
+					array(
+						'name'	=> __( 'Left', 'gumbo' ),
+						'value'	=> 'left'
+					),
+				),
+				'std'	=> 'left',
+			),
+			array(
+				'name' => __( 'Video URL', 'gumbo' ),
+				'desc' => __( 'You can use video instead of Featured Image', 'gumbo' ),
+				'id'   => $prefix . 'video_url',
+				'type' => 'oembed',
+			),
+			array(
+				'name'		=> __( 'Widgets per row', 'gumbo' ),
+				'desc'		=> __( 'Use "Widgetized Homepage Widget Area" for this', 'gumbo' ),
+				'id'		=> $prefix . 'widgetized_widgets_per_row',
+				'type'		=> 'radio_inline',
+				'options'	=> array(
+					array(
+						'name'	=> 'Two',
+						'value'	=> 2
+					),
+					array(
+						'name'	=> 'Three',
+						'value'	=> 3
+					),
+					array(
+						'name'	=> 'Four',
+						'value'	=> 4
+					),
+				),
+				'std'	=> 4
+			),
+		),
+	);
+
 	return $meta_boxes;
 }
 add_filter( 'cmb_meta_boxes', 'cmb_sample_metaboxes' );

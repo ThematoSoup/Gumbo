@@ -208,6 +208,15 @@ function thsp_widgets_init() {
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
+	register_sidebar( array(
+		'name' => __( 'Widgetized Homepage Widget Area', 'gumbo' ),
+		'description' => __( 'This widget area is used in "Widgetized Homepage" page template', 'gumbo' ),
+		'id' => 'homepage-widget-area',
+		'before_widget' => '<aside id="%1$s" class="widget widgetized-homepage-widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
 }
 add_action( 'widgets_init', 'thsp_widgets_init' );
 
