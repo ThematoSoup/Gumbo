@@ -55,7 +55,7 @@ function thsp_edit_cbp_option_name() {
  */
 add_filter( 'thsp_cbp_directory_uri', 'thsp_edit_cbp_directory_uri', 1 );
 function thsp_edit_cbp_directory_uri() {	
-	return get_template_directory_uri() . '/inc/customizer-boilerplate';	
+	return get_template_directory_uri() . '/inc/libraries/customizer-boilerplate';	
 }
 
 

@@ -217,8 +217,31 @@ function thsp_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
+	register_sidebar( array(
+		'name' => __( 'Pull-out widget area', 'gumbo' ),
+		'description' => __( 'This widget area can be located at top, bottom, left or right of each page. To set its location go to Appearance > Theme Customizer.', 'gumbo' ),
+		'id' => 'pull-out-widget-area',
+		'before_widget' => '<aside id="%1$s" class="widget widgetized-homepage-widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
 }
 add_action( 'widgets_init', 'thsp_widgets_init' );
+
+/**
+ * Add pull out widget area to wp_footer hook
+ */
+function thsp_add_pull_out() {
+	$theme_options = thsp_cbp_get_options_values();
+	if ( is_active_sidebar( 'pull-out-widget-area' ) ) :
+		echo '<div id="pull-out-widget-area" class="position-' . $theme_options['pull_out_placement'] . '">';
+			dynamic_sidebar( 'pull-out-widget-area' );
+		echo '</div>';
+		echo '<a href="#" id="pull-out-trigger">' . __( 'Click', 'gumbo' ) . '</a>';
+	endif;
+}
+add_action( 'wp_footer', 'thsp_add_pull_out' );
 
 /**
  * Enqueue scripts and styles
