@@ -226,6 +226,15 @@ function thsp_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
+	register_sidebar( array(
+		'name' => __( 'Sub-header widget area', 'gumbo' ),
+		'description' => __( 'This widget area is located below site header.', 'gumbo' ),
+		'id' => 'sub-header-widget-area',
+		'before_widget' => '<aside id="%1$s" class="widget sub-header-widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
 }
 add_action( 'widgets_init', 'thsp_widgets_init' );
 
@@ -237,11 +246,30 @@ function thsp_add_pull_out() {
 	if ( is_active_sidebar( 'pull-out-widget-area' ) ) :
 		echo '<div id="pull-out-widget-area" class="position-' . $theme_options['pull_out_placement'] . '">';
 			dynamic_sidebar( 'pull-out-widget-area' );
-		echo '</div>';
+		echo '</div><!-- #pull-out-widget-area -->';
 		echo '<a href="#" id="pull-out-trigger">' . __( 'Click', 'gumbo' ) . '</a>';
 	endif;
 }
 add_action( 'wp_footer', 'thsp_add_pull_out' );
+
+/**
+ * Add sub-header widget area to tha_header_after hook
+ *
+ * @todo	Figure out what to do when no widgets
+ */
+function thsp_add_sub_header() {
+	if ( is_active_sidebar( 'sub-header-widget-area' ) ) :
+		echo '<div id="sub-header" class="' . thsp_count_widgets( 'sub-header-widget-area' ) . '">';
+			echo '<div class="inner clear">';
+			dynamic_sidebar( 'sub-header-widget-area' );
+			echo '</div>';
+		echo '</div><!-- #sub-header -->';
+	else :
+		echo '<div id="sub-header">';
+		echo '</div><!-- #sub-header -->';	
+	endif;
+}
+add_action( 'tha_header_after', 'thsp_add_sub_header' );
 
 /**
  * Enqueue scripts and styles
@@ -315,7 +343,7 @@ add_action( 'wp_enqueue_scripts', 'thsp_scripts' );
 /**
  * Implement the Custom Header feature
  */
-//require( get_template_directory() . '/inc/custom-header.php' );
+// require( get_template_directory() . '/inc/custom-header.php' );
 
 /**
  * Add menu item descriptions to main menu

@@ -313,3 +313,31 @@ class THSP_Post_Meta_Widget extends WP_Widget {
 	}
 }
 add_action( 'widgets_init', function() { register_widget( 'THSP_Post_Meta_Widget' ); } );
+
+/**
+ * Count number of widgets in a sidebar
+ * Used to add classes to widget areas so widgets can be displayed one, two or three per row
+ *
+ * @uses	wp_get_sidebars_widgets()		http://codex.wordpress.org/Function_Reference/wp_get_sidebars_widgets
+ * @since	Gumbo 1.0
+ */
+function thsp_count_widgets( $sidebar_id ) {
+	/* 
+	 * Count widgets in footer widget area
+	 * Used to set widget width based on total count
+	 */
+	$sidebars_widgets_count = wp_get_sidebars_widgets();
+	if ( isset( $sidebars_widgets_count[ $sidebar_id ] ) ) :
+		$widget_count = count( $sidebars_widgets_count[ $sidebar_id ] );
+		$widget_classes = 'widget-count-' . count( $sidebars_widgets_count[ $sidebar_id ] );
+		if ( $widget_count % 4 == 0 || $widget_count > 6 ) : // four per row if four widgets or more than 6
+			$widget_classes .= ' per-row-4';
+		elseif ( $widget_count % 3 == 0 || $widget_count > 3 ) :
+			$widget_classes .= ' per-row-3';
+		elseif ( 2 == $widget_count ) :
+			$widget_classes .= ' per-row-2';
+		endif; 
+		 
+		return $widget_classes;
+	endif;
+}

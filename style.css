@@ -911,7 +911,6 @@ body.body-font-weight-300,
 	text-align: center;
 }
 #sub-header {
-	padding: 30px;
 	margin-bottom: 30px;
 	background: #fcfcfc;
 	border-top: 1px solid rgba(0,0,0,0.025);
@@ -1598,7 +1597,23 @@ article.comment {
 ----------------------------------------------- */
 
 .widget {
-	margin: 0 0 1.5em;
+	margin: 0 0 2.5em;
+	font-size: 14px;
+	font-size: 1.4rem;
+}
+	.font-size-small .widget {
+		font-size: 12px;
+		font-size: 1.2rem;
+	}
+	.font-size-large .widget {
+		font-size: 16px;
+		font-size: 1.6rem;
+	}
+.widget:last-child {
+	margin-bottom: 0;
+}
+.widget-title {
+	text-transform: uppercase;
 }
 
 /* Make sure select elements fit in widgets */
@@ -1618,6 +1633,48 @@ article.comment {
 }
 .widget_search .submit {
 	display: none;
+}
+
+/* Lists */
+.widget ul {
+	margin: 0 0 2em;
+	list-style: none;
+}
+.widget ul li {
+	display: block;
+	padding: 0.25em 0;
+	border-bottom: 1px solid #eee;
+}
+.widget ul li:last-child {
+	border-bottom: none;
+}
+.widget ul.children {
+	margin: 0.25em 0 0 1em;
+}
+.widget ul.children li:first-child {
+	border-top: 1px solid #eee;	
+}
+.widget a {
+	text-decoration: none;
+}
+
+/* Calendar */
+#wp-calendar {
+	border-collapse: collapse;
+}
+#wp-calendar th,
+#wp-calendar td {
+	border: 1px solid #eee;
+	text-align: center;
+}
+#wp-calendar tfoot td {
+	border: none;
+}
+#wp-calendar tfoot td#prev {
+	text-align: left;
+}
+#wp-calendar tfoot td#next {
+	text-align: right;
 }
 
 /* Pull-out widget area */
@@ -1648,6 +1705,50 @@ article.comment {
 }
 .admin-bar #pull-out-trigger { 
 	top: 28px;
+}
+
+/* Sub-header widget area */
+#sub-header .widget {
+	margin: 20px 0;
+	float: left;
+	width: 100%;
+	padding: 0 15px;
+}
+#sub-header.widget-count-1 .widget {
+	padding: 0;
+}
+/* Two per row */
+#sub-header.per-row-2 .widget {
+    width: 50%;
+}
+#sub-header.per-row-2 .widget:nth-child(2n+1) {
+	clear: left;
+	padding-left: 0;
+}
+#sub-header.per-row-2 .widget:nth-child(2n) {
+	padding-right: 0;
+}
+/* Three per row */
+#sub-header.per-row-3 .widget {
+    width: 33.33333%;
+}
+#sub-header.per-row-3 .widget:nth-child(3n+1) {
+	clear: left;
+	padding-left: 0;
+}
+#sub-header.per-row-3 .widget:nth-child(3n) {
+	padding-right: 0;
+}
+/* Four per row */
+#sub-header.per-row-4 .widget {
+    width: 25%;
+}
+#sub-header.per-row-4 .widget:nth-child(4n+1) {
+	clear: left;
+	padding-left: 0;
+}
+#sub-header.per-row-4 .widget:nth-child(4n) {
+	padding-right: 0;
 }
 
 /* =Infinite Scroll

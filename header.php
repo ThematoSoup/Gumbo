@@ -59,8 +59,5 @@
 	</header><!-- #masthead -->
 	<?php tha_header_after(); ?>
 
-	<div id="sub-header">
-	</div><!-- #sub-header -->
-
 	<div id="main" class="site-main">
 		<div class="inner clear">
