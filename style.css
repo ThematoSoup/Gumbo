@@ -1216,22 +1216,57 @@ a .entry-title {
 .wp-caption .wp-caption-text {
 	margin: 0.5em 0;
 }
-.site-content .gallery {
-	margin-bottom: 1.5em;
+.gallery {
+	margin-bottom: 30px !important;
+	margin-bottom: 3rem !important;
+}
+.gallery .gallery-item {
+	padding: 0 8px 16px !important;
+	margin: 0 !important;
 }
 .gallery-caption {
+	font-size: 12px;
+	font-size: 1.2rem;
+	padding: 4px 8px 0;
 }
-.site-content .gallery a img {
+.gallery-columns-2 .gallery-caption {
+	font-size: 14px;
+	font-size: 1.4rem;
+}
+.gallery a,
+.gallery a img {
+	display: block;
+	margin: 0 auto;
+}
+.gallery a img {
 	border: none;
 	height: auto;
-	max-width: 90%;
+	width: 100%;
+	height: auto;
+	border: none !important;
 }
-.site-content .gallery dd {
+.gallery dd {
 	margin: 0;
 }
-.site-content .gallery-columns-4 .gallery-item {
+.gallery-columns-4 .gallery-item {
 }
-.site-content .gallery-columns-4 .gallery-item img {
+.gallery-columns-4 .gallery-item img {
+}
+/* Tiled Galleries (Jetpack) */
+.site-content .tiled-gallery {
+	margin-bottom: 30px;
+	margin-bottom: 3rem;
+}
+.tiled-gallery .tiled-gallery-caption {
+	background: #222;
+	background: rgba(0,0,0,0.5);
+	color: #fff;
+}
+.tiled-gallery .tiled-gallery-item {
+	margin: 2px !important;
+}
+.tiled-gallery .tiled-gallery-item img {
+	margin: 0 !important;
 }
 
 /* Make sure embeds and iframes fit their containers */
