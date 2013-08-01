@@ -48,8 +48,30 @@ function thsp_content_nav( $nav_id ) {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'gumbo' ); ?></h1>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
-		<?php previous_post_link( '<div class="previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'gumbo' ) . '</span> %title' ); ?>
-		<?php next_post_link( '<div class="next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'gumbo' ) . '</span>' ); ?>
+		<?php
+			$previous_post = get_adjacent_post( false, '', true );
+			$next_post = get_adjacent_post( false, '', false );
+			echo '<div class="previous">';
+				echo '<a href="' . get_permalink( $previous_post->ID ) . '" title="' . sprintf( __( 'Previous post: %1$s', 'gumbo' ), esc_attr( get_the_title( $previous_post->ID ) ) ) . '">';
+					echo '<span class="trigger"></span>';
+					echo '<div class="hidden clear">';
+					echo get_the_post_thumbnail( $previous_post->ID, 'thumbnail');
+					echo '<span class="heading">' . __( 'Previous post', 'gumbo' ) . '</span>';
+					echo get_the_title( $previous_post->ID );
+					echo '</div>';
+				echo '</a>';
+			echo '</div>';
+			echo '<div class="next">';
+				echo '<a href="' . get_permalink( $next_post->ID ) . '" title="' . sprintf( __( 'Next post: %1$s', 'gumbo' ), esc_attr( get_the_title( $next_post->ID ) ) ) . '">';
+					echo '<span class="trigger"></span>';
+					echo '<div class="hidden clear">';
+					echo get_the_post_thumbnail( $next_post->ID, 'thumbnail');
+					echo '<span class="heading">' . __( 'Next post', 'gumbo' ) . '</span>';
+					echo get_the_title( $next_post->ID );
+					echo '</div>';
+				echo '</a>';
+			echo '</div>';
+		?>
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages
 		global $wp_query;
 		$big = 999999999; // need an unlikely integer

@@ -1283,16 +1283,117 @@ object {
 	margin: 0 0 1.5em;
 	overflow: hidden;
 }
+[class*="navigation"] .previous,
+[class*="navigation"] .next {
+	padding: 10px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	font-size: 14px;
+	font-size: 1.4rem;
+	line-height: 1.2;
+}
 [class*="navigation"] .previous {
 	float: left;
-	width: 25%;
+	width: 50%;
 	text-align: left;
+	overflow: hidden;
+	padding-left: 0;
 }
 [class*="navigation"] .next {
 	float: right;
 	text-align: right;
-	width: 25%;
+	width: 50%;
+	overflow: hidden;
+	padding-right: 0;
 }
+[class*="navigation"] .previous a,
+[class*="navigation"] .next a {
+	display: block;
+	overflow: hidden;
+	text-decoration: none;
+	color: #303030;
+}
+[class*="navigation"] .previous span.heading,
+[class*="navigation"] .next span.heading {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 0.2em;
+}
+[class*="navigation"] .previous img,
+[class*="navigation"] .next img {
+	display: block;
+	width: 80px;
+	height: 80px;
+}
+[class*="navigation"] .previous img {
+	float: left;
+	margin-right: 10px;
+}
+[class*="navigation"] .next img {
+	float: right;
+	margin-left: 10px;
+}
+@media screen and (min-width: 1200px) {
+	[class*="navigation"] .previous,
+	[class*="navigation"] .next {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		width: 400px;
+		margin-top: -50px;
+	}
+	[class*="navigation"] .previous {
+		margin-left: -560px;
+	}
+	[class*="navigation"] .next {
+		margin-left: 160px;
+	}
+	[class*="navigation"] .previous a,
+	[class*="navigation"] .next a {
+		padding: 10px;
+		height: 80px;
+		box-sizing: content-box;
+		-moz-box-sizing: content-box;
+	}
+	[class*="navigation"] .previous span.trigger,
+	[class*="navigation"] .next span.trigger {
+		display: block;
+		width: 40px;
+		height: 80px;
+		background: url(images/next-prev.png);
+		background-size: 80px 160px;
+	}
+	[class*="navigation"] .previous span.trigger {
+		float: left;
+		margin-right: 10px;
+	}
+	[class*="navigation"] .next span.trigger {
+		float: right;
+		margin-left: 10px;
+		background-position: right 0;
+	}
+	[class*="navigation"] .previous .hidden,
+	[class*="navigation"] .next .hidden {
+		display: none;
+	}
+	[class*="navigation"] .previous a:hover,
+	[class*="navigation"] .next a:hover {
+		background: #333;
+		color: #fff;
+	}
+	[class*="navigation"] .previous a:hover .hidden,
+	[class*="navigation"] .next a:hover .hidden {
+		display: block;
+	}
+	[class*="navigation"] .previous a:hover .trigger {
+		background-position: 0 bottom;
+	}
+	[class*="navigation"] .next a:hover .trigger {
+		background-position: right bottom;
+	}
+}
+
+
 .navigation-paging {
 	text-align: center;
 }
