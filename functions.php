@@ -235,6 +235,15 @@ function thsp_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
+	register_sidebar( array(
+		'name' => __( 'Above footer widget area', 'gumbo' ),
+		'description' => __( 'This widget area is located above site footer.', 'gumbo' ),
+		'id' => 'above-footer-widget-area',
+		'before_widget' => '<aside id="%1$s" class="widget above-footer-widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
 }
 add_action( 'widgets_init', 'thsp_widgets_init' );
 
@@ -254,8 +263,6 @@ add_action( 'wp_footer', 'thsp_add_pull_out' );
 
 /**
  * Add sub-header widget area to tha_header_after hook
- *
- * @todo	Figure out what to do when no widgets
  */
 function thsp_add_sub_header() {
 	if ( is_active_sidebar( 'sub-header-widget-area' ) ) :
@@ -267,6 +274,20 @@ function thsp_add_sub_header() {
 	endif;
 }
 add_action( 'tha_header_after', 'thsp_add_sub_header' );
+
+/**
+ * Add above footer widget area to tha_header_after hook
+ */
+function thsp_add_above_footer() {
+	if ( is_active_sidebar( 'above-footer-widget-area' ) ) :
+		echo '<div id="above-footer" class="flexible-widget-area ' . thsp_count_widgets( 'above-footer-widget-area' ) . '">';
+			echo '<div class="inner clear">';
+			dynamic_sidebar( 'above-footer-widget-area' );
+			echo '</div>';
+		echo '</div><!-- #above-footer -->';
+	endif;
+}
+add_action( 'tha_footer_before', 'thsp_add_above_footer' );
 
 /**
  * Enqueue scripts and styles

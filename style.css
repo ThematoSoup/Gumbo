@@ -734,8 +734,8 @@ body.body-font-weight-300,
 	word-wrap: break-word;
 }
 #main {
-	padding-top: 40px;
-	padding-top: 4rem;
+	padding: 40px 0;
+	padding: 4rem 0;
 }
 
 /* Layout: Content - Primary Sidebar */
@@ -914,20 +914,22 @@ body.body-font-weight-300,
 #masthead.centered {
 	text-align: center;
 }
-#sub-header {
-	margin-bottom: 30px;
-	background: #fcfcfc;
-	border-top: 1px solid rgba(0,0,0,0.025);
-	border-bottom: 1px solid rgba(0,0,0,0.025);
-}
-
 /* Footer */
 .site-footer {
 	clear: both;
 	width: 100%;
-	border-top: 1px solid rgba(0,0,0,0.025);
-	background: #fcfcfc;
+	background: #303030;
 	padding: 20px 0;
+}
+.site-footer,
+.site-footer a {
+	color: #fff;
+}
+
+/* Sub header and above footer widget areas */
+#sub-header,
+#above-footer {
+	background: #fcfcfc;
 }
 
 
