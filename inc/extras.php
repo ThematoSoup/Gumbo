@@ -233,7 +233,9 @@ function thsp_internal_css() {
 		.comment-reply-link,
 		.wpcf7 input[type="submit"],
 		.protected-post-form input[type="submit"],
-		.navigation-main a:hover {
+		.navigation-main a:hover,
+		.page-numbers.current,
+		.page-links a:hover span {
 			background: <?php echo $thsp_primary_color; ?>;
 		}
 	</style>

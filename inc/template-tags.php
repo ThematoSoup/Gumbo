@@ -51,7 +51,7 @@ function thsp_content_nav( $nav_id ) {
 		<?php
 			$previous_post = get_adjacent_post( false, '', true );
 			$next_post = get_adjacent_post( false, '', false );
-			echo '<div class="previous">';
+			echo '<div class="prev">';
 				echo '<a href="' . get_permalink( $previous_post->ID ) . '" title="' . sprintf( __( 'Previous post: %1$s', 'gumbo' ), esc_attr( get_the_title( $previous_post->ID ) ) ) . '">';
 					echo '<span class="trigger"></span>';
 					echo '<div class="hidden clear">';

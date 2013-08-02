@@ -1075,6 +1075,10 @@ body.body-font-weight-300,
 	padding: 30px;
 	padding: 3rem;
 }
+	.background-dark #main .sticky {
+		background: #444;
+		border-bottom-color: #555;
+	}
 .entry-header {
 	margin-bottom: 15px;
 	margin-bottom: 1.5rem;
@@ -1287,7 +1291,7 @@ object {
 	margin: 0 0 1.5em;
 	overflow: hidden;
 }
-[class*="navigation"] .previous,
+[class*="navigation"] .prev,
 [class*="navigation"] .next {
 	padding: 10px;
 	box-sizing: border-box;
@@ -1296,7 +1300,7 @@ object {
 	font-size: 1.4rem;
 	line-height: 1.2;
 }
-[class*="navigation"] .previous {
+[class*="navigation"] .prev {
 	float: left;
 	width: 50%;
 	text-align: left;
@@ -1310,26 +1314,26 @@ object {
 	overflow: hidden;
 	padding-right: 0;
 }
-[class*="navigation"] .previous a,
+[class*="navigation"] .prev a,
 [class*="navigation"] .next a {
 	display: block;
 	overflow: hidden;
 	text-decoration: none;
 	color: #303030;
 }
-[class*="navigation"] .previous span.heading,
+[class*="navigation"] .prev span.heading,
 [class*="navigation"] .next span.heading {
 	display: block;
 	font-weight: bold;
 	margin-bottom: 0.3em;
 }
-[class*="navigation"] .previous img,
+[class*="navigation"] .prev img,
 [class*="navigation"] .next img {
 	display: block;
 	width: 80px;
 	height: 80px;
 }
-[class*="navigation"] .previous img {
+[class*="navigation"] .prev img {
 	float: left;
 	margin-right: 10px;
 }
@@ -1353,20 +1357,20 @@ object {
 		width: 400px;
 		margin-top: -50px;
 	}
-	.single [class*="navigation"] .previous {
+	.single [class*="navigation"] .prev {
 		margin-left: -560px;
 	}
 	.single [class*="navigation"] .next {
 		margin-left: 160px;
 	}
-	.single [class*="navigation"] .previous a,
+	.single [class*="navigation"] .prev a,
 	.single [class*="navigation"] .next a {
 		padding: 10px;
 		height: 80px;
 		box-sizing: content-box;
 		-moz-box-sizing: content-box;
 	}
-	.single [class*="navigation"] .previous span.trigger,
+	.single [class*="navigation"] .prev span.trigger,
 	.single [class*="navigation"] .next span.trigger {
 		display: block;
 		width: 40px;
@@ -1374,7 +1378,7 @@ object {
 		background: url(images/next-prev.png);
 		background-size: 80px 160px;
 	}
-	.single [class*="navigation"] .previous span.trigger {
+	.single [class*="navigation"] .prev span.trigger {
 		float: left;
 		margin-right: 10px;
 	}
@@ -1383,11 +1387,11 @@ object {
 		margin-left: 10px;
 		background-position: right 0;
 	}
-	.single [class*="navigation"] .previous .hidden,
+	.single [class*="navigation"] .prev .hidden,
 	.single [class*="navigation"] .next .hidden {
 		display: none;
 	}
-	.single [class*="navigation"] .previous a:hover,
+	.single [class*="navigation"] .prev a:hover,
 	.single [class*="navigation"] .next a:hover {
 		background: #333;
 		color: #fff;
@@ -1397,11 +1401,11 @@ object {
 		font-size: 16px;
 		color: #fff;
 	}
-	.single [class*="navigation"] .previous a:hover .hidden,
+	.single [class*="navigation"] .prev a:hover .hidden,
 	.single [class*="navigation"] .next a:hover .hidden {
 		display: block;
 	}
-	.single [class*="navigation"] .previous a:hover .trigger {
+	.single [class*="navigation"] .prev a:hover .trigger {
 		background-position: 0 bottom;
 	}
 	.single [class*="navigation"] .next a:hover .trigger {
@@ -1409,10 +1413,62 @@ object {
 	}
 }
 
-
 .navigation-paging {
 	text-align: center;
 }
+.page-numbers {
+	display: inline-block;
+	line-height: 1;
+	padding: 0.3em 0.5em;
+}
+.page-numbers.current {
+	color: #fff;
+}
+a.page-numbers {
+	color: #303030;
+	text-decoration: none;
+}
+a.page-numbers:hover {
+	background: #303030;
+	color: #fff;
+}
+a.page-numbers.prev:hover,
+a.page-numbers.next:hover {
+	background: none;
+	color: #303030;
+}
+.navigation-paging .next,
+.navigation-paging .prev {
+	width: 33.33333%;
+}
+/* Add left spacing to first page of archives when there's no Prev link */
+.screen-reader-text + .page-numbers {
+	margin-left: 33.33333%;
+}
+.screen-reader-text + .prev {
+	margin-left: 0;
+}
+/* Add right spacing to last page of archives when there's no Next link */
+.page-numbers.current:last-child {
+	margin-right: 33.33333%;
+}
+
+/* Paginated posts */
+.page-links span {
+	background: #303030;
+	color: #fff;
+	display: inline-block;
+	line-height: 1;
+	padding: 0.3em 0.5em;
+}
+.page-links a span {
+	background: none;
+	color: #303030;
+}
+.page-links a:hover span {
+	color: #fff;
+}
+
 
 /* =Comments
 ----------------------------------------------- */
@@ -1804,24 +1860,49 @@ article.comment {
 	background: #333;
 	display: none;
 }
-.admin-bar #pull-out-widget-area {
-	top: 28px;
-}
+	.admin-bar #pull-out-widget-area {
+		top: 28px;
+	}
+	.background-dark #pull-out-widget-area {
+		background: #fff;
+	}
 #pull-out-trigger {
 	position: fixed;
 	top: 0;
 	right: 16px;
-	font-size: 16px;
-	padding: 0.25em 0.5em;
-	line-height: 1;
-	font-weight: bold;
-	text-decoration: none;
-	color: #fff;
-	background: #333;
+	width: 32px;
+	height: 32px;
+	background: #333 url(images/pull-out-trigger.png);
+	background-size: 64px 64px;
 	border-radius: 0 0 0.25em 0.25em;
+	text-indent: -9999em;
 }
-.admin-bar #pull-out-trigger { 
-	top: 28px;
+#pull-out-trigger.open {
+	background-position: top right;
+}
+	.admin-bar #pull-out-trigger { 
+		top: 28px;
+	}
+	.background-dark #pull-out-trigger {
+		background-color: #fff;
+		background-position: bottom left;
+	}
+	.background-dark #pull-out-trigger.open {
+		background-position: bottom right;
+	}
+#pull-out-widget-area .widget {
+	margin: 20px;
+	margin: 2rem;
+}
+#pull-out-widget-area .widget,
+#pull-out-widget-area .widget a {
+	color: #eee;
+}
+#pull-out-widget-area .widget a {
+	text-decoration: underline;
+}
+#pull-out-widget-area .widget-title {
+	color: #fff;
 }
 
 /* Sub-header widget area */

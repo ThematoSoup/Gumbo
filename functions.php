@@ -221,7 +221,7 @@ function thsp_widgets_init() {
 		'name' => __( 'Pull-out widget area', 'gumbo' ),
 		'description' => __( 'This widget area can be located at top, bottom, left or right of each page. To set its location go to Appearance > Theme Customizer.', 'gumbo' ),
 		'id' => 'pull-out-widget-area',
-		'before_widget' => '<aside id="%1$s" class="widget widgetized-homepage-widget %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget pull-out-widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',

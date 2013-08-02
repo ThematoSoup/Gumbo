@@ -23,7 +23,7 @@ jQuery( document ).ready( function( $ ) {
 				}, 400);
 				$(this).animate({ 
 					marginTop: $pullOutHeight,
-				}, 400);
+				}, 400).addClass('open');
 			},
 			function(){
 				$('#pull-out-widget-area').slideUp(400);
@@ -32,7 +32,7 @@ jQuery( document ).ready( function( $ ) {
 				}, 400);
 				$(this).animate({ 
 					marginTop: 0,
-				}, 400);
+				}, 400).removeClass('open');
 			}
 		);
 	}

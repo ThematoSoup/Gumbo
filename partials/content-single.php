@@ -35,8 +35,10 @@
 			<?php the_content(); ?>
 			<?php
 				wp_link_pages( array(
-					'before' => '<div class="page-links">' . __( 'Pages:', 'gumbo' ),
-					'after'  => '</div>',
+					'before' 		=> '<div class="page-links">' . __( 'Pages:', 'gumbo' ),
+					'after'  		=> '</div>',
+					'link_before'	=> '<span>',
+					'link_after'	=> '</span>'
 				) );
 			?>
 		</div><!-- .entry-content -->
