@@ -244,7 +244,7 @@ add_action( 'widgets_init', 'thsp_widgets_init' );
 function thsp_add_pull_out() {
 	$theme_options = thsp_cbp_get_options_values();
 	if ( is_active_sidebar( 'pull-out-widget-area' ) ) :
-		echo '<div id="pull-out-widget-area" class="position-' . $theme_options['pull_out_placement'] . '">';
+		echo '<div id="pull-out-widget-area" class="flexible-widget-area position-' . $theme_options['pull_out_placement'] . ' ' . thsp_count_widgets( 'pull-out-widget-area' ) . '">';
 			dynamic_sidebar( 'pull-out-widget-area' );
 		echo '</div><!-- #pull-out-widget-area -->';
 		echo '<a href="#" id="pull-out-trigger">' . __( 'Click', 'gumbo' ) . '</a>';
@@ -259,14 +259,11 @@ add_action( 'wp_footer', 'thsp_add_pull_out' );
  */
 function thsp_add_sub_header() {
 	if ( is_active_sidebar( 'sub-header-widget-area' ) ) :
-		echo '<div id="sub-header" class="' . thsp_count_widgets( 'sub-header-widget-area' ) . '">';
+		echo '<div id="sub-header" class="flexible-widget-area ' . thsp_count_widgets( 'sub-header-widget-area' ) . '">';
 			echo '<div class="inner clear">';
 			dynamic_sidebar( 'sub-header-widget-area' );
 			echo '</div>';
 		echo '</div><!-- #sub-header -->';
-	else :
-		echo '<div id="sub-header">';
-		echo '</div><!-- #sub-header -->';	
 	endif;
 }
 add_action( 'tha_header_after', 'thsp_add_sub_header' );

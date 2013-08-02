@@ -733,6 +733,10 @@ body.body-font-weight-300,
 #tertiary {
 	word-wrap: break-word;
 }
+#main {
+	padding-top: 40px;
+	padding-top: 4rem;
+}
 
 /* Layout: Content - Primary Sidebar */
 .layout-cp .content-area {
@@ -1859,6 +1863,8 @@ article.comment {
 	z-index: 999;
 	background: #333;
 	display: none;
+	padding: 0 20px;
+	padding: 0 2rem;
 }
 	.admin-bar #pull-out-widget-area {
 		top: 28px;
@@ -1891,12 +1897,10 @@ article.comment {
 		background-position: bottom right;
 	}
 #pull-out-widget-area .widget {
-	margin: 20px;
-	margin: 2rem;
+	color: #ddd;
 }
-#pull-out-widget-area .widget,
 #pull-out-widget-area .widget a {
-	color: #eee;
+	color: #fff;
 }
 #pull-out-widget-area .widget a {
 	text-decoration: underline;
@@ -1904,48 +1908,55 @@ article.comment {
 #pull-out-widget-area .widget-title {
 	color: #fff;
 }
+#pull-out-widget-area .widget ul li {
+	border-color: #4f4f4f;
+	border-style: dotted;
+}
+#pull-out-widget-area .widget ul li:last-child {
+	border-bottom: none;
+}
 
-/* Sub-header widget area */
-#sub-header .widget {
+/* Flexible widget areas - number of widgets per row (1, 2, 3 or 4) changes depending on number of widgets used */
+.flexible-widget-area .widget {
 	margin: 20px 0;
 	float: left;
 	width: 100%;
 	padding: 0 15px;
 }
-#sub-header.widget-count-1 .widget {
+.flexible-widget-area.widget-count-1 .widget {
 	padding: 0;
 }
 /* Two per row */
-#sub-header.per-row-2 .widget {
+.flexible-widget-area.per-row-2 .widget {
     width: 50%;
 }
-#sub-header.per-row-2 .widget:nth-child(2n+1) {
+.flexible-widget-area.per-row-2 .widget:nth-child(2n+1) {
 	clear: left;
 	padding-left: 0;
 }
-#sub-header.per-row-2 .widget:nth-child(2n) {
+.flexible-widget-area.per-row-2 .widget:nth-child(2n) {
 	padding-right: 0;
 }
 /* Three per row */
-#sub-header.per-row-3 .widget {
+.flexible-widget-area.per-row-3 .widget {
     width: 33.33333%;
 }
-#sub-header.per-row-3 .widget:nth-child(3n+1) {
+.flexible-widget-area.per-row-3 .widget:nth-child(3n+1) {
 	clear: left;
 	padding-left: 0;
 }
-#sub-header.per-row-3 .widget:nth-child(3n) {
+.flexible-widget-area.per-row-3 .widget:nth-child(3n) {
 	padding-right: 0;
 }
 /* Four per row */
-#sub-header.per-row-4 .widget {
+.flexible-widget-area.per-row-4 .widget {
     width: 25%;
 }
-#sub-header.per-row-4 .widget:nth-child(4n+1) {
+.flexible-widget-area.per-row-4 .widget:nth-child(4n+1) {
 	clear: left;
 	padding-left: 0;
 }
-#sub-header.per-row-4 .widget:nth-child(4n) {
+.flexible-widget-area.per-row-4 .widget:nth-child(4n) {
 	padding-right: 0;
 }
 
