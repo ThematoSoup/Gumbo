@@ -1065,11 +1065,15 @@ body.body-font-weight-300,
 }
 .blog .hentry,
 .archive .hentry {
-	border-bottom: 1px solid #f6f6f6;
+	border-bottom: 1px solid #eee;
 	padding-bottom: 30px;
 	padding-bottom: 3rem;
 }
-.sticky {
+#main .sticky {
+	background: #f9f9f9;
+	border-bottom: 3px solid #303030;
+	padding: 30px;
+	padding: 3rem;
 }
 .entry-header {
 	margin-bottom: 15px;
@@ -1341,66 +1345,66 @@ object {
 	margin-top: 0;
 }
 @media screen and (min-width: 1200px) {
-	[class*="navigation"] .previous,
-	[class*="navigation"] .next {
+	.single [class*="navigation"] .previous,
+	.single [class*="navigation"] .next {
 		position: fixed;
 		top: 50%;
 		left: 50%;
 		width: 400px;
 		margin-top: -50px;
 	}
-	[class*="navigation"] .previous {
+	.single [class*="navigation"] .previous {
 		margin-left: -560px;
 	}
-	[class*="navigation"] .next {
+	.single [class*="navigation"] .next {
 		margin-left: 160px;
 	}
-	[class*="navigation"] .previous a,
-	[class*="navigation"] .next a {
+	.single [class*="navigation"] .previous a,
+	.single [class*="navigation"] .next a {
 		padding: 10px;
 		height: 80px;
 		box-sizing: content-box;
 		-moz-box-sizing: content-box;
 	}
-	[class*="navigation"] .previous span.trigger,
-	[class*="navigation"] .next span.trigger {
+	.single [class*="navigation"] .previous span.trigger,
+	.single [class*="navigation"] .next span.trigger {
 		display: block;
 		width: 40px;
 		height: 80px;
 		background: url(images/next-prev.png);
 		background-size: 80px 160px;
 	}
-	[class*="navigation"] .previous span.trigger {
+	.single [class*="navigation"] .previous span.trigger {
 		float: left;
 		margin-right: 10px;
 	}
-	[class*="navigation"] .next span.trigger {
+	.single [class*="navigation"] .next span.trigger {
 		float: right;
 		margin-left: 10px;
 		background-position: right 0;
 	}
-	[class*="navigation"] .previous .hidden,
-	[class*="navigation"] .next .hidden {
+	.single [class*="navigation"] .previous .hidden,
+	.single [class*="navigation"] .next .hidden {
 		display: none;
 	}
-	[class*="navigation"] .previous a:hover,
-	[class*="navigation"] .next a:hover {
+	.single [class*="navigation"] .previous a:hover,
+	.single [class*="navigation"] .next a:hover {
 		background: #333;
 		color: #fff;
 	}
-	[class*="navigation"] .previous-title,
-	[class*="navigation"] .next-title {
+	.single [class*="navigation"] .previous-title,
+	.single [class*="navigation"] .next-title {
 		font-size: 16px;
 		color: #fff;
 	}
-	[class*="navigation"] .previous a:hover .hidden,
-	[class*="navigation"] .next a:hover .hidden {
+	.single [class*="navigation"] .previous a:hover .hidden,
+	.single [class*="navigation"] .next a:hover .hidden {
 		display: block;
 	}
-	[class*="navigation"] .previous a:hover .trigger {
+	.single [class*="navigation"] .previous a:hover .trigger {
 		background-position: 0 bottom;
 	}
-	[class*="navigation"] .next a:hover .trigger {
+	.single [class*="navigation"] .next a:hover .trigger {
 		background-position: right bottom;
 	}
 }
