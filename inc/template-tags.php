@@ -57,7 +57,7 @@ function thsp_content_nav( $nav_id ) {
 					echo '<div class="hidden clear">';
 					echo get_the_post_thumbnail( $previous_post->ID, 'thumbnail');
 					echo '<span class="heading">' . __( 'Previous post', 'gumbo' ) . '</span>';
-					echo get_the_title( $previous_post->ID );
+					echo '<h3 class="title previous-title">' . get_the_title( $previous_post->ID ) . '</h3>';
 					echo '</div>';
 				echo '</a>';
 			echo '</div>';
@@ -67,7 +67,7 @@ function thsp_content_nav( $nav_id ) {
 					echo '<div class="hidden clear">';
 					echo get_the_post_thumbnail( $next_post->ID, 'thumbnail');
 					echo '<span class="heading">' . __( 'Next post', 'gumbo' ) . '</span>';
-					echo get_the_title( $next_post->ID );
+					echo '<h3 class="title next-title">' . get_the_title( $next_post->ID ) . '</h3>';
 					echo '</div>';
 				echo '</a>';
 			echo '</div>';

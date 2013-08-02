@@ -1317,7 +1317,7 @@ object {
 [class*="navigation"] .next span.heading {
 	display: block;
 	font-weight: bold;
-	margin-bottom: 0.2em;
+	margin-bottom: 0.3em;
 }
 [class*="navigation"] .previous img,
 [class*="navigation"] .next img {
@@ -1332,6 +1332,13 @@ object {
 [class*="navigation"] .next img {
 	float: right;
 	margin-left: 10px;
+}
+[class*="navigation"] .previous-title,
+[class*="navigation"] .next-title {
+	font-size: 18px;
+	clear: none;
+	word-wrap: break-word;
+	margin-top: 0;
 }
 @media screen and (min-width: 1200px) {
 	[class*="navigation"] .previous,
@@ -1379,6 +1386,11 @@ object {
 	[class*="navigation"] .previous a:hover,
 	[class*="navigation"] .next a:hover {
 		background: #333;
+		color: #fff;
+	}
+	[class*="navigation"] .previous-title,
+	[class*="navigation"] .next-title {
+		font-size: 16px;
 		color: #fff;
 	}
 	[class*="navigation"] .previous a:hover .hidden,
