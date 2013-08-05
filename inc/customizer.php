@@ -127,6 +127,19 @@ function thsp_theme_options_array() {
 						'type' => 'color', // Color picker field control
 						'priority' => 3
 					)
+				),
+				'header_background' => array(
+					'setting_args' => array(
+						'default' => '#ffffff',
+						'type' => 'option',
+						'capability' => $thsp_cbp_capability,
+						'transport' => 'refresh',
+					),					
+					'control_args' => array(
+						'label' => __( 'Header background color', 'gumbo' ),
+						'type' => 'color', // Color picker field control
+						'priority' => 4
+					)
 				)
 			) // End fields
 		),

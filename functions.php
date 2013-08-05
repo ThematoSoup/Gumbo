@@ -55,37 +55,6 @@ if ( ! function_exists( 'thsp_setup' ) ) :
 function thsp_setup() {
 
 	/**
-	 * Custom template tags for this theme.
-	 */
-	require( get_template_directory() . '/inc/template-tags.php' );
-
-	/**
-	 * Custom functions that act independently of the theme templates
-	 */
-	require( get_template_directory() . '/inc/extras.php' );
-
-	/**
-	 * Theme Customizer boilerplate
-	 */
-	require( get_template_directory() . '/inc/libraries/customizer-boilerplate/customizer.php' );
-
-	/**
-	 * Post Format tools
-	 */
-	require( get_template_directory() . '/inc/libraries/post-format-tools.php' );
-	
-	/**
-	 * Theme hooks
-	 */
-	require( get_template_directory() . '/inc/libraries/tha/tha-theme-hooks.php' );
-
-	/**
-	 * Customizer options
-	 */
-	require( get_template_directory() . '/inc/customizer.php' );
-
-
-	/**
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
 	 */
@@ -127,6 +96,36 @@ function thsp_setup() {
 }
 endif; // thsp_setup
 add_action( 'after_setup_theme', 'thsp_setup' );
+
+/**
+ * Custom template tags for this theme.
+ */
+require( get_template_directory() . '/inc/template-tags.php' );
+
+/**
+ * Custom functions that act independently of the theme templates
+ */
+require( get_template_directory() . '/inc/extras.php' );
+
+/**
+ * Theme Customizer boilerplate
+ */
+require( get_template_directory() . '/inc/libraries/customizer-boilerplate/customizer.php' );
+
+/**
+ * Post Format tools
+ */
+require( get_template_directory() . '/inc/libraries/post-format-tools.php' );
+
+/**
+ * Theme hooks
+ */
+require( get_template_directory() . '/inc/libraries/tha/tha-theme-hooks.php' );
+
+/**
+ * Customizer options
+ */
+require( get_template_directory() . '/inc/customizer.php' );
 
 /**
  * Custom meta boxes

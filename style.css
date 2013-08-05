@@ -914,6 +914,25 @@ body.body-font-weight-300,
 #masthead.centered {
 	text-align: center;
 }
+/* Header text and navigation colors */
+#masthead.light-text,
+#masthead.light-text .site-title a,
+#masthead.light-text .site-description,
+#masthead.light-text a {
+	color: #fcfcfc;
+}
+#masthead.light-text .navigation-main li:hover a {
+	background: #fcfcfc;
+	color: #303030;
+}
+#masthead .navigation-main li a:hover {
+	box-shadow: inset 0 0 10em rgba(255,255,255,0.1);
+}
+
+#masthead.light-text .navigation-main li a:hover {
+	box-shadow: inset 0 0 10em rgba(0,0,0,0.05);
+}
+
 /* Footer */
 .site-footer {
 	clear: both;
@@ -968,10 +987,12 @@ body.body-font-weight-300,
 .navigation-main li:hover {
 	background: #303030;
 }
+.navigation-main .sub-menu {
+	box-shadow: 3px 3px 0 rgba(0,0,0,0.1);	
+}
 .navigation-main .sub-menu li {
 	display: block;
 	position: relative;
-	border-bottom: 1px solid rgba(255,255,255,0.075);
 }
 .navigation-main .sub-menu li:last-child {
 	border-bottom: none;
@@ -985,6 +1006,9 @@ body.body-font-weight-300,
 }
 .navigation-main .sub-menu a {
 	color: #fff;
+}
+.navigation-main .sub-menu a:hover {
+
 }
 .navigation-main ul ul {
 	background: #303030;

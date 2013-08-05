@@ -222,8 +222,9 @@ add_filter( 'the_password_form', 'thsp_custom_password_form' );
  */
 function thsp_internal_css() {
 	// Get current theme options
-	$thsp_theme_options = thsp_cbp_get_options_values();
-	$thsp_primary_color = $thsp_theme_options['primary_color'];
+	$thsp_theme_options			= thsp_cbp_get_options_values();
+	$thsp_primary_color			= $thsp_theme_options['primary_color'];
+	$thsp_header_background		= $thsp_theme_options['header_background'];
 	?>
 	<style type="text/css">
 		a {
@@ -233,15 +234,35 @@ function thsp_internal_css() {
 		.comment-reply-link,
 		.wpcf7 input[type="submit"],
 		.protected-post-form input[type="submit"],
-		.navigation-main a:hover,
 		.page-numbers.current,
 		.page-links a:hover span {
 			background: <?php echo $thsp_primary_color; ?>;
 		}
+		<?php
+		if ( '#ffffff' != $thsp_header_background ) : ?>
+		#masthead {
+			background-color: <?php echo $thsp_header_background; ?>;
+		}
+		<?php endif;
+		?>
 	</style>
 	<?php
 }
 add_action( 'wp_head', 'thsp_internal_css' );
+
+/**
+ * Internal CSS for accent color
+ *
+ * @link	http://24ways.org/2010/calculating-color-contrast/
+ * @since	Gumbo 1.0
+ */
+function thsp_get_color_contrast( $hexcolor ){
+	$r = hexdec( substr( $hexcolor, 0, 2 ) );
+	$g = hexdec( substr( $hexcolor, 2, 2 ) );
+	$b = hexdec( substr( $hexcolor, 4, 2 ) );
+	$yiq = ( ( $r*299 ) + ( $g * 587 ) + ( $b * 114 ) ) / 1000;
+	return ( $yiq >= 128 ) ? '#303030' : '#fcfcfc';
+}
 
 /**
  * Post meta widget class

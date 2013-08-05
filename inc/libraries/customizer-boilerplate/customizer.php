@@ -42,22 +42,6 @@ require( dirname(__FILE__) . '/helpers.php' );
 
 
 /**
- * Adds the Customize page to the WordPress admin area
- */
-add_action( 'admin_menu', 'thsp_cbp_customizer_menu' );
-function thsp_cbp_customizer_menu() {
-
-    add_theme_page(
-    	thsp_cbp_menu_link_text(),
-    	thsp_cbp_menu_link_text(),
-    	thsp_cbp_capability(),
-    	'customize.php'
-    );
-    
-}
-
-
-/**
  * Adds Customizer Sections, Settings and Controls
  *
  * - Require Custom Customizer Controls
