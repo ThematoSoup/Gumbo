@@ -925,11 +925,11 @@ body.body-font-weight-300,
 	background: #fcfcfc;
 	color: #303030;
 }
-#masthead .navigation-main li a:hover {
+#masthead .navigation-main .sub-menu li a:hover {
 	box-shadow: inset 0 0 10em rgba(255,255,255,0.1);
 }
 
-#masthead.light-text .navigation-main li a:hover {
+#masthead.light-text .navigation-main .sub-menu li a:hover {
 	box-shadow: inset 0 0 10em rgba(0,0,0,0.05);
 }
 

@@ -227,8 +227,17 @@ function thsp_internal_css() {
 	$thsp_header_background		= $thsp_theme_options['header_background'];
 	?>
 	<style type="text/css">
-		a {
+		#main a,
+		#sub-header a,
+		#above-footer a {
 			color: <?php echo $thsp_primary_color; ?>
+		}
+		#main a:hover,
+		#sub-header a:hover,
+		#above-footer a:hover {
+			background: <?php echo $thsp_primary_color; ?>;
+			color: #fff;
+			text-decoration: none;
 		}
 		#commentform #submit,
 		.comment-reply-link,
