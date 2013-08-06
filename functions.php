@@ -305,41 +305,37 @@ function thsp_scripts() {
 	$heading_font_value		= $theme_options['heading_font'];
 	$body_font_options		= $theme_options_fields['thsp_typography_section']['fields']['body_font']['control_args']['choices'];
 	$heading_font_options	= $theme_options_fields['thsp_typography_section']['fields']['heading_font']['control_args']['choices'];
-
-	// Check protocol
-	$protocol = is_ssl() ? 'https' : 'http';
     
-	// Check if body and heading fonts are the same and Google Fonts
-	$font_subset = '&subset=latin,latin-ext';
-	if ( $body_font_value == $heading_font_value && isset( $body_font_options[$body_font_value]['google_font'] ) ) {
-		$font_style = $body_font_weight . ',' . $body_font_weight . 'italic,700,700italic';
-		$font_url = $protocol . '://fonts.googleapis.com/css?family=' . $body_font_options[$body_font_value]['google_font'] . ':' . $font_style . $font_subset;
+	/*
+	 * Check if Google Fonts are needed
+	 * Font options are defined in /inc/customizer.php
+	 */
+	if ( isset( $body_font_options[ $body_font_value ]['google_font'] ) || isset( $heading_font_options[ $heading_font_value ]['google_font'] ) ) :
+		$font_families = array();
+		
+		if ( $body_font_value == $heading_font_value ) : // Check if it's the same font
+			$font_families[] = $body_font_options[ $body_font_value ]['google_font'] . ':' . $body_font_weight . ',' . $body_font_weight . 'italic,700,700italic';
+		else :
+			if ( isset( $body_font_options[ $body_font_value ]['google_font'] ) ) : // Check body font
+				$font_families[] = $body_font_options[ $body_font_value ]['google_font'] . ':' . $body_font_weight . ',' . $body_font_weight . 'italic';
+			endif;
+			if ( isset( $heading_font_options[ $heading_font_value ]['google_font'] ) ) : // Check heading font
+				$font_families[] = $heading_font_options[ $heading_font_value ]['google_font'] . ':700,700italic';
+			endif;
+		endif;
+		
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+		$fonts_url = add_query_arg( $query_args, "//fonts.googleapis.com/css" );
+
 		// Enqueue the font
 		wp_enqueue_style(
-			'gumbo_font_' . $body_font_value,
-			$font_url
+			'gumbo_fonts',
+			$fonts_url
 		);
-	} else {
-		// Check if body font is Google Font
-		if ( isset( $body_font_options[$body_font_value]['google_font'] ) ) {
-			$body_font_style = $body_font_weight . ',' . $body_font_weight . 'italic,700,700italic';
-			$body_font_url = $protocol . '://fonts.googleapis.com/css?family=' . $body_font_options[$body_font_value]['google_font'] . ':' . $body_font_style . $font_subset;
-			// Enqueue the font
-			wp_enqueue_style(
-				'gumbo_body_font_' . $body_font_value,
-				$body_font_url
-			);
-		}
-		// Check if heading font is Google Font	
-		if ( isset( $heading_font_options[$heading_font_value]['google_font'] ) ) {
-			$heading_font_url = $protocol . '://fonts.googleapis.com/css?family=' . $heading_font_options[$heading_font_value]['google_font'] . ':700,700italic' . $font_subset;
-			// Enqueue the font
-			wp_enqueue_style(
-				'gumbo_heading_font_' . $heading_font_value,
-				$heading_font_url
-			);
-		}
-	}
+	endif;
 	
 	wp_enqueue_style( 'gumbo-style', get_stylesheet_uri() );
 	wp_enqueue_script( 'gumbo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );

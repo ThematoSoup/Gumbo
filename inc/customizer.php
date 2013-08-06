@@ -307,7 +307,7 @@ function thsp_theme_options_array() {
 							),
 							'open-sans' => array(
 								'label' => 'Open Sans',
-								'google_font' => 'Open+Sans',
+								'google_font' => 'Open Sans',
 								'image_src' => get_template_directory_uri() . '/images/theme-options/font-body-open-sans.png'
 							),
 							'lato' => array(
@@ -317,7 +317,7 @@ function thsp_theme_options_array() {
 							),
 							'source-sans-pro' => array(
 								'label' => 'Source Sans Pro',
-								'google_font' => 'Source+Sans+Pro',
+								'google_font' => 'Source Sans Pro',
 								'image_src' => get_template_directory_uri() . '/images/theme-options/font-body-source-sans-pro.png'
 							),
 							'roboto' => array(
@@ -327,7 +327,7 @@ function thsp_theme_options_array() {
 							),
 							'titillium-web' => array(
 								'label' => 'Titillium Web',
-								'google_font' => 'Titillium+Web',
+								'google_font' => 'Titillium Web',
 								'image_src' => get_template_directory_uri() . '/images/theme-options/font-body-titillium-web.png'
 							)
 						),
@@ -372,7 +372,7 @@ function thsp_theme_options_array() {
 							),
 							'open-sans' => array(
 								'label' => 'Open Sans',
-								'google_font' => 'Open+Sans',
+								'google_font' => 'Open Sans',
 								'image_src' => get_template_directory_uri() . '/images/theme-options/font-heading-open-sans.png'
 							),
 							'lato' => array(
@@ -382,7 +382,7 @@ function thsp_theme_options_array() {
 							),
 							'source-sans-pro' => array(
 								'label' => 'Source Sans Pro',
-								'google_font' => 'Source+Sans+Pro',
+								'google_font' => 'Source Sans Pro',
 								'image_src' => get_template_directory_uri() . '/images/theme-options/font-heading-source-sans-pro.png'
 							),
 							'roboto' => array(
@@ -392,7 +392,7 @@ function thsp_theme_options_array() {
 							),
 							'titillium-web' => array(
 								'label' => 'Titillium Web',
-								'google_font' => 'Titillium+Web',
+								'google_font' => 'Titillium Web',
 								'image_src' => get_template_directory_uri() . '/images/theme-options/font-heading-titillium-web.png'
 							)
 						),
