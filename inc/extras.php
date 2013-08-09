@@ -83,7 +83,7 @@ add_filter( 'post_class', 'thsp_post_classes' );
 /**
  * Adds custom classes to the array of menu item classes.
  */
-function thsp_custom_menu_item_classes( $classes, $item, $args ) {
+function thsp_custom_menu_item_classes( $classes, $item ) {
 	$children = get_posts( array(
 		'meta_query' => array (
 		array(
@@ -98,7 +98,7 @@ function thsp_custom_menu_item_classes( $classes, $item, $args ) {
 	
 	return $classes;
 }
-add_filter( 'nav_menu_css_class', 'thsp_custom_menu_item_classes', 10, 3 );
+add_filter( 'nav_menu_css_class', 'thsp_custom_menu_item_classes', 10, 2 );
 
 /**
  * Gets current layout for page being displayed

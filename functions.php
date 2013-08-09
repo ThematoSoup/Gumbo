@@ -108,6 +108,15 @@ require( get_template_directory() . '/inc/template-tags.php' );
 require( get_template_directory() . '/inc/extras.php' );
 
 /**
+ * Steroids plugin display functions
+ */
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+if ( is_plugin_active( 'steroids/steroids.php' ) ) :
+	require( get_template_directory() . '/inc/steroids.php' );
+endif;
+
+
+/**
  * Theme Customizer boilerplate
  */
 require( get_template_directory() . '/inc/libraries/customizer-boilerplate/customizer.php' );

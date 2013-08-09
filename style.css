@@ -2000,6 +2000,14 @@ article.comment {
 	display: block;
 }
 
+/* =Steroids plugin
+----------------------------------------------- */
+
+/* Portfolio */
+.project-media {
+	margin-bottom: 20px;
+}
+
 
 /* =Media Queries
 ----------------------------------------------- */
