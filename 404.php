@@ -49,4 +49,5 @@ get_header(); ?>
 		<?php tha_content_after(); ?>
 	</div><!-- #primary -->
 
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

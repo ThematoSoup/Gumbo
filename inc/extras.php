@@ -38,20 +38,41 @@ function thsp_body_classes( $classes ) {
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
+	
+	// Add content width to body_class
+	global $content_width;
+	$classes[] = 'cwidth-' . $content_width;
+
+	// Get theme options values
+	$thsp_theme_options = thsp_cbp_get_options_values();
+
+	if ( is_active_sidebar( 'sidebar-1' ) && ( is_singular( 'post' ) || is_page() || is_archive() || is_404() || is_attachment() ) ) :
+		$classes[] = 'sidebar';
+
+		$thsp_body_classes = array();
+	
+		// Get layout classes and add them to body_class array
+		$thsp_current_layout = thsp_get_current_layout();
+		foreach ( $thsp_current_layout as $thsp_current_layout_value ) :
+			$thsp_body_classes[] = $thsp_current_layout_value;
+		endforeach;
+	endif;
+
+	if ( is_active_sidebar( 'steroids-portfolio-sidebar' ) && is_singular( 'steroids_portfolio' ) ) :
+		$classes[] = 'sidebar';
+
+		$thsp_body_classes = array();
+	
+		// Get layout classes and add them to body_class array
+		$thsp_current_layout = thsp_get_current_layout();
+		foreach ( $thsp_current_layout as $thsp_current_layout_value ) :
+			$thsp_body_classes[] = $thsp_current_layout_value;
+		endforeach;
+	endif;
 
 	// Adds a class id Post Aside is active
-	if ( is_single() && is_active_sidebar( 'post-aside' ) ) {
+	if ( is_singular( 'post' ) && is_active_sidebar( 'post-aside' ) ) {
 		$classes[] = 'post-aside';
-	}
-
-	// Get current theme options
-	$thsp_theme_options = thsp_cbp_get_options_values();
-	$thsp_body_classes = array();
-
-	// Get layout classes and add them to body_class array
-	$thsp_current_layout = thsp_get_current_layout();
-	foreach ( $thsp_current_layout as $thsp_current_layout_value ) {
-		$thsp_body_classes[] = $thsp_current_layout_value;
 	}
 
 	// Get color scheme class and add them to body_class array
@@ -136,33 +157,6 @@ function thsp_get_current_layout() {
 }
 
 /**
- * Checks if current layout has three columns and secondary sidebar needs to be rendered
- *
- * @uses	thsp_get_current_layout()			defined in /inc/extras.php
- * @return	boolean
- * @since	Gumbo 1.0
- */
-function thsp_check_sidebar( $sidebar ) {
-	$current_layout = thsp_get_current_layout();
-	
-	// Check if it's a three column layout and secondary sidebar is needed
-	if ( 'secondary' == $sidebar ) :
-		if ( in_array( $current_layout['default_layout'], array( 'layout-pcs', 'layout-cps', 'layout-psc' ) ) ) :
-			return true;
-		else :
-			return false;
-		endif;
-	// Check if it's not a single-column layout and primary sidebar is needed
-	elseif ( 'primary' == $sidebar ) :
-		if ( 'layout-c' != $current_layout['default_layout'] ) :
-			return true;
-		else :
-			return false;
-		endif;
-	endif;
-}
-
-/**
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
  * @since	Gumbo 1.0
  */
@@ -227,14 +221,10 @@ function thsp_internal_css() {
 	$thsp_header_background		= $thsp_theme_options['header_background'];
 	?>
 	<style type="text/css">
-		#main a,
-		#sub-header a,
-		#above-footer a {
+		#content a {
 			color: <?php echo $thsp_primary_color; ?>
 		}
-		#main a:hover,
-		#sub-header a:hover,
-		#above-footer a:hover {
+		#content a:hover {
 			background: <?php echo $thsp_primary_color; ?>;
 			color: #fff;
 			text-decoration: none;
@@ -244,7 +234,8 @@ function thsp_internal_css() {
 		.wpcf7 input[type="submit"],
 		.protected-post-form input[type="submit"],
 		.page-numbers.current,
-		.page-links a:hover span {
+		.page-links a:hover span,
+		#main .more-link {
 			background: <?php echo $thsp_primary_color; ?>;
 		}
 		<?php

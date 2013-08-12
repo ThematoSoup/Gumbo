@@ -196,7 +196,7 @@ function thsp_theme_options_array() {
 			'fields' => array(
 				'default_layout' => array(
 					'setting_args' => array(
-						'default' => 'layout-cp',
+						'default' => 'sidebar-right',
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',
@@ -205,30 +205,14 @@ function thsp_theme_options_array() {
 						'label' => __( 'Default page layout', 'gumbo' ),
 						'type' => 'images_radio', // Image radio replacement
 						'choices' => array(
-							'layout-c' => array(
-								'label' => __( 'Content', 'gumbo' ),
-								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-c.png'
-							),
-							'layout-cp' =>  array(
-								'label' => __( 'Content - Primary Sidebar', 'gumbo' ),
+							'sidebar-right' =>  array(
+								'label' => __( 'Right sidebar', 'gumbo' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-cp.png'
 							),
-							'layout-pc' => array(
-								'label' => __( 'Primary Sidebar - Content', 'gumbo' ),
+							'sidebar-left' => array(
+								'label' => __( 'Left sidebar', 'gumbo' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-pc.png'
 							),
-							'layout-cps' => array(
-								'label' => __( 'Content - Primary Sidebar - Secondary Sidebar', 'gumbo' ),
-								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-cps.png'
-							),
-							'layout-psc' => array(
-								'label' => __( 'Primary Sidebar - Secondary Sidebar - Content', 'gumbo' ),
-								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-psc.png'
-							),
-							'layout-pcs' => array(
-								'label' => __( 'Primary Sidebar - Content - Secondary Sidebar', 'gumbo' ),
-								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-pcs.png'
-							)
 						),					
 						'priority' => 2
 					) // End control args

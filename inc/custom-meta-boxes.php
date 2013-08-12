@@ -13,7 +13,7 @@
  * @param  array $meta_boxes
  * @return array
  */
-function cmb_sample_metaboxes( $meta_boxes ) {
+function thsp_metaboxes( $meta_boxes ) {
 	// Start with an underscore to hide fields from custom fields list
 	$prefix = '_thsp_';
 
@@ -176,13 +176,13 @@ function cmb_sample_metaboxes( $meta_boxes ) {
 
 	return $meta_boxes;
 }
-add_filter( 'cmb_meta_boxes', 'cmb_sample_metaboxes' );
+add_filter( 'cmb_meta_boxes', 'thsp_metaboxes' );
 
 /**
  * Initialize the metabox class.
  */
-function cmb_initialize_cmb_meta_boxes() {
+function thsp_initialize_cmb_meta_boxes() {
 	if ( ! class_exists( 'cmb_Meta_Box' ) )
 		require_once get_template_directory() . '/inc/libraries/cmb/init.php';
 }
-add_action( 'init', 'cmb_initialize_cmb_meta_boxes', 9999 );
+add_action( 'init', 'thsp_initialize_cmb_meta_boxes', 9999 );

@@ -30,6 +30,21 @@
  */
 if ( ! isset( $content_width ) )
 	$content_width = 660; /* pixels */
+	
+/**
+ * Adjusts content_width value in single column layouts
+ *
+ * @since Gumbo 1.0
+ * @return void
+ */
+function thsp_content_width() {
+	global $content_width;
+
+	if ( ! is_active_sidebar( 'sidebar-1' ) && ( is_singular( 'post' ) || is_page() || is_archive() || is_404() || is_attachment() ) ) :
+		$content_width = 1000;
+	endif;
+}
+add_action( 'template_redirect', 'thsp_content_width' );
 
 /**
  * Add custom image size(s)
@@ -170,7 +185,7 @@ function thsp_register_custom_background() {
 		add_custom_background();
 	}
 }
-// add_action( 'after_setup_theme', 'thsp_register_custom_background' );
+add_action( 'after_setup_theme', 'thsp_register_custom_background' );
 
 /**
  * Register widgetized areas and update sidebar with default widgets
@@ -179,14 +194,6 @@ function thsp_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Primary Sidebar', 'gumbo' ),
 		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Secondary Sidebar', 'gumbo' ),
-		'id'            => 'sidebar-2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',

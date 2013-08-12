@@ -729,8 +729,7 @@ body.body-font-weight-300,
 	-moz-box-sizing: border-box;
 }
 #primary,
-#secondary,
-#tertiary {
+#secondary {
 	word-wrap: break-word;
 }
 #main {
@@ -739,100 +738,31 @@ body.body-font-weight-300,
 }
 
 /* Layout: Content - Primary Sidebar */
-.layout-cp .content-area {
+.sidebar-right .content-area {
 	float: left;
 	margin: 0 -34% 0 0;
 	width: 100%;
 }
-.layout-cp #content {
+.sidebar-right #content {
 	margin: 0 34% 0 0;
 }
-.layout-cp #secondary {
+.sidebar-right #secondary {
 	float: right;
 	width: 30%;
 }
-.layout-cp #tertiary {
-	clear: both;
-	width: 100%;
-}
-
-/* Layout: Content - Primary Sidebar - Secondary Sidebar */
-.layout-cps .content-area {
-	float: left;
-	width: 100%;
-}
-.layout-cps #content {
-	margin: 0 44% 0 0;
-}
-.layout-cps #main .widget-area {
-	float: left;
-}
-.layout-cps #secondary {
-	width: 22%;
-	margin: 0 0 0 -40%;
-}
-.layout-cps #tertiary {
-	width: 16%;
-	margin: 0 0 0 -16%;
-}
-
-/* Layout: Primary Sidebar - Content - Secondary Sidebar */
-.layout-pcs .content-area {
-	float: left;
-	width: 100%;
-}
-.layout-pcs #content {
-	margin-left: 26%;
-	margin-right: 20%;
-}
-.layout-pcs #main .widget-area {
-	float: left;
-}
-.layout-pcs #secondary {
-	width: 22%;
-	margin: 0 0 0 -100%;
-}
-.layout-pcs #tertiary {
-	width: 16%;
-	margin: 0 0 0 -16%;
-}
 
 /* Layout: Primary Sidebar - Content */
-.layout-pc .content-area {
+.sidebar-left .content-area {
 	float: right;
 	margin: 0 0 0 -34%;
 	width: 100%;
 }
-.layout-pc #content {
+.sidebar-left #content {
 	margin: 0 0 0 34%;
 }
-.layout-pc #secondary {
+.sidebar-left #secondary {
 	float: left;
 	width: 30%;
-}
-.layout-pc #tertiary {
-	clear: both;
-	width: 100%;
-}
-
-/* Layout: Primary Sidebar - Secondary Sidebar - Content */
-.layout-psc .content-area {
-	float: right;
-	margin: 0 0 0 -44%;
-	width: 100%;
-}
-.layout-psc #content {
-	margin: 0 0 0 44%;
-}
-.layout-psc #main .widget-area {
-	float: left;
-}
-.layout-psc #secondary {
-	width: 22%;
-}
-.layout-psc #tertiary {
-	width: 16%;
-	margin-left: 2%;
 }
 
 /* Full-width templates (Masonry, attachment) */
@@ -1123,9 +1053,12 @@ body.body-font-weight-300,
 	margin: 0 0 0.5em;
 	clear: none;
 }
-.entry-title a,
-a .entry-title {
+#main .entry-title a,
+#main a .entry-title,
+#main .entry-title a:hover,
+#main a:hover .entry-title {
 	color: #2e2e2e;
+	background: none;
 	text-decoration: none;
 }
 .byline {
@@ -1171,6 +1104,27 @@ a .entry-title {
 	float: right;
 	width: 75%;
 }
+#main .more-link {
+	display: inline-block;
+	text-decoration: none;
+	border: 1px solid rgba(0,0,0,0.1);
+	background: #999;
+	box-shadow: none;
+	color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	font-size: 1.6rem;
+	line-height: 1;
+	padding: 0.6em 0.6em;
+	text-shadow: none;
+}
+#main .more-link:hover {
+	box-shadow: inset 0 0 5em rgba(0,0,0,0.25);
+}
+#main .more-link:active {
+	background: #444;
+}
+
 
 /* =Asides (post format)
 ----------------------------------------------- */
@@ -2006,6 +1960,18 @@ article.comment {
 /* Portfolio */
 .project-media {
 	margin-bottom: 20px;
+}
+.project-meta {
+	margin-top: 50px;
+}
+.project-meta dl {
+	font-size: 14px;
+}
+.project-meta dt {
+	margin: 0;
+}
+.project-meta dd {
+	margin: 0 0 1em;
 }
 
 
