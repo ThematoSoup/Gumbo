@@ -40,35 +40,35 @@ if ( ! function_exists( 'thsp_project_meta' ) ) :
  * Display portfolio project meta fields
  */
 function thsp_project_meta( $post ) {
-	if ( get_post_meta( $post->ID, '_steroids_portfolio_project_url', true ) ) :
-		echo '<p><a class="more-link" href="' . get_post_meta( $post->ID, '_steroids_portfolio_project_url', true ) . '">' . __( 'Visit Project', 'gumbo' ) . '</a></p>';
-	endif;
-		
 	echo '<div class="project-meta">';
-	echo '<h3>' . __( 'Project Details', 'gumbo' ) . '</h3>';
-	echo '<dl>';
-	// Show project categories
-	the_terms( $post->ID, 'steroids_project_categories', '<dt>' . __( 'Project Category', 'gumbo' ) . '</dt><dd>', ', ', '</dd>' );
-
-	// Show client name and URL
-	if ( get_post_meta( $post->ID, '_steroids_portfolio_client_name', true ) || get_post_meta( $post->ID, '_steroids_portfolio_client_url', true ) ) :
-		echo '<dt>' . __( 'Client', 'gumbo' ) . '</dt>';
-		echo '<dd>';
-		if ( get_post_meta( $post->ID, '_steroids_portfolio_client_name', true ) && get_post_meta( $post->ID, '_steroids_portfolio_client_url', true ) ) :
-			echo '<a href="' . get_post_meta( $post->ID, '_steroids_portfolio_client_url', true ) . '">' . get_post_meta( $post->ID, '_steroids_portfolio_client_name', true ) . '</a>';
-		elseif ( get_post_meta( $post->ID, '_steroids_portfolio_client_name', true ) ) :
-			echo get_post_meta( $post->ID, '_steroids_portfolio_client_name', true );
-		else :
-			echo get_post_meta( $post->ID, '_steroids_portfolio_client_url', true );
-		endif;
-	endif;
+		echo '<h3>' . __( 'Project Details', 'gumbo' ) . '</h3>';
+		echo '<dl>';
+		// Show project categories
+		the_terms( $post->ID, 'steroids_project_categories', '<dt>' . __( 'Project Category', 'gumbo' ) . '</dt><dd>', ', ', '</dd>' );
 	
-	// Show project date
-	if ( get_post_meta( $post->ID, '_steroids_portfolio_project_date', true ) ) :
-		echo '<dt>' . __( 'Date', 'gumbo' ) . '</dt>';
-		echo '<dd>' . date( get_option( 'date_format' ), get_post_meta( $post->ID, '_steroids_portfolio_project_date', true ) ) . '</dd>';
-	endif;
-	echo '</dl>';
+		// Show client name and URL
+		if ( get_post_meta( $post->ID, '_steroids_portfolio_client_name', true ) || get_post_meta( $post->ID, '_steroids_portfolio_client_url', true ) ) :
+			echo '<dt>' . __( 'Client', 'gumbo' ) . '</dt>';
+			echo '<dd>';
+			if ( get_post_meta( $post->ID, '_steroids_portfolio_client_name', true ) && get_post_meta( $post->ID, '_steroids_portfolio_client_url', true ) ) :
+				echo '<a href="' . get_post_meta( $post->ID, '_steroids_portfolio_client_url', true ) . '">' . get_post_meta( $post->ID, '_steroids_portfolio_client_name', true ) . '</a>';
+			elseif ( get_post_meta( $post->ID, '_steroids_portfolio_client_name', true ) ) :
+				echo get_post_meta( $post->ID, '_steroids_portfolio_client_name', true );
+			else :
+				echo get_post_meta( $post->ID, '_steroids_portfolio_client_url', true );
+			endif;
+		endif;
+		
+		// Show project date
+		if ( get_post_meta( $post->ID, '_steroids_portfolio_project_date', true ) ) :
+			echo '<dt>' . __( 'Date', 'gumbo' ) . '</dt>';
+			echo '<dd>' . date( get_option( 'date_format' ), get_post_meta( $post->ID, '_steroids_portfolio_project_date', true ) ) . '</dd>';
+		endif;
+		echo '</dl>';
+
+		if ( get_post_meta( $post->ID, '_steroids_portfolio_project_url', true ) ) :
+			echo '<p><a class="more-link" href="' . get_post_meta( $post->ID, '_steroids_portfolio_project_url', true ) . '">' . __( 'Visit Project', 'gumbo' ) . '</a></p>';
+		endif;
 	echo '</div><!-- .project-meta -->';
 }
 endif;
@@ -93,20 +93,16 @@ function thsp_steroids_metaboxes( $meta_boxes ) {
 		'std'		=> 'layout-a',
 		'options'	=> array(
 			array(
-				'name'	=> 'Layout A',
+				'name'	=> 'Layout A (Media, Content, Meta)',
 				'value'	=> 'layout-a'
 			),
 			array(
-				'name'	=> 'Layout B',
+				'name'	=> 'Layout B (Left: Media, Meta / Right: Content',
 				'value'	=> 'layout-b'
 			),
 			array(
-				'name'	=> 'Layout C',
+				'name'	=> 'Layout C (Media, Left: Content / Right: Meta)',
 				'value'	=> 'layout-c'
-			),
-			array(
-				'name'	=> 'Layout D',
-				'value'	=> 'layout-d'
 			),
 		)
 	);
