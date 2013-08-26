@@ -1994,6 +1994,24 @@ article.comment {
 	margin-top: 0;
 }
 
+/* FAQ */
+.steroids-faqs dt {
+	font-size: 18px;
+	font-size: 1.8rem;
+	padding: 0.5em 0;
+}
+.steroids-faqs dd {
+	display: none;
+	padding: 0.5em 0 1em;
+	margin: 0;
+}
+.steroids-faqs dd > :last-child {
+	margin-bottom: 0;
+}
+.steroids-faqs.expanded dd {
+	display: block;
+}
+
 
 /* =Media Queries
 ----------------------------------------------- */
