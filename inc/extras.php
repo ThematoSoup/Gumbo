@@ -46,7 +46,7 @@ function thsp_body_classes( $classes ) {
 	// Get theme options values
 	$thsp_theme_options = thsp_cbp_get_options_values();
 
-	if ( is_active_sidebar( 'sidebar-1' ) && ( is_singular( 'post' ) || is_page() || is_archive() || is_404() || is_attachment() ) ) :
+	if ( is_active_sidebar( 'sidebar-1' ) ) :
 		$classes[] = 'sidebar';
 
 		$thsp_body_classes = array();

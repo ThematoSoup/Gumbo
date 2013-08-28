@@ -47,7 +47,45 @@ get_header(); ?>
 					</div><!-- .entry-content -->
 					<?php tha_entry_bottom(); ?>
 					
-					<?php thsp_project_meta( $post ); // Defined in /inc/steroids.php ?>
+					<div class="project-meta">
+						<h3><?php _e( 'Project Details', 'gumbo' ); ?></h3>
+						<dl>
+						<?php
+						// Show portfolio taxonomy terms 
+						the_terms( $post->ID, 'steroids_project_categories', '<dt>' . __( 'Project Category', 'gumbo' ) . '</dt><dd>', ', ', '</dd>' );
+						?>
+					
+						<?php
+						// Show client name and URL
+						if ( get_post_meta( $post->ID, '_steroids_portfolio_client_name', true ) || get_post_meta( $post->ID, '_steroids_portfolio_client_url', true ) ) :
+							echo '<dt>' . __( 'Client', 'gumbo' ) . '</dt>';
+							echo '<dd>';
+							if ( get_post_meta( $post->ID, '_steroids_portfolio_client_name', true ) && get_post_meta( $post->ID, '_steroids_portfolio_client_url', true ) ) :
+								echo '<a href="' . get_post_meta( $post->ID, '_steroids_portfolio_client_url', true ) . '">' . get_post_meta( $post->ID, '_steroids_portfolio_client_name', true ) . '</a>';
+							elseif ( get_post_meta( $post->ID, '_steroids_portfolio_client_name', true ) ) :
+								echo get_post_meta( $post->ID, '_steroids_portfolio_client_name', true );
+							else :
+								echo get_post_meta( $post->ID, '_steroids_portfolio_client_url', true );
+							endif;
+						endif;
+						?>
+						
+						<?php
+						// Show project date
+						if ( get_post_meta( $post->ID, '_steroids_portfolio_project_date', true ) ) :
+							echo '<dt>' . __( 'Date', 'gumbo' ) . '</dt>';
+							echo '<dd>' . date( get_option( 'date_format' ), get_post_meta( $post->ID, '_steroids_portfolio_project_date', true ) ) . '</dd>';
+						endif;
+						?>
+						</dl>
+					
+						<?php
+						// Show Project URL button
+						if ( get_post_meta( $post->ID, '_steroids_portfolio_project_url', true ) ) :
+							echo '<p><a class="more-link" href="' . get_post_meta( $post->ID, '_steroids_portfolio_project_url', true ) . '">' . __( 'Visit Project', 'gumbo' ) . '</a></p>';
+						endif;
+						?>
+					</div><!-- .project-meta -->
 				</article><!-- #post-## -->
 				<?php tha_entry_after(); ?>
 	

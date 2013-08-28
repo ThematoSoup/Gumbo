@@ -771,7 +771,9 @@ body.body-font-weight-300,
 .page-template-page-templatestemplate-masonry-php #primary,
 .page-template-page-templatestemplate-masonry-php #content,
 .page-template-page-templatestemplate-widgetized-php #primary,
-.page-template-page-templatestemplate-widgetized-php #content {
+.page-template-page-templatestemplate-widgetized-php #content,
+.page-template-page-templatestemplate-full-width-php #primary,
+.page-template-page-templatestemplate-full-width-php #content {
 	margin: 0;
 	width: auto;
 	float: none;
@@ -918,7 +920,7 @@ body.body-font-weight-300,
 	background: #303030;
 }
 .navigation-main .sub-menu {
-	box-shadow: 3px 3px 0 rgba(0,0,0,0.1);	
+	box-shadow: 4px 4px 0 rgba(0,0,0,0.15);	
 }
 .navigation-main .sub-menu li {
 	display: block;
@@ -1333,6 +1335,7 @@ object {
 	margin-top: 0;
 }
 @media screen and (min-width: 1200px) {
+	/*
 	.single [class*="navigation"] .previous,
 	.single [class*="navigation"] .next {
 		position: fixed;
@@ -1395,6 +1398,7 @@ object {
 	.single [class*="navigation"] .next a:hover .trigger {
 		background-position: right bottom;
 	}
+	*/
 }
 
 .navigation-paging {
