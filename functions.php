@@ -348,23 +348,32 @@ function thsp_scripts() {
 
 		// Enqueue the font
 		wp_enqueue_style(
-			'gumbo_fonts',
+			'gumbo-fonts',
 			$fonts_url
 		);
 	endif;
 	
-	wp_enqueue_style( 'gumbo-style', get_stylesheet_uri() );
+	// Add Genericons font, used in the main stylesheet.
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/fonts/genericons.css', array(), '2.09' );
+
+	// Enqueue main stylesheet
+	wp_enqueue_style( 'gumbo', get_stylesheet_uri() );
+	
 	wp_enqueue_script( 'gumbo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'gumbo-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) :
 		wp_enqueue_script( 'comment-reply' );
 	endif;
+	
 	if ( is_singular() && wp_attachment_is_image() ) :
 		wp_enqueue_script( 'gumbo-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	endif;
+	
 	if ( is_page_template( 'page-templates/template-masonry.php' ) ) :
 		wp_enqueue_script( 'gumbo-masonry', get_template_directory_uri() . '/js/masonry.pkgd.min.js', array( 'jquery' ), '3.1.0' );
 	endif; 
+	
 	wp_enqueue_script( 'gumbo', get_template_directory_uri() . '/js/gumbo.js', array( 'jquery' ), '1.0.0' );
 }
 add_action( 'wp_enqueue_scripts', 'thsp_scripts' );
