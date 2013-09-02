@@ -718,25 +718,7 @@ body.body-font-weight-300,
 }
 
 /* Genericons */
-.genericon:before,
-.menu-toggle:after,
-.featured-post:before,
-.date a:before,
-.entry-meta .author a:before,
-.format-audio .entry-content:before,
-.comments-link a:before,
-.tags-links a:first-child:before,
-.categories-links a:first-child:before,
-.edit-link a:before,
-.attachment .entry-title:before,
-.attachment-meta:before,
-.attachment-meta a:before,
-.comment-awaiting-moderation:before,
-.comment-reply-link:before,
-.comment-reply-login:before,
-.comment-reply-title small a:before,
-.bypostauthor > .comment-body .fn:before,
-.error404 .page-title:before {
+#pull-out-trigger:before {
 	-webkit-font-smoothing: antialiased;
 	display: inline-block;
 	font: normal 16px/1 Genericons;
@@ -1900,10 +1882,6 @@ article.comment {
 	content: '\f431';
 	font-size: 1.25em;
 	line-height: 0.8;
-	-webkit-font-smoothing: antialiased;
-	display: inline-block;
-	font-family: Genericons;
-	vertical-align: text-bottom;
 }
 #pull-out-trigger.open {
 	background-position: top right;

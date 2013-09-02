@@ -20,6 +20,39 @@ add_action( 'widgets_init', 'thsp_steroids_widgets_init' );
 
 
 /**
+ * Hook into Steroids plugin to show theme's Portfolio Sidebar
+ */
+function thsp_steroids_portfolio_sidebar() {
+	if ( is_active_sidebar( 'steroids-portfolio-sidebar' ) ) :
+		tha_sidebars_before(); ?>
+		<div id="secondary" class="widget-area" role="complementary">
+			<?php
+			tha_sidebar_top();
+			dynamic_sidebar( 'steroids-portfolio-sidebar' );
+			tha_sidebar_bottom();
+			?>
+		</div>
+		<?php tha_sidebars_after();
+	endif;
+}
+add_action( 'steroids_portfolio_sidebar', 'thsp_steroids_portfolio_sidebar' );
+
+
+/**
+ * Hook into post_class filter to add Portfolio project layout class
+ */
+function thsp_steroids_portfolio_project_layout( $classes ) {
+	global $post;
+	if ( is_singular( 'steroids_portfolio' ) && get_post_meta( $post->ID, '_thsp_project_layout', true ) ) :
+		$classes[] = get_post_meta( $post->ID, '_thsp_project_layout', true );	
+	endif;
+
+	return $classes;
+}
+add_filter( 'post_class', 'thsp_steroids_portfolio_project_layout' );
+
+
+/**
  * Adjusts content_width value for post types registered by Steroids plugin
  *
  * @since Gumbo 1.0
@@ -45,7 +78,13 @@ add_action( 'template_redirect', 'thsp_steroids_content_width' );
 function thsp_steroids_metaboxes( $meta_boxes ) {
 	$prefix = '_thsp_';
 
-	// Add layout fields to steroids_portfolio_metabox
+	// Add layout title to steroids_portfolio_metabox
+	$current_fields = $meta_boxes['steroids_portfolio']['fields'][] = array(
+		'name' => 'Project Layout',
+		'id'   => $prefix . 'project_layout_title',
+		'type' => 'title',
+	);
+	// Add layout field to steroids_portfolio_metabox
 	$current_fields = $meta_boxes['steroids_portfolio']['fields'][] = array(
 		'name'		=> 'Project Layout',
 		'desc'		=> '',
@@ -70,4 +109,4 @@ function thsp_steroids_metaboxes( $meta_boxes ) {
 	
 	return $meta_boxes;
 }
-add_filter( 'cmb_meta_boxes', 'thsp_steroids_metaboxes' );
+add_filter( 'cmb_meta_boxes', 'thsp_steroids_metaboxes', 100 );

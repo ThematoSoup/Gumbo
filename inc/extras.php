@@ -46,7 +46,12 @@ function thsp_body_classes( $classes ) {
 	// Get theme options values
 	$thsp_theme_options = thsp_cbp_get_options_values();
 
-	if ( is_active_sidebar( 'sidebar-1' ) ) :
+	// Check if portfolio needs sidebar
+	if ( is_singular( 'steroids_portfolio' ) ) :
+		if ( is_active_sidebar( 'steroids-portfolio-sidebar' ) ) :
+			$classes[] = 'sidebar';
+		endif;
+	elseif ( is_active_sidebar( 'sidebar-1' ) ) : // Check if Primary Sidebar is active for all other pages
 		$classes[] = 'sidebar';
 
 		$thsp_body_classes = array();
