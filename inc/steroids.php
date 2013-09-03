@@ -80,9 +80,10 @@ function thsp_steroids_metaboxes( $meta_boxes ) {
 
 	// Add layout title to steroids_portfolio_metabox
 	$current_fields = $meta_boxes['steroids_portfolio']['fields'][] = array(
-		'name' => 'Project Layout',
-		'id'   => $prefix . 'project_layout_title',
-		'type' => 'title',
+		'name'		=> 'Project Layout (Gumbo Theme)',
+		'desc'		=> 'This option is added by the theme',
+		'id'		=> $prefix . 'project_layout_title',
+		'type'		=> 'title',
 	);
 	// Add layout field to steroids_portfolio_metabox
 	$current_fields = $meta_boxes['steroids_portfolio']['fields'][] = array(
