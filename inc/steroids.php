@@ -87,21 +87,21 @@ function thsp_steroids_metaboxes( $meta_boxes ) {
 	// Add layout field to steroids_portfolio_metabox
 	$current_fields = $meta_boxes['steroids_portfolio']['fields'][] = array(
 		'name'		=> 'Project Layout',
-		'desc'		=> '',
+		'desc'		=> 'You can select any of these layouts <img src="http://placehold.it/200/200" />',
 		'id'		=> $prefix . 'project_layout',
 		'type'		=> 'radio',
 		'std'		=> 'layout-a',
 		'options'	=> array(
 			array(
-				'name'	=> 'Layout A (Media, Content, Meta)',
+				'name'	=> 'Layout A',
 				'value'	=> 'layout-a'
 			),
 			array(
-				'name'	=> 'Layout B (Left: Media, Meta / Right: Content',
+				'name'	=> 'Layout B',
 				'value'	=> 'layout-b'
 			),
 			array(
-				'name'	=> 'Layout C (Media, Left: Content / Right: Meta)',
+				'name'	=> 'Layout C',
 				'value'	=> 'layout-c'
 			),
 		)

@@ -1980,41 +1980,27 @@ article.comment {
 /* =Steroids plugin
 ----------------------------------------------- */
 
-/* Portfolio */
-.project-media,
-.portfolio-project .entry-content {
-	margin-bottom: 30px;
-}
-.project-meta dl {
-	font-size: 14px;
-	margin-bottom: 2em;
-}
-.project-meta dt {
-	margin: 0;
-}
-.project-meta dd {
-	margin: 0 0 1em;
-}
-.portfolio-project.layout-b {
-	padding-right: 240px;
-	position: relative;
+/* Portfolio project layouts */
+.portfolio-project.layout-b .project-content {
+	float: left;
+	width: 72%;
 }
 .portfolio-project.layout-b .project-meta {
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 200px;
+	float: right;
+	width: 24%;
+}
+.portfolio-project.layout-b .project-testimonials {
+	clear: both;
 }
 .portfolio-project.layout-c .entry-content {
-	float: left;
-	padding-right: 30px;
-	width: 66.666%;
+	position: relative;
+	padding-right: 28%;
 }
 .portfolio-project.layout-c .project-meta {
-	float: right;
-	width: 33.333%;
-	padding-left: 30px;
-	margin-top: 0;
+	position: absolute;
+	width: 24%;
+	top: 0;
+	right: 0;
 }
 
 /* FAQ */
