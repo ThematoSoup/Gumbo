@@ -917,11 +917,12 @@ body.body-font-weight-300,
 	font-size: 14px;
 	font-size: 1.4rem;
 }
-.navigation-main .menu > li {
+.navigation-main .menu li {
 	display: inline-block;
 	position: relative;
+	font-weight: bold;
 }
-	.centered .navigation-main .menu > li {
+	.centered .navigation-main .menu li {
 		margin: 0 0.5em;
 		text-align: left;
 	}
@@ -934,6 +935,7 @@ body.body-font-weight-300,
 .navigation-main .sub-menu li {
 	display: block;
 	position: relative;
+	font-weight: normal;
 }
 .navigation-main .sub-menu li:last-child {
 	border-bottom: none;

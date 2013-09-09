@@ -81,7 +81,7 @@ function thsp_body_classes( $classes ) {
 	}
 
 	// Get color scheme class and add them to body_class array
-	$thsp_body_classes[] = 'background-' . $thsp_theme_options['page_background'];
+	$thsp_body_classes[] = 'scheme-' . $thsp_theme_options['page_background'];
 
 	// Typography classes
 	$thsp_body_classes[] = 'body-font-' . $thsp_theme_options['body_font'];

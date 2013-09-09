@@ -96,7 +96,7 @@ function thsp_theme_options_array() {
 			'fields' => array(
 				'page_background' => array(
 					'setting_args' => array(
-						'default' => 'light',
+						'default' => 'white',
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',
@@ -105,6 +105,9 @@ function thsp_theme_options_array() {
 						'label' => __( 'Page background', 'gumbo' ),
 						'type' => 'select', // Select control
 						'choices' => array(
+							'white' => array(
+								'label' => 'White',
+							),
 							'light' => array(
 								'label' => 'Light',
 							),
@@ -117,7 +120,7 @@ function thsp_theme_options_array() {
 				),
 				'primary_color' => array(
 					'setting_args' => array(
-						'default' => '#1e559b',
+						'default' => '',
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',
@@ -130,7 +133,7 @@ function thsp_theme_options_array() {
 				),
 				'header_background' => array(
 					'setting_args' => array(
-						'default' => '#ffffff',
+						'default' => '',
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',
