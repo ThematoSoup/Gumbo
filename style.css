@@ -656,17 +656,19 @@ body.scheme-light {
 .scheme-light .page-numbers.current,
 .scheme-light .page-links a:hover span,
 .scheme-light #main .more-link {
-	background: #ba4a3f;
+	background: #efb700;
 }
-.scheme-light #content a,
-.scheme-light #sub-header a,
-.scheme-light #above-footer a,
-.scheme-light #secondary a {
+.scheme-light #main a {
 	color: #ba4a3f;
 }
 .scheme-light #sub-header,
 .scheme-light #above-footer {
 	background: #e2e1d9;
+}
+.scheme-light #above-footer a,
+.scheme-light #sub-header a {
+	color: #49473f;
+	text-decoration: underline;
 }
 .scheme-light #main .sticky {
 	border: none;
