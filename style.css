@@ -33,7 +33,7 @@ and Blueprint http://www.blueprintcss.org/
 		- Alignment
 		- Screen reader text
 		- Clearing
-	* Dark color scheme
+	* Color schemes
 	* Typography
 	* Layout
 	* Menus
@@ -542,47 +542,138 @@ a:active {
 }
 
 
-/* =Dark color scheme
+/* =Color Schemes
 ----------------------------------------------- */
-body.background-dark {
-	background-color: #242424;
-	color: #e9e9e9;
+#masthead,
+#commentform #submit,
+.comment-reply-link,
+.wpcf7 input[type="submit"],
+.protected-post-form input[type="submit"],
+.page-numbers.current,
+.page-links a:hover span,
+#main .more-link {
+	background: #1e8ca3;
 }
-.background-dark a:visited {
-	color: #888;
+#colophon {
+	background: #303030;
 }
-.background-dark a:hover,
-.background-dark a:focus,
-.background-dark a:active {
+#colophon,
+#colophon a {
 	color: #fff;
 }
-.background-dark h1,
-.background-dark h2,
-.background-dark h3,
-.background-dark h4,
-.background-dark h5,
-.background-dark h6 {
+#sub-header,
+#above-footer {
+	background: #f9f9f9;
+}
+#content a,
+#sub-header a,
+#above-footer a,
+#secondary a {
+	color: #1e8ca3;
+}
+#content a:visited {
+	color: #75a0a9;
+}
+#content a:hover {
+	color: #105466;
+}
+#content a:active {
+	color: #303030;
+}
+/* Dark scheme */
+body.scheme-dark {
+	background: #222;
+	color: #ddd;
+}
+.scheme-dark #masthead ,
+.scheme-dark #commentform #submit,
+.scheme-dark .comment-reply-link,
+.scheme-dark .wpcf7 input[type="submit"],
+.scheme-dark .protected-post-form input[type="submit"],
+.scheme-dark .page-numbers.current,
+.scheme-dark .page-links a:hover span,
+.scheme-dark #main .more-link {
+	background: #f9f567;
+	color: #303030;
+}
+.scheme-dark #content a,
+.scheme-dark #sub-header a,
+.scheme-dark #above-footer a,
+.scheme-dark #secondary a {
+	color: #f9f567;
+}
+.scheme-dark h1,
+.scheme-dark h2,
+.scheme-dark h3,
+.scheme-dark h4,
+.scheme-dark h5,
+.scheme-dark h6,
+.scheme-dark #main .entry-title a,
+.scheme-dark #main a .entry-title,
+.scheme-dark #main .entry-title a:hover,
+.scheme-dark #main a:hover .entry-title {
 	color: #f3f3f3;
 }
-.background-dark #sub-header,
-.background-dark .site-footer {
-	background: #333;
-	border-color: #222;
+.scheme-dark #masthead,
+.scheme-dark #colophon {
+	background: #222;
 }
-.background-dark .navigation-main li:hover,
-.background-dark .navigation-main ul ul {
-	color: #303030;
-	background: #fff;
+.scheme-dark #sub-header,
+.scheme-dark #above-footer {
+	background: #262626;
 }
-.background-dark .navigation-main a {
-	color: #eee;
+.scheme-dark #masthead,
+.scheme-dark #sub-header,
+.scheme-dark #main,
+.scheme-dark #above-footer {
+	border-bottom: 1px solid #303030;
 }
-.background-dark .navigation-main .sub-menu a,
-.background-dark .navigation-main li:hover a {
-	color: #303030;
+.scheme-dark #main .sticky {
+	background: #262626;
+	border: 1px solid #303030;
 }
-.background-dark .navigation-main a:hover {
-	color: #fff !important;
+.scheme-dark .widget ul li {
+	border-color: #303030;
+}
+.scheme-dark.blog .hentry,
+.scheme-dark.archive .hentry {
+	border-color: #303030;
+}
+/* Light scheme */
+body.scheme-light {
+	background: #eeede8;
+}
+#sub-header,
+#above-footer,
+#main {
+	text-shadow: 1px 1px rgba(255,255,255,0.75);	
+}
+.scheme-light #masthead ,
+.scheme-light #commentform #submit,
+.scheme-light .comment-reply-link,
+.scheme-light .wpcf7 input[type="submit"],
+.scheme-light .protected-post-form input[type="submit"],
+.scheme-light .page-numbers.current,
+.scheme-light .page-links a:hover span,
+.scheme-light #main .more-link {
+	background: #ba4a3f;
+}
+.scheme-light #content a,
+.scheme-light #sub-header a,
+.scheme-light #above-footer a,
+.scheme-light #secondary a {
+	color: #ba4a3f;
+}
+.scheme-light #sub-header,
+.scheme-light #above-footer {
+	background: #e2e1d9;
+}
+.scheme-light #main .sticky {
+	border: none;
+}
+.scheme-light.blog .hentry,
+.scheme-light.archive .hentry {
+	border-color: rgba(0,0,0,.025);
 }
 
 
@@ -878,18 +969,7 @@ body.body-font-weight-300,
 .site-footer {
 	clear: both;
 	width: 100%;
-	background: #303030;
 	padding: 20px 0;
-}
-.site-footer,
-.site-footer a {
-	color: #fff;
-}
-
-/* Sub header and above footer widget areas */
-#sub-header,
-#above-footer {
-	background: #fcfcfc;
 }
 
 
@@ -1105,8 +1185,8 @@ body.body-font-weight-300,
 	font-size: 14px;
 	font-size: 1.4rem;
 	color: #aaa;
-	margin-bottom: 10px;
-	margin-bottom: 1rem;
+	margin-bottom: 20px;
+	margin-bottom: 2rem;
 	line-height: 1.5;
 }
 .entry-meta a,
@@ -1567,15 +1647,12 @@ article.comment {
 .wpcf7 textarea:focus,
 .protected-post-form input[type="password"]:focus {
 	outline: none;
-	border-color: #bbb;
-	background: #fdfdfd;
 }
 #commentform #submit,
 .wpcf7 input[type="submit"],
 .protected-post-form input[type="submit"] {
 	border: 1px solid rgba(0,0,0,0.1);
 	border-radius: 0;
-	background: #999;
 	box-shadow: none;
 	color: #fff;
 	cursor: pointer;

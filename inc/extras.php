@@ -224,8 +224,10 @@ function thsp_internal_css() {
 	$thsp_theme_options			= thsp_cbp_get_options_values();
 	$thsp_primary_color			= $thsp_theme_options['primary_color'];
 	$thsp_header_background		= $thsp_theme_options['header_background'];
-	?>
+	
+	if ( ( isset( $thsp_primary_color ) && '' != $thsp_primary_color ) || isset( $thsp_header_background ) && '' != $thsp_header_background ) : ?>
 	<style type="text/css">
+	<?php if ( isset( $thsp_primary_color ) && '' != $thsp_primary_color ) : ?>
 		#content a {
 			color: <?php echo $thsp_primary_color; ?>
 		}
@@ -243,15 +245,14 @@ function thsp_internal_css() {
 		#main .more-link {
 			background: <?php echo $thsp_primary_color; ?>;
 		}
-		<?php
-		if ( '#ffffff' != $thsp_header_background ) : ?>
+	<?php endif; ?>
+	<?php if ( isset( $thsp_header_background ) && '' != $thsp_header_background ) : ?>
 		#masthead {
 			background-color: <?php echo $thsp_header_background; ?>;
 		}
-		<?php endif;
-		?>
+	<?php endif; ?>
 	</style>
-	<?php
+	<?php endif;
 }
 add_action( 'wp_head', 'thsp_internal_css' );
 
