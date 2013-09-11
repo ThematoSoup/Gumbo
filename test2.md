@@ -1,4 +1,0 @@
-Gumbo
-=====
-
-Responsive WordPress theme
