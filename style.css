@@ -140,28 +140,10 @@ select,
 textarea {
 	color: #303030;
 	font-family: sans-serif;
-	font-size: 16px;
-	font-size: 1.6rem;
 	font-weight: normal;
 	line-height: 1.6;
 	-webkit-font-smoothing: antialiased;
 }
-	body.font-size-small,
-	.font-size-small button,
-	.font-size-small input,
-	.font-size-small select,
-	.font-size-small textarea {
-		font-size: 14px;
-		font-size: 1.4rem;
-	}
-	body.font-size-large,
-	.font-size-large button,
-	.font-size-large input,
-	.font-size-large select,
-	.font-size-large textarea {
-		font-size: 18px;
-		font-size: 1.8rem;
-	}
 
 /* Headings */
 h1,
@@ -186,83 +168,6 @@ h5:first-child,
 h6:first-child {
 	margin-top: 0;
 }
-h1 {
-	font-size: 36px;
-	font-size: 3.6rem;
-}
-h2 {
-	font-size: 28px;
-	font-size: 2.8rem;
-}
-h3 {
-	font-size: 24px;
-	font-size: 2.4rem;
-}
-h4,
-.widget-title {
-	font-size: 20px;
-	font-size: 2rem;
-}
-h5 {
-	font-size: 16px;
-	font-size: 2rem;
-}
-h6 {
-	font-size: 14px;
-	font-size: 1.4rem;
-}
-	/* Small fonts */
-	.font-size-small h1 {
-		font-size: 32px;
-		font-size: 3.2rem;
-	}
-	.font-size-small h2 {
-		font-size: 26px;
-		font-size: 2.6rem;
-	}
-	.font-size-small h3 {
-		font-size: 22px;
-		font-size: 2.2rem;
-	}
-	.font-size-small h4,
-	.font-size-small .widget-title {
-		font-size: 18px;
-		font-size: 1.8rem;
-	}
-	.font-size-small h5 {
-		font-size: 14px;
-		font-size: 1.4rem;
-	}
-	.font-size-small h6 {
-		font-size: 12px;
-		font-size: 1.2rem;
-	}
-	/* Large fonts */
-	.font-size-large h1 {
-		font-size: 40px;
-		font-size: 4.0rem;
-	}
-	.font-size-large h2 {
-		font-size: 32px;
-		font-size: 3.2rem;
-	}
-	.font-size-large h3 {
-		font-size: 26px;
-		font-size: 2.6rem;
-	}
-	.font-size-large h4,
-	.font-size-large .widget-title {
-		font-size: 22px;
-		font-size: 2.2rem;
-	}
-	.font-size-large h5 {
-		font-size: 18px;
-		font-size: 1.8rem;
-	}
-	.font-size-large h6 {
-		font-size: 14px;
-		font-size: 1.4rem;
-	}
 
 hr {
 	background-color: #ccc;
@@ -317,7 +222,6 @@ pre {
 	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 15px;
-	font-size: 1.5rem;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
 	padding: 1.6em;
@@ -642,9 +546,8 @@ body.scheme-dark {
 /* Light scheme */
 body.scheme-light {
 	background: #eeede8;
+	color: #383735;
 }
-#sub-header,
-#above-footer,
 #main {
 	text-shadow: 1px 1px rgba(255,255,255,0.75);	
 }
@@ -656,7 +559,9 @@ body.scheme-light {
 .scheme-light .page-numbers.current,
 .scheme-light .page-links a:hover span,
 .scheme-light #main .more-link {
-	background: #efb700;
+	background: #dfa700;
+	border: none;
+	color: #fff;
 }
 .scheme-light #main a {
 	color: #ba4a3f;
@@ -677,6 +582,38 @@ body.scheme-light {
 .scheme-light.archive .hentry {
 	border-color: rgba(0,0,0,.025);
 }
+.scheme-light #content a,
+.scheme-light #sub-header a,
+.scheme-light #above-footer a,
+.scheme-light #secondary a {
+	color: #bf8f00;
+}
+.scheme-light #content a:visited {
+	color: #b6a05f;
+}
+.scheme-light #content a:hover {
+	color: #5c5542;
+}
+.scheme-light #content a:active {
+	color: #252422;
+}
+.scheme-light h1,
+.scheme-light h2,
+.scheme-light h3,
+.scheme-light h4,
+.scheme-light h5,
+.scheme-light h6,
+.scheme-light #main .entry-title a,
+.scheme-light #main a .entry-title,
+.scheme-light #main .entry-title a:hover,
+.scheme-light #main a:hover .entry-title {
+	color: #252422;
+}
+.scheme-light .entry-meta,
+.scheme-light .entry-aside {
+	color: #696454;
+}
+
 
 
 /* =Typography
@@ -819,6 +756,110 @@ body.body-font-weight-300,
 }
 
 
+/* Font Sizes */
+body,
+button,
+input,
+select,
+textarea {
+	font-size: 16px;
+}
+body.font-size-small,
+.font-size-small button,
+.font-size-small input,
+.font-size-small select,
+.font-size-small textarea {
+	font-size: 14px;
+}
+body.font-size-large,
+.font-size-large button,
+.font-size-large input,
+.font-size-large select,
+.font-size-large textarea {
+	font-size: 18px;
+}
+h1 {
+	font-size: 36px;
+}
+h2 {
+	font-size: 28px;
+}
+h3 {
+	font-size: 24px;
+}
+h4,
+.widget-title {
+	font-size: 20px;
+}
+h5 {
+	font-size: 16px;
+}
+h6 {
+	font-size: 14px;
+}
+/* Small fonts */
+.font-size-small h1 {
+	font-size: 32px;
+}
+.font-size-small h2 {
+	font-size: 26px;
+}
+.font-size-small h3 {
+	font-size: 22px;
+}
+.font-size-small h4,
+.font-size-small .widget-title {
+	font-size: 18px;
+}
+.font-size-small h5 {
+	font-size: 14px;
+}
+.font-size-small h6 {
+	font-size: 12px;
+}
+/* Large fonts */
+.font-size-large h1 {
+	font-size: 40px;
+}
+.font-size-large h2 {
+	font-size: 32px;
+}
+.font-size-large h3 {
+	font-size: 26px;
+}
+.font-size-large h4,
+.font-size-large .widget-title {
+	font-size: 22px;
+}
+.font-size-large h5 {
+	font-size: 18px;
+}
+.font-size-large h6 {
+	font-size: 16px;
+}
+
+#masthead .site-title {
+	font-size: 32px;
+}
+#masthead .site-description {
+	font-size: 16px;
+}
+.body-font-size-small {
+	font-size: 14px;
+}
+.font-size-small #masthead .site-title {
+	font-size: 32px;
+}
+.font-size-small #masthead .site-description {
+	font-size: 14px;
+}
+.font-size-large #masthead .site-title {
+	font-size: 40px;
+}
+.font-size-large #masthead .site-description {
+	font-size: 18px;
+}
+
 
 /* =Layout
 ----------------------------------------------- */
@@ -886,7 +927,6 @@ body.body-font-weight-300,
 }
 .attachment .entry-caption {
 	font-size: 14px;
-	font-size: 1.4rem;
 }
 
 .site-footer {
@@ -917,7 +957,6 @@ body.body-font-weight-300,
 #masthead .site-title {
 	margin: 0 0 0.25em;
 	font-size: 36px;
-	font-size: 3.6rem;
 }
 #masthead .site-title a {
 	color: #2e2e2e;
@@ -925,26 +964,8 @@ body.body-font-weight-300,
 }
 #masthead .site-description {
 	margin: 0;
-	font-size: 16px;
-	font-size: 1.6rem;
 	font-weight: normal;
 }
-	.font-size-small #masthead .site-title {
-		font-size: 32px;
-		font-size: 3.2rem;
-	}
-	.font-size-small #masthead .site-description {
-		font-size: 14px;
-		font-size: 1.4rem;
-	}
-	.font-size-large #masthead .site-title {
-		font-size: 40px;
-		font-size: 4rem;
-	}
-	.font-size-large #masthead .site-description {
-		font-size: 18px;
-		font-size: 1.8rem;
-	}
 #masthead.centered {
 	text-align: center;
 }
@@ -996,8 +1017,6 @@ body.body-font-weight-300,
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
-	font-size: 14px;
-	font-size: 1.4rem;
 }
 .navigation-main .menu li {
 	display: inline-block;
@@ -1087,7 +1106,6 @@ body.body-font-weight-300,
 .navigation-main .menu-item-description {
 	opacity: 0.8;
 	font-size: 12px;
-	font-size: 1.2rem;
 	margin-top: 0.25em;
 }
 /* Small menu */
@@ -1116,19 +1134,16 @@ body.body-font-weight-300,
 
 .hentry {
 	margin: 0 0 30px;
-	margin: 0 0 3rem;
 }
 .blog .hentry,
 .archive .hentry {
 	border-bottom: 1px solid #eee;
 	padding-bottom: 30px;
-	padding-bottom: 3rem;
 }
 #main .sticky {
 	background: #f9f9f9;
 	border-bottom: 3px solid #303030;
 	padding: 30px;
-	padding: 3rem;
 }
 	.background-dark #main .sticky {
 		background: #444;
@@ -1136,7 +1151,6 @@ body.body-font-weight-300,
 	}
 .entry-header {
 	margin-bottom: 15px;
-	margin-bottom: 1.5rem;
 }
 .entry-featured {
 	display: block;
@@ -1175,20 +1189,16 @@ body.body-font-weight-300,
 .entry-aside .widget {
 	margin-bottom: 1.5em;
 	font-size: 14px;
-	font-size: 1.4rem;
 }
 .entry-aside .widget-title {
 	font-size: 16px;
-	font-size: 1.6rem;
 	margin: 0.5em 0;
 }
 .entry-meta,
 .entry-aside {
 	font-size: 14px;
-	font-size: 1.4rem;
 	color: #aaa;
 	margin-bottom: 20px;
-	margin-bottom: 2rem;
 	line-height: 1.5;
 }
 .entry-meta a,
@@ -1208,7 +1218,6 @@ body.body-font-weight-300,
 	color: #fff;
 	cursor: pointer;
 	font-size: 16px;
-	font-size: 1.6rem;
 	line-height: 1;
 	padding: 0.6em 0.6em;
 	text-shadow: none;
@@ -1273,7 +1282,6 @@ body.body-font-weight-300,
 	background: rgba(0,0,0,0.5);
 	color: #fff;
 	font-size: 30px;
-	font-size: 3rem;
 }
 
 
@@ -1312,12 +1320,10 @@ body.body-font-weight-300,
 }
 .gallery-caption {
 	font-size: 12px;
-	font-size: 1.2rem;
 	padding: 4px 8px 0;
 }
 .gallery-columns-2 .gallery-caption {
 	font-size: 14px;
-	font-size: 1.4rem;
 }
 .gallery a,
 .gallery a img {
@@ -1341,7 +1347,6 @@ body.body-font-weight-300,
 /* Tiled Galleries (Jetpack) */
 .site-content .tiled-gallery {
 	margin-bottom: 30px;
-	margin-bottom: 3rem;
 }
 .tiled-gallery .tiled-gallery-caption {
 	background: #222;
@@ -1376,7 +1381,6 @@ object {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	font-size: 14px;
-	font-size: 1.4rem;
 	line-height: 1.2;
 }
 [class*="navigation"] .prev {
@@ -1574,7 +1578,6 @@ article.comment {
 	text-decoration: none;
 	line-height: 1;
 	font-size: 14px;
-	font-size: 1.4rem;
 }
 .comment-reply-link:hover {
 	color: #fff;
@@ -1659,7 +1662,6 @@ article.comment {
 	color: #fff;
 	cursor: pointer;
 	font-size: 16px;
-	font-size: 1.6rem;
 	line-height: 1;
 	padding: 0.75em 1.25em;
 	text-shadow: none;
@@ -1717,17 +1719,14 @@ article.comment {
   clear: none;
   margin-top: 0;
   font-size: 24px;
-  font-size: 2.4rem;
 }
 #authors-list h3 {
   clear: none;
   margin-top: 1em;
   font-size: 16px;
-  font-size: 1.6rem;
 }
 #authors-list .latest-by-author li {
   font-size: 14px;
-  font-size: 1.4rem;
 }
 
 /* Masonry template */
@@ -1740,9 +1739,7 @@ article.comment {
 }
 .masonry-brick .entry-title {
 	font-size: 22px;
-	font-size: 2.2rem;
 	margin-bottom: 10px;
-	margin-bottom: 1rem;
 }
 .masonry-brick .entry-summary,
 .masonry-brick .entry-footer {
@@ -1751,11 +1748,9 @@ article.comment {
 .masonry-brick .entry-thumb img {
 	display: block;
 	margin-bottom: 10px;
-	margin-bottom: 1rem;
 }
 .masonry-brick .entry-summary {
 	margin-bottom: 5px;
-	margin-bottom: 0.5rem;
 }
 
 /* Widgetized Homepage template */
@@ -1849,17 +1844,7 @@ article.comment {
 
 .widget {
 	margin: 0 0 2.5em;
-	font-size: 14px;
-	font-size: 1.4rem;
 }
-	.font-size-small .widget {
-		font-size: 12px;
-		font-size: 1.2rem;
-	}
-	.font-size-large .widget {
-		font-size: 16px;
-		font-size: 1.6rem;
-	}
 .widget:last-child {
 	margin-bottom: 0;
 }
@@ -1938,7 +1923,6 @@ article.comment {
 	background: #303030;
 	display: none;
 	padding: 0 20px;
-	padding: 0 2rem;
 }
 	.admin-bar #pull-out-widget-area {
 		top: 28px;
@@ -2087,7 +2071,6 @@ article.comment {
 /* FAQ */
 .steroids-faqs dt {
 	font-size: 18px;
-	font-size: 1.8rem;
 	padding: 0.5em 0;
 }
 .steroids-faqs dd > :last-child {
