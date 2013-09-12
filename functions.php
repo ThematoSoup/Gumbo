@@ -170,7 +170,7 @@ require_once get_template_directory() . '/inc/custom-meta-boxes.php';
  */
 function thsp_register_custom_background() {
 	$args = array(
-		'default-color' => 'ffffff',
+		'default-color' => '',
 		'default-image' => '',
 	);
 

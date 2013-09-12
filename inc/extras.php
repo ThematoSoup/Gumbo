@@ -81,7 +81,7 @@ function thsp_body_classes( $classes ) {
 	}
 
 	// Get color scheme class and add them to body_class array
-	$thsp_body_classes[] = 'scheme-' . $thsp_theme_options['page_background'];
+	$thsp_body_classes[] = 'scheme-' . $thsp_theme_options['color_scheme'];
 
 	// Typography classes
 	$thsp_body_classes[] = 'body-font-' . $thsp_theme_options['body_font'];
@@ -91,6 +91,12 @@ function thsp_body_classes( $classes ) {
 	
 	// Header layout
 	$thsp_body_classes[] = 'header-' . $thsp_theme_options['main_nav_placement'];
+	
+	// Check header image
+	$header_image = get_header_image();
+	if ( ! empty( $header_image ) ) :
+		$thsp_body_classes[] = 'header-image';
+	endif;
 		
 	$classes = array_merge( $classes, $thsp_body_classes );
 	return $classes;

@@ -94,7 +94,7 @@ function thsp_theme_options_array() {
 		'colors' => array(
 			'existing_section' => true,
 			'fields' => array(
-				'page_background' => array(
+				'color_scheme' => array(
 					'setting_args' => array(
 						'default' => 'white',
 						'type' => 'option',
@@ -102,7 +102,7 @@ function thsp_theme_options_array() {
 						'transport' => 'refresh',
 					), // End setting args			
 					'control_args' => array(
-						'label' => __( 'Page background', 'gumbo' ),
+						'label' => __( 'Color Scheme', 'gumbo' ),
 						'type' => 'select', // Select control
 						'choices' => array(
 							'white' => array(
@@ -126,7 +126,7 @@ function thsp_theme_options_array() {
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
-						'label' => __( 'Primary color', 'gumbo' ),
+						'label' => __( 'Primary Color', 'gumbo' ),
 						'type' => 'color', // Color picker field control
 						'priority' => 3
 					)
@@ -139,7 +139,7 @@ function thsp_theme_options_array() {
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
-						'label' => __( 'Header background color', 'gumbo' ),
+						'label' => __( 'Header Background Color', 'gumbo' ),
 						'type' => 'color', // Color picker field control
 						'priority' => 4
 					)

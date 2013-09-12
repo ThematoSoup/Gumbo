@@ -48,6 +48,7 @@ and Blueprint http://www.blueprintcss.org/
 	* Forms
 	* Widgets
 	* Infinite scroll (Jetpack module)
+	* Theme Variations
 	
 ---------------------------------------------------------------*/
 
@@ -80,7 +81,8 @@ html {
 	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
 	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
-body {
+body,
+#main {
 	background: #fff;
 }
 article,
@@ -139,6 +141,7 @@ input,
 select,
 textarea {
 	color: #303030;
+	font-size: 16px;
 	font-family: sans-serif;
 	font-weight: normal;
 	line-height: 1.6;
@@ -158,6 +161,25 @@ h6 {
 	color: #2e2e2e;
 	font-weight: bold;
 	-webkit-font-smoothing: antialiased;
+}
+h1 {
+	font-size: 36px;
+}
+h2 {
+	font-size: 28px;
+}
+h3 {
+	font-size: 24px;
+}
+h4,
+.widget-title {
+	font-size: 20px;
+}
+h5 {
+	font-size: 16px;
+}
+h6 {
+	font-size: 14px;
 }
 /* No need for top margin if :first-child */
 h1:first-child,
@@ -467,10 +489,11 @@ a:active {
 #colophon a {
 	color: #fff;
 }
-#site-navigation {
+.navigation-main,
+.main-small-navigation {
 	background: #e9e9e9;
 }
-#site-navigation a {
+.navigation-main a {
 	color: #303030;
 }
 #sub-header,
@@ -492,136 +515,6 @@ a:active {
 #content a:active {
 	color: #303030;
 }
-/* Dark scheme */
-body.scheme-dark {
-	background: #222;
-	color: #ddd;
-}
-.scheme-dark #masthead,
-.scheme-dark #commentform #submit,
-.scheme-dark .comment-reply-link,
-.scheme-dark .wpcf7 input[type="submit"],
-.scheme-dark .protected-post-form input[type="submit"],
-.scheme-dark .page-numbers.current,
-.scheme-dark .page-links a:hover span,
-.scheme-dark #main .more-link {
-	background: #f9f567;
-	color: #303030;
-}
-.scheme-dark #content a,
-.scheme-dark #sub-header a,
-.scheme-dark #above-footer a,
-.scheme-dark #secondary a {
-	color: #f9f567;
-}
-.scheme-dark h1,
-.scheme-dark h2,
-.scheme-dark h3,
-.scheme-dark h4,
-.scheme-dark h5,
-.scheme-dark h6,
-.scheme-dark #main .entry-title a,
-.scheme-dark #main a .entry-title,
-.scheme-dark #main .entry-title a:hover,
-.scheme-dark #main a:hover .entry-title {
-	color: #f3f3f3;
-}
-.scheme-dark #masthead,
-.scheme-dark #colophon {
-	background: #222;
-}
-.scheme-dark #sub-header,
-.scheme-dark #above-footer {
-	background: #262626;
-}
-.scheme-dark #masthead,
-.scheme-dark #sub-header,
-.scheme-dark #main,
-.scheme-dark #above-footer {
-	border-bottom: 1px solid #303030;
-}
-.scheme-dark #main .sticky {
-	background: #262626;
-	border: 1px solid #303030;
-}
-.scheme-dark .widget ul li {
-	border-color: #303030;
-}
-.scheme-dark.blog .hentry,
-.scheme-dark.archive .hentry {
-	border-color: #303030;
-}
-/* Light scheme */
-body.scheme-light {
-	background: #eeede8;
-	color: #282725;
-}
-#main {
-	text-shadow: 1px 1px rgba(255,255,255,0.75);	
-}
-.scheme-light #masthead,
-.scheme-light #commentform #submit,
-.scheme-light .comment-reply-link,
-.scheme-light .wpcf7 input[type="submit"],
-.scheme-light .protected-post-form input[type="submit"],
-.scheme-light .page-numbers.current,
-.scheme-light .page-links a:hover span,
-.scheme-light #main .more-link {
-	background: #dfa700;
-	border: none;
-	color: #fff;
-}
-.scheme-light #main a {
-	color: #ba4a3f;
-}
-.scheme-light #sub-header,
-.scheme-light #above-footer {
-	background: #e2e1d9;
-}
-.scheme-light #above-footer a,
-.scheme-light #sub-header a {
-	color: #49473f;
-	text-decoration: underline;
-}
-.scheme-light #main .sticky {
-	border: none;
-}
-.scheme-light.blog .hentry,
-.scheme-light.archive .hentry {
-	border-color: rgba(0,0,0,.025);
-}
-.scheme-light #content a,
-.scheme-light #sub-header a,
-.scheme-light #above-footer a,
-.scheme-light #secondary a {
-	color: #bf8f00;
-}
-.scheme-light #content a:visited {
-	color: #b6a05f;
-}
-.scheme-light #content a:hover {
-	color: #5c5542;
-}
-.scheme-light #content a:active {
-	color: #252422;
-}
-.scheme-light h1,
-.scheme-light h2,
-.scheme-light h3,
-.scheme-light h4,
-.scheme-light h5,
-.scheme-light h6,
-.scheme-light #main .entry-title a,
-.scheme-light #main a .entry-title,
-.scheme-light #main .entry-title a:hover,
-.scheme-light #main a:hover .entry-title {
-	color: #252422;
-}
-.scheme-light .entry-meta,
-.scheme-light .entry-aside {
-	color: #696454;
-}
-
 
 
 /* =Typography
@@ -764,132 +657,25 @@ body.body-font-weight-300,
 }
 
 
-/* Font Sizes */
-body,
-button,
-input,
-select,
-textarea {
-	font-size: 16px;
-}
-h1 {
-	font-size: 36px;
-}
-h2 {
-	font-size: 28px;
-}
-h3 {
-	font-size: 24px;
-}
-h4,
-.widget-title {
-	font-size: 20px;
-}
-h5 {
-	font-size: 16px;
-}
-h6 {
-	font-size: 14px;
-}
-.menu-toggle {
-	font-size: 24px;
-}
-/* Small fonts */
-body.font-size-small,
-.font-size-small button,
-.font-size-small input,
-.font-size-small select,
-.font-size-small textarea {
-	font-size: 14px;
-}
-.font-size-small h1 {
-	font-size: 32px;
-}
-.font-size-small h2 {
-	font-size: 26px;
-}
-.font-size-small h3 {
-	font-size: 22px;
-}
-.font-size-small h4,
-.font-size-small .widget-title {
-	font-size: 18px;
-}
-.font-size-small h5 {
-	font-size: 14px;
-}
-.font-size-small h6 {
-	font-size: 12px;
-}
-.font-size-small .menu-toggle {
-	font-size: 20px;
-}
-/* Large fonts */
-body.font-size-large,
-.font-size-large button,
-.font-size-large input,
-.font-size-large select,
-.font-size-large textarea {
-	font-size: 18px;
-}
-.font-size-large h1 {
-	font-size: 40px;
-}
-.font-size-large h2 {
-	font-size: 32px;
-}
-.font-size-large h3 {
-	font-size: 26px;
-}
-.font-size-large h4,
-.font-size-large .widget-title {
-	font-size: 22px;
-}
-.font-size-large h5 {
-	font-size: 18px;
-}
-.font-size-large h6 {
-	font-size: 16px;
-}
-
-#masthead .site-title {
-	font-size: 32px;
-}
-#masthead .site-description {
-	font-size: 16px;
-}
-.body-font-size-small {
-	font-size: 14px;
-}
-.font-size-small #masthead .site-title {
-	font-size: 32px;
-}
-.font-size-small #masthead .site-description {
-	font-size: 14px;
-}
-.font-size-large #masthead .site-title {
-	font-size: 40px;
-}
-.font-size-large #masthead .site-description {
-	font-size: 18px;
-}
-.font-size-large .menu-toggle {
-	font-size: 28px;
-}
-
-
 /* =Layout
 ----------------------------------------------- */
 
+.custom-background {
+	padding: 0 20px;
+}
+.custom-background #page {
+	max-width: 1040px;
+	margin: 0 auto;
+}
 .inner,
-#site-navigation > ul {
+.navigation-main > ul {
 	max-width: 1040px;
 	margin: 0 auto;
 	padding: 0 20px;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 }
-#site-navigation ul {
+.navigation-main ul {
 	padding: 0;
 }
 #primary,
@@ -897,17 +683,17 @@ body.font-size-large,
 	word-wrap: break-word;
 }
 #main {
-	padding: 60px 0;
+	padding: 40px 0;
 }
 
 /* Layout: Content - Primary Sidebar */
 .sidebar-right .content-area {
 	float: left;
-	margin: 0 -34% 0 0;
+	margin: 0 -36% 0 0;
 	width: 100%;
 }
 .sidebar-right #content {
-	margin: 0 34% 0 0;
+	margin: 0 36% 0 0;
 }
 .sidebar-right #secondary {
 	float: right;
@@ -917,11 +703,11 @@ body.font-size-large,
 /* Layout: Primary Sidebar - Content */
 .sidebar-left .content-area {
 	float: right;
-	margin: 0 0 0 -34%;
+	margin: 0 0 0 -36%;
 	width: 100%;
 }
 .sidebar-left #content {
-	margin: 0 0 0 34%;
+	margin: 0 0 0 36%;
 }
 .sidebar-left #secondary {
 	float: left;
@@ -958,36 +744,23 @@ body.font-size-large,
 #masthead hgroup {
 	padding: 40px 0;
 }
+.header-image #masthead hgroup {
+	padding: 80px 0;
+}
 #masthead .site-title {
-	margin: 0 0 0.25em;
-	font-size: 36px;
+	margin: 0 0 0.1em;
+	font-size: 48px;
 }
 #masthead .site-title a {
 	text-decoration: none;
 }
 #masthead .site-description {
 	margin: 0;
+	font-size: 16px;
+	font-weight: normal;
 }
 #masthead.centered {
 	text-align: center;
-}
-/* Header text and navigation colors */
-#masthead.light-text,
-#masthead.light-text .site-title a,
-#masthead.light-text .site-description,
-#masthead.light-text a {
-	color: #fcfcfc;
-}
-#masthead.light-text .navigation-main li:hover a {
-	background: #fcfcfc;
-	color: #303030;
-}
-#masthead .navigation-main .sub-menu li a:hover {
-	box-shadow: inset 0 0 10em rgba(255,255,255,0.1);
-}
-
-#masthead.light-text .navigation-main .sub-menu li a:hover {
-	box-shadow: inset 0 0 10em rgba(0,0,0,0.05);
 }
 
 /* Footer */
@@ -1006,8 +779,6 @@ body.font-size-large,
 }
 .navigation-main ul {
 	list-style: none;
-	margin: 0;
-	padding-left: 0;
 }
 .navigation-main .menu li {
 	display: inline-block;
@@ -1048,6 +819,7 @@ body.font-size-large,
 	background: #f9f9f9;
 }
 .navigation-main ul ul {
+	margin: 0;
 }
 .navigation-main ul ul ul {
 	right: 100%;
@@ -1088,11 +860,15 @@ body.font-size-large,
 .menu-toggle {
 	display: none;
 	cursor: pointer;
-	color: #fff;
+	margin-bottom: 0;
+	padding: 10px 0;
+}
+.main-small-navigation {
+	text-align: center;
 }
 .main-small-navigation ul {
 	display: none;
-	margin: 0 0 1em;
+	margin: 0;
 	list-style: none;
 }
 .main-small-navigation a {
@@ -1410,72 +1186,6 @@ object {
 	clear: none;
 	word-wrap: break-word;
 	margin-top: 0;
-}
-@media screen and (min-width: 1200px) {
-	/*
-	.single [class*="navigation"] .previous,
-	.single [class*="navigation"] .next {
-		position: fixed;
-		top: 50%;
-		left: 50%;
-		width: 400px;
-		margin-top: -50px;
-	}
-	.single [class*="navigation"] .prev {
-		margin-left: -560px;
-	}
-	.single [class*="navigation"] .next {
-		margin-left: 160px;
-	}
-	.single [class*="navigation"] .prev a,
-	.single [class*="navigation"] .next a {
-		padding: 10px;
-		height: 80px;
-		box-sizing: content-box;
-		-moz-box-sizing: content-box;
-	}
-	.single [class*="navigation"] .prev span.trigger,
-	.single [class*="navigation"] .next span.trigger {
-		display: block;
-		width: 40px;
-		height: 80px;
-		background: url(images/next-prev.png);
-		background-size: 80px 160px;
-	}
-	.single [class*="navigation"] .prev span.trigger {
-		float: left;
-		margin-right: 10px;
-	}
-	.single [class*="navigation"] .next span.trigger {
-		float: right;
-		margin-left: 10px;
-		background-position: right 0;
-	}
-	.single [class*="navigation"] .prev .hidden,
-	.single [class*="navigation"] .next .hidden {
-		display: none;
-	}
-	.single [class*="navigation"] .prev a:hover,
-	.single [class*="navigation"] .next a:hover {
-		background: #333;
-		color: #fff;
-	}
-	.single [class*="navigation"] .previous-title,
-	.single [class*="navigation"] .next-title {
-		font-size: 16px;
-		color: #fff;
-	}
-	.single [class*="navigation"] .prev a:hover .hidden,
-	.single [class*="navigation"] .next a:hover .hidden {
-		display: block;
-	}
-	.single [class*="navigation"] .prev a:hover .trigger {
-		background-position: 0 bottom;
-	}
-	.single [class*="navigation"] .next a:hover .trigger {
-		background-position: right bottom;
-	}
-	*/
 }
 
 .navigation-paging {
@@ -1824,6 +1534,7 @@ article.comment {
 
 .widget {
 	margin: 0 0 2.5em;
+	font-size: 14px;
 }
 .widget:last-child {
 	margin-bottom: 0;
@@ -2022,6 +1733,231 @@ article.comment {
 	display: block;
 }
 
+
+/* =Theme Variations
+----------------------------------------------- */
+
+/* Color Schemes */
+body.scheme-dark {
+	background: #222;
+	color: #ddd;
+}
+.scheme-dark #main {
+	background: #222;
+}
+.scheme-dark #masthead,
+.scheme-dark #commentform #submit,
+.scheme-dark .comment-reply-link,
+.scheme-dark .wpcf7 input[type="submit"],
+.scheme-dark .protected-post-form input[type="submit"],
+.scheme-dark .page-numbers.current,
+.scheme-dark .page-links a:hover span,
+.scheme-dark #main .more-link {
+	background: #f9f567;
+	color: #303030;
+}
+.scheme-dark #content a,
+.scheme-dark #sub-header a,
+.scheme-dark #above-footer a,
+.scheme-dark #secondary a {
+	color: #f9f567;
+}
+.scheme-dark h1,
+.scheme-dark h2,
+.scheme-dark h3,
+.scheme-dark h4,
+.scheme-dark h5,
+.scheme-dark h6,
+.scheme-dark #main .entry-title a,
+.scheme-dark #main a .entry-title,
+.scheme-dark #main .entry-title a:hover,
+.scheme-dark #main a:hover .entry-title {
+	color: #f3f3f3;
+}
+.scheme-dark #masthead,
+.scheme-dark #colophon {
+	background: #222;
+}
+.scheme-dark #sub-header,
+.scheme-dark #above-footer {
+	background: #262626;
+}
+.scheme-dark #masthead,
+.scheme-dark #sub-header,
+.scheme-dark #main,
+.scheme-dark #above-footer {
+	border-bottom: 1px solid #303030;
+}
+.scheme-dark #main .sticky {
+	background: #262626;
+	border: 1px solid #303030;
+}
+.scheme-dark .widget ul li {
+	border-color: #303030;
+}
+.scheme-dark.blog .hentry,
+.scheme-dark.archive .hentry {
+	border-color: #303030;
+}
+body.scheme-light {
+	background: #f0efec;
+	color: #282725;
+}
+.scheme-light #main {
+	background: #f0efec;
+}
+.scheme-light .navigation-main {
+	background: #e8e7e3;
+}
+.scheme-light #masthead,
+.scheme-light #commentform #submit,
+.scheme-light .comment-reply-link,
+.scheme-light .wpcf7 input[type="submit"],
+.scheme-light .protected-post-form input[type="submit"],
+.scheme-light .page-numbers.current,
+.scheme-light .page-links a:hover span,
+.scheme-light #main .more-link {
+	background: #dfa700;
+	border: none;
+	color: #fff;
+}
+.scheme-light #main a {
+	color: #ba4a3f;
+}
+.scheme-light #sub-header,
+.scheme-light #above-footer {
+	background: #e2e1d9;
+}
+.scheme-light #above-footer a,
+.scheme-light #sub-header a {
+	color: #49473f;
+	text-decoration: underline;
+}
+.scheme-light #main .sticky {
+	border: none;
+}
+.scheme-light.blog .hentry,
+.scheme-light.archive .hentry {
+	border-color: rgba(0,0,0,.025);
+}
+.scheme-light #content a,
+.scheme-light #sub-header a,
+.scheme-light #above-footer a,
+.scheme-light #secondary a {
+	color: #bf8f00;
+}
+.scheme-light #content a:visited {
+	color: #b6a05f;
+}
+.scheme-light #content a:hover {
+	color: #5c5542;
+}
+.scheme-light #content a:active {
+	color: #252422;
+}
+.scheme-light h1,
+.scheme-light h2,
+.scheme-light h3,
+.scheme-light h4,
+.scheme-light h5,
+.scheme-light h6,
+.scheme-light #main .entry-title a,
+.scheme-light #main a .entry-title,
+.scheme-light #main .entry-title a:hover,
+.scheme-light #main a:hover .entry-title {
+	color: #252422;
+}
+.scheme-light .entry-meta,
+.scheme-light .entry-aside {
+	color: #696454;
+}
+
+/* Font Sizes */
+/* Small fonts */
+body.font-size-small,
+.font-size-small button,
+.font-size-small input,
+.font-size-small select,
+.font-size-small textarea {
+	font-size: 14px;
+}
+.font-size-small h1 {
+	font-size: 32px;
+}
+.font-size-small h2 {
+	font-size: 26px;
+}
+.font-size-small h3 {
+	font-size: 22px;
+}
+.font-size-small h4,
+.font-size-small .widget-title {
+	font-size: 18px;
+}
+.font-size-small h5 {
+	font-size: 14px;
+}
+.font-size-small h6 {
+	font-size: 12px;
+}
+.font-size-small .menu-toggle {
+	font-size: 20px;
+}
+.font-size-small .widget {
+	font-size: 12px;
+}
+/* Large fonts */
+body.font-size-large,
+.font-size-large button,
+.font-size-large input,
+.font-size-large select,
+.font-size-large textarea {
+	font-size: 18px;
+}
+.font-size-large h1 {
+	font-size: 40px;
+}
+.font-size-large h2 {
+	font-size: 32px;
+}
+.font-size-large h3 {
+	font-size: 26px;
+}
+.font-size-large h4,
+.font-size-large .widget-title {
+	font-size: 22px;
+}
+.font-size-large h5 {
+	font-size: 18px;
+}
+.font-size-large h6 {
+	font-size: 16px;
+}
+.body-font-size-small {
+	font-size: 14px;
+}
+.font-size-small #masthead .site-title {
+	font-size: 40px;
+}
+.font-size-small #masthead .site-description {
+	font-size: 14px;
+}
+.font-size-large #masthead .site-title {
+	font-size: 60px;
+}
+.font-size-large #masthead .site-description {
+	font-size: 20px;
+}
+.font-size-large .menu-toggle {
+	font-size: 28px;
+}
+.font-size-large .widget {
+	font-size: 16px;
+}
+
+/* Header Layouts */
+
+
 /* =Steroids plugin
 ----------------------------------------------- */
 
@@ -2064,13 +2000,10 @@ article.comment {
 @media screen and (max-width: 800px) {
 	/* Centered header layout */
 	#masthead hgroup,
-	#masthead #site-navigation {
+	#masthead .navigation-main {
 		width: auto;
 		float: none;
 		text-align: center;
-	}
-	#masthead hgroup {
-		margin-bottom: 20px;
 	}
 	/* Switch two column layouts to one column layout */
 	.sidebar #primary,

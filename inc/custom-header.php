@@ -37,7 +37,7 @@ function thsp_custom_header_setup() {
 		'default-image'          => '',
 		'default-text-color'     => '',
 		'width'                  => 1600,
-		'height'                 => 400,
+		'height'                 => 300,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'thsp_header_style',
 		'admin-head-callback'    => 'thsp_admin_header_style',
@@ -59,30 +59,6 @@ function thsp_custom_header_setup() {
 }
 add_action( 'after_setup_theme', 'thsp_custom_header_setup' );
 
-/**
- * Shiv for get_custom_header().
- *
- * get_custom_header() was introduced to WordPress
- * in version 3.4. To provide backward compatibility
- * with previous versions, we will define our own version
- * of this function.
- *
- * @todo Remove this function when WordPress 3.6 is released.
- * @return stdClass All properties represent attributes of the curent header image.
- *
- * @package Gumbo
- */
-
-if ( ! function_exists( 'get_custom_header' ) ) {
-	function get_custom_header() {
-		return (object) array(
-			'url'           => get_header_image(),
-			'thumbnail_url' => get_header_image(),
-			'width'         => HEADER_IMAGE_WIDTH,
-			'height'        => HEADER_IMAGE_HEIGHT,
-		);
-	}
-}
 
 if ( ! function_exists( 'thsp_header_style' ) ) :
 /**
@@ -107,6 +83,8 @@ function thsp_header_style() {
 		#masthead hgroup {
 			background: url(<?php header_image(); ?>) no-repeat scroll top;
 			background-size: 1600px auto;
+			/* background-attachment: fixed; */
+			background-position: center top;
 		}
 	<?php
 		endif;
@@ -132,9 +110,9 @@ function thsp_header_style() {
 		// If the user has set a custom color for the text, use that.
 		elseif ( $text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) :
 	?>
-		.site-title,
-		.site-title a,
-		.site-description {
+		.site-header .site-title,
+		.site-header .site-title a,
+		.site-header .site-description {
 			color: #<?php echo esc_attr( $text_color ); ?>;
 		}
 	<?php endif; ?>
