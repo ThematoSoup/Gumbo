@@ -27,21 +27,24 @@
 
 <div id="page" class="hfeed site">	
 	<?php tha_header_before(); ?>		
-	<?php
-	$thsp_theme_options = thsp_cbp_get_options_values();
-	$thsp_header_class = $thsp_theme_options['main_nav_placement'];
-	// Get header background option
-	$thsp_header_background		= $thsp_theme_options['header_background'];
-	$thsp_header_text			= thsp_get_color_contrast( $thsp_header_background );
-	$thsp_header_text_invert	= ( '#303030' == $thsp_header_text ) ? '#fcfcfc' : '#303030';
-	$thsp_header_class .= ( '#fcfcfc' == $thsp_header_text ) ? ' light-text' : ' dark-text';
-	?>
 	<header id="masthead" class="site-header <?php echo $thsp_header_class; ?>" role="banner">
-		<div class="inner clear">
+		<div class="clear">
 			<?php tha_header_top(); ?>
 			<hgroup>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+				<div class="inner">
+					<?php
+					// Get current theme options values
+					$thsp_theme_options = thsp_cbp_get_options_values();
+					if ( '' != $thsp_theme_options['logo_image'] ) :
+						$logo_image = thsp_get_logo_image( $thsp_theme_options['logo_image'] ); ?>
+						<a class="header-image" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+							<img src="<?php echo $logo_image[0]; ?>" width="<?php echo $logo_image[1]; ?>" height="<?php echo $logo_image[2]; ?>" alt="<?php bloginfo( 'name' ); ?>" />
+						</a>
+					<?php else : // if ( ! isset( $thsp_theme_options['logo_image'] ) ?>
+						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php endif; ?>
+					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+				</div>
 			</hgroup>
 		
 			<nav id="site-navigation" class="navigation-main" role="navigation">
@@ -56,7 +59,7 @@
 				?>
 			</nav><!-- #site-navigation -->
 			<?php tha_header_bottom(); ?>
-		</div><!-- .inner -->
+		</div><!-- .clear -->
 	</header><!-- #masthead -->
 	<?php tha_header_after(); ?>
 

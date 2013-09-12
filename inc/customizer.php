@@ -244,27 +244,6 @@ function thsp_theme_options_array() {
 						'priority' => 2
 					) // End control args
 				),
-				'post_archives_show' => array(
-					'setting_args' => array(
-						'default' => 'full_content',
-						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
-						'transport' => 'refresh',
-					), // End setting args			
-					'control_args' => array(
-						'label' => __( 'Post in archives show', 'gumbo' ),
-						'type' => 'radio', // Image radio replacement
-						'choices' => array(
-							'full_content' => array(
-								'label' => __( 'Full content', 'gumbo' )
-							),
-							'excerpt' => array(
-								'label' => __( 'Excerpt', 'gumbo' )
-							),
-						),					
-						'priority' => 3
-					) // End control args
-				)
 			) // End fields
 		),
 		
@@ -286,36 +265,68 @@ function thsp_theme_options_array() {
 					), // End setting args			
 					'control_args' => array(
 						'label' => __( 'Body font', 'gumbo' ),
-						'type' => 'images_radio', // Image replacement radios
+						'type' => 'select', // Image replacement radios
 						'choices' => array(
 							'helvetica' => array(
 								'label' => 'Helvetica',
-								'image_src' => get_template_directory_uri() . '/images/theme-options/font-body-helvetica.png'
 							),
 							'open-sans' => array(
 								'label' => 'Open Sans',
 								'google_font' => 'Open Sans',
-								'image_src' => get_template_directory_uri() . '/images/theme-options/font-body-open-sans.png'
 							),
 							'lato' => array(
 								'label' => 'Lato',
 								'google_font' => 'Lato',
-								'image_src' => get_template_directory_uri() . '/images/theme-options/font-body-lato.png'
 							),
 							'source-sans-pro' => array(
 								'label' => 'Source Sans Pro',
 								'google_font' => 'Source Sans Pro',
-								'image_src' => get_template_directory_uri() . '/images/theme-options/font-body-source-sans-pro.png'
 							),
 							'roboto' => array(
 								'label' => 'Roboto',
 								'google_font' => 'Roboto',
-								'image_src' => get_template_directory_uri() . '/images/theme-options/font-body-roboto.png'
 							),
 							'titillium-web' => array(
 								'label' => 'Titillium Web',
 								'google_font' => 'Titillium Web',
-								'image_src' => get_template_directory_uri() . '/images/theme-options/font-body-titillium-web.png'
+							)
+						),
+						'priority' => 1
+					) // End control args
+				),
+				'heading_font' => array(
+					'setting_args' => array(
+						'default' => 'titillium-web',
+						'type' => 'option',
+						'capability' => $thsp_cbp_capability,
+						'transport' => 'refresh',
+					), // End setting args			
+					'control_args' => array(
+						'label' => __( 'Heading font', 'gumbo' ),
+						'type' => 'select',
+						'choices' => array(
+							'helvetica' => array(
+								'label' => 'Helvetica',
+							),
+							'open-sans' => array(
+								'label' => 'Open Sans',
+								'google_font' => 'Open Sans',
+							),
+							'lato' => array(
+								'label' => 'Lato',
+								'google_font' => 'Lato',
+							),
+							'source-sans-pro' => array(
+								'label' => 'Source Sans Pro',
+								'google_font' => 'Source Sans Pro',
+							),
+							'roboto' => array(
+								'label' => 'Roboto',
+								'google_font' => 'Roboto',
+							),
+							'titillium-web' => array(
+								'label' => 'Titillium Web',
+								'google_font' => 'Titillium Web',
 							)
 						),
 						'priority' => 1
@@ -338,50 +349,6 @@ function thsp_theme_options_array() {
 							'300' => array(
 								'label' => 'Thin'
 							),
-						),
-						'priority' => 1
-					) // End control args
-				),
-				'heading_font' => array(
-					'setting_args' => array(
-						'default' => 'titillium-web',
-						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
-						'transport' => 'refresh',
-					), // End setting args			
-					'control_args' => array(
-						'label' => __( 'Heading font', 'gumbo' ),
-						'type' => 'images_radio',
-						'choices' => array(
-							'helvetica' => array(
-								'label' => 'Helvetica',
-								'image_src' => get_template_directory_uri() . '/images/theme-options/font-heading-helvetica.png'
-							),
-							'open-sans' => array(
-								'label' => 'Open Sans',
-								'google_font' => 'Open Sans',
-								'image_src' => get_template_directory_uri() . '/images/theme-options/font-heading-open-sans.png'
-							),
-							'lato' => array(
-								'label' => 'Lato',
-								'google_font' => 'Lato',
-								'image_src' => get_template_directory_uri() . '/images/theme-options/font-heading-lato.png'
-							),
-							'source-sans-pro' => array(
-								'label' => 'Source Sans Pro',
-								'google_font' => 'Source Sans Pro',
-								'image_src' => get_template_directory_uri() . '/images/theme-options/font-heading-source-sans-pro.png'
-							),
-							'roboto' => array(
-								'label' => 'Roboto',
-								'google_font' => 'Roboto',
-								'image_src' => get_template_directory_uri() . '/images/theme-options/font-heading-roboto.png'
-							),
-							'titillium-web' => array(
-								'label' => 'Titillium Web',
-								'google_font' => 'Titillium Web',
-								'image_src' => get_template_directory_uri() . '/images/theme-options/font-heading-titillium-web.png'
-							)
 						),
 						'priority' => 1
 					) // End control args
@@ -428,7 +395,6 @@ function thsp_theme_options_array() {
 add_filter( 'tshp_cbp_remove_controls', 'thsp_theme_options_remove_controls', 1 );
 function thsp_theme_options_remove_controls() {
 	$thsp_cbp_remove_controls = array(
-		'header_textcolor',
 		'background_color'
 	);
 	

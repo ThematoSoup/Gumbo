@@ -35,9 +35,9 @@
 function thsp_custom_header_setup() {
 	$args = array(
 		'default-image'          => '',
-		'default-text-color'     => '000',
-		'width'                  => 1000,
-		'height'                 => 250,
+		'default-text-color'     => '',
+		'width'                  => 1600,
+		'height'                 => 400,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'thsp_header_style',
 		'admin-head-callback'    => 'thsp_admin_header_style',
@@ -91,31 +91,51 @@ if ( ! function_exists( 'thsp_header_style' ) ) :
  * @see thsp_custom_header_setup().
  */
 function thsp_header_style() {
+	$header_image = get_header_image();
+	$text_color   = get_header_textcolor();
 
-	// If no custom options for text are set, let's bail
-	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	if ( HEADER_TEXTCOLOR == get_header_textcolor() )
+	// If no custom options for text are set, let's bail.
+	if ( empty( $header_image ) && $text_color == get_theme_support( 'custom-header', 'default-text-color' ) )
 		return;
-	// If we get this far, we have custom styles. Let's do this.
+
+	// If we get this far, we have custom styles.
 	?>
-	<style type="text/css">
+	<style type="text/css" id="twentythirteen-header-css">
 	<?php
+		if ( ! empty( $header_image ) ) :
+	?>
+		#masthead hgroup {
+			background: url(<?php header_image(); ?>) no-repeat scroll top;
+			background-size: 1600px auto;
+		}
+	<?php
+		endif;
+
 		// Has the text been hidden?
-		if ( 'blank' == get_header_textcolor() ) :
+		if ( ! display_header_text() ) :
 	?>
 		.site-title,
 		.site-description {
-			position: absolute !important;
-			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+			position: absolute;
+			clip: rect(1px 1px 1px 1px); /* IE7 */
 			clip: rect(1px, 1px, 1px, 1px);
 		}
 	<?php
-		// If the user has set a custom color for the text use that
-		else :
+			if ( empty( $header_image ) ) :
 	?>
+		.site-header .home-link {
+			min-height: 0;
+		}
+	<?php
+			endif;
+
+		// If the user has set a custom color for the text, use that.
+		elseif ( $text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) :
+	?>
+		.site-title,
 		.site-title a,
 		.site-description {
-			color: #<?php echo get_header_textcolor(); ?>;
+			color: #<?php echo esc_attr( $text_color ); ?>;
 		}
 	<?php endif; ?>
 	</style>

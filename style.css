@@ -455,8 +455,10 @@ a:active {
 .protected-post-form input[type="submit"],
 .page-numbers.current,
 .page-links a:hover span,
-#main .more-link {
+#main .more-link,
+#main .more-link:hover {
 	background: #1e8ca3;
+	color: #fff;
 }
 #colophon {
 	background: #303030;
@@ -464,6 +466,12 @@ a:active {
 #colophon,
 #colophon a {
 	color: #fff;
+}
+#site-navigation {
+	background: #e9e9e9;
+}
+#site-navigation a {
+	color: #303030;
 }
 #sub-header,
 #above-footer {
@@ -489,7 +497,7 @@ body.scheme-dark {
 	background: #222;
 	color: #ddd;
 }
-.scheme-dark #masthead ,
+.scheme-dark #masthead,
 .scheme-dark #commentform #submit,
 .scheme-dark .comment-reply-link,
 .scheme-dark .wpcf7 input[type="submit"],
@@ -546,12 +554,12 @@ body.scheme-dark {
 /* Light scheme */
 body.scheme-light {
 	background: #eeede8;
-	color: #383735;
+	color: #282725;
 }
 #main {
 	text-shadow: 1px 1px rgba(255,255,255,0.75);	
 }
-.scheme-light #masthead ,
+.scheme-light #masthead,
 .scheme-light #commentform #submit,
 .scheme-light .comment-reply-link,
 .scheme-light .wpcf7 input[type="submit"],
@@ -764,20 +772,6 @@ select,
 textarea {
 	font-size: 16px;
 }
-body.font-size-small,
-.font-size-small button,
-.font-size-small input,
-.font-size-small select,
-.font-size-small textarea {
-	font-size: 14px;
-}
-body.font-size-large,
-.font-size-large button,
-.font-size-large input,
-.font-size-large select,
-.font-size-large textarea {
-	font-size: 18px;
-}
 h1 {
 	font-size: 36px;
 }
@@ -797,7 +791,17 @@ h5 {
 h6 {
 	font-size: 14px;
 }
+.menu-toggle {
+	font-size: 24px;
+}
 /* Small fonts */
+body.font-size-small,
+.font-size-small button,
+.font-size-small input,
+.font-size-small select,
+.font-size-small textarea {
+	font-size: 14px;
+}
 .font-size-small h1 {
 	font-size: 32px;
 }
@@ -817,7 +821,17 @@ h6 {
 .font-size-small h6 {
 	font-size: 12px;
 }
+.font-size-small .menu-toggle {
+	font-size: 20px;
+}
 /* Large fonts */
+body.font-size-large,
+.font-size-large button,
+.font-size-large input,
+.font-size-large select,
+.font-size-large textarea {
+	font-size: 18px;
+}
 .font-size-large h1 {
 	font-size: 40px;
 }
@@ -859,25 +873,31 @@ h6 {
 .font-size-large #masthead .site-description {
 	font-size: 18px;
 }
+.font-size-large .menu-toggle {
+	font-size: 28px;
+}
 
 
 /* =Layout
 ----------------------------------------------- */
 
-.inner {
+.inner,
+#site-navigation > ul {
 	max-width: 1040px;
 	margin: 0 auto;
 	padding: 0 20px;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 }
+#site-navigation ul {
+	padding: 0;
+}
 #primary,
 #secondary {
 	word-wrap: break-word;
 }
 #main {
-	padding: 40px 0;
-	padding: 4rem 0;
+	padding: 60px 0;
 }
 
 /* Layout: Content - Primary Sidebar */
@@ -935,36 +955,18 @@ h6 {
 }
 
 /* Header */
-#masthead {
-	padding: 20px 0;
-	padding: 2rem 0;
-}
 #masthead hgroup {
-	float: left;
-	width: 30%;
+	padding: 40px 0;
 }
-#masthead #site-navigation {
-	float: right;
-	width: 70%;
-}
-	#masthead.centered hgroup,
-	#masthead.centered #site-navigation,
-	#masthead.below hgroup,
-	#masthead.below #site-navigation {
-		float: none;
-		width: 100%;
-	}
 #masthead .site-title {
 	margin: 0 0 0.25em;
 	font-size: 36px;
 }
 #masthead .site-title a {
-	color: #2e2e2e;
 	text-decoration: none;
 }
 #masthead .site-description {
 	margin: 0;
-	font-weight: normal;
 }
 #masthead.centered {
 	text-align: center;
@@ -1001,18 +1003,7 @@ h6 {
 
 .navigation-main {
 	display: block;
-	text-align: right;
 }
-	.centered .navigation-main {
-		text-align: center;
-		margin-top: 15px;
-	}
-	.below .navigation-main {
-		text-align: left;
-		margin-top: 15px;
-		position: relative;
-		left: -0.5em;
-	}
 .navigation-main ul {
 	list-style: none;
 	margin: 0;
@@ -1021,17 +1012,19 @@ h6 {
 .navigation-main .menu li {
 	display: inline-block;
 	position: relative;
-	font-weight: bold;
 }
-	.centered .navigation-main .menu li {
-		margin: 0 0.5em;
-		text-align: left;
-	}
 .navigation-main li:hover {
-	background: #303030;
+	background: #fff;
 }
 .navigation-main .sub-menu {
-	box-shadow: 4px 4px 0 rgba(0,0,0,0.15);	
+	background: #fff;
+	border: 1px solid #e9e9e9;
+	border-top: none;
+	display: none;
+	position: absolute;
+		top: 100%;
+		left: -1px;
+	z-index: 99;
 }
 .navigation-main .sub-menu li {
 	display: block;
@@ -1046,37 +1039,20 @@ h6 {
 	line-height: 1;
 	text-decoration: none;
 	color: #2e2e2e;
-	padding: 0.75em;
+	padding: 15px 20px;
 }
 .navigation-main .sub-menu a {
 	color: #fff;
 }
 .navigation-main .sub-menu a:hover {
-
+	background: #f9f9f9;
 }
 .navigation-main ul ul {
-	background: #303030;
-	display: none;
-	position: absolute;
-		top: 100%;
-		right: 0;
-	z-index: 99;
 }
-	.centered .navigation-main ul ul,
-	.below .navigation-main ul ul {
-		right: auto;
-		left: 0;
-		text-align: left;
-	}
 .navigation-main ul ul ul {
 	right: 100%;
 	top: 0;
 }
-	.centered .navigation-main ul ul ul,
-	.below .navigation-main ul ul ul {
-		right: auto;
-		left: 100%;
-	}
 .navigation-main ul ul a {
 	width: 220px;
 }
@@ -1112,10 +1088,17 @@ h6 {
 .menu-toggle {
 	display: none;
 	cursor: pointer;
+	color: #fff;
 }
-
 .main-small-navigation ul {
 	display: none;
+	margin: 0 0 1em;
+	list-style: none;
+}
+.main-small-navigation a {
+	text-decoration: none;
+	display: block;
+	padding: 0.25em;
 }
 
 @media screen and (max-width: 600px) {
@@ -1123,7 +1106,6 @@ h6 {
 	.main-small-navigation ul.nav-menu.toggled-on {
 		display: block;
 	}
-
 	.navigation-main ul {
 		display: none;
 	}
@@ -1213,7 +1195,6 @@ h6 {
 	display: inline-block;
 	text-decoration: none;
 	border: 1px solid rgba(0,0,0,0.1);
-	background: #999;
 	box-shadow: none;
 	color: #fff;
 	cursor: pointer;
@@ -1312,7 +1293,6 @@ h6 {
 }
 .gallery {
 	margin-bottom: 30px !important;
-	margin-bottom: 3rem !important;
 }
 .gallery .gallery-item {
 	padding: 0 8px 16px !important;
@@ -2093,15 +2073,12 @@ article.comment {
 		margin-bottom: 20px;
 	}
 	/* Switch two column layouts to one column layout */
-	.layout-cp .content-area,
-	.layout-pc .content-area,
-	.layout-cp #content,
-	.layout-pc	 #content {
+	.sidebar #primary,
+	.sidebar #content {
 		margin: 0;
 		float: none;
 	}
-	.layout-cp #secondary,
-	.layout-pc #secondary {
+	.sidebar #secondary {
 		float: none;
 		width: auto;
 	}

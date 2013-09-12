@@ -88,6 +88,9 @@ function thsp_body_classes( $classes ) {
 	$thsp_body_classes[] = 'body-font-weight-' . $thsp_theme_options['body_font_weight'];
 	$thsp_body_classes[] = 'heading-font-' . $thsp_theme_options['heading_font'];
 	$thsp_body_classes[] = 'font-size-' . $thsp_theme_options['font_size'];
+	
+	// Header layout
+	$thsp_body_classes[] = 'header-' . $thsp_theme_options['main_nav_placement'];
 		
 	$classes = array_merge( $classes, $thsp_body_classes );
 	return $classes;
@@ -247,7 +250,7 @@ function thsp_internal_css() {
 		}
 	<?php endif; ?>
 	<?php if ( isset( $thsp_header_background ) && '' != $thsp_header_background ) : ?>
-		#masthead {
+		#masthead hgroup {
 			background-color: <?php echo $thsp_header_background; ?>;
 		}
 	<?php endif; ?>
@@ -369,4 +372,39 @@ function thsp_count_widgets( $sidebar_id ) {
 		 
 		return $widget_classes;
 	endif;
+}
+
+/**
+ * Retrieves the attachment ID from the file URL
+ * Used to get attachment object for logo image added through Theme Customizer
+ *
+ * @link	http://philipnewcomer.net/2012/11/get-the-attachment-id-from-an-image-url-in-wordpress/
+ * @since Cazuela 1.0
+ */
+function thsp_get_logo_image( $attachment_url ) {
+	global $wpdb;
+	$attachment_id = false;
+ 
+	// If there is no url, return.
+	if ( '' == $attachment_url )
+		return;
+ 
+	// Get the upload directory paths
+	$upload_dir_paths = wp_upload_dir();
+ 
+	// Make sure the upload path base directory exists in the attachment URL, to verify that we're working with a media library image
+	if ( false !== strpos( $attachment_url, $upload_dir_paths['baseurl'] ) ) :
+		// If this is the URL of an auto-generated thumbnail, get the URL of the original image
+		$attachment_url = preg_replace( '/-\d+x\d+(?=\.(jpg|jpeg|png|gif)$)/i', '', $attachment_url );
+ 
+		// Remove the upload path base directory from the attachment URL
+		$attachment_url = str_replace( $upload_dir_paths['baseurl'] . '/', '', $attachment_url );
+ 
+		// Finally, run a custom database query to get the attachment ID from the modified attachment URL
+		$attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = '%s' AND wposts.post_type = 'attachment'", $attachment_url ) );
+	endif;
+
+	$attachment_array = wp_get_attachment_image_src( $attachment_id, 'full' );
+
+	return $attachment_array; 
 }
