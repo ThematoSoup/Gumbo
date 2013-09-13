@@ -123,18 +123,31 @@ function thsp_admin_header_style() {
 ?>
 	<style type="text/css">
 	.appearance_page_custom-header #headimg {
+		position: relative;
+	}
+	.appearance_page_custom-header #headimg,
+	.appearance_page_custom-header img {
 		border: none;
+		max-width: 100%;
 	}
 	#headimg h1,
 	#desc {
+		display: block;
+		position: absolute;
 	}
 	#headimg h1 {
+		top: 70px;
+		font-size: 48px;
+		left: 40px;
 	}
 	#headimg h1 a {
+		text-decoration: none;
 	}
 	#desc {
-	}
-	#headimg img {
+		position: absolute;
+		top: 140px;
+		left: 40px;
+		font-size: 16px;
 	}
 	</style>
 <?php
