@@ -2,7 +2,8 @@
 /**
  * Template Name: Sitemap
  *
- * @package Gumbo
+ * @package		Gumbo
+ * @since		Gumbo 1.0
  */
 
 get_header(); ?>

@@ -2,7 +2,10 @@
 /**
  * The template for displaying image attachments.
  *
- * @package Gumbo
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package		Gumbo
+ * @since		Gumbo 1.0
  */
 
 get_header();

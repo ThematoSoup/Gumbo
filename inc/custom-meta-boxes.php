@@ -2,9 +2,10 @@
 /**
  * Include and setup custom metaboxes and fields.
  *
- * @package  Gumbo
- * @license  http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
- * @link     https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress
+ * @package		Gumbo
+ * @since		Gumbo 1.0
+ * @license		http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
+ * @link		https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress
  */
 
 /**
@@ -149,27 +150,6 @@ function thsp_metaboxes( $meta_boxes ) {
 				'desc' => __( 'You can use video instead of Featured Image', 'gumbo' ),
 				'id'   => $prefix . 'video_url',
 				'type' => 'oembed',
-			),
-			array(
-				'name'		=> __( 'Widgets per row', 'gumbo' ),
-				'desc'		=> __( 'Use "Widgetized Homepage Widget Area" for this', 'gumbo' ),
-				'id'		=> $prefix . 'widgetized_widgets_per_row',
-				'type'		=> 'radio_inline',
-				'options'	=> array(
-					array(
-						'name'	=> 'Two',
-						'value'	=> 2
-					),
-					array(
-						'name'	=> 'Three',
-						'value'	=> 3
-					),
-					array(
-						'name'	=> 'Four',
-						'value'	=> 4
-					),
-				),
-				'std'	=> 4
 			),
 		),
 	);

@@ -4,7 +4,8 @@
  *
  * Displays all of the <head> section and everything up till <div id="main">
  *
- * @package Gumbo
+ * @package		Gumbo
+ * @since		Gumbo 1.0
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -54,7 +55,8 @@
 				<?php
 					wp_nav_menu( array(
 						'theme_location'	=> 'primary',
-						'container'			=> ''
+						'container'			=> '',
+						'menu_class'		=> 'menu inner'
 					) );
 				?>
 			</nav><!-- #site-navigation -->

@@ -7,7 +7,10 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package Gumbo
+ * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package		Gumbo
+ * @since		Gumbo 1.0
  */
 
 get_header(); ?>

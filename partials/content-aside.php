@@ -2,10 +2,8 @@
 /**
  * The template part that displays a single post in archives.
  *
- * Based on theme settings one of three possible layouts is shown.
- * Excerpt or full content is shown, also based on theme settings.
- *
- * @package Gumbo
+ * @package		Gumbo
+ * @since		Gumbo 1.0
  */
 ?>
 

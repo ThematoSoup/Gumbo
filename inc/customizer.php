@@ -1,9 +1,13 @@
 <?php
 /**
- * Gumbo Theme Customizer
+ * Theme Customizer options
  *
- * @package Gumbo
+ * @package		Gumbo
+ * @since		Gumbo 1.0
+ * @license		http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
+ * @link		https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate
  */
+
 
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
@@ -24,6 +28,7 @@ function gumbo_customize_preview_js() {
 	wp_enqueue_script( 'gumbo_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130304', true );
 }
 add_action( 'customize_preview_init', 'gumbo_customize_preview_js' );
+
 
 
 /*
@@ -395,7 +400,6 @@ function thsp_theme_options_array() {
 add_filter( 'tshp_cbp_remove_controls', 'thsp_theme_options_remove_controls', 1 );
 function thsp_theme_options_remove_controls() {
 	$thsp_cbp_remove_controls = array(
-		'background_color'
 	);
 	
 	return $thsp_cbp_remove_controls;

@@ -1,6 +1,9 @@
 <?php
 /**
- * @package Gumbo
+ * The template used for displaying post content in post.php
+ *
+ * @package		Gumbo
+ * @since		Gumbo 1.0
  */
 ?>
 

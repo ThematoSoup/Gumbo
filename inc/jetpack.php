@@ -1,9 +1,11 @@
 <?php
 /**
  * Jetpack Compatibility File
+ *
  * See: http://jetpack.me/
  *
- * @package Gumbo
+ * @package		Gumbo
+ * @since		Gumbo 1.0
  */
 
 /**

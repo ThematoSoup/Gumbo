@@ -1,19 +1,11 @@
 <?php
 /**
  * Sample implementation of the Custom Header feature
+ *
  * http://codex.wordpress.org/Custom_Headers
  *
- * You can add an optional custom header image to header.php like so ...
-
-	<?php $header_image = get_header_image();
-	if ( ! empty( $header_image ) ) { ?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-			<img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
-		</a>
-	<?php } // if ( ! empty( $header_image ) ) ?>
-
- *
- * @package Gumbo
+ * @package		Gumbo
+ * @since		Gumbo 1.0
  */
 
 /**
@@ -37,7 +29,7 @@ function thsp_custom_header_setup() {
 		'default-image'          => '',
 		'default-text-color'     => '',
 		'width'                  => 1600,
-		'height'                 => 300,
+		'height'                 => 240,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'thsp_header_style',
 		'admin-head-callback'    => 'thsp_admin_header_style',

@@ -1,13 +1,13 @@
 /*
-Theme Name: Gumbo
-Theme URI: http://thematosoup.com
-Author: ThematoSoup
-Author URI: http://thematosoup.com
-Description: Responsive WordPress theme
-Version: 1.0
-License: GNU General Public License
-License URI: license.txt
-Tags:
+Theme Name:		Gumbo
+Theme URI:		http://thematosoup.com
+Author:			ThematoSoup
+Author URI:		http://thematosoup.com
+Description:	Responsive WordPress theme
+Version:		1.0
+License:		GNU General Public License
+License URI		license.txt
+Tags:			responsive
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -25,36 +25,56 @@ and Blueprint http://www.blueprintcss.org/
 
 	Table of contents
 	
-	* Reset
-	* Global
-		- Headings
-		- Text elements
-		- Links
-		- Alignment
-		- Screen reader text
-		- Clearing
-	* Color schemes
-	* Typography
-	* Layout
-	* Menus
-		- Main menu
-		- Small menu
-	* Content
-		- Different archives layouts
-	* Asides (post format)
-	* Media
-	* Navigation
-	* Comments
-	* Forms
-	* Widgets
-	* Infinite scroll (Jetpack module)
-	* Theme Variations
+	0.	Reset
+	1.	Global Styles
+		- 1.1 Headings
+		- 1.2 Text elements
+		- 1.3 Form elements
+		- 1.4 Links
+		- 1.5 Alignment
+		- 1.6 Screen Reader Text
+		- 1.7 Clearing
+	2.	Color Schemes
+		- 2.1 White (default)
+		- 2.2 Dark
+		- 2.3 Light
+	3.	Typography
+		- 3.1 Body Font
+		- 3.2 Heading Font
+		- 3.3 Genericons
+		- 3.4 Small Fonts
+		- 3.5 Large Fonts
+	4.	Layout
+		- 4.1 Right Sidebar
+		- 4.2 Left Sidebar
+		- 4.2 Full-width Templates
+	5.	Header
+	6.	Menus
+		- 6.1 Main Menu
+		- 6.2 Small Menu
+	7.	 Entries
+		- 7.1 Post Aside Widget Area
+		- 7.2 Post Formats
+	8.	Page Templates
+		- 8.1 Authors
+		- 8.2 Masonry
+		- 8.3 Widgetized Homepage
+	9.	Media
+	10.	Post Navigation
+	11.	Comments
+	12.	Forms
+	13.	Widgets
+	14.	Infinite scroll (Jetpack module)
+	15.	Steroids Plugin
+		- 15.1 Portfolio
+		- 15.2 FAQ
+	16. Media Queries
 	
 ---------------------------------------------------------------*/
 
 
 
-/* =Reset
+/* =0. Reset
 -------------------------------------------------------------- */
 
 html, body, div, span, applet, object, iframe,
@@ -127,7 +147,7 @@ a img {
 }
 
 
-/* =Global
+/* =1. Global Styles
 ----------------------------------------------- */
 
 * {
@@ -147,8 +167,7 @@ textarea {
 	line-height: 1.6;
 	-webkit-font-smoothing: antialiased;
 }
-
-/* Headings */
+/* =1.1 Headings */
 h1,
 h2,
 h3,
@@ -190,15 +209,13 @@ h5:first-child,
 h6:first-child {
 	margin-top: 0;
 }
-
 hr {
 	background-color: #ccc;
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
 }
-
-/* Text elements */
+/* =1.2 Text elements */
 p {
 	margin-bottom: 1.4em;
 }
@@ -295,6 +312,7 @@ img {
 	height: auto; /* Make sure images are scaled correctly. */
 	max-width: 100%; /* Adhere to container width. */
 }
+/* =1.3 Form elements */
 button,
 input,
 select,
@@ -392,8 +410,7 @@ textarea {
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 98%;
 }
-
-/* Links */
+/* =1.4 Links */
 a {
 	color: royalblue;
 }
@@ -405,8 +422,7 @@ a:focus,
 a:active {
 	color: #111;
 }
-
-/* Alignment */
+/* =1.5 Alignment */
 .alignleft {
 	display: inline;
 	float: left;
@@ -422,8 +438,7 @@ a:active {
 	display: block;
 	margin: 0 auto;
 }
-
-/* Text meant only for screen readers */
+/* =1.6 Screen Reader Text */
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
@@ -449,8 +464,7 @@ a:active {
 	width: auto;
 	z-index: 100000; /* Above WP toolbar */
 }
-
-/* Clearing */
+/* =1.7 Clearing */
 .clear:before,
 .clear:after,
 [class*="content"]:before,
@@ -460,7 +474,6 @@ a:active {
 	content: '';
 	display: table;
 }
-
 .clear:after,
 [class*="content"]:after,
 [class*="site"]:after {
@@ -468,8 +481,10 @@ a:active {
 }
 
 
-/* =Color Schemes
+/* =2. Color Schemes
 ----------------------------------------------- */
+
+/* =2.1 White (default) */
 #masthead,
 #commentform #submit,
 .comment-reply-link,
@@ -515,12 +530,150 @@ a:active {
 #content a:active {
 	color: #303030;
 }
+.sticky {
+	background: #f9f9f9;
+}
+/* =2.2 Dark */
+body.scheme-dark {
+	background: #222;
+	color: #ddd;
+}
+.scheme-dark #main {
+	background: #222;
+}
+.scheme-dark #masthead,
+.scheme-dark #commentform #submit,
+.scheme-dark .comment-reply-link,
+.scheme-dark .wpcf7 input[type="submit"],
+.scheme-dark .protected-post-form input[type="submit"],
+.scheme-dark .page-numbers.current,
+.scheme-dark .page-links a:hover span,
+.scheme-dark #main .more-link {
+	background: #f9f567;
+	color: #303030;
+}
+.scheme-dark #content a,
+.scheme-dark #sub-header a,
+.scheme-dark #above-footer a,
+.scheme-dark #secondary a {
+	color: #f9f567;
+}
+.scheme-dark h1,
+.scheme-dark h2,
+.scheme-dark h3,
+.scheme-dark h4,
+.scheme-dark h5,
+.scheme-dark h6,
+.scheme-dark #main .entry-title a,
+.scheme-dark #main a .entry-title,
+.scheme-dark #main .entry-title a:hover,
+.scheme-dark #main a:hover .entry-title {
+	color: #f3f3f3;
+}
+.scheme-dark #masthead,
+.scheme-dark #colophon {
+	background: #222;
+}
+.scheme-dark #sub-header,
+.scheme-dark #above-footer {
+	background: #262626;
+}
+.scheme-dark #masthead,
+.scheme-dark #sub-header,
+.scheme-dark #main,
+.scheme-dark #above-footer {
+	border-bottom: 1px solid #303030;
+}
+.scheme-dark #main .sticky {
+	background: #262626;
+	border: 1px solid #303030;
+}
+.scheme-dark .widget ul li {
+	border-color: #303030;
+}
+.scheme-dark.blog .hentry,
+.scheme-dark.archive .hentry {
+	border-color: #303030;
+}
+/* =2.2 Light */
+body.scheme-light {
+	background: #f0efec;
+	color: #282725;
+}
+.scheme-light #main {
+	background: #f0efec;
+}
+.scheme-light .navigation-main {
+	background: #e8e7e3;
+}
+.scheme-light #masthead,
+.scheme-light #commentform #submit,
+.scheme-light .comment-reply-link,
+.scheme-light .wpcf7 input[type="submit"],
+.scheme-light .protected-post-form input[type="submit"],
+.scheme-light .page-numbers.current,
+.scheme-light .page-links a:hover span,
+.scheme-light #main .more-link {
+	background: #dfa700;
+	border: none;
+	color: #fff;
+}
+.scheme-light #main a {
+	color: #ba4a3f;
+}
+.scheme-light #sub-header,
+.scheme-light #above-footer {
+	background: #e2e1d9;
+}
+.scheme-light #above-footer a,
+.scheme-light #sub-header a {
+	color: #49473f;
+	text-decoration: underline;
+}
+.scheme-light #main .sticky {
+	border: none;
+}
+.scheme-light.blog .hentry,
+.scheme-light.archive .hentry {
+	border-color: rgba(0,0,0,.025);
+}
+.scheme-light #content a,
+.scheme-light #sub-header a,
+.scheme-light #above-footer a,
+.scheme-light #secondary a {
+	color: #bf8f00;
+}
+.scheme-light #content a:visited {
+	color: #b6a05f;
+}
+.scheme-light #content a:hover {
+	color: #5c5542;
+}
+.scheme-light #content a:active {
+	color: #252422;
+}
+.scheme-light h1,
+.scheme-light h2,
+.scheme-light h3,
+.scheme-light h4,
+.scheme-light h5,
+.scheme-light h6,
+.scheme-light #main .entry-title a,
+.scheme-light #main a .entry-title,
+.scheme-light #main .entry-title a:hover,
+.scheme-light #main a:hover .entry-title {
+	color: #252422;
+}
+.scheme-light .entry-meta,
+.scheme-light .entry-aside {
+	color: #696454;
+}
 
 
-/* =Typography
+/* =3. Typography
 ----------------------------------------------- */
 
-/* Body font */
+/* =3.1 Body font */
 body.body-font-helvetica,
 .body-font-helvetica button,
 .body-font-helvetica input,
@@ -577,7 +730,6 @@ body.body-font-titillium-web,
 .body-font-titillium-web .site-description {
 	font-family: "Titillium Web", sans-serif;
 }
-
 /* Body font weight */
 body.body-font-weight-300,
 .body-font-weight-300 button,
@@ -588,9 +740,7 @@ body.body-font-weight-300,
 	font-weight: 300;
 	-webkit-font-smoothing: antialiased;
 }
-
-
-/* Heading font */
+/* =3.2 Heading font */
 .heading-font-helvetica h1,
 .heading-font-helvetica h2,
 .heading-font-helvetica h3,
@@ -647,19 +797,100 @@ body.body-font-weight-300,
 .heading-font-titillium-web h6 {
 	font-family: "Titillium Web", sans-serif;
 }
-
-/* Genericons */
+/* =3.3 Genericons */
 #pull-out-trigger:before {
 	-webkit-font-smoothing: antialiased;
 	display: inline-block;
 	font: normal 16px/1 Genericons;
 	vertical-align: text-bottom;
 }
+/* =3.4 Small Fonts */
+body.font-size-small,
+.font-size-small button,
+.font-size-small input,
+.font-size-small select,
+.font-size-small textarea {
+	font-size: 14px;
+}
+.font-size-small h1 {
+	font-size: 32px;
+}
+.font-size-small h2 {
+	font-size: 26px;
+}
+.font-size-small h3 {
+	font-size: 22px;
+}
+.font-size-small h4,
+.font-size-small .widget-title {
+	font-size: 18px;
+}
+.font-size-small h5 {
+	font-size: 14px;
+}
+.font-size-small h6 {
+	font-size: 12px;
+}
+.font-size-small .menu-toggle {
+	font-size: 20px;
+}
+.font-size-small .widget {
+	font-size: 12px;
+}
+/* =3.5 Large fonts */
+body.font-size-large,
+.font-size-large button,
+.font-size-large input,
+.font-size-large select,
+.font-size-large textarea {
+	font-size: 18px;
+}
+.font-size-large h1 {
+	font-size: 40px;
+}
+.font-size-large h2 {
+	font-size: 32px;
+}
+.font-size-large h3 {
+	font-size: 26px;
+}
+.font-size-large h4,
+.font-size-large .widget-title {
+	font-size: 22px;
+}
+.font-size-large h5 {
+	font-size: 18px;
+}
+.font-size-large h6 {
+	font-size: 16px;
+}
+.body-font-size-small {
+	font-size: 14px;
+}
+.font-size-small #masthead .site-title {
+	font-size: 40px;
+}
+.font-size-small #masthead .site-description {
+	font-size: 14px;
+}
+.font-size-large #masthead .site-title {
+	font-size: 60px;
+}
+.font-size-large #masthead .site-description {
+	font-size: 20px;
+}
+.font-size-large .menu-toggle {
+	font-size: 28px;
+}
+.font-size-large .widget {
+	font-size: 16px;
+}
 
 
-/* =Layout
+/* =4. Layout
 ----------------------------------------------- */
 
+/* Setting a custom background activates boxed layout */
 .custom-background {
 	padding: 0 20px;
 }
@@ -667,16 +898,12 @@ body.body-font-weight-300,
 	max-width: 1040px;
 	margin: 0 auto;
 }
-.inner,
-.navigation-main > ul {
+.inner {
 	max-width: 1040px;
 	margin: 0 auto;
 	padding: 0 20px;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
-}
-.navigation-main ul {
-	padding: 0;
 }
 #primary,
 #secondary {
@@ -685,8 +912,7 @@ body.body-font-weight-300,
 #main {
 	padding: 40px 0;
 }
-
-/* Layout: Content - Primary Sidebar */
+/* =4.1 Right Sidebar */
 .sidebar-right .content-area {
 	float: left;
 	margin: 0 -36% 0 0;
@@ -699,8 +925,7 @@ body.body-font-weight-300,
 	float: right;
 	width: 30%;
 }
-
-/* Layout: Primary Sidebar - Content */
+/* =4.2 Left Sidebar */
 .sidebar-left .content-area {
 	float: right;
 	margin: 0 0 0 -36%;
@@ -713,8 +938,7 @@ body.body-font-weight-300,
 	float: left;
 	width: 30%;
 }
-
-/* Full-width templates (Masonry, attachment) */
+/* =4.2 Full-width templates */
 .attachment #primary,
 .attachment #content,
 .page-template-page-templatestemplate-masonry-php #primary,
@@ -734,36 +958,6 @@ body.body-font-weight-300,
 .attachment .entry-caption {
 	font-size: 14px;
 }
-
-.site-footer {
-	clear: both;
-	width: 100%;
-}
-
-/* Header */
-#masthead hgroup {
-	padding: 40px 0;
-}
-.header-image #masthead hgroup {
-	padding: 80px 0;
-}
-#masthead .site-title {
-	margin: 0 0 0.1em;
-	font-size: 48px;
-}
-#masthead .site-title a {
-	text-decoration: none;
-}
-#masthead .site-description {
-	margin: 0;
-	font-size: 16px;
-	font-weight: normal;
-}
-#masthead.centered {
-	text-align: center;
-}
-
-/* Footer */
 .site-footer {
 	clear: both;
 	width: 100%;
@@ -771,14 +965,43 @@ body.body-font-weight-300,
 }
 
 
-/* =Menu
+/* =5. Header
 ----------------------------------------------- */
 
+.site-header hgroup {
+	padding: 40px 0;
+}
+.header-image .site-header hgroup {
+	padding: 0;
+	min-height: 240px;
+}
+.header-image .site-title {
+	padding: 70px 0 0;
+}
+.site-header .site-title {
+	margin: 0 0 0.1em;
+	font-size: 48px;
+}
+.site-header .site-title a {
+	text-decoration: none;
+}
+.site-header .site-description {
+	margin: 0;
+	font-size: 16px;
+	font-weight: normal;
+}
+
+
+/* =6. Menus
+----------------------------------------------- */
+
+/* =6.1 Large Menu */
 .navigation-main {
 	display: block;
 }
 .navigation-main ul {
 	list-style: none;
+	padding: 0;
 }
 .navigation-main .menu li {
 	display: inline-block;
@@ -856,7 +1079,7 @@ body.body-font-weight-300,
 	font-size: 12px;
 	margin-top: 0.25em;
 }
-/* Small menu */
+/* =6.2 Small Menu */
 .menu-toggle {
 	display: none;
 	cursor: pointer;
@@ -876,7 +1099,6 @@ body.body-font-weight-300,
 	display: block;
 	padding: 0.25em;
 }
-
 @media screen and (max-width: 600px) {
 	.menu-toggle,
 	.main-small-navigation ul.nav-menu.toggled-on {
@@ -887,7 +1109,7 @@ body.body-font-weight-300,
 	}
 }
 
-/* =Content
+/* =7. Entries
 ----------------------------------------------- */
 
 .hentry {
@@ -898,15 +1120,10 @@ body.body-font-weight-300,
 	border-bottom: 1px solid #eee;
 	padding-bottom: 30px;
 }
-#main .sticky {
-	background: #f9f9f9;
+.sticky {
 	border-bottom: 3px solid #303030;
 	padding: 30px;
 }
-	.background-dark #main .sticky {
-		background: #444;
-		border-bottom-color: #555;
-	}
 .entry-header {
 	margin-bottom: 15px;
 }
@@ -939,7 +1156,25 @@ body.body-font-weight-300,
 	clear: both;
 	margin: 0 0 1.5em;
 }
-/* Post layout */
+#main .more-link {
+	display: inline-block;
+	text-decoration: none;
+	border: 1px solid rgba(0,0,0,0.1);
+	box-shadow: none;
+	color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	line-height: 1;
+	padding: 0.6em 0.6em;
+	text-shadow: none;
+}
+#main .more-link:hover {
+	box-shadow: inset 0 0 5em rgba(0,0,0,0.25);
+}
+#main .more-link:active {
+	background: #444;
+}
+/* =7.1 Post Aside Widget Area */
 .entry-aside {
 	float: left;
 	width: 21.969696%; /* 145px */
@@ -967,45 +1202,15 @@ body.body-font-weight-300,
 	float: right;
 	width: 75%;
 }
-#main .more-link {
-	display: inline-block;
-	text-decoration: none;
-	border: 1px solid rgba(0,0,0,0.1);
-	box-shadow: none;
-	color: #fff;
-	cursor: pointer;
-	font-size: 16px;
-	line-height: 1;
-	padding: 0.6em 0.6em;
-	text-shadow: none;
-}
-#main .more-link:hover {
-	box-shadow: inset 0 0 5em rgba(0,0,0,0.25);
-}
-#main .more-link:active {
-	background: #444;
-}
-
-
-/* =Asides (post format)
------------------------------------------------ */
-
+/* =7.1 Post Formats */
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
 	display: none;
 }
-
-/* =Status (post format)
------------------------------------------------ */
-
 .blog .format-status .entry-content,
 .archive .format-status .entry-content {
 	font-size: 1.25em;
 }
-
-/* =Images, Galleries and Videos (post format)
------------------------------------------------ */
-
 .blog .format-image .entry-header,
 .archive .format-image .entry-header,
 .blog .format-gallery .entry-header,
@@ -1042,7 +1247,116 @@ body.body-font-weight-300,
 }
 
 
-/* =Media
+/* =8. Page Templates
+----------------------------------------------- */
+
+/* =8.1 Authors */
+#authors-list {
+  list-style: none;
+  margin: 2em 0;
+}
+#authors-list > li {
+  margin-bottom: 1.25em;
+  padding-bottom: 1.25em;
+  border-bottom: 1px solid #f6f6f6;
+}
+#authors-list > li:last-child {
+  border-bottom: none;
+}
+#authors-list .author-avatar {
+  float: left;
+  padding: 0;
+  border: none;
+  width: 96px;
+}
+#authors-list .author-avatar .avatar {
+  padding: 0;
+  border: none;
+  width: 100%;
+  height: auto;
+}
+#authors-list .author-text {
+  margin-left: 112px;
+}
+#authors-list h2 {
+  clear: none;
+  margin-top: 0;
+  font-size: 24px;
+}
+#authors-list h3 {
+  clear: none;
+  margin-top: 1em;
+  font-size: 16px;
+}
+#authors-list .latest-by-author li {
+  font-size: 14px;
+}
+/* =8.2 Masonry */
+.masonry-brick {
+	width: 300px;
+	margin-bottom: 30px;
+}
+.masonry-brick .entry-header a {
+	text-decoration: none;
+}
+.masonry-brick .entry-title {
+	font-size: 22px;
+	margin-bottom: 10px;
+}
+.masonry-brick .entry-summary,
+.masonry-brick .entry-footer {
+	font-size: 14px;
+}
+.masonry-brick .entry-thumb img {
+	display: block;
+	margin-bottom: 10px;
+}
+.masonry-brick .entry-summary {
+	margin-bottom: 5px;
+}
+/* =8.3 Widgetized Homepage */
+#widgetized-homepage-top {
+	margin-bottom: 40px;
+}
+.widgetized-text-left #widgetized-homepage-aside,
+.widgetized-text-right #widgetized-homepage-aside,
+.widgetized-text-left .widgetized-homepage-text,
+.widgetized-text-right .widgetized-homepage-text {
+	float: left;
+	width: 50%;
+}
+.widgetized-text-left > :first-child,
+.widgetized-text-right > :first-child {
+	padding-right: 20px;
+}
+.widgetized-text-left > :last-child,
+.widgetized-text-right > :last-child {
+	padding-left: 20px;
+}
+.widgetized-text-top > :first-child,
+.widgetized-text-bottom > :first-child {
+	margin-bottom: 40px;
+}
+/* Make video fluid */
+.widgetized-homepage-video-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+}
+.widgetized-homepage-video-container iframe,  
+.widgetized-homepage-video-container object,  
+.widgetized-homepage-video-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+/* =9. Media
 ----------------------------------------------- */
 
 .entry-content img.wp-smiley,
@@ -1115,7 +1429,6 @@ body.body-font-weight-300,
 .tiled-gallery .tiled-gallery-item img {
 	margin: 0 !important;
 }
-
 /* Make sure embeds and iframes fit their containers */
 embed,
 iframe,
@@ -1124,7 +1437,7 @@ object {
 }
 
 
-/* =Navigation
+/* =10. Post Navigation
 ----------------------------------------------- */
 
 .site-content [class*="navigation"] {
@@ -1187,7 +1500,6 @@ object {
 	word-wrap: break-word;
 	margin-top: 0;
 }
-
 .navigation-paging {
 	text-align: center;
 }
@@ -1227,7 +1539,6 @@ a.page-numbers.next:hover {
 .page-numbers.current:last-child {
 	margin-right: 33.33333%;
 }
-
 /* Paginated posts */
 .page-links span {
 	background: #303030;
@@ -1245,7 +1556,7 @@ a.page-numbers.next:hover {
 }
 
 
-/* =Comments
+/* =11. Comments
 ----------------------------------------------- */
 
 .comment-list {
@@ -1305,7 +1616,7 @@ article.comment {
 }
 
 
-/* =Forms
+/* =12. Forms
 ----------------------------------------------- */
 
 #commentform label,
@@ -1374,162 +1685,8 @@ article.comment {
 	margin-left: 0.5em;
 }
 
-/* =Page Templates
------------------------------------------------ */
 
-/* Authors page template */
-#authors-list {
-  list-style: none;
-  margin: 2em 0;
-}
-#authors-list > li {
-  margin-bottom: 1.25em;
-  padding-bottom: 1.25em;
-  border-bottom: 1px solid #f6f6f6;
-}
-#authors-list > li:last-child {
-  border-bottom: none;
-}
-#authors-list .author-avatar {
-  float: left;
-  padding: 0;
-  border: none;
-  width: 96px;
-}
-#authors-list .author-avatar .avatar {
-  padding: 0;
-  border: none;
-  width: 100%;
-  height: auto;
-}
-#authors-list .author-text {
-  margin-left: 112px;
-}
-#authors-list h2 {
-  clear: none;
-  margin-top: 0;
-  font-size: 24px;
-}
-#authors-list h3 {
-  clear: none;
-  margin-top: 1em;
-  font-size: 16px;
-}
-#authors-list .latest-by-author li {
-  font-size: 14px;
-}
-
-/* Masonry template */
-.masonry-brick {
-	width: 300px;
-	margin-bottom: 30px;
-}
-.masonry-brick .entry-header a {
-	text-decoration: none;
-}
-.masonry-brick .entry-title {
-	font-size: 22px;
-	margin-bottom: 10px;
-}
-.masonry-brick .entry-summary,
-.masonry-brick .entry-footer {
-	font-size: 14px;
-}
-.masonry-brick .entry-thumb img {
-	display: block;
-	margin-bottom: 10px;
-}
-.masonry-brick .entry-summary {
-	margin-bottom: 5px;
-}
-
-/* Widgetized Homepage template */
-#widgetized-homepage-top {
-	margin-bottom: 40px;
-}
-.widgetized-text-left #widgetized-homepage-aside,
-.widgetized-text-right #widgetized-homepage-aside,
-.widgetized-text-left .widgetized-homepage-text,
-.widgetized-text-right .widgetized-homepage-text {
-	float: left;
-	width: 50%;
-}
-.widgetized-text-left > :first-child,
-.widgetized-text-right > :first-child {
-	padding-right: 20px;
-}
-.widgetized-text-left > :last-child,
-.widgetized-text-right > :last-child {
-	padding-left: 20px;
-}
-.widgetized-text-top > :first-child,
-.widgetized-text-bottom > :first-child {
-	margin-bottom: 40px;
-}
-/* Make video fluid */
-.widgetized-homepage-video-container {
-	position: relative;
-	padding-bottom: 56.25%;
-	padding-top: 30px;
-	height: 0;
-	overflow: hidden;
-}
-.widgetized-homepage-video-container iframe,  
-.widgetized-homepage-video-container object,  
-.widgetized-homepage-video-container embed {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-.widgetized-homepage-widget {
-	float: left;
-	margin-bottom: 40px;
-	padding: 0 20px;
-}
-.widgetized-homepage-widget :last-child {
-	margin-bottom: 0;
-}
-	.widgetized-homepage-widgets-2 .widget {
-		width: 50%;
-	}
-		.widgetized-homepage-widgets-2 .widget:nth-child(2n+1) {
-			padding: 0 20px 0 0;
-			clear: left;
-		}
-		.widgetized-homepage-widgets-2 .widget:nth-child(2n) {
-			padding: 0 0 0 20px;
-		}
-	.widgetized-homepage-widgets-3 .widget {
-		width: 33.333%;
-	}
-		.widgetized-homepage-widgets-3 .widget:nth-child(3n+1) {
-			padding: 0 20px 0 0;
-			clear: left;
-		}
-		.widgetized-homepage-widgets-3 .widget:nth-child(3n+2) {
-			padding: 0 20px;
-		}
-		.widgetized-homepage-widgets-3 .widget:nth-child(3n) {
-			padding: 0 0 0 20px;
-		}
-	.widgetized-homepage-widgets-4 .widget {
-		width: 25%;
-	}
-		.widgetized-homepage-widgets-4 .widget:nth-child(4n+1) {
-			padding: 0 20px 0 0;
-			clear: left;
-		}
-		.widgetized-homepage-widgets-4 .widget:nth-child(4n+2),
-		.widgetized-homepage-widgets-4 .widget:nth-child(4n+3) {
-			padding: 0 20px;
-		}
-		.widgetized-homepage-widgets-4 .widget:nth-child(4n+3) {
-			padding: 0 0 0 20px;
-		}
-
-/* =Widgets
+/* =13. Widgets
 ----------------------------------------------- */
 
 .widget {
@@ -1542,12 +1699,10 @@ article.comment {
 .widget-title {
 	text-transform: uppercase;
 }
-
 /* Make sure select elements fit in widgets */
 .widget select {
 	max-width: 100%;
 }
-
 /* Search widget */
 .widget_search #s {
 	width: 100%;
@@ -1561,7 +1716,6 @@ article.comment {
 .widget_search .submit {
 	display: none;
 }
-
 /* Lists */
 .widget ul {
 	margin: 0 0 2em;
@@ -1584,7 +1738,6 @@ article.comment {
 .widget a {
 	text-decoration: none;
 }
-
 /* Calendar */
 #wp-calendar {
 	border-collapse: collapse;
@@ -1603,8 +1756,7 @@ article.comment {
 #wp-calendar tfoot td#next {
 	text-align: right;
 }
-
-/* Pull-out widget area */
+/* =13.1 Pull-out widget area */
 #pull-out-widget-area {
 	position: fixed;
 	top: 0;
@@ -1615,12 +1767,6 @@ article.comment {
 	display: none;
 	padding: 0 20px;
 }
-	.admin-bar #pull-out-widget-area {
-		top: 28px;
-	}
-	.background-dark #pull-out-widget-area {
-		background: #fff;
-	}
 #pull-out-trigger {
 	position: fixed;
 	top: 0;
@@ -1639,22 +1785,9 @@ article.comment {
 	font-size: 1.25em;
 	line-height: 0.8;
 }
-#pull-out-trigger.open {
-	background-position: top right;
-}
 #pull-out-trigger.open:before {
 	content: '\f432';
 }
-	.admin-bar #pull-out-trigger { 
-		top: 28px;
-	}
-	.background-dark #pull-out-trigger {
-		background-color: #fff;
-		background-position: bottom left;
-	}
-	.background-dark #pull-out-trigger.open {
-		background-position: bottom right;
-	}
 #pull-out-widget-area .widget {
 	color: #ddd;
 }
@@ -1674,8 +1807,14 @@ article.comment {
 #pull-out-widget-area .widget ul li:last-child {
 	border-bottom: none;
 }
-
-/* Flexible widget areas - number of widgets per row (1, 2, 3 or 4) changes depending on number of widgets used */
+.admin-bar #pull-out-widget-area {
+	top: 28px;
+}
+.admin-bar #pull-out-trigger { 
+	top: 28px;
+}
+/* =13.2 Flexible widget areas */
+/* Number of widgets per row (1, 2, 3 or 4) changes depending on number of widgets used */
 .flexible-widget-area .widget {
 	margin: 20px 0;
 	float: left;
@@ -1719,6 +1858,7 @@ article.comment {
 	padding-right: 0;
 }
 
+
 /* =Infinite Scroll
 ----------------------------------------------- */
 
@@ -1734,234 +1874,10 @@ article.comment {
 }
 
 
-/* =Theme Variations
+/* =15. Steroids Plugin
 ----------------------------------------------- */
 
-/* Color Schemes */
-body.scheme-dark {
-	background: #222;
-	color: #ddd;
-}
-.scheme-dark #main {
-	background: #222;
-}
-.scheme-dark #masthead,
-.scheme-dark #commentform #submit,
-.scheme-dark .comment-reply-link,
-.scheme-dark .wpcf7 input[type="submit"],
-.scheme-dark .protected-post-form input[type="submit"],
-.scheme-dark .page-numbers.current,
-.scheme-dark .page-links a:hover span,
-.scheme-dark #main .more-link {
-	background: #f9f567;
-	color: #303030;
-}
-.scheme-dark #content a,
-.scheme-dark #sub-header a,
-.scheme-dark #above-footer a,
-.scheme-dark #secondary a {
-	color: #f9f567;
-}
-.scheme-dark h1,
-.scheme-dark h2,
-.scheme-dark h3,
-.scheme-dark h4,
-.scheme-dark h5,
-.scheme-dark h6,
-.scheme-dark #main .entry-title a,
-.scheme-dark #main a .entry-title,
-.scheme-dark #main .entry-title a:hover,
-.scheme-dark #main a:hover .entry-title {
-	color: #f3f3f3;
-}
-.scheme-dark #masthead,
-.scheme-dark #colophon {
-	background: #222;
-}
-.scheme-dark #sub-header,
-.scheme-dark #above-footer {
-	background: #262626;
-}
-.scheme-dark #masthead,
-.scheme-dark #sub-header,
-.scheme-dark #main,
-.scheme-dark #above-footer {
-	border-bottom: 1px solid #303030;
-}
-.scheme-dark #main .sticky {
-	background: #262626;
-	border: 1px solid #303030;
-}
-.scheme-dark .widget ul li {
-	border-color: #303030;
-}
-.scheme-dark.blog .hentry,
-.scheme-dark.archive .hentry {
-	border-color: #303030;
-}
-body.scheme-light {
-	background: #f0efec;
-	color: #282725;
-}
-.scheme-light #main {
-	background: #f0efec;
-}
-.scheme-light .navigation-main {
-	background: #e8e7e3;
-}
-.scheme-light #masthead,
-.scheme-light #commentform #submit,
-.scheme-light .comment-reply-link,
-.scheme-light .wpcf7 input[type="submit"],
-.scheme-light .protected-post-form input[type="submit"],
-.scheme-light .page-numbers.current,
-.scheme-light .page-links a:hover span,
-.scheme-light #main .more-link {
-	background: #dfa700;
-	border: none;
-	color: #fff;
-}
-.scheme-light #main a {
-	color: #ba4a3f;
-}
-.scheme-light #sub-header,
-.scheme-light #above-footer {
-	background: #e2e1d9;
-}
-.scheme-light #above-footer a,
-.scheme-light #sub-header a {
-	color: #49473f;
-	text-decoration: underline;
-}
-.scheme-light #main .sticky {
-	border: none;
-}
-.scheme-light.blog .hentry,
-.scheme-light.archive .hentry {
-	border-color: rgba(0,0,0,.025);
-}
-.scheme-light #content a,
-.scheme-light #sub-header a,
-.scheme-light #above-footer a,
-.scheme-light #secondary a {
-	color: #bf8f00;
-}
-.scheme-light #content a:visited {
-	color: #b6a05f;
-}
-.scheme-light #content a:hover {
-	color: #5c5542;
-}
-.scheme-light #content a:active {
-	color: #252422;
-}
-.scheme-light h1,
-.scheme-light h2,
-.scheme-light h3,
-.scheme-light h4,
-.scheme-light h5,
-.scheme-light h6,
-.scheme-light #main .entry-title a,
-.scheme-light #main a .entry-title,
-.scheme-light #main .entry-title a:hover,
-.scheme-light #main a:hover .entry-title {
-	color: #252422;
-}
-.scheme-light .entry-meta,
-.scheme-light .entry-aside {
-	color: #696454;
-}
-
-/* Font Sizes */
-/* Small fonts */
-body.font-size-small,
-.font-size-small button,
-.font-size-small input,
-.font-size-small select,
-.font-size-small textarea {
-	font-size: 14px;
-}
-.font-size-small h1 {
-	font-size: 32px;
-}
-.font-size-small h2 {
-	font-size: 26px;
-}
-.font-size-small h3 {
-	font-size: 22px;
-}
-.font-size-small h4,
-.font-size-small .widget-title {
-	font-size: 18px;
-}
-.font-size-small h5 {
-	font-size: 14px;
-}
-.font-size-small h6 {
-	font-size: 12px;
-}
-.font-size-small .menu-toggle {
-	font-size: 20px;
-}
-.font-size-small .widget {
-	font-size: 12px;
-}
-/* Large fonts */
-body.font-size-large,
-.font-size-large button,
-.font-size-large input,
-.font-size-large select,
-.font-size-large textarea {
-	font-size: 18px;
-}
-.font-size-large h1 {
-	font-size: 40px;
-}
-.font-size-large h2 {
-	font-size: 32px;
-}
-.font-size-large h3 {
-	font-size: 26px;
-}
-.font-size-large h4,
-.font-size-large .widget-title {
-	font-size: 22px;
-}
-.font-size-large h5 {
-	font-size: 18px;
-}
-.font-size-large h6 {
-	font-size: 16px;
-}
-.body-font-size-small {
-	font-size: 14px;
-}
-.font-size-small #masthead .site-title {
-	font-size: 40px;
-}
-.font-size-small #masthead .site-description {
-	font-size: 14px;
-}
-.font-size-large #masthead .site-title {
-	font-size: 60px;
-}
-.font-size-large #masthead .site-description {
-	font-size: 20px;
-}
-.font-size-large .menu-toggle {
-	font-size: 28px;
-}
-.font-size-large .widget {
-	font-size: 16px;
-}
-
-/* Header Layouts */
-
-
-/* =Steroids plugin
------------------------------------------------ */
-
-/* Portfolio project layouts */
+/* =15.1 Portfolio */
 .portfolio-project.layout-b .project-content {
 	float: left;
 	width: 72%;
@@ -1983,8 +1899,7 @@ body.font-size-large,
 	top: 0;
 	right: 0;
 }
-
-/* FAQ */
+/* =15.2 FAQ */
 .steroids-faqs dt {
 	font-size: 18px;
 	padding: 0.5em 0;
@@ -1994,7 +1909,7 @@ body.font-size-large,
 }
 
 
-/* =Media Queries
+/* =16. Media Queries
 ----------------------------------------------- */
 
 @media screen and (max-width: 800px) {

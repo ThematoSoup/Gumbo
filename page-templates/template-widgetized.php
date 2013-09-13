@@ -2,7 +2,10 @@
 /**
  * Template Name: Widgetized Homepage
  *
- * @package Gumbo
+ * Similar to 2012 homepage template
+ *
+ * @package		Gumbo
+ * @since		Gumbo 1.0
  */
 
 get_header(); ?>
@@ -69,7 +72,7 @@ get_header(); ?>
 
 			<?php if ( is_active_sidebar( 'homepage-widget-area' ) ) : ?>
 			<?php $widgets_per_row = ( get_post_meta( $post->ID, '_thsp_widgetized_widgets_per_row', true ) ? get_post_meta( $post->ID, '_thsp_widgetized_widgets_per_row', true ) : 4 ); ?>
-			<div id="widgetized-homepage-widgets" class="widgetized-homepage-widgets-<?php echo $widgets_per_row; ?>">
+			<div id="widgetized-homepage-widgets" class="flexible-widget-area <?php echo thsp_count_widgets( 'homepage-widget-area' ); ?>">
 				<?php dynamic_sidebar( 'homepage-widget-area' ); ?>
 			</div><!-- #widgetized-homepage-widgets -->
 			<?php endif; ?>

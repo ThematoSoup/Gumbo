@@ -2,7 +2,8 @@
 /**
  * Template Name: Full Width
  *
- * @package Gumbo
+ * @package		Gumbo
+ * @since		Gumbo 1.0
  */
 
 get_header(); ?>

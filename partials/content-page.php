@@ -2,7 +2,8 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package Gumbo
+ * @package		Gumbo
+ * @since		Gumbo 1.0
  */
 ?>
 

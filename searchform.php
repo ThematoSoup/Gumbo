@@ -1,8 +1,9 @@
 <?php
 /**
- * The template for displaying search forms in Gumbo
+ * The template for displaying search forms in Gumbo.
  *
- * @package Gumbo
+ * @package		Gumbo
+ * @since		Gumbo 1.0
  */
 ?>
 	<form method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">

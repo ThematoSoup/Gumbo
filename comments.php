@@ -7,7 +7,8 @@
  * handled by a callback to thsp_comment() which is
  * located in the inc/template-tags.php file.
  *
- * @package Gumbo
+ * @package		Gumbo
+ * @since 		Gumbo 1.0
  */
 ?>
 

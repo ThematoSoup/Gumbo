@@ -2,7 +2,10 @@
 /**
  * Template Name: Masonry
  *
- * @package Gumbo
+ * Number of posts per page and excluded category can be set in page meta box
+ *
+ * @package		Gumbo
+ * @since		Gumbo 1.0
  */
 
 get_header(); ?>

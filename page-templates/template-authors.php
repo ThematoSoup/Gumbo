@@ -2,7 +2,11 @@
 /**
  * Template Name: Authors
  *
- * @package Gumbo
+ * Used to display your site's authors
+ * Authors can be ordered by post count or alphabetically
+ *
+ * @package		Gumbo
+ * @since		Gumbo 1.0
  */
 
 get_header(); ?>

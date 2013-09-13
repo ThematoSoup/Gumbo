@@ -1,18 +1,12 @@
 <?php
 /**
- * The template part that displays a single post in archives.
+ * The template part that displays a single link post in archives.
  *
- * Based on theme settings one of three possible layouts is shown.
- * Excerpt or full content is shown, also based on theme settings.
- *
- * @package Gumbo
+ * @package		Gumbo
+ * @since		Gumbo 1.0
  */
 ?>
 
-<?php 
-	// Get theme options
-	$thsp_theme_options = thsp_cbp_get_options_values(); 
-?>
 <?php tha_entry_before(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php tha_entry_top(); ?>
