@@ -419,3 +419,15 @@ class THSP_Menu_With_Description extends Walker_Nav_Menu {
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	}
 }
+
+
+
+/**
+ * Add Yoast breadcrumbs
+ */
+function thsp_add_yoast_breadcrumbs() {
+	if ( function_exists( 'yoast_breadcrumb' ) && ! is_home() ) :
+		yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+	endif;	
+}
+add_action( 'tha_content_top', 'thsp_add_yoast_breadcrumbs' );

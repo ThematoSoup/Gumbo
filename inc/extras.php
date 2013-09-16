@@ -237,7 +237,10 @@ function thsp_internal_css() {
 	if ( ( isset( $thsp_primary_color ) && '' != $thsp_primary_color ) || isset( $thsp_header_background ) && '' != $thsp_header_background ) : ?>
 	<style type="text/css">
 	<?php if ( isset( $thsp_primary_color ) && '' != $thsp_primary_color ) : ?>
-		#content a {
+		#content a,
+		#sub-header a,
+		#above-footer a,
+		#secondary a {
 			color: <?php echo $thsp_primary_color; ?>
 		}
 		#content a:hover {
@@ -251,7 +254,8 @@ function thsp_internal_css() {
 		.protected-post-form input[type="submit"],
 		.page-numbers.current,
 		.page-links a:hover span,
-		#main .more-link {
+		#main .more-link,
+		.navigation-main .sub-menu a:hover {
 			background: <?php echo $thsp_primary_color; ?>;
 		}
 	<?php endif; ?>
