@@ -91,6 +91,8 @@ function thsp_setup() {
 	 */
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'gumbo' ),
+		'footer' => __( 'Footer Menu', 'gumbo' ),
+		'top' => __( 'Top Menu', 'gumbo' ),
 	) );
 
 	/**

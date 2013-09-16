@@ -72,8 +72,8 @@ function thsp_header_style() {
 	<?php
 		if ( ! empty( $header_image ) ) :
 	?>
-		#masthead hgroup {
-			background: url(<?php header_image(); ?>) no-repeat scroll top;
+		.header-image #masthead {
+			background: url(<?php header_image(); ?>) no-repeat scroll top !important;
 			background-size: 1600px auto;
 			/* background-attachment: fixed; */
 			background-position: center top;

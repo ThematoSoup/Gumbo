@@ -29,6 +29,18 @@
 <div id="page" class="hfeed site">	
 	<?php tha_header_before(); ?>		
 	<header id="masthead" class="site-header <?php echo $thsp_header_class; ?>" role="banner">
+		<?php if ( has_nav_menu( 'top' ) ) : ?>
+		<nav id="top-navigation" role="navigation">
+			<?php
+				wp_nav_menu( array(
+					'theme_location'	=> 'top',
+					'container'			=> '',
+					'menu_class'		=> 'menu inner'
+				) );
+			?>
+		</nav><!-- #top-navigation -->
+		<?php endif; ?>
+
 		<div class="clear">
 			<?php tha_header_top(); ?>
 			<hgroup>

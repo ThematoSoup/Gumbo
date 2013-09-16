@@ -97,6 +97,11 @@ function thsp_body_classes( $classes ) {
 	if ( ! empty( $header_image ) ) :
 		$thsp_body_classes[] = 'header-image';
 	endif;
+
+	// Check if custom primary color is used
+	if ( ! empty( $thsp_theme_options['primary_color'] ) ) :
+		$thsp_body_classes[] = 'custom-primary-color';
+	endif;
 		
 	$classes = array_merge( $classes, $thsp_body_classes );
 	return $classes;
@@ -232,38 +237,25 @@ function thsp_internal_css() {
 	// Get current theme options
 	$thsp_theme_options			= thsp_cbp_get_options_values();
 	$thsp_primary_color			= $thsp_theme_options['primary_color'];
-	$thsp_header_background		= $thsp_theme_options['header_background'];
 	
-	if ( ( isset( $thsp_primary_color ) && '' != $thsp_primary_color ) || isset( $thsp_header_background ) && '' != $thsp_header_background ) : ?>
+	if ( isset( $thsp_primary_color ) && '' != $thsp_primary_color ) : ?>
 	<style type="text/css">
-	<?php if ( isset( $thsp_primary_color ) && '' != $thsp_primary_color ) : ?>
-		#content a,
-		#sub-header a,
-		#above-footer a,
-		#secondary a {
+		.custom-primary-color #main a {
 			color: <?php echo $thsp_primary_color; ?>
 		}
-		#content a:hover {
-			background: <?php echo $thsp_primary_color; ?>;
-			color: #fff;
-			text-decoration: none;
-		}
-		#commentform #submit,
-		.comment-reply-link,
-		.wpcf7 input[type="submit"],
-		.protected-post-form input[type="submit"],
-		.page-numbers.current,
-		.page-links a:hover span,
-		#main .more-link,
-		.navigation-main .sub-menu a:hover {
+		.custom-primary-color #commentform #submit,
+		.custom-primary-color .comment-reply-link,
+		.custom-primary-color .wpcf7 input[type="submit"],
+		.custom-primary-color .protected-post-form input[type="submit"],
+		.custom-primary-color .page-numbers.current,
+		.custom-primary-color .page-links a:hover span,
+		.custom-primary-color #main .more-link,
+		.custom-primary-color .navigation-main .sub-menu a:hover {
 			background: <?php echo $thsp_primary_color; ?>;
 		}
-	<?php endif; ?>
-	<?php if ( isset( $thsp_header_background ) && '' != $thsp_header_background ) : ?>
-		#masthead hgroup {
-			background-color: <?php echo $thsp_header_background; ?>;
+		.custom-primary-color #masthead {
+			background-color: <?php echo $thsp_primary_color; ?> !important;
 		}
-	<?php endif; ?>
 	</style>
 	<?php endif;
 }
