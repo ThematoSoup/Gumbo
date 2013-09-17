@@ -111,6 +111,11 @@ function thsp_setup() {
 	 * Enable support for Theme Hook Alliance hooks
 	 */
 	add_theme_support( 'tha_hooks', array( 'all' ) );
+
+	/**
+	 * Enable WooCommerce support
+	 */
+	add_theme_support( 'woocommerce' );
 }
 endif; // thsp_setup
 add_action( 'after_setup_theme', 'thsp_setup' );
@@ -126,13 +131,18 @@ require( get_template_directory() . '/inc/template-tags.php' );
 require( get_template_directory() . '/inc/extras.php' );
 
 /**
- * Steroids plugin display functions
+ * Steroids plugin compatibility
  */
-include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-if ( is_plugin_active( 'steroids/steroids.php' ) ) :
+if ( in_array( 'steroids/steroids.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) :
 	require( get_template_directory() . '/inc/steroids.php' );
 endif;
 
+/**
+ * Check if WooCommerce is active
+ **/
+if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) :
+	require( get_template_directory() . '/inc/woocommerce.php' );
+endif;
 
 /**
  * Theme Customizer boilerplate
