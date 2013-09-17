@@ -517,30 +517,6 @@ a:active {
 #above-footer {
 	background: #f9f9f9;
 }
-#main a {
-	color: #1e8ca3;
-}
-#main .entry-content a:visited {
-	color: #757575;
-}
-#main a:hover {
-	color: #555;
-}
-#main a:active {
-	background: #303030;
-	color: #fff !important;
-	text-decoration: none;
-}
-.entry-meta,
-.entry-aside,
-#main .entry-meta a,
-#main .entry-aside a {
-	color: #aaa;
-}
-#main .entry-meta a:hover,
-#main .entry-aside a:hover {
-	color: #1e8ca3;
-}
 .sticky {
 	background: #f9f9f9;
 }
@@ -549,6 +525,33 @@ a:active {
 .protected-post-form input[type="submit"]:focus {
 	background: #303030 !important;
 }
+/* Links */
+.entry-content a,
+#secondary a,
+#comments a {
+	color: #1e8ca3;
+}
+#main .entry-content a:visited,
+#main #comments a:visited {
+	color: #757575;
+}
+#main #primary a:hover,
+#main #secondary a:hover {
+	color: #222;
+}
+#main a:active {
+	background: #303030;
+	color: #fff !important;
+	text-decoration: none;
+}
+.entry-meta,
+.entry-aside,
+.entry-meta a,
+.entry-aside a,
+#breadcrumbs a {
+	color: #888;
+}
+
 /* =2.2 Dark */
 body.scheme-dark,
 .scheme-dark #main {
@@ -630,7 +633,7 @@ body.scheme-light {
 	background: #f0efec;
 }
 .scheme-light .navigation-main {
-	background: #e5e4e0;
+	background: #e0e0da;
 }
 .scheme-light .navigation-main li:hover a {
 	background: #3f3e38;
@@ -664,20 +667,6 @@ body.scheme-light {
 .scheme-light.archive .hentry {
 	border-color: rgba(0,0,0,.025);
 }
-.scheme-light #main a {
-	color: #d19d00;
-}
-.scheme-light #main .entry-content a:visited {
-	color: #7d7c76;
-}
-.scheme-light #main a:hover {
-	color: #3f3e38;
-}
-.scheme-light #main a:active {
-	background: #3f3e38;
-	color: #fff;
-	text-decoration: none;
-}
 .scheme-light h1,
 .scheme-light h2,
 .scheme-light h3,
@@ -690,20 +679,6 @@ body.scheme-light {
 .scheme-light #main a:hover .entry-title {
 	color: #252422;
 }
-.scheme-light #main .entry-meta,
-.scheme-light #main .entry-aside,
-.scheme-light #main .entry-meta a,
-.scheme-light #main .entry-aside a,
-.scheme-light #main #breadcrumbs a,
-.scheme-light #main #secondary a {
-	color: #797464;
-}
-.scheme-light #main .entry-meta a:hover,
-.scheme-light #main .entry-aside a:hover,
-.scheme-light #main #breadcrumbs a:hover,
-.scheme-light #main #secondary a:hover {
-	color: #252422;
-}
 .scheme-light #colophon,
 .scheme-light .header-image #top-navigation {
 	background: #3f3e38;
@@ -713,6 +688,33 @@ body.scheme-light {
 .scheme-light .protected-post-form input[type="submit"]:focus {
 	background: #3f3e38 !important;
 }
+/* Links */
+.scheme-light .entry-content a,
+.scheme-light #secondary a,
+.scheme-light #comments a {
+	color: #d19d00;
+}
+.scheme-light #main .entry-content a:visited,
+.scheme-light #main #comments a:visited {
+	color: #7d7c76;
+}
+.scheme-light #main #primary a:hover,
+.scheme-light #main #secondary a:hover {
+	color: #2f2e28;
+}
+.scheme-light #main a:active {
+	background: #3f3e38;
+	color: #fff;
+	text-decoration: none;
+}
+.scheme-light .entry-meta,
+.scheme-light .entry-aside,
+.scheme-light .entry-meta a,
+.scheme-light .entry-aside a,
+.scheme-light #breadcrumbs a {
+	color: #6d6c66;
+}
+
 
 /* =3. Typography
 ----------------------------------------------- */
@@ -961,11 +963,11 @@ body.font-size-large,
 /* =4.1 Right Sidebar */
 .sidebar-right .content-area {
 	float: left;
-	margin: 0 -36% 0 0;
+	margin: 0 -35% 0 0;
 	width: 100%;
 }
 .sidebar-right #content {
-	margin: 0 36% 0 0;
+	margin: 0 35% 0 0;
 }
 .sidebar-right #secondary {
 	float: right;
@@ -974,11 +976,11 @@ body.font-size-large,
 /* =4.2 Left Sidebar */
 .sidebar-left .content-area {
 	float: right;
-	margin: 0 0 0 -36%;
+	margin: 0 0 0 -35%;
 	width: 100%;
 }
 .sidebar-left #content {
-	margin: 0 0 0 36%;
+	margin: 0 0 0 35%;
 }
 .sidebar-left #secondary {
 	float: left;

@@ -29,7 +29,7 @@ function thsp_custom_header_setup() {
 		'default-image'          => '',
 		'default-text-color'     => '',
 		'width'                  => 1600,
-		'height'                 => 240,
+		'height'                 => 300,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'thsp_header_style',
 		'admin-head-callback'    => 'thsp_admin_header_style',
@@ -73,10 +73,11 @@ function thsp_header_style() {
 		if ( ! empty( $header_image ) ) :
 	?>
 		.header-image #masthead {
-			background: url(<?php header_image(); ?>) no-repeat scroll top !important;
-			background-size: 1600px auto;
-			/* background-attachment: fixed; */
+			background-image: url(<?php header_image(); ?>);
+			background-attachment: fixed;
 			background-position: center top;
+			background-size: 1600px auto;
+			background-repeat: no-repeat;
 		}
 	<?php
 		endif;
