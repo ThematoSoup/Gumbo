@@ -240,9 +240,8 @@ function thsp_internal_css() {
 	
 	if ( isset( $thsp_primary_color ) && '' != $thsp_primary_color ) : ?>
 	<style type="text/css">
-		.custom-primary-color .entry-content a,
-		.custom-primary-color #secondary a,
-		.custom-primary-color #comments a {
+		.custom-primary-color #primary a,
+		.custom-primary-color #secondary a {
 			color: <?php echo $thsp_primary_color; ?>
 		}
 		.custom-primary-color #commentform #submit,

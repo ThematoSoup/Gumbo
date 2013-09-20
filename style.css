@@ -527,13 +527,11 @@ a:active {
 	background: #303030 !important;
 }
 /* Links */
-.entry-content a,
-#secondary a,
-#comments a {
+#primary a,
+#secondary a {
 	color: #1e8ca3;
 }
-#main .entry-content a:visited,
-#main #comments a:visited {
+#main #primary a:visited {
 	color: #757575;
 }
 #main #primary a:hover,
