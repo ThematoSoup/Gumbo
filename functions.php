@@ -141,7 +141,7 @@ endif;
  * Check if WooCommerce is active
  **/
 if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) :
-	require( get_template_directory() . '/inc/woocommerce.php' );
+	require( get_template_directory() . '/inc/woocommerce/woocommerce.php' );
 endif;
 
 /**

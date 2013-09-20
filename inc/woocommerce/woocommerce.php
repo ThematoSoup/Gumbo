@@ -38,7 +38,18 @@ function thsp_woocommerce_widgets_init() {
 add_action( 'widgets_init', 'thsp_woocommerce_widgets_init' );
 
 
-// Replace sidebar
+// Replace sidebar (function is pluggable)
 function woocommerce_get_sidebar() {
-	woocommerce_get_template( 'inc/woocommerce-sidebar.php' );
+	woocommerce_get_template( 'inc/woocommerce/woocommerce-sidebar.php' );
 }
+
+
+/**
+ * Disable WooCommerce frontendstyles CSS
+ *
+ * @since	Gumbo 1.0
+ */
+function thsp_woocommerce_remove_frontend_styles() {
+	remove_action( 'woocommerce_admin_field_frontend_styles', 'woocommerce_frontend_styles_setting' );
+}
+add_action( 'init', 'thsp_woocommerce_remove_frontend_styles', 1 );

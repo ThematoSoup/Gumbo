@@ -70,7 +70,8 @@ and Blueprint http://www.blueprintcss.org/
 	15.	Steroids Plugin
 		- 15.1 Portfolio
 		- 15.2 FAQ
-	16. Media Queries
+	16.	WooCommerce
+	17. Media Queries
 	
 ---------------------------------------------------------------*/
 
@@ -540,9 +541,8 @@ a:active {
 	color: #222;
 }
 #main a:active {
-	background: #303030;
-	color: #fff !important;
-	text-decoration: none;
+	position: relative;
+	top: 2px;
 }
 .entry-meta,
 .entry-aside,
@@ -1977,7 +1977,92 @@ article.comment {
 }
 
 
-/* =16. Media Queries
+/* =16. WooCommerce
+----------------------------------------------- */
+
+body.woocommerce div.product div.images img,
+body.woocommerce-page div.product div.images img,
+body.woocommerce #content div.product div.images img,
+body.woocommerce-page #content div.product div.images img,
+body.woocommerce ul.products li.product a img,
+body.woocommerce-page ul.products li.product a img {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+}
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt,
+.woocommerce #respond input#submit.alt,
+.woocommerce #content input.button.alt,
+.woocommerce-page a.button.alt,
+.woocommerce-page button.button.alt,
+.woocommerce-page input.button.alt,
+.woocommerce-page #respond input#submit.alt,
+.woocommerce-page #content input.button.alt {
+	border: none;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+}
+body.woocommerce div.product .woocommerce-tabs ul.tabs li,
+body.woocommerce #content div.product .woocommerce-tabs ul.tabs li,
+body.woocommerce-page div.product .woocommerce-tabs ul.tabs li,
+body.woocommerce-page #content div.product .woocommerce-tabs ul.tabs li {
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+}
+.woocommerce #content div.product .woocommerce-tabs ul.tabs li:after,
+.woocommerce #content div.product .woocommerce-tabs ul.tabs li:before {
+	display: none;
+}
+body.woocommerce ul.cart_list li a,
+body.woocommerce ul.product_list_widget li a,
+body.woocommerce-page ul.cart_list li a,
+body.woocommerce-page ul.product_list_widget li a,
+body.woocommerce a.button,
+body.woocommerce button.button,
+body.woocommerce input.button,
+body.woocommerce #respond input#submit,
+body.woocommerce #content input.button,
+body.woocommerce-page a.button,
+body.woocommerce-page button.button,
+body.woocommerce-page input.button,
+body.woocommerce-page #respond input#submit,
+body.woocommerce-page #content input.button {
+	font-weight: normal;
+}
+body.woocommerce div.product .woocommerce-tabs ul.tabs li,
+body.woocommerce #content div.product .woocommerce-tabs ul.tabs li,
+body.woocommerce-page div.product .woocommerce-tabs ul.tabs li,
+body.woocommerce-page #content div.product .woocommerce-tabs ul.tabs li,
+body.woocommerce a.button,
+body.woocommerce button.button,
+body.woocommerce input.button,
+body.woocommerce #respond input#submit,
+body.woocommerce #content input.button,
+body.woocommerce-page a.button,
+body.woocommerce-page button.button,
+body.woocommerce-page input.button,
+body.woocommerce-page #respond input#submit,
+body.woocommerce-page #content input.button {
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+}
+
+
+/* =17. Media Queries
 ----------------------------------------------- */
 
 @media screen and (max-width: 800px) {
