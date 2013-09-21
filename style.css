@@ -501,11 +501,14 @@ a:active {
 	background: #1e8ca3;
 	color: #fff !important;
 }
-#colophon {
+#colophon,
+#infinite-footer .container {
 	background: #303030;
 }
 #colophon,
-#colophon a {
+#colophon a,
+#infinite-footer .container,
+#infinite-footer .container a {
 	color: #fff;
 }
 .navigation-main,
@@ -604,14 +607,17 @@ body.scheme-light {
 .scheme-light h4,
 .scheme-light h5,
 .scheme-light h6,
-.scheme-light #main .entry-title a,
-.scheme-light #main a .entry-title,
-.scheme-light #main .entry-title a:hover,
-.scheme-light #main a:hover .entry-title {
+.scheme-light #main #primary .entry-title a,
+.scheme-light #main #primary a .entry-title,
+.scheme-light #main #primary .entry-title a:hover,
+.scheme-light #main #primary .entry-title a:visited,
+.scheme-light #main #primary a:hover .entry-title,
+.scheme-light #main #primary a:visited .entry-title {
 	color: #252422;
 }
 .scheme-light #colophon,
-.scheme-light .header-image #top-navigation {
+.scheme-light .header-image #top-navigation,
+.scheme-light #infinite-footer .container {
 	background: #3f3e38;
 }
 .scheme-light #commentform #submit:active,
@@ -1821,7 +1827,7 @@ article.comment {
 }
 
 
-/* =Infinite Scroll
+/* =Infinite Scroll (Jetpack module)
 ----------------------------------------------- */
 
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
@@ -1829,10 +1835,12 @@ article.comment {
 .infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
 	display: none;
 }
-
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
 .infinity-end.neverending .site-footer {
 	display: block;
+}
+#infinite-footer .container {
+	border: none;
 }
 
 
