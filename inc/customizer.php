@@ -214,7 +214,7 @@ function thsp_theme_options_array() {
 				),
 				'main_nav_placement' => array(
 					'setting_args' => array(
-						'default' => 'floated',
+						'default' => 'nav-below',
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',
@@ -223,15 +223,12 @@ function thsp_theme_options_array() {
 						'label' => __( 'Main navigation placement', 'gumbo' ),
 						'type' => 'radio', // Image radio replacement
 						'choices' => array(
-							'floated' => array(
+							'nav-right' => array(
 								'label' => __( 'Next to title and tagline', 'gumbo' )
 							),
-							'below' =>  array(
+							'nav-below' =>  array(
 								'label' => __( 'Below title and tagline', 'gumbo' )
 							),
-							'centered' =>  array(
-								'label' => __( 'Below title and tagline, centered', 'gumbo' )
-							)
 						),					
 						'priority' => 2
 					) // End control args

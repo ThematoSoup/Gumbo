@@ -28,6 +28,17 @@
 
 <div id="page" class="hfeed site">	
 	<?php tha_header_before(); ?>		
+	<?php
+	// Header layout
+	$thsp_theme_options = thsp_cbp_get_options_values();
+	$thsp_header_class = 'header-' . $thsp_theme_options['main_nav_placement'];
+	// Check header image
+	$header_image = get_header_image();
+	if ( ! empty( $header_image ) ) :
+		$thsp_header_class .= ' header-image';
+	endif;
+	?>
+
 	<header id="masthead" class="site-header <?php echo $thsp_header_class; ?>" role="banner">
 		<?php if ( has_nav_menu( 'top' ) ) : ?>
 		<nav id="top-navigation" role="navigation">
@@ -41,23 +52,21 @@
 		</nav><!-- #top-navigation -->
 		<?php endif; ?>
 
-		<div class="clear">
+		<div id="header-inner" class="clear">
 			<?php tha_header_top(); ?>
 			<hgroup>
-				<div class="inner">
-					<?php
-					// Get current theme options values
-					$thsp_theme_options = thsp_cbp_get_options_values();
-					if ( '' != $thsp_theme_options['logo_image'] ) :
-						$logo_image = thsp_get_logo_image( $thsp_theme_options['logo_image'] ); ?>
-						<a class="header-image" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-							<img src="<?php echo $logo_image[0]; ?>" width="<?php echo $logo_image[1]; ?>" height="<?php echo $logo_image[2]; ?>" alt="<?php bloginfo( 'name' ); ?>" />
-						</a>
-					<?php else : // if ( ! isset( $thsp_theme_options['logo_image'] ) ?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php endif; ?>
-					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-				</div>
+				<?php
+				// Get current theme options values
+				$thsp_theme_options = thsp_cbp_get_options_values();
+				if ( '' != $thsp_theme_options['logo_image'] ) :
+					$logo_image = thsp_get_logo_image( $thsp_theme_options['logo_image'] ); ?>
+					<a class="header-image" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+						<img src="<?php echo $logo_image[0]; ?>" width="<?php echo $logo_image[1]; ?>" height="<?php echo $logo_image[2]; ?>" alt="<?php bloginfo( 'name' ); ?>" />
+					</a>
+				<?php else : // if ( ! isset( $thsp_theme_options['logo_image'] ) ?>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<?php endif; ?>
+				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</hgroup>
 		
 			<nav id="site-navigation" class="navigation-main" role="navigation">

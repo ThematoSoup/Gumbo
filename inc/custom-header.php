@@ -72,7 +72,7 @@ function thsp_header_style() {
 	<?php
 		if ( ! empty( $header_image ) ) :
 	?>
-		.header-image #masthead {
+		#masthead.header-image  {
 			background-image: url(<?php header_image(); ?>);
 			background-attachment: fixed;
 			background-position: center top;

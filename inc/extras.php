@@ -64,16 +64,7 @@ function thsp_body_classes( $classes ) {
 	// Typography classes
 	$thsp_body_classes[] = 'body-font-weight-' . $thsp_theme_options['body_font_weight'];
 	$thsp_body_classes[] = 'font-size-' . $thsp_theme_options['font_size'];
-	
-	// Header layout
-	$thsp_body_classes[] = 'header-' . $thsp_theme_options['main_nav_placement'];
-	
-	// Check header image
-	$header_image = get_header_image();
-	if ( ! empty( $header_image ) ) :
-		$thsp_body_classes[] = 'header-image';
-	endif;
-
+		
 	// Check if custom primary color is used
 	if ( ! empty( $thsp_theme_options['primary_color'] ) ) :
 		$thsp_body_classes[] = 'custom-primary-color';

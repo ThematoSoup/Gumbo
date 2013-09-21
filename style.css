@@ -47,6 +47,8 @@ and Blueprint http://www.blueprintcss.org/
 		- 4.2 Left Sidebar
 		- 4.2 Full-width Templates
 	5.	Header
+		- 5.1 With Header Image
+		- 5.2 Compact Header
 	6.	Menus
 		- 6.1 Main Menu
 		- 6.2 Small Menu
@@ -616,7 +618,6 @@ body.scheme-light {
 	color: #252422;
 }
 .scheme-light #colophon,
-.scheme-light .header-image #top-navigation,
 .scheme-light #infinite-footer .container {
 	background: #3f3e38;
 }
@@ -859,6 +860,7 @@ body.font-size-large,
 #main {
 	padding: 40px 0;
 }
+
 /* =4.1 Right Sidebar */
 .sidebar-right .content-area {
 	float: left;
@@ -872,6 +874,7 @@ body.font-size-large,
 	float: right;
 	width: 30%;
 }
+
 /* =4.2 Left Sidebar */
 .sidebar-left .content-area {
 	float: right;
@@ -885,6 +888,7 @@ body.font-size-large,
 	float: left;
 	width: 30%;
 }
+
 /* =4.2 Full-width templates */
 .no-sidebar #primary,
 .no-sidebar #content,
@@ -918,10 +922,14 @@ body.font-size-large,
 ----------------------------------------------- */
 
 .site-header hgroup {
-	padding: 40px 0;
+	padding: 40px 20px;
+	max-width: 1040px;
+	margin: 0 auto;
 }
-.header-image .site-header hgroup {
-	padding: 0;
+
+/* =5.1 With header image activated */
+.header-image.site-header hgroup {
+	padding: 0 20px;
 	min-height: 240px;
 }
 .header-image .site-title {
@@ -940,6 +948,43 @@ body.font-size-large,
 	margin: 0;
 	font-size: 16px;
 	font-weight: normal;
+}
+
+/* =5.2 Compact header (navigation on the right side) */
+.header-nav-right #header-inner {
+	padding: 0 20px;
+	max-width: 1040px;
+	margin: 0 auto;
+}
+.site-header.header-nav-right hgroup {
+	float: left;
+	width: 30%;
+	padding-left: 0;
+}
+.header-nav-right .navigation-main {
+	float: right;
+	width: 70%;
+	padding-top: 50px;
+	background: none;
+}
+.header-image.header-nav-right .navigation-main {
+	padding-top: 80px;
+}
+.header-nav-right .navigation-main ul {
+	text-align: right;
+	font-weight: bold;
+}
+.header-nav-right .navigation-main a {
+	color: #fff;
+	padding: 15px;
+}
+.header-nav-right .navigation-main .sub-menu {
+	font-weight: normal;
+	right: 0;
+}
+.header-nav-right .navigation-main .sub-menu .sub-menu {
+	left: auto;
+	right: 220px;
 }
 
 
@@ -1065,7 +1110,7 @@ body.font-size-large,
 #top-navigation {
 	background: rgba(0,0,0,0.2);
 }
-.header-image #top-navigation {
+#masthead.header-image #top-navigation {
 	background: rgba(0,0,0,0.5);
 }
 #top-navigation ul {
