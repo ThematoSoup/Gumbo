@@ -235,9 +235,31 @@ add_filter( 'the_password_form', 'thsp_custom_password_form' );
  */
 function thsp_internal_css() {
 	// Get current theme options
-	$thsp_theme_options			= thsp_cbp_get_options_values();
-	$thsp_primary_color			= $thsp_theme_options['primary_color'];
+	$thsp_theme_options		= thsp_cbp_get_options_values();
+	$theme_options_fields	= thsp_cbp_get_fields();
+	$thsp_primary_color		= $thsp_theme_options['primary_color'];
+	$body_font_value		= $thsp_theme_options['body_font'];
+	$heading_font_value		= $thsp_theme_options['heading_font'];
+	$body_font_options		= $theme_options_fields['thsp_typography_section']['fields']['body_font']['control_args']['choices'];
+	$heading_font_options	= $theme_options_fields['thsp_typography_section']['fields']['heading_font']['control_args']['choices'];
 	
+	// Fonts
+	if ( 'helvetica' != $thsp_heading_font || 'helvetica' != $thsp_body_font ) : ?>
+	<style type="text/css">
+		<?php if ( 'helvetica' != $body_font_value ) : ?>
+		body, button, input, select, textarea, .site-description {
+			font-family: <?php echo $body_font_options[ $body_font_value ]['font_family']; ?>;
+		}
+		<?php endif; ?>
+		<?php if ( 'helvetica' != $heading_font_value ) : ?>
+		h1, h2, h3, h4, h5, h6 {
+			font-family: <?php echo $heading_font_options[ $heading_font_value ]['font_family']; ?>;
+		}
+		<?php endif; ?>
+	</style>
+	<?php endif;
+	
+	// Colors
 	if ( isset( $thsp_primary_color ) && '' != $thsp_primary_color ) : ?>
 	<style type="text/css">
 		.custom-primary-color #primary a,

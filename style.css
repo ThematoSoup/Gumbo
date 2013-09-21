@@ -39,11 +39,9 @@ and Blueprint http://www.blueprintcss.org/
 		- 2.2 Dark
 		- 2.3 Light
 	3.	Typography
-		- 3.1 Body Font
-		- 3.2 Heading Font
-		- 3.3 Genericons
-		- 3.4 Small Fonts
-		- 3.5 Large Fonts
+		- 3.1 Genericons
+		- 3.2 Small Fonts
+		- 3.3 Large Fonts
 	4.	Layout
 		- 4.1 Right Sidebar
 		- 4.2 Left Sidebar
@@ -163,6 +161,7 @@ button,
 input,
 select,
 textarea {
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
 	color: #303030;
 	font-size: 16px;
 	font-family: sans-serif;
@@ -177,6 +176,7 @@ h3,
 h4,
 h5,
 h6 {
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
 	clear: both;
 	line-height: 1;
 	margin: 1.25em 0 0.5em;
@@ -717,63 +717,6 @@ body.scheme-light {
 /* =3. Typography
 ----------------------------------------------- */
 
-/* =3.1 Body font */
-body.body-font-helvetica,
-.body-font-helvetica button,
-.body-font-helvetica input,
-.body-font-helvetica select,
-.body-font-helvetica textarea,
-.body-font-helvetica .site-description {
-	font-family: "Helvetica Neue", Helvetica, sans-serif;
-}
-body.body-font-open-sans,
-.body-font-open-sans button,
-.body-font-open-sans input,
-.body-font-open-sans select,
-.body-font-open-sans textarea,
-.body-font-open-sans .site-description {
-	font-family: "Open Sans", sans-serif;
-}
-body.body-font-lato,
-.body-font-lato button,
-.body-font-lato input,
-.body-font-lato select,
-.body-font-lato textarea,
-.body-font-lato .site-description {
-	font-family: Lato, sans-serif;
-}
-body.body-font-source-sans-pro,
-.body-font-source-sans-pro button,
-.body-font-source-sans-pro input,
-.body-font-source-sans-pro select,
-.body-font-source-sans-pro textarea,
-.body-font-source-sans-pro .site-description {
-	font-family: "Source Sans Pro", sans-serif;
-}
-body.body-font-raleway,
-.body-font-raleway button,
-.body-font-raleway input,
-.body-font-raleway select,
-.body-font-raleway textarea,
-.body-font-raleway .site-description {
-	font-family: Raleway, sans-serif;
-}
-body.body-font-roboto,
-.body-font-roboto button,
-.body-font-roboto input,
-.body-font-roboto select,
-.body-font-roboto textarea,
-.body-font-roboto .site-description {
-	font-family: Roboto, sans-serif;
-}
-body.body-font-titillium-web,
-.body-font-titillium-web button,
-.body-font-titillium-web input,
-.body-font-titillium-web select,
-.body-font-titillium-web textarea,
-.body-font-titillium-web .site-description {
-	font-family: "Titillium Web", sans-serif;
-}
 /* Body font weight */
 body.body-font-weight-300,
 .body-font-weight-300 button,
@@ -784,71 +727,14 @@ body.body-font-weight-300,
 	font-weight: 300;
 	-webkit-font-smoothing: antialiased;
 }
-/* =3.2 Heading font */
-.heading-font-helvetica h1,
-.heading-font-helvetica h2,
-.heading-font-helvetica h3,
-.heading-font-helvetica h4,
-.heading-font-helvetica h5,
-.heading-font-helvetica h6 {
-	font-family: "Helvetica Neue", Helvetica, sans-serif;
-}
-.heading-font-open-sans h1,
-.heading-font-open-sans h2,
-.heading-font-open-sans h3,
-.heading-font-open-sans h4,
-.heading-font-open-sans h5,
-.heading-font-open-sans h6 {
-	font-family: "Open Sans", sans-serif;
-}
-.heading-font-lato h1,
-.heading-font-lato h2,
-.heading-font-lato h3,
-.heading-font-lato h4,
-.heading-font-lato h5,
-.heading-font-lato h6 {
-	font-family: Lato, sans-serif;
-}
-.heading-font-source-sans-pro h1,
-.heading-font-source-sans-pro h2,
-.heading-font-source-sans-pro h3,
-.heading-font-source-sans-pro h4,
-.heading-font-source-sans-pro h5,
-.heading-font-source-sans-pro h6 {
-	font-family: "Source Sans Pro", sans-serif;
-}
-.heading-font-raleway h1,
-.heading-font-raleway h2,
-.heading-font-raleway h3,
-.heading-font-raleway h4,
-.heading-font-raleway h5,
-.heading-font-raleway h6 {
-	font-family: Raleway, sans-serif;
-}
-.heading-font-roboto h1,
-.heading-font-roboto h2,
-.heading-font-roboto h3,
-.heading-font-roboto h4,
-.heading-font-roboto h5,
-.heading-font-roboto h6 {
-	font-family: Roboto, sans-serif;
-}
-.heading-font-titillium-web h1,
-.heading-font-titillium-web h2,
-.heading-font-titillium-web h3,
-.heading-font-titillium-web h4,
-.heading-font-titillium-web h5,
-.heading-font-titillium-web h6 {
-	font-family: "Titillium Web", sans-serif;
-}
-/* =3.3 Genericons */
+/* =3.1 Genericons */
 #pull-out-trigger:before {
 	-webkit-font-smoothing: antialiased;
 	display: inline-block;
 	font: normal 16px/1 Genericons;
 	vertical-align: text-bottom;
 }
-/* =3.4 Small Fonts */
+/* =3.2 Small Fonts */
 body.font-size-small,
 .font-size-small button,
 .font-size-small input,
@@ -882,7 +768,7 @@ body.font-size-small,
 .font-size-small .navigation-main .sub-menu {
 	font-size: 12px;
 }
-/* =3.5 Large fonts */
+/* =3.3 Large fonts */
 body.font-size-large,
 .font-size-large button,
 .font-size-large input,

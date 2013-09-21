@@ -250,7 +250,7 @@ function thsp_theme_options_array() {
 			'fields' => array(
 				'body_font' => array(
 					'setting_args' => array(
-						'default' => 'titillium-web',
+						'default' => 'Helvetica',
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',
@@ -261,26 +261,32 @@ function thsp_theme_options_array() {
 						'choices' => array(
 							'helvetica' => array(
 								'label' => 'Helvetica',
+								'font_family' => '"Helvetica Neue", Helvetica, sans-serif',
 							),
 							'open-sans' => array(
 								'label' => 'Open Sans',
 								'google_font' => 'Open Sans',
+								'font_family' => '"Open Sans", sans-serif',
 							),
 							'lato' => array(
 								'label' => 'Lato',
 								'google_font' => 'Lato',
+								'font_family' => 'Lato, sans-serif',
 							),
 							'source-sans-pro' => array(
 								'label' => 'Source Sans Pro',
 								'google_font' => 'Source Sans Pro',
+								'font_family' => '"Source Sans Pro", sans-serif',
 							),
 							'roboto' => array(
 								'label' => 'Roboto',
 								'google_font' => 'Roboto',
+								'font_family' => 'Roboto, sans-serif',
 							),
 							'titillium-web' => array(
 								'label' => 'Titillium Web',
 								'google_font' => 'Titillium Web',
+								'font_family' => '"Titillium Web", sans-serif',
 							)
 						),
 						'priority' => 1
@@ -288,7 +294,7 @@ function thsp_theme_options_array() {
 				),
 				'heading_font' => array(
 					'setting_args' => array(
-						'default' => 'titillium-web',
+						'default' => 'Helvetica',
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',
@@ -299,26 +305,32 @@ function thsp_theme_options_array() {
 						'choices' => array(
 							'helvetica' => array(
 								'label' => 'Helvetica',
+								'font_family' => '"Helvetica Neue", Helvetica, sans-serif',
 							),
 							'open-sans' => array(
 								'label' => 'Open Sans',
 								'google_font' => 'Open Sans',
+								'font_family' => '"Open Sans", sans-serif',
 							),
 							'lato' => array(
 								'label' => 'Lato',
 								'google_font' => 'Lato',
+								'font_family' => 'Lato, sans-serif',
 							),
 							'source-sans-pro' => array(
 								'label' => 'Source Sans Pro',
 								'google_font' => 'Source Sans Pro',
+								'font_family' => '"Source Sans Pro", sans-serif',
 							),
 							'roboto' => array(
 								'label' => 'Roboto',
 								'google_font' => 'Roboto',
+								'font_family' => 'Roboto, sans-serif',
 							),
 							'titillium-web' => array(
 								'label' => 'Titillium Web',
 								'google_font' => 'Titillium Web',
+								'font_family' => '"Titillium Web", sans-serif',
 							)
 						),
 						'priority' => 1
