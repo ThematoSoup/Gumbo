@@ -494,7 +494,7 @@ a:active {
 .wpcf7 input[type="submit"],
 .protected-post-form input[type="submit"],
 .page-numbers.current,
-.page-links a:hover span,
+.page-links > span,
 #main #content .woocommerce-pagination .current,
 #main .more-link,
 #main .more-link:hover {
@@ -1478,7 +1478,6 @@ body.woocommerce-page #content nav.woocommerce-pagination ul li a:hover {
 }
 /* Paginated posts */
 .page-links span {
-	background: #303030;
 	color: #fff;
 	display: inline-block;
 	line-height: 1;
@@ -1489,6 +1488,7 @@ body.woocommerce-page #content nav.woocommerce-pagination ul li a:hover {
 	color: #303030;
 }
 .page-links a:hover span {
+	background: #303030;
 	color: #fff;
 }
 #breadcrumbs,

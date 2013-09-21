@@ -280,7 +280,7 @@ function thsp_internal_css() {
 		.custom-primary-color .wpcf7 input[type="submit"],
 		.custom-primary-color .protected-post-form input[type="submit"],
 		.custom-primary-color .page-numbers.current,
-		.custom-primary-color .page-links a:hover span,
+		.custom-primary-color .page-links > span,
 		.custom-primary-color #main #content .woocommerce-pagination .current,
 		.custom-primary-color #main .more-link,
 		.custom-primary-color .navigation-main .sub-menu a:hover {
