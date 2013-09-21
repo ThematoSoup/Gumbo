@@ -21,6 +21,7 @@
  * @package Gumbo
  */
 
+
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  */
@@ -29,6 +30,7 @@ function thsp_page_menu_args( $args ) {
 	return $args;
 }
 add_filter( 'wp_page_menu_args', 'thsp_page_menu_args' );
+
 
 /**
  * Adds custom classes to the array of body classes.
@@ -39,54 +41,28 @@ function thsp_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 	
-	// Add content width to body_class
-	global $content_width;
-	$classes[] = 'cwidth-' . $content_width;
-
 	// Get theme options values
 	$thsp_theme_options = thsp_cbp_get_options_values();
 
-	// Check if portfolio needs sidebar
-	if ( is_singular( 'steroids_portfolio' ) ) :
-		if ( is_active_sidebar( 'steroids-portfolio-sidebar' ) ) :
-			$classes[] = 'sidebar';
-		endif;
-	elseif ( is_active_sidebar( 'sidebar-1' ) ) : // Check if Primary Sidebar is active for all other pages
-		$classes[] = 'sidebar';
+	// Get layout class and add it to body_class array
+	$thsp_current_layout = thsp_get_current_layout();
+	$thsp_body_classes[] = $thsp_current_layout;
 
-		$thsp_body_classes = array();
-	
-		// Get layout classes and add them to body_class array
-		$thsp_current_layout = thsp_get_current_layout();
-		foreach ( $thsp_current_layout as $thsp_current_layout_value ) :
-			$thsp_body_classes[] = $thsp_current_layout_value;
-		endforeach;
+	$thsp_has_no_sidebar = thsp_has_no_sidebar();
+	if ( $thsp_has_no_sidebar ) :
+		$thsp_body_classes[] = 'no-sidebar';
 	endif;
-
-	if ( is_active_sidebar( 'steroids-portfolio-sidebar' ) && is_singular( 'steroids_portfolio' ) ) :
-		$classes[] = 'sidebar';
-
-		$thsp_body_classes = array();
 	
-		// Get layout classes and add them to body_class array
-		$thsp_current_layout = thsp_get_current_layout();
-		foreach ( $thsp_current_layout as $thsp_current_layout_value ) :
-			$thsp_body_classes[] = $thsp_current_layout_value;
-		endforeach;
-	endif;
-
 	// Adds a class id Post Aside is active
 	if ( is_singular( 'post' ) && is_active_sidebar( 'post-aside' ) ) {
-		$classes[] = 'post-aside';
+		$thsp_body_classes[] = 'post-aside';
 	}
 
-	// Get color scheme class and add them to body_class array
+	// Color scheme class
 	$thsp_body_classes[] = 'scheme-' . $thsp_theme_options['color_scheme'];
 
 	// Typography classes
-	$thsp_body_classes[] = 'body-font-' . $thsp_theme_options['body_font'];
 	$thsp_body_classes[] = 'body-font-weight-' . $thsp_theme_options['body_font_weight'];
-	$thsp_body_classes[] = 'heading-font-' . $thsp_theme_options['heading_font'];
 	$thsp_body_classes[] = 'font-size-' . $thsp_theme_options['font_size'];
 	
 	// Header layout
@@ -108,6 +84,7 @@ function thsp_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'thsp_body_classes' );
 
+
 /**
  * Adds custom classes to the array of post classes.
  */
@@ -119,6 +96,7 @@ function thsp_post_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'post_class', 'thsp_post_classes' );
+
 
 /**
  * Adds custom classes to the array of menu item classes.
@@ -140,6 +118,7 @@ function thsp_custom_menu_item_classes( $classes, $item ) {
 }
 add_filter( 'nav_menu_css_class', 'thsp_custom_menu_item_classes', 10, 2 );
 
+
 /**
  * Gets current layout for page being displayed
  *
@@ -155,25 +134,49 @@ function thsp_get_current_layout() {
 
 	// Check if in single post/page view and if layout custom field value exists
 	if ( is_singular() && get_post_meta( $post->ID, '_thsp_post_layout', true ) ) {
-		$current_layout['default_layout'] = get_post_meta( $post->ID, '_thsp_post_layout', true );
+		$current_layout = get_post_meta( $post->ID, '_thsp_post_layout', true );
 	} else {
-		$current_layout['default_layout'] = $thsp_theme_options['default_layout'];
-	}
-
-	if( is_singular() && get_post_meta( $post->ID, '_post_layout_type', true ) ) {
-		$current_layout['default_layout'] = get_post_meta( $post->ID, '_post_layout_type', true );
-	} else {
-		$current_layout['layout_type'] = $thsp_theme_options['layout_type'];
+		$current_layout = $thsp_theme_options['default_layout'];
 	}
 
 	/*
 	 * Returns an array with two values that can be changed using
-	 * 'thsp_current_layout' filter hook:
-	 * $current_layout['default-layout']	- determines number and placement of sidebars
-	 * $current_layout['layout_type']		- boxed or full width
+	 * 'thsp_current_layout' filter hook
+	 *
+	 * returns	$current_layout		string		sidebar-right / sidebar-left
 	 */
 	return apply_filters( 'thsp_current_layout', $current_layout );
 }
+
+
+/**
+ * Checks if current page has sidebar
+ *
+ * @return	boolean		$has_sidebar				
+ * @since	Gumbo 1.0
+ */
+function thsp_has_no_sidebar() {
+	global $post;
+	$thsp_has_no_sidebar = false;
+	
+	// Check Portfolio
+	if ( is_singular( 'steroids_portfolio' ) && ! is_active_sidebar( 'steroids-portfolio-sidebar' ) ) :
+		$thsp_has_no_sidebar = true;
+	// Check other pages, make sure WooCommerce is disabled
+	elseif ( ! is_active_sidebar( 'primary-sidebar' ) && ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) :
+		$thsp_has_no_sidebar = true;
+	endif;
+	
+	// If WooCommerce plugin is active, check if Store Sidebar has any widgets
+	if( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) && ! is_active_sidebar( 'store-sidebar' ) ) :
+		if( is_woocommerce() ) :
+			$thsp_has_no_sidebar = true;
+		endif;
+	endif;
+	
+	return $thsp_has_no_sidebar;
+}
+
 
 /**
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
@@ -190,6 +193,7 @@ function thsp_enhanced_image_navigation( $url, $id ) {
 	return $url;
 }
 add_filter( 'attachment_link', 'thsp_enhanced_image_navigation', 10, 2 );
+
 
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
@@ -217,6 +221,7 @@ function thsp_wp_title( $title, $sep ) {
 }
 add_filter( 'wp_title', 'thsp_wp_title', 10, 2 );
 
+
 /**
  * Change password protected form output
  * @since	Gumbo 1.0
@@ -228,6 +233,7 @@ function thsp_custom_password_form() {
 	return $form_output;
 }
 add_filter( 'the_password_form', 'thsp_custom_password_form' );
+
 
 /**
  * Internal CSS for accent color
@@ -262,8 +268,11 @@ function thsp_internal_css() {
 	// Colors
 	if ( isset( $thsp_primary_color ) && '' != $thsp_primary_color ) : ?>
 	<style type="text/css">
-		.custom-primary-color #primary a,
-		.custom-primary-color #secondary a {
+		.custom-primary-color .entry-content a,
+		.custom-primary-color .entry-summary a,
+		.custom-primary-color #comments a,
+		.custom-primary-color #secondary a,
+		.custom-primary-color .star-rating {
 			color: <?php echo $thsp_primary_color; ?>
 		}
 		.custom-primary-color #commentform #submit,
@@ -272,6 +281,7 @@ function thsp_internal_css() {
 		.custom-primary-color .protected-post-form input[type="submit"],
 		.custom-primary-color .page-numbers.current,
 		.custom-primary-color .page-links a:hover span,
+		.custom-primary-color #main #content .woocommerce-pagination .current,
 		.custom-primary-color #main .more-link,
 		.custom-primary-color .navigation-main .sub-menu a:hover {
 			background: <?php echo $thsp_primary_color; ?>;
@@ -283,6 +293,7 @@ function thsp_internal_css() {
 	<?php endif;
 }
 add_action( 'wp_head', 'thsp_internal_css' );
+
 
 /**
  * Internal CSS for accent color
@@ -297,6 +308,7 @@ function thsp_get_color_contrast( $hexcolor ){
 	$yiq = ( ( $r*299 ) + ( $g * 587 ) + ( $b * 114 ) ) / 1000;
 	return ( $yiq >= 128 ) ? '#303030' : '#fcfcfc';
 }
+
 
 /**
  * Post meta widget class
@@ -371,6 +383,7 @@ class THSP_Post_Meta_Widget extends WP_Widget {
 }
 add_action( 'widgets_init', function() { register_widget( 'THSP_Post_Meta_Widget' ); } );
 
+
 /**
  * Count number of widgets in a sidebar
  * Used to add classes to widget areas so widgets can be displayed one, two or three per row
@@ -398,6 +411,7 @@ function thsp_count_widgets( $sidebar_id ) {
 		return $widget_classes;
 	endif;
 }
+
 
 /**
  * Retrieves the attachment ID from the file URL

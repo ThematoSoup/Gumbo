@@ -41,7 +41,7 @@ if ( ! isset( $content_width ) )
 function thsp_content_width() {
 	global $content_width;
 
-	if ( ! is_active_sidebar( 'sidebar-1' ) && ( is_singular( 'post' ) || is_page() || is_archive() || is_404() || is_attachment() ) ) :
+	if ( ! is_active_sidebar( 'primary-sidebar' ) && ( is_singular( 'post' ) || is_page() || is_archive() || is_404() || is_attachment() ) ) :
 		$content_width = 1000;
 	endif;
 }
@@ -206,7 +206,7 @@ add_action( 'after_setup_theme', 'thsp_register_custom_background' );
 function thsp_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Primary Sidebar', 'gumbo' ),
-		'id'            => 'sidebar-1',
+		'id'            => 'primary-sidebar',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -436,10 +436,18 @@ class THSP_Menu_With_Description extends Walker_Nav_Menu {
 
 /**
  * Add Yoast breadcrumbs
+ *
+ * Check if WooCommerce breadcrumbs are active and let them takeover in WooCommerce pages
+ *
+ * @since	Gumbo 1.0
  */
 function thsp_add_yoast_breadcrumbs() {
-	if ( function_exists( 'yoast_breadcrumb' ) && ! is_home() ) :
+	if ( function_exists( 'is_woocommerce' ) ) :
+		if ( ! is_woocommerce() && ! is_home() ) :
+			yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+		endif;
+	elseif ( function_exists( 'yoast_breadcrumb' ) && ! is_home() ) :
 		yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
 	endif;	
 }
-add_action( 'tha_content_top', 'thsp_add_yoast_breadcrumbs' );
+add_action( 'tha_content_top', 'thsp_add_yoast_breadcrumbs', 10 );

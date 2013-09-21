@@ -7,11 +7,11 @@
  */
 ?>
 
-<?php if ( is_active_sidebar( 'sidebar-1' ) ) : // Only render this sidebar in not in single column layout ?>
+<?php if ( is_active_sidebar( 'primary-sidebar' ) ) : // Only render this sidebar in not in single column layout ?>
 	<?php tha_sidebars_before(); ?>
 	<div id="secondary" class="widget-area" role="complementary">
 		<?php tha_sidebar_top(); ?>
-		<?php dynamic_sidebar( 'sidebar-1' ) ?>
+		<?php dynamic_sidebar( 'primary-sidebar' ) ?>
 		<?php tha_sidebar_bottom(); ?>
 	</div><!-- #secondary -->
 	<?php tha_sidebars_before(); ?>

@@ -336,27 +336,6 @@ function thsp_theme_options_array() {
 						'priority' => 1
 					) // End control args
 				),
-				'body_font_weight' => array(
-					'setting_args' => array(
-						'default' => 'regular',
-						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
-						'transport' => 'refresh',
-					), // End setting args			
-					'control_args' => array(
-						'label' => __( 'Body font weight', 'gumbo' ),
-						'type' => 'radio', // Radio control
-						'choices' => array(
-							'400' => array(
-								'label' => 'Regular'
-							),
-							'300' => array(
-								'label' => 'Thin'
-							),
-						),
-						'priority' => 1
-					) // End control args
-				),
 				'font_size' => array(
 					'setting_args' => array(
 						'default' => 'medium',
@@ -380,7 +359,28 @@ function thsp_theme_options_array() {
 						),
 						'priority' => 1
 					) // End control args
-				)
+				),
+				'body_font_weight' => array(
+					'setting_args' => array(
+						'default' => 'regular',
+						'type' => 'option',
+						'capability' => $thsp_cbp_capability,
+						'transport' => 'refresh',
+					), // End setting args			
+					'control_args' => array(
+						'label' => __( 'Body font weight', 'gumbo' ),
+						'type' => 'radio', // Radio control
+						'choices' => array(
+							'400' => array(
+								'label' => 'Regular'
+							),
+							'300' => array(
+								'label' => 'Thin'
+							),
+						),
+						'priority' => 1
+					) // End control args
+				),
 			) // End fields
 		)
 	);

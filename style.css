@@ -36,8 +36,8 @@ and Blueprint http://www.blueprintcss.org/
 		- 1.7 Clearing
 	2.	Color Schemes
 		- 2.1 White (default)
-		- 2.2 Dark
-		- 2.3 Light
+		- 2.2 Light
+		- 2.3 Dark
 	3.	Typography
 		- 3.1 Genericons
 		- 3.2 Small Fonts
@@ -495,10 +495,11 @@ a:active {
 .protected-post-form input[type="submit"],
 .page-numbers.current,
 .page-links a:hover span,
+#main #content .woocommerce-pagination .current,
 #main .more-link,
 #main .more-link:hover {
 	background: #1e8ca3;
-	color: #fff;
+	color: #fff !important;
 }
 #colophon {
 	background: #303030;
@@ -527,8 +528,11 @@ a:active {
 	background: #303030 !important;
 }
 /* Links */
-#primary a,
-#secondary a {
+.entry-content a,
+.entry-summary a,
+#comments a,
+#secondary a,
+.star-rating {
 	color: #1e8ca3;
 }
 #main #primary a:visited {
@@ -546,11 +550,104 @@ a:active {
 .entry-aside,
 .entry-meta a,
 .entry-aside a,
-#breadcrumbs a {
+#main #breadcrumbs a,
+#main .woocommerce-breadcrumb a {
 	color: #888;
 }
 
-/* =2.2 Dark */
+/* =2.2 Light */
+body.scheme-light {
+	background: #f0efec;
+	color: #282725;
+}
+.scheme-light #main {
+	background: #f0efec;
+}
+.scheme-light .navigation-main {
+	background: #e0e0da;
+}
+.scheme-light .navigation-main li:hover a {
+	background: #3f3e38;
+}
+.scheme-light #masthead,
+.scheme-light #commentform #submit,
+.scheme-light .comment-reply-link,
+.scheme-light .wpcf7 input[type="submit"],
+.scheme-light .protected-post-form input[type="submit"],
+.scheme-light .page-numbers.current,
+.scheme-light .page-links a:hover span,
+.scheme-light #main .more-link,
+.scheme-light .navigation-main .sub-menu a:hover {
+	background: #d19d00;
+	border: none;
+	color: #fff;
+}
+.scheme-light #sub-header,
+.scheme-light #above-footer {
+	background: #e2e1d9;
+}
+.scheme-light #above-footer a,
+.scheme-light #sub-header a {
+	color: #49473f;
+	text-decoration: underline;
+}
+.scheme-light #main .sticky {
+	border: none;
+}
+.scheme-light.blog .hentry,
+.scheme-light.archive .hentry {
+	border-color: rgba(0,0,0,.025);
+}
+.scheme-light h1,
+.scheme-light h2,
+.scheme-light h3,
+.scheme-light h4,
+.scheme-light h5,
+.scheme-light h6,
+.scheme-light #main .entry-title a,
+.scheme-light #main a .entry-title,
+.scheme-light #main .entry-title a:hover,
+.scheme-light #main a:hover .entry-title {
+	color: #252422;
+}
+.scheme-light #colophon,
+.scheme-light .header-image #top-navigation {
+	background: #3f3e38;
+}
+.scheme-light #commentform #submit:active,
+.scheme-light .wpcf7 input[type="submit"]:active,
+.scheme-light .protected-post-form input[type="submit"]:focus {
+	background: #3f3e38 !important;
+}
+/* Links */
+.scheme-light .entry-content a,
+.scheme-light .entry-summary a,
+.scheme-light #comments a,
+.scheme-light #secondary a,
+.scheme-light .star-rating {
+	color: #d19d00;
+}
+.scheme-light #main #primary a:visited {
+	color: #7d7c76;
+}
+.scheme-light #main #primary a:hover,
+.scheme-light #main #secondary a:hover {
+	color: #2f2e28;
+}
+.scheme-light #main a:active {
+	background: #3f3e38;
+	color: #fff;
+	text-decoration: none;
+}
+.scheme-light .entry-meta,
+.scheme-light .entry-aside,
+.scheme-light .entry-meta a,
+.scheme-light .entry-aside a,
+.scheme-light #breadcrumbs a {
+	color: #6d6c66;
+}
+
+/* =2.3 Dark */
 body.scheme-dark,
 .scheme-dark #main {
 	background: #282828;
@@ -622,96 +719,6 @@ body.scheme-dark #colophon {
 	background: #f9f9f9;
 	color: #303030;
 }
-/* =2.2 Light */
-body.scheme-light {
-	background: #f0efec;
-	color: #282725;
-}
-.scheme-light #main {
-	background: #f0efec;
-}
-.scheme-light .navigation-main {
-	background: #e0e0da;
-}
-.scheme-light .navigation-main li:hover a {
-	background: #3f3e38;
-}
-.scheme-light #masthead,
-.scheme-light #commentform #submit,
-.scheme-light .comment-reply-link,
-.scheme-light .wpcf7 input[type="submit"],
-.scheme-light .protected-post-form input[type="submit"],
-.scheme-light .page-numbers.current,
-.scheme-light .page-links a:hover span,
-.scheme-light #main .more-link,
-.scheme-light .navigation-main .sub-menu a:hover {
-	background: #d19d00;
-	border: none;
-	color: #fff;
-}
-.scheme-light #sub-header,
-.scheme-light #above-footer {
-	background: #e2e1d9;
-}
-.scheme-light #above-footer a,
-.scheme-light #sub-header a {
-	color: #49473f;
-	text-decoration: underline;
-}
-.scheme-light #main .sticky {
-	border: none;
-}
-.scheme-light.blog .hentry,
-.scheme-light.archive .hentry {
-	border-color: rgba(0,0,0,.025);
-}
-.scheme-light h1,
-.scheme-light h2,
-.scheme-light h3,
-.scheme-light h4,
-.scheme-light h5,
-.scheme-light h6,
-.scheme-light #main .entry-title a,
-.scheme-light #main a .entry-title,
-.scheme-light #main .entry-title a:hover,
-.scheme-light #main a:hover .entry-title {
-	color: #252422;
-}
-.scheme-light #colophon,
-.scheme-light .header-image #top-navigation {
-	background: #3f3e38;
-}
-.scheme-light #commentform #submit:active,
-.scheme-light .wpcf7 input[type="submit"]:active,
-.scheme-light .protected-post-form input[type="submit"]:focus {
-	background: #3f3e38 !important;
-}
-/* Links */
-.scheme-light .entry-content a,
-.scheme-light #secondary a,
-.scheme-light #comments a {
-	color: #d19d00;
-}
-.scheme-light #main .entry-content a:visited,
-.scheme-light #main #comments a:visited {
-	color: #7d7c76;
-}
-.scheme-light #main #primary a:hover,
-.scheme-light #main #secondary a:hover {
-	color: #2f2e28;
-}
-.scheme-light #main a:active {
-	background: #3f3e38;
-	color: #fff;
-	text-decoration: none;
-}
-.scheme-light .entry-meta,
-.scheme-light .entry-aside,
-.scheme-light .entry-meta a,
-.scheme-light .entry-aside a,
-.scheme-light #breadcrumbs a {
-	color: #6d6c66;
-}
 
 
 /* =3. Typography
@@ -765,7 +772,8 @@ body.font-size-small,
 	font-size: 20px;
 }
 .font-size-small .widget,
-.font-size-small .navigation-main .sub-menu {
+.font-size-small .navigation-main .sub-menu,
+.font-size-small #top-navigation li {
 	font-size: 12px;
 }
 /* =3.3 Large fonts */
@@ -814,7 +822,8 @@ body.font-size-large,
 	font-size: 28px;
 }
 .font-size-large .widget,
-.font-size-large .navigation-main .sub-menu {
+.font-size-large .navigation-main .sub-menu,
+.font-size-large #top-navigation li {
 	font-size: 16px;
 }
 
@@ -871,6 +880,8 @@ body.font-size-large,
 	width: 30%;
 }
 /* =4.2 Full-width templates */
+.no-sidebar #primary,
+.no-sidebar #content,
 .attachment #primary,
 .attachment #content,
 .page-template-page-templatestemplate-masonry-php #primary,
@@ -1076,7 +1087,6 @@ body.font-size-large,
 }
 .blog .hentry,
 .archive .hentry {
-	border-bottom: 1px solid #eee;
 	padding-bottom: 30px;
 }
 .sticky {
@@ -1096,10 +1106,10 @@ body.font-size-large,
 	margin: 0 0 0.5em;
 	clear: none;
 }
-#main .entry-title a,
-#main a .entry-title,
-#main .entry-title a:hover,
-#main a:hover .entry-title {
+#main #primary .entry-title a,
+#main #primary a .entry-title,
+#main #primary .entry-title a:hover,
+#main #primary a:hover .entry-title {
 	color: #2e2e2e;
 	background: none;
 	text-decoration: none;
@@ -1394,38 +1404,29 @@ object {
 /* =10. Post Navigation
 ----------------------------------------------- */
 
-.site-content [class*="navigation"] {
+.site-content [class*="navigation"],
+.woocommerce-pagination {
 	margin: 0 0 1.5em;
 	overflow: hidden;
 }
 [class*="navigation"] .prev,
 [class*="navigation"] .next {
-	padding: 10px;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	font-size: 14px;
-	line-height: 1.2;
 }
 [class*="navigation"] .prev {
-	float: left;
-	width: 50%;
-	text-align: left;
+	width: auto;
 	overflow: hidden;
-	padding-left: 0;
 }
 [class*="navigation"] .next {
-	float: right;
-	text-align: right;
-	width: 50%;
+	width: auto;
 	overflow: hidden;
-	padding-right: 0;
 }
 [class*="navigation"] .prev a,
 [class*="navigation"] .next a {
 	display: block;
 	overflow: hidden;
 	text-decoration: none;
-	color: #303030;
 }
 [class*="navigation"] .prev span.heading,
 [class*="navigation"] .next span.heading {
@@ -1466,32 +1467,14 @@ object {
 	color: #fff;
 }
 a.page-numbers {
-	color: #303030;
+	color: #303030 !important;
 	text-decoration: none;
 }
-a.page-numbers:hover {
+a.page-numbers:hover,
+body.woocommerce #content nav.woocommerce-pagination ul li a:hover,
+body.woocommerce-page #content nav.woocommerce-pagination ul li a:hover {
 	background: #303030;
-	color: #fff;
-}
-a.page-numbers.prev:hover,
-a.page-numbers.next:hover {
-	background: none;
-	color: #303030;
-}
-.navigation-paging .next,
-.navigation-paging .prev {
-	width: 33.33333%;
-}
-/* Add left spacing to first page of archives when there's no Prev link */
-.screen-reader-text + .page-numbers {
-	margin-left: 33.33333%;
-}
-.screen-reader-text + .prev {
-	margin-left: 0;
-}
-/* Add right spacing to last page of archives when there's no Next link */
-.page-numbers.current:last-child {
-	margin-right: 33.33333%;
+	color: #fff !important;
 }
 /* Paginated posts */
 .page-links span {
@@ -1508,11 +1491,38 @@ a.page-numbers.next:hover {
 .page-links a:hover span {
 	color: #fff;
 }
-#breadcrumbs {
+#breadcrumbs,
+#main .woocommerce-breadcrumb {
 	font-size: 12px;
+	margin-bottom: 1em;
 }
-#breadcrumbs a {
+#main .woocommerce-breadcrumb {
+	font-weight: bold;
+	color: #303030;
+}
+#breadcrumbs a,
+#main .woocommerce-breadcrumb a {
 	text-decoration: none;
+	font-weight: normal;
+}
+/* WooCommerce pagination */
+body.woocommerce #content nav.woocommerce-pagination ul,
+body.woocommerce-page #content nav.woocommerce-pagination ul {
+	text-align: center;
+	border: none;
+}
+
+body.woocommerce #content nav.woocommerce-pagination ul li,
+body.woocommerce-page #content nav.woocommerce-pagination ul li {
+	float: none;
+	display: inline-block;
+	border: none;
+}
+body.woocommerce #content nav.woocommerce-pagination ul li a,
+body.woocommerce #content nav.woocommerce-pagination ul li span,
+body.woocommerce-page #content nav.woocommerce-pagination ul li a,
+body.woocommerce-page #content nav.woocommerce-pagination ul li span {
+	padding: 0.3em 0.5em;
 }
 
 
@@ -1870,9 +1880,9 @@ body.woocommerce #content div.product div.images img,
 body.woocommerce-page #content div.product div.images img,
 body.woocommerce ul.products li.product a img,
 body.woocommerce-page ul.products li.product a img {
-	box-shadow: none;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
+	box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
 }
 .woocommerce a.button.alt,
 .woocommerce button.button.alt,
@@ -1902,10 +1912,6 @@ body.woocommerce-page #content div.product .woocommerce-tabs ul.tabs li {
 	box-shadow: none;
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
-}
-.woocommerce #content div.product .woocommerce-tabs ul.tabs li:after,
-.woocommerce #content div.product .woocommerce-tabs ul.tabs li:before {
-	display: none;
 }
 body.woocommerce ul.cart_list li a,
 body.woocommerce ul.product_list_widget li a,
