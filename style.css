@@ -71,7 +71,8 @@ and Blueprint http://www.blueprintcss.org/
 		- 15.1 Portfolio
 		- 15.2 FAQ
 	16.	WooCommerce
-	17. Media Queries
+	17. Steroids
+	18. Media Queries
 	
 ---------------------------------------------------------------*/
 
@@ -426,6 +427,12 @@ a:hover,
 a:focus,
 a:active {
 	color: #111;
+}
+#secondary a {
+	text-decoration: none;
+}
+#secondary a:hover {
+	text-decoration: underline;
 }
 /* =1.5 Alignment */
 .alignleft {
@@ -1900,6 +1907,9 @@ article.comment {
 .infinity-end.neverending .site-footer {
 	display: block;
 }
+#infinite-footer {
+	z-index: 999;
+}
 #infinite-footer .container {
 	border: none;
 }
@@ -2048,6 +2058,14 @@ body.woocommerce-page table.shop_table {
 
 
 /* =17. Media Queries
+----------------------------------------------- */
+
+#top-slider .ls-wp-fullwidth-container {
+	margin-top: 0;
+}
+
+
+/* =18. Media Queries
 ----------------------------------------------- */
 
 @media screen and (max-width: 800px) {

@@ -301,7 +301,26 @@ function thsp_add_sub_header() {
 		echo '</div><!-- #sub-header -->';
 	endif;
 }
-add_action( 'tha_header_after', 'thsp_add_sub_header' );
+add_action( 'tha_header_after', 'thsp_add_sub_header', 10 );
+
+/**
+ * Add sub-header widget area to tha_header_after hook
+ */
+function thsp_add_top_slider() {
+	global $post;
+	
+	if ( is_singular() && ( get_post_meta( $post->ID, '_thsp_slider_revolution', true ) || get_post_meta( $post->ID, '_thsp_slider_layer', true ) ) ) :
+		echo '<div id="top-slider">';
+			if( get_post_meta( $post->ID, '_thsp_slider_revolution', true ) ) :
+				putRevSlider( get_post_meta( $post->ID, '_thsp_slider_revolution', true ) );
+			elseif( get_post_meta( $post->ID, '_thsp_slider_layer', true ) ) :
+				layerslider( get_post_meta( $post->ID, '_thsp_slider_layer', true ) );
+			endif;
+		echo '</div>';
+	endif;
+}
+add_action( 'tha_header_after', 'thsp_add_top_slider', 20 );
+
 
 /**
  * Add above footer widget area to tha_header_after hook
