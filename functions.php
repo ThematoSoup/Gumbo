@@ -443,7 +443,7 @@ class THSP_Menu_With_Description extends Walker_Nav_Menu {
  */
 function thsp_add_yoast_breadcrumbs() {
 	if ( function_exists( 'is_woocommerce' ) ) :
-		if ( ! is_woocommerce() && ! is_home() ) :
+		if ( ! is_woocommerce() && ! is_home() && function_exists( 'yoast_breadcrumb' ) ) :
 			yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
 		endif;
 	elseif ( function_exists( 'yoast_breadcrumb' ) && ! is_home() ) :
