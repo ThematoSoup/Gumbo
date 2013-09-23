@@ -42,3 +42,12 @@ add_action( 'widgets_init', 'thsp_woocommerce_widgets_init' );
 function woocommerce_get_sidebar() {
 	woocommerce_get_template( 'inc/woocommerce/woocommerce-sidebar.php' );
 }
+
+
+// Disable Jetpack Infinite Scroll on WooCommerce pages
+function thsp_woocommerce_disable_infinite_scroll() {
+    $supported = current_theme_supports( 'infinite-scroll' ) && ( is_home() || is_archive() ) && ( ! is_woocommerce() );
+
+    return $supported;
+}
+add_filter( 'infinite_scroll_archive_supported', 'thsp_woocommerce_disable_infinite_scroll' );
