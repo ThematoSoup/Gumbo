@@ -715,6 +715,10 @@ body.scheme-dark #infinite-footer .container a {
 .scheme-dark #above-footer {
 	border-bottom: 1px solid #2c2c2c;
 }
+.scheme-dark #masthead.header-image #top-navigation,
+.scheme-dark #masthead.header-image #site-navigation {
+	border-bottom: none;
+}
 .scheme-dark #main .sticky {
 	background: #262626;
 	border: 1px solid #303030;
