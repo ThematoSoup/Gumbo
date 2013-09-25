@@ -52,8 +52,9 @@ and Blueprint http://www.blueprintcss.org/
 	6.	Menus
 		- 6.1 Main Menu
 		- 6.2 Small Menu
-		- 6.3 Top Menu
-		- 6.4 Footer Menu
+		- 6.3 Compact Header Menu
+		- 6.4 Top Menu
+		- 6.5 Footer Menu
 	7.	 Entries
 		- 7.1 Post Aside Widget Area
 		- 7.2 Post Formats
@@ -71,14 +72,14 @@ and Blueprint http://www.blueprintcss.org/
 		- 15.1 Portfolio
 		- 15.2 FAQ
 	16.	WooCommerce
-	17. Steroids
+	17. Sliders
 	18. Media Queries
 	
 ---------------------------------------------------------------*/
 
 
 
-/* =0. Reset
+/* 0. =Reset
 -------------------------------------------------------------- */
 
 html, body, div, span, applet, object, iframe,
@@ -151,7 +152,7 @@ a img {
 }
 
 
-/* =1. Global Styles
+/* 1. =Global Styles
 ----------------------------------------------- */
 
 * {
@@ -172,7 +173,7 @@ textarea {
 	line-height: 1.6;
 	-webkit-font-smoothing: antialiased;
 }
-/* =1.1 Headings */
+/* 1.1 Headings */
 h1,
 h2,
 h3,
@@ -221,7 +222,7 @@ hr {
 	height: 1px;
 	margin-bottom: 1.5em;
 }
-/* =1.2 Text elements */
+/* 1.2 Text elements */
 p {
 	margin-bottom: 1.4em;
 }
@@ -318,7 +319,7 @@ img {
 	height: auto; /* Make sure images are scaled correctly. */
 	max-width: 100%; /* Adhere to container width. */
 }
-/* =1.3 Form elements */
+/* 1.3 Form elements */
 button,
 input,
 select,
@@ -416,7 +417,7 @@ textarea {
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 98%;
 }
-/* =1.4 Links */
+/* 1.4 Links */
 a {
 	color: royalblue;
 }
@@ -434,7 +435,7 @@ a:active {
 #secondary a:hover {
 	text-decoration: underline;
 }
-/* =1.5 Alignment */
+/* 1.5 Alignment */
 .alignleft {
 	display: inline;
 	float: left;
@@ -450,7 +451,7 @@ a:active {
 	display: block;
 	margin: 0 auto;
 }
-/* =1.6 Screen Reader Text */
+/* 1.6 Screen Reader Text */
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
@@ -476,7 +477,7 @@ a:active {
 	width: auto;
 	z-index: 100000; /* Above WP toolbar */
 }
-/* =1.7 Clearing */
+/* 1.7 Clearing */
 .clear:before,
 .clear:after,
 [class*="content"]:before,
@@ -493,10 +494,10 @@ a:active {
 }
 
 
-/* =2. Color Schemes
+/* 2. =Color Schemes
 ----------------------------------------------- */
 
-/* =2.1 White (default) */
+/* 2.1 White (default) */
 #masthead,
 #commentform #submit,
 .comment-reply-link,
@@ -567,7 +568,7 @@ a:active {
 	color: #888;
 }
 
-/* =2.2 Light */
+/* 2.2 Light */
 body.scheme-light {
 	background: #f0efec;
 	color: #282725;
@@ -657,14 +658,15 @@ body.scheme-light {
 .scheme-light .entry-aside,
 .scheme-light .entry-meta a,
 .scheme-light .entry-aside a,
-.scheme-light #breadcrumbs a {
+.scheme-light #main #breadcrumbs a,
+.scheme-light #main .woocommerce-breadcrumb a  {
 	color: #6d6c66;
 }
 
-/* =2.3 Dark */
+/* 2.3 Dark */
 body.scheme-dark,
 .scheme-dark #main {
-	background: #282828;
+	background: #212121;
 	color: #ddd;
 }
 .scheme-dark #commentform #submit,
@@ -677,12 +679,6 @@ body.scheme-dark,
 .scheme-dark .navigation-main .sub-menu a:hover {
 	background: #e56100;
 	color: #fff;
-}
-.scheme-dark #content a,
-.scheme-dark #sub-header a,
-.scheme-dark #above-footer a,
-.scheme-dark #secondary a {
-	color: #e56100;
 }
 .scheme-dark h1,
 .scheme-dark h2,
@@ -699,6 +695,13 @@ body.scheme-dark,
 body.scheme-dark #masthead,
 body.scheme-dark #colophon {
 	background-color: #1f1f1f !important;
+}
+body.scheme-dark #infinite-footer .container {
+	background: #fff;
+}
+body.scheme-dark #infinite-footer .container,
+body.scheme-dark #infinite-footer .container a {
+	color: #222;
 }
 .scheme-dark #sub-header,
 .scheme-dark #above-footer {
@@ -733,9 +736,52 @@ body.scheme-dark #colophon {
 	background: #f9f9f9;
 	color: #303030;
 }
+/* Links */
+.scheme-dark .entry-content a,
+.scheme-dark .entry-summary a,
+.scheme-dark #comments a,
+.scheme-dark #secondary a,
+.scheme-dark .star-rating {
+	color: #e56100;
+}
+.scheme-dark #main #primary a:visited {
+	color: #7d7c76;
+}
+.scheme-dark #main #primary a:hover,
+.scheme-dark #main #secondary a:hover {
+	color: #2f2e28;
+}
+.scheme-dark #main a:active {
+	background: #3f3e38;
+	color: #fff;
+	text-decoration: none;
+}
+.scheme-dark #main #breadcrumbs,
+.scheme-dark #main .woocommerce-breadcrumb {
+	color: #fff;
+}
+
+.scheme-dark .entry-meta,
+.scheme-dark .entry-aside,
+.scheme-dark .entry-meta a,
+.scheme-dark .entry-aside a,
+.scheme-dark #main #breadcrumbs a,
+.scheme-dark #main .woocommerce-breadcrumb a  {
+	color: #ddd !important;
+}
+.scheme-dark a.page-numbers,
+.scheme-dark body.woocommerce #content nav.woocommerce-pagination ul li a,
+.scheme-dark body.woocommerce-page #content nav.woocommerce-pagination ul li a {
+	color: #fff !important;
+}
+.scheme-dark a.page-numbers:hover,
+.scheme-dark body.woocommerce #content nav.woocommerce-pagination ul li a:hover,
+.scheme-dark body.woocommerce-page #content nav.woocommerce-pagination ul li a:hover {
+	background: #444 !important;
+}
 
 
-/* =3. Typography
+/* 3. =Typography
 ----------------------------------------------- */
 
 /* Body font weight */
@@ -748,14 +794,14 @@ body.body-font-weight-300,
 	font-weight: 300;
 	-webkit-font-smoothing: antialiased;
 }
-/* =3.1 Genericons */
+/* 3.1 Genericons */
 #pull-out-trigger:before {
 	-webkit-font-smoothing: antialiased;
 	display: inline-block;
 	font: normal 16px/1 Genericons;
 	vertical-align: text-bottom;
 }
-/* =3.2 Small Fonts */
+/* 3.2 Small Fonts */
 body.font-size-small,
 .font-size-small button,
 .font-size-small input,
@@ -792,7 +838,7 @@ body.font-size-small,
 .font-size-small [class*="navigation"] .next-post {
 	font-size: 12px;
 }
-/* =3.3 Large fonts */
+/* 3.3 Large fonts */
 body.font-size-large,
 .font-size-large button,
 .font-size-large input,
@@ -842,11 +888,11 @@ body.font-size-large,
 .font-size-large #top-navigation li,
 .font-size-large [class*="navigation"] .prev-post,
 .font-size-large [class*="navigation"] .next-post {
-	font-size: 16px;
+	font-size: 15px;
 }
 
 
-/* =4. Layout
+/* 4. =Layout
 ----------------------------------------------- */
 
 /* Setting a custom background activates boxed layout */
@@ -872,7 +918,7 @@ body.font-size-large,
 	padding: 40px 0;
 }
 
-/* =4.1 Right Sidebar */
+/* 4.1 Right Sidebar */
 .sidebar-right .content-area {
 	float: left;
 	margin: 0 -35% 0 0;
@@ -886,7 +932,7 @@ body.font-size-large,
 	width: 30%;
 }
 
-/* =4.2 Left Sidebar */
+/* 4.2 Left Sidebar */
 .sidebar-left .content-area {
 	float: right;
 	margin: 0 0 0 -35%;
@@ -900,7 +946,7 @@ body.font-size-large,
 	width: 30%;
 }
 
-/* =4.2 Full-width templates */
+/* 4.2 Full-width templates */
 .no-sidebar #primary,
 .no-sidebar #content,
 .attachment #primary,
@@ -929,7 +975,7 @@ body.font-size-large,
 }
 
 
-/* =5. Header
+/* 5. =Header
 ----------------------------------------------- */
 
 .site-header hgroup {
@@ -938,7 +984,7 @@ body.font-size-large,
 	margin: 0 auto;
 }
 
-/* =5.1 With header image activated */
+/* 5.1 With header image activated */
 .header-image.site-header hgroup {
 	padding: 0 20px;
 	min-height: 240px;
@@ -961,7 +1007,7 @@ body.font-size-large,
 	font-weight: normal;
 }
 
-/* =5.2 Compact header (navigation on the right side) */
+/* 5.2 Compact header (navigation on the right side) */
 .header-nav-right #header-inner {
 	padding: 0 20px;
 	max-width: 1040px;
@@ -985,24 +1031,12 @@ body.font-size-large,
 	text-align: right;
 	font-weight: bold;
 }
-.header-nav-right .navigation-main a {
-	color: #fff;
-	padding: 15px;
-}
-.header-nav-right .navigation-main .sub-menu {
-	font-weight: normal;
-	right: 0;
-}
-.header-nav-right .navigation-main .sub-menu .sub-menu {
-	left: auto;
-	right: 220px;
-}
 
 
-/* =6. Menus
+/* 6. =Menus
 ----------------------------------------------- */
 
-/* =6.1 Large Menu */
+/* 6.1 Large Menu */
 .navigation-main {
 	display: block;
 }
@@ -1045,10 +1079,6 @@ body.font-size-large,
 	text-decoration: none;
 	padding: 15px 20px;
 }
-.navigation-main a:hover {
-}
-.navigation-main .sub-menu a {
-}
 .navigation-main .sub-menu a:hover {
 	background: #1e8ca3;
 }
@@ -1060,16 +1090,6 @@ body.font-size-large,
 }
 .navigation-main ul ul a {
 	width: 220px;
-}
-.navigation-main ul ul ul ul {
-}
-.navigation-main ul ul li {
-}
-.navigation-main li:hover > a {
-}
-.navigation-main ul ul :hover > a {
-}
-.navigation-main ul ul a:hover {
 }
 .navigation-main ul li:hover > ul {
 	display: block;
@@ -1088,7 +1108,7 @@ body.font-size-large,
 	font-size: 12px;
 	margin-top: 0.25em;
 }
-/* =6.2 Small Menu */
+/* 6.2 Small Menu */
 .menu-toggle {
 	display: none;
 	cursor: pointer;
@@ -1117,7 +1137,42 @@ body.font-size-large,
 		display: none;
 	}
 }
-/* =6.3 Top Menu */
+/* 6.3 Compact Header Menu */
+.header-nav-right .navigation-main a {
+	color: #fff;
+	padding: 15px;
+}
+.header-nav-right .navigation-main a:hover {
+	background: none;
+}
+.header-nav-right .navigation-main .sub-menu {
+	font-weight: normal;
+	right: 0;
+}
+.header-nav-right .navigation-main .sub-menu .sub-menu {
+	left: auto;
+	right: 220px;
+	top: -1px;
+}
+.header-nav-right .navigation-main li:hover a {
+	background: none;
+	color: #eee;
+}
+.header-nav-right .navigation-main .sub-menu {
+	background: #fff;
+	border: 1px solid #ddd;
+	box-shadow: 0 0 4px rgba(0,0,0,0.3);
+}
+.header-nav-right .navigation-main .sub-menu .sub-menu {
+	box-shadow: none;
+}
+.header-nav-right .navigation-main .sub-menu a {
+	color: #444 !important;
+}
+.header-nav-right .navigation-main .sub-menu a:hover {
+	background: #f6f6f6 !important;
+}
+/* 6.4 Top Menu */
 #top-navigation {
 	background: rgba(0,0,0,0.2);
 }
@@ -1127,21 +1182,22 @@ body.font-size-large,
 #top-navigation ul {
 	list-style: none;
 	text-align: right;
-	padding: 0.25em 0;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
 }
 #top-navigation li {
 	display: inline-block;
-	font-size: 14px;
+	font-size: 13px;
 	margin-left: 1.5em;
 }
 #top-navigation a {
 	color: #fff;
 	text-decoration: none;
 }
-/* =6.2 Footer Menu */
+/* 6.5 Footer Menu */
 
 
-/* =7. Entries
+/* 7. =Entries
 ----------------------------------------------- */
 
 .hentry {
@@ -1205,7 +1261,7 @@ body.font-size-large,
 #main .more-link:active {
 	background: #444;
 }
-/* =7.1 Post Aside Widget Area */
+/* 7.1 Post Aside Widget Area */
 .entry-aside {
 	float: left;
 	width: 21.969696%; /* 145px */
@@ -1228,7 +1284,7 @@ body.font-size-large,
 	float: right;
 	width: 75%;
 }
-/* =7.1 Post Formats */
+/* 7.2 Post Formats */
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
 	display: none;
@@ -1267,16 +1323,16 @@ body.font-size-large,
 	left: 0;
 	width: 100%;
 	padding: 0.5em;
-	background: rgba(0,0,0,0.5);
-	color: #fff;
+	background: rgba(0,0,0,0.5) !important;
+	color: #fff !important;
 	font-size: 30px;
 }
 
 
-/* =8. Page Templates
+/* 8. =Page Templates
 ----------------------------------------------- */
 
-/* =8.1 Authors */
+/* 8.1 Authors */
 #authors-list {
   list-style: none;
   margin: 2em 0;
@@ -1317,7 +1373,7 @@ body.font-size-large,
 #authors-list .latest-by-author li {
   font-size: 14px;
 }
-/* =8.2 Masonry */
+/* 8.2 Masonry */
 .masonry-brick {
 	width: 300px;
 	margin-bottom: 30px;
@@ -1340,7 +1396,7 @@ body.font-size-large,
 .masonry-brick .entry-summary {
 	margin-bottom: 5px;
 }
-/* =8.3 Widgetized Homepage */
+/* 8.3 Widgetized Homepage */
 #widgetized-homepage-top {
 	margin-bottom: 40px;
 }
@@ -1382,7 +1438,7 @@ body.font-size-large,
 }
 
 
-/* =9. Media
+/* 9. =Media
 ----------------------------------------------- */
 
 .entry-content img.wp-smiley,
@@ -1463,7 +1519,7 @@ object {
 }
 
 
-/* =10. Post Navigation
+/* 10. =Post Navigation
 ----------------------------------------------- */
 
 .site-content [class*="navigation"],
@@ -1600,7 +1656,7 @@ body.woocommerce-page #content nav.woocommerce-pagination ul li span {
 }
 
 
-/* =11. Comments
+/* 11. =Comments
 ----------------------------------------------- */
 
 .comment-list {
@@ -1660,7 +1716,7 @@ article.comment {
 }
 
 
-/* =12. Forms
+/* 12. =Forms
 ----------------------------------------------- */
 
 #commentform label,
@@ -1725,7 +1781,7 @@ article.comment {
 }
 
 
-/* =13. Widgets
+/* 13. =Widgets
 ----------------------------------------------- */
 
 .widget {
@@ -1792,7 +1848,7 @@ article.comment {
 #wp-calendar tfoot td#next {
 	text-align: right;
 }
-/* =13.1 Pull-out widget area */
+/* 13.1 Pull-out widget area */
 #pull-out-widget-area {
 	position: fixed;
 	top: 0;
@@ -1849,7 +1905,7 @@ article.comment {
 .admin-bar #pull-out-trigger { 
 	top: 28px;
 }
-/* =13.2 Flexible widget areas */
+/* 13.2 Flexible widget areas */
 /* Number of widgets per row (1, 2, 3 or 4) changes depending on number of widgets used */
 .flexible-widget-area .widget {
 	margin: 20px 0;
@@ -1895,7 +1951,7 @@ article.comment {
 }
 
 
-/* =Infinite Scroll (Jetpack module)
+/* 14. =Infinite Scroll (Jetpack module)
 ----------------------------------------------- */
 
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
@@ -1915,10 +1971,10 @@ article.comment {
 }
 
 
-/* =15. Steroids Plugin
+/* 15. =Steroids Plugin
 ----------------------------------------------- */
 
-/* =15.1 Portfolio */
+/* 15.1 Portfolio */
 .portfolio-project.layout-b .project-content {
 	float: left;
 	width: 72%;
@@ -1940,7 +1996,7 @@ article.comment {
 	top: 0;
 	right: 0;
 }
-/* =15.2 FAQ */
+/* 15.2 FAQ */
 .steroids-faqs dt {
 	font-size: 18px;
 	padding: 0.5em 0;
@@ -1950,7 +2006,7 @@ article.comment {
 }
 
 
-/* =16. WooCommerce
+/* 16. =WooCommerce
 ----------------------------------------------- */
 
 body.woocommerce div.product div.images img,
@@ -2055,9 +2111,30 @@ body.woocommerce table.shop_table,
 body.woocommerce-page table.shop_table {
 	margin-bottom: 60px;
 }
+body.woocommerce .related ul.products li.product,
+body.woocommerce .related ul li.product,
+body.woocommerce .upsells.products ul.products li.product, 
+body.woocommerce .upsells.products ul li.product,
+body.woocommerce-page .related ul.products li.product,
+body.woocommerce-page .related ul li.product,
+body.woocommerce-page .upsells.products ul.products li.product,
+body.woocommerce-page .upsells.products ul li.product {
+	width: 22.05%;
+	margin: 0 3.8% 2.992em 0;
+}
+body.woocommerce .related ul.products li.product.last,
+body.woocommerce .related ul li.product.last,
+body.woocommerce .upsells.products ul.products li.product.last, 
+body.woocommerce .upsells.products ul li.product.last,
+body.woocommerce-page .related ul.products li.product.last,
+body.woocommerce-page .related ul li.product.last,
+body.woocommerce-page .upsells.products ul.products li.product.last,
+body.woocommerce-page .upsells.products ul li.product.last {
+	margin-right: 0;
+}
 
 
-/* =17. Media Queries
+/* 17. =Sliders
 ----------------------------------------------- */
 
 #top-slider .ls-wp-fullwidth-container {
@@ -2065,7 +2142,7 @@ body.woocommerce-page table.shop_table {
 }
 
 
-/* =18. Media Queries
+/* 18. =Media Queries
 ----------------------------------------------- */
 
 @media screen and (max-width: 800px) {

@@ -11,7 +11,7 @@ function my_theme_wrapper_start() { ?>
 			<?php tha_content_top(); ?>
 
 <?php }
-add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
+add_action( 'woocommerce_before_main_content', 'my_theme_wrapper_start', 10 );
 
 // Theme wrapper
 function my_theme_wrapper_end() { ?>
@@ -20,7 +20,7 @@ function my_theme_wrapper_end() { ?>
 		<?php tha_content_after(); ?>
 	</div><!-- #primary -->
 <?php }
-add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
+add_action( 'woocommerce_after_main_content', 'my_theme_wrapper_end', 10 );
 
 
 // Register Store Sidebar
@@ -51,3 +51,19 @@ function thsp_woocommerce_disable_infinite_scroll() {
     return $supported;
 }
 add_filter( 'infinite_scroll_archive_supported', 'thsp_woocommerce_disable_infinite_scroll' );
+
+
+/**
+ * Output the related products. Overrides a pluggable WooCommerce function.
+ *
+ * @access public
+ * @subpackage	Product
+ * @return void
+ */
+function woocommerce_output_related_products() {
+	woocommerce_related_products( 4, 4 );
+}
+
+
+// Change number of products per page
+add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 16;' ), 20 );
