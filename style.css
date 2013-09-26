@@ -1954,40 +1954,40 @@ article.comment {
 	width: 100%;
 	padding: 0 15px;
 }
-.flexible-widget-area.widget-count-1 .widget {
+.widget-count-1 .widget {
 	padding: 0;
 }
 /* Two per row */
-.flexible-widget-area.per-row-2 .widget {
+.per-row-2 .widget {
     width: 50%;
 }
-.flexible-widget-area.per-row-2 .widget:nth-child(2n+1) {
+.per-row-2 .widget:nth-child(2n+1) {
 	clear: left;
 	padding-left: 0;
 }
-.flexible-widget-area.per-row-2 .widget:nth-child(2n) {
+.per-row-2 .widget:nth-child(2n) {
 	padding-right: 0;
 }
 /* Three per row */
-.flexible-widget-area.per-row-3 .widget {
+.per-row-3 .widget {
     width: 33.33333%;
 }
-.flexible-widget-area.per-row-3 .widget:nth-child(3n+1) {
+.per-row-3 .widget:nth-child(3n+1) {
 	clear: left;
 	padding-left: 0;
 }
-.flexible-widget-area.per-row-3 .widget:nth-child(3n) {
+.per-row-3 .widget:nth-child(3n) {
 	padding-right: 0;
 }
 /* Four per row */
-.flexible-widget-area.per-row-4 .widget {
+.per-row-4 .widget {
     width: 25%;
 }
-.flexible-widget-area.per-row-4 .widget:nth-child(4n+1) {
+.per-row-4 .widget:nth-child(4n+1) {
 	clear: left;
 	padding-left: 0;
 }
-.flexible-widget-area.per-row-4 .widget:nth-child(4n) {
+.per-row-4 .widget:nth-child(4n) {
 	padding-right: 0;
 }
 
@@ -2208,15 +2208,15 @@ body.woocommerce-page .upsells.products ul li.product.last {
 		width: auto;
 	}
 	.flexible-widget-area .widget {
-		width: 50% !important;
-		clear: none !important;
+		width: 50%;
+		clear: none;
 	}
 	.flexible-widget-area .widget:nth-child(2n+1) {
-		padding: 0 15px 0 0 !important;
-		clear: left !important;
+		padding: 0 15px 0 0;
+		clear: left;
 	}
 	.flexible-widget-area .widget:nth-child(2n) {
-		padding: 0 0 0 15px !important;
+		padding: 0 0 0 15px;
 	}
 }
 @media screen and (max-width: 600px) {
@@ -2249,12 +2249,12 @@ body.woocommerce-page .upsells.products ul li.product.last {
 }
 @media screen and (max-width: 400px) {
 	.flexible-widget-area .widget {
-		width: 100% !important;
-		float: none !important;
+		width: 100%;
+		float: none;
 	}
 	.flexible-widget-area .widget:nth-child(2n+1),
 	.flexible-widget-area .widget:nth-child(2n) {
-		padding: 0 !important;
+		padding: 0;
 		margin-bottom: 30px;
 		margin-top: 0;	
 	}
