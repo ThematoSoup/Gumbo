@@ -90,6 +90,23 @@ add_filter( 'post_class', 'thsp_post_classes' );
 
 
 /**
+ * Returns classes added to header element.
+ */
+function thsp_header_classes() {
+	// Header layout
+	$thsp_theme_options = thsp_cbp_get_options_values();
+	$thsp_header_class = 'header-' . $thsp_theme_options['main_nav_placement'];
+	// Check header image
+	$header_image = get_header_image();
+	if ( ! empty( $header_image ) ) :
+		$thsp_header_class .= ' header-image';
+	endif;
+
+	return $thsp_header_class;
+}
+
+
+/**
  * Adds custom classes to the array of menu item classes.
  */
 function thsp_custom_menu_item_classes( $classes, $item ) {
@@ -262,7 +279,7 @@ function thsp_internal_css() {
 		.custom-primary-color .entry-content a,
 		.custom-primary-color .entry-summary a,
 		.custom-primary-color #comments a,
-		.custom-primary-color #secondary a,
+		.custom-primary-color .widget a,
 		.custom-primary-color .star-rating {
 			color: <?php echo $thsp_primary_color; ?>
 		}

@@ -213,6 +213,33 @@ function thsp_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 	register_sidebar( array(
+		'name'          => __( 'Footer Widget Area', 'gumbo' ),
+		'id'            => 'footer-widget-area',
+		'description' => __( 'This widget area is located in site footer.', 'gumbo' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+	register_sidebar( array(
+		'name' => __( 'Below Header Widget Area', 'gumbo' ),
+		'description' => __( 'This widget area is located below site header.', 'gumbo' ),
+		'id' => 'sub-header-widget-area',
+		'before_widget' => '<aside id="%1$s" class="widget sub-header-widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+	register_sidebar( array(
+		'name' => __( 'Above Footer Widget Area', 'gumbo' ),
+		'description' => __( 'This widget area is located above site footer.', 'gumbo' ),
+		'id' => 'above-footer-widget-area',
+		'before_widget' => '<aside id="%1$s" class="widget above-footer-widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+	register_sidebar( array(
 		'name'          => __( 'Post Aside', 'gumbo' ),
 		'id'            => 'post-aside',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -246,28 +273,10 @@ function thsp_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 	register_sidebar( array(
-		'name' => __( 'Pull-out widget area', 'gumbo' ),
+		'name' => __( 'Pull-out Widget Area', 'gumbo' ),
 		'description' => __( 'This widget area can be located at top, bottom, left or right of each page. To set its location go to Appearance > Theme Customizer.', 'gumbo' ),
 		'id' => 'pull-out-widget-area',
 		'before_widget' => '<aside id="%1$s" class="widget pull-out-widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-	register_sidebar( array(
-		'name' => __( 'Sub-header widget area', 'gumbo' ),
-		'description' => __( 'This widget area is located below site header.', 'gumbo' ),
-		'id' => 'sub-header-widget-area',
-		'before_widget' => '<aside id="%1$s" class="widget sub-header-widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-	register_sidebar( array(
-		'name' => __( 'Above footer widget area', 'gumbo' ),
-		'description' => __( 'This widget area is located above site footer.', 'gumbo' ),
-		'id' => 'above-footer-widget-area',
-		'before_widget' => '<aside id="%1$s" class="widget above-footer-widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',

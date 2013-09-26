@@ -28,18 +28,7 @@
 
 <div id="page" class="hfeed site">	
 	<?php tha_header_before(); ?>		
-	<?php
-	// Header layout
-	$thsp_theme_options = thsp_cbp_get_options_values();
-	$thsp_header_class = 'header-' . $thsp_theme_options['main_nav_placement'];
-	// Check header image
-	$header_image = get_header_image();
-	if ( ! empty( $header_image ) ) :
-		$thsp_header_class .= ' header-image';
-	endif;
-	?>
-
-	<header id="masthead" class="site-header <?php echo $thsp_header_class; ?>" role="banner">
+	<header id="masthead" class="site-header <?php echo thsp_header_classes(); ?>" role="banner">
 		<?php if ( has_nav_menu( 'top' ) ) : ?>
 		<nav id="top-navigation" role="navigation">
 			<?php

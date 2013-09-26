@@ -58,22 +58,23 @@ and Blueprint http://www.blueprintcss.org/
 	7.	 Entries
 		- 7.1 Post Aside Widget Area
 		- 7.2 Post Formats
-	8.	Page Templates
-		- 8.1 Authors
-		- 8.2 Masonry
-		- 8.3 Widgetized Homepage
-	9.	Media
-	10.	Post Navigation
-	11.	Comments
-	12.	Forms
-	13.	Widgets
-	14.	Infinite scroll (Jetpack module)
-	15.	Steroids Plugin
-		- 15.1 Portfolio
-		- 15.2 FAQ
-	16.	WooCommerce
-	17. Sliders
-	18. Media Queries
+	8.	Footer
+	9.	Page Templates
+		- 9.1 Authors
+		- 9.2 Masonry
+		- 9.3 Widgetized Homepage
+	10.	Media
+	11.	Post Navigation
+	12.	Comments
+	13.	Forms
+	14.	Widgets
+	15.	Infinite scroll (Jetpack module)
+	16.	Steroids Plugin
+		- 16.1 Portfolio
+		- 16.2 FAQ
+	17.	WooCommerce
+	18. Sliders
+	19. Media Queries
 	
 ---------------------------------------------------------------*/
 
@@ -511,16 +512,6 @@ a:active {
 	background: #1e8ca3;
 	color: #fff !important;
 }
-#colophon,
-#infinite-footer .container {
-	background: #303030;
-}
-#colophon,
-#colophon a,
-#infinite-footer .container,
-#infinite-footer .container a {
-	color: #fff;
-}
 .navigation-main,
 .main-small-navigation {
 	background: #e9e9e9;
@@ -544,7 +535,7 @@ a:active {
 .entry-content a,
 .entry-summary a,
 #comments a,
-#secondary a,
+.widget a,
 .star-rating {
 	color: #1e8ca3;
 }
@@ -552,7 +543,7 @@ a:active {
 	color: #757575;
 }
 #main #primary a:hover,
-#main #secondary a:hover {
+#main .widget a:hover {
 	color: #222;
 }
 #main a:active {
@@ -638,7 +629,7 @@ body.scheme-light {
 .scheme-light .entry-content a,
 .scheme-light .entry-summary a,
 .scheme-light #comments a,
-.scheme-light #secondary a,
+.scheme-light .widget a,
 .scheme-light .star-rating {
 	color: #d19d00;
 }
@@ -646,7 +637,7 @@ body.scheme-light {
 	color: #7d7c76;
 }
 .scheme-light #main #primary a:hover,
-.scheme-light #main #secondary a:hover {
+.scheme-light #main .widget a:hover {
 	color: #2f2e28;
 }
 .scheme-light #main a:active {
@@ -666,7 +657,7 @@ body.scheme-light {
 /* 2.3 Dark */
 body.scheme-dark,
 .scheme-dark #main {
-	background: #212121;
+	background: #191919;
 	color: #ddd;
 }
 .scheme-dark #commentform #submit,
@@ -686,11 +677,11 @@ body.scheme-dark,
 .scheme-dark h4,
 .scheme-dark h5,
 .scheme-dark h6,
-.scheme-dark #main .entry-title a,
-.scheme-dark #main a .entry-title,
-.scheme-dark #main .entry-title a:hover,
-.scheme-dark #main a:hover .entry-title {
-	color: #f3f3f3;
+.scheme-dark #main #primary .entry-title a,
+.scheme-dark #main #primary a .entry-title,
+.scheme-dark #main #primary .entry-title a:hover,
+.scheme-dark #main #primary a:hover .entry-title {
+	color: #f9f9f9 !important;
 }
 body.scheme-dark #masthead,
 body.scheme-dark #colophon {
@@ -720,18 +711,17 @@ body.scheme-dark #infinite-footer .container a {
 	border-bottom: none;
 }
 .scheme-dark #main .sticky {
-	background: #262626;
-	border: 1px solid #303030;
-}
-.scheme-dark .widget ul li {
-	border-color: #303030;
-}
-.scheme-dark.blog .hentry,
-.scheme-dark.archive .hentry {
-	border-color: #303030;
+	background: #111;
+	border: 1px solid #131313;
 }
 .scheme-dark .navigation-main {
-	background: #222;
+	background: #111;
+}
+.scheme-dark .widget ul li,
+.scheme-dark .widget ul.children li:first-child,
+.scheme-dark #wp-calendar th,
+.scheme-dark #wp-calendar td {
+	border-color: #2f2f2f;
 }
 .scheme-dark .navigation-main a {
 	color: #ddd;
@@ -744,7 +734,7 @@ body.scheme-dark #infinite-footer .container a {
 .scheme-dark .entry-content a,
 .scheme-dark .entry-summary a,
 .scheme-dark #comments a,
-.scheme-dark #secondary a,
+.scheme-dark .widget a,
 .scheme-dark .star-rating {
 	color: #e56100;
 }
@@ -752,7 +742,7 @@ body.scheme-dark #infinite-footer .container a {
 	color: #7d7c76;
 }
 .scheme-dark #main #primary a:hover,
-.scheme-dark #main #secondary a:hover {
+.scheme-dark #main .widget a:hover {
 	color: #2f2e28;
 }
 .scheme-dark #main a:active {
@@ -836,6 +826,7 @@ body.font-size-small,
 	font-size: 20px;
 }
 .font-size-small .widget,
+.font-size-small #colophon,
 .font-size-small .navigation-main .sub-menu,
 .font-size-small #top-navigation li,
 .font-size-small [class*="navigation"] .prev-post,
@@ -888,6 +879,7 @@ body.font-size-large,
 	font-size: 28px;
 }
 .font-size-large .widget,
+.font-size-large #colophon,
 .font-size-large .navigation-main .sub-menu,
 .font-size-large #top-navigation li,
 .font-size-large [class*="navigation"] .prev-post,
@@ -919,17 +911,17 @@ body.font-size-large,
 	word-wrap: break-word;
 }
 #main {
-	padding: 40px 0;
+	padding: 50px 0;
 }
 
 /* 4.1 Right Sidebar */
 .sidebar-right .content-area {
 	float: left;
-	margin: 0 -35% 0 0;
+	margin: 0 -36% 0 0;
 	width: 100%;
 }
 .sidebar-right #content {
-	margin: 0 35% 0 0;
+	margin: 0 36% 0 0;
 }
 .sidebar-right #secondary {
 	float: right;
@@ -939,11 +931,11 @@ body.font-size-large,
 /* 4.2 Left Sidebar */
 .sidebar-left .content-area {
 	float: right;
-	margin: 0 0 0 -35%;
+	margin: 0 0 0 -36%;
 	width: 100%;
 }
 .sidebar-left #content {
-	margin: 0 0 0 35%;
+	margin: 0 0 0 36%;
 }
 .sidebar-left #secondary {
 	float: left;
@@ -1333,10 +1325,40 @@ body.font-size-large,
 }
 
 
-/* 8. =Page Templates
+/* 8. =Footer
 ----------------------------------------------- */
 
-/* 8.1 Authors */
+#colophon {
+	font-size: 14px;
+}
+#colophon,
+#infinite-footer .container {
+	background: #303030;
+}
+#colophon,
+#infinite-footer .container {
+	color: #ddd;
+	color: rgba(255,255,255,.6);
+}
+#colophon .widget-title,
+#colophon a,
+#infinite-footer .container a {
+	color: #fff;
+	text-decoration: none;
+}
+#colophon a:hover,
+#infinite-footer .container a:hover {
+	text-decoration: underline;
+}
+#colophon .widget ul li {
+	border-bottom-color: rgba(255,255,255,.1);
+}
+
+
+/* 9. =Page Templates
+----------------------------------------------- */
+
+/* 9.1 Authors */
 #authors-list {
   list-style: none;
   margin: 2em 0;
@@ -1377,7 +1399,7 @@ body.font-size-large,
 #authors-list .latest-by-author li {
   font-size: 14px;
 }
-/* 8.2 Masonry */
+/* 9.2 Masonry */
 .masonry-brick {
 	width: 300px;
 	margin-bottom: 30px;
@@ -1400,7 +1422,7 @@ body.font-size-large,
 .masonry-brick .entry-summary {
 	margin-bottom: 5px;
 }
-/* 8.3 Widgetized Homepage */
+/* 9.3 Widgetized Homepage */
 #widgetized-homepage-top {
 	margin-bottom: 40px;
 }
@@ -1442,7 +1464,7 @@ body.font-size-large,
 }
 
 
-/* 9. =Media
+/* 10. =Media
 ----------------------------------------------- */
 
 .entry-content img.wp-smiley,
@@ -1523,7 +1545,7 @@ object {
 }
 
 
-/* 10. =Post Navigation
+/* 11. =Post Navigation
 ----------------------------------------------- */
 
 .site-content [class*="navigation"],
@@ -1660,7 +1682,7 @@ body.woocommerce-page #content nav.woocommerce-pagination ul li span {
 }
 
 
-/* 11. =Comments
+/* 12. =Comments
 ----------------------------------------------- */
 
 .comment-list {
@@ -1720,7 +1742,7 @@ article.comment {
 }
 
 
-/* 12. =Forms
+/* 13. =Forms
 ----------------------------------------------- */
 
 #commentform label,
@@ -1785,7 +1807,7 @@ article.comment {
 }
 
 
-/* 13. =Widgets
+/* 14. =Widgets
 ----------------------------------------------- */
 
 .widget {
@@ -1852,7 +1874,7 @@ article.comment {
 #wp-calendar tfoot td#next {
 	text-align: right;
 }
-/* 13.1 Pull-out widget area */
+/* 14.1 Pull-out widget area */
 #pull-out-widget-area {
 	position: fixed;
 	top: 0;
@@ -1909,7 +1931,7 @@ article.comment {
 .admin-bar #pull-out-trigger { 
 	top: 28px;
 }
-/* 13.2 Flexible widget areas */
+/* 14.2 Flexible widget areas */
 /* Number of widgets per row (1, 2, 3 or 4) changes depending on number of widgets used */
 .flexible-widget-area .widget {
 	margin: 20px 0;
@@ -1955,7 +1977,7 @@ article.comment {
 }
 
 
-/* 14. =Infinite Scroll (Jetpack module)
+/* 15. =Infinite Scroll (Jetpack module)
 ----------------------------------------------- */
 
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
@@ -1975,10 +1997,10 @@ article.comment {
 }
 
 
-/* 15. =Steroids Plugin
+/* 16. =Steroids Plugin
 ----------------------------------------------- */
 
-/* 15.1 Portfolio */
+/* 16.1 Portfolio */
 .portfolio-project.layout-b .project-content {
 	float: left;
 	width: 72%;
@@ -2000,7 +2022,7 @@ article.comment {
 	top: 0;
 	right: 0;
 }
-/* 15.2 FAQ */
+/* 16.2 FAQ */
 .steroids-faqs dt {
 	font-size: 18px;
 	padding: 0.5em 0;
@@ -2010,7 +2032,7 @@ article.comment {
 }
 
 
-/* 16. =WooCommerce
+/* 17. =WooCommerce
 ----------------------------------------------- */
 
 body.woocommerce div.product div.images img,
@@ -2138,7 +2160,7 @@ body.woocommerce-page .upsells.products ul li.product.last {
 }
 
 
-/* 17. =Sliders
+/* 18. =Sliders
 ----------------------------------------------- */
 
 #top-slider .ls-wp-fullwidth-container {
@@ -2146,7 +2168,7 @@ body.woocommerce-page .upsells.products ul li.product.last {
 }
 
 
-/* 18. =Media Queries
+/* 19. =Media Queries
 ----------------------------------------------- */
 
 @media screen and (max-width: 800px) {

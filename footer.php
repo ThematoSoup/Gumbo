@@ -16,6 +16,26 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="inner clear">
 			<?php tha_footer_top(); ?>
+			<?php
+			if ( is_active_sidebar( 'footer-widget-area' ) ) :
+				echo '<div id="footer-widgets" class="flexible-widget-area ' . thsp_count_widgets( 'footer-widget-area' ) . '">';
+					echo '<div class="clear">';
+					dynamic_sidebar( 'footer-widget-area' );
+					echo '</div>';
+				echo '</div><!-- #footer-widgets -->';
+			endif;
+			?>
+
+			<?php
+				// Footer menu
+				wp_nav_menu( array(
+					'theme_location'	=> 'footer',
+					'container'			=> '',
+					'menu_class'		=> 'menu',
+					'depth'				=> 1
+				) );
+			?>
+
 			<div class="site-info">
 				<?php do_action( 'gumbo_credits' ); ?>
 				<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'gumbo' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'gumbo' ), 'WordPress' ); ?></a>
