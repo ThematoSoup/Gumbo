@@ -1889,6 +1889,25 @@ article.comment {
 #wp-calendar tfoot td#next {
 	text-align: right;
 }
+/* Text widget icon */
+.thsp-text-widget-icon {
+	text-align: center;
+}
+.thsp-text-widget-icon-64 .genericon {
+	font-size: 64px;
+	width: 64px;
+	height: 64px;
+}
+.thsp-text-widget-icon-128 .genericon {
+	font-size: 128px;
+	width: 128px;
+	height: 128px;
+}
+.thsp-text-widget-icon-256 .genericon {
+	font-size: 256px;
+	width: 256px;
+	height: 256px;
+}
 /* 14.1 Pull-out widget area */
 #pull-out-widget-area {
 	position: fixed;

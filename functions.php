@@ -400,7 +400,7 @@ function thsp_scripts() {
 	endif;
 	
 	// Add Genericons font, used in the main stylesheet.
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/fonts/genericons.css', array(), '2.09' );
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/fonts/genericons.css', array(), '3.0.1' );
 
 	// Enqueue main stylesheet
 	wp_enqueue_style( 'gumbo', get_stylesheet_uri() );
