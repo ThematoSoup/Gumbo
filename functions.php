@@ -131,6 +131,11 @@ require( get_template_directory() . '/inc/template-tags.php' );
 require( get_template_directory() . '/inc/extras.php' );
 
 /**
+ * Edits built-in WordPress widgets
+ */
+require( get_template_directory() . '/inc/widgets.php' );
+
+/**
  * Steroids plugin compatibility
  */
 if ( in_array( 'steroids/steroids.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) :
