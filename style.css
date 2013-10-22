@@ -1890,13 +1890,24 @@ article.comment {
 	text-align: right;
 }
 /* Text widget icon */
-.thsp-text-widget-icon {
+.thsp-text-widget-centered {
 	text-align: center;
+}
+.thsp-text-widget-icon {
+	opacity: 0.25;
+}
+.thsp-text-widget-icon + .widget-title {
+	margin-top: 0.75em;
 }
 .thsp-text-widget-icon-64 .genericon {
 	font-size: 64px;
 	width: 64px;
 	height: 64px;
+}
+.thsp-text-widget-icon-96 .genericon {
+	font-size: 96px;
+	width: 96px;
+	height: 96px;
 }
 .thsp-text-widget-icon-128 .genericon {
 	font-size: 128px;

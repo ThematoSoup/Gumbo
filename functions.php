@@ -32,6 +32,7 @@
 if ( ! isset( $content_width ) )
 	$content_width = 660; /* pixels */
 	
+
 /**
  * Adjusts content_width value in single column layouts
  *
@@ -47,6 +48,7 @@ function thsp_content_width() {
 }
 add_action( 'template_redirect', 'thsp_content_width' );
 
+
 /**
  * Add custom image size(s)
  */
@@ -55,10 +57,12 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'thsp-masonry', 300, 180, true );
 }
 
+
 /*
  * Load Jetpack compatibility file.
  */
 require( get_template_directory() . '/inc/jetpack.php' );
+
 
 if ( ! function_exists( 'thsp_setup' ) ) :
 /**
@@ -120,20 +124,24 @@ function thsp_setup() {
 endif; // thsp_setup
 add_action( 'after_setup_theme', 'thsp_setup' );
 
+
 /**
  * Custom template tags for this theme.
  */
 require( get_template_directory() . '/inc/template-tags.php' );
+
 
 /**
  * Custom functions that act independently of the theme templates
  */
 require( get_template_directory() . '/inc/extras.php' );
 
+
 /**
  * Edits built-in WordPress widgets
  */
 require( get_template_directory() . '/inc/widgets.php' );
+
 
 /**
  * Steroids plugin compatibility
@@ -142,6 +150,7 @@ if ( in_array( 'steroids/steroids.php', apply_filters( 'active_plugins', get_opt
 	require( get_template_directory() . '/inc/steroids.php' );
 endif;
 
+
 /**
  * Check if WooCommerce is active
  **/
@@ -149,30 +158,36 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 	require( get_template_directory() . '/inc/woocommerce/woocommerce.php' );
 endif;
 
+
 /**
  * Theme Customizer boilerplate
  */
 require( get_template_directory() . '/inc/libraries/customizer-boilerplate/customizer.php' );
+
 
 /**
  * Post Format tools
  */
 require( get_template_directory() . '/inc/libraries/post-format-tools.php' );
 
+
 /**
  * Theme hooks
  */
 require( get_template_directory() . '/inc/libraries/tha/tha-theme-hooks.php' );
+
 
 /**
  * Customizer options
  */
 require( get_template_directory() . '/inc/customizer.php' );
 
+
 /**
  * Custom meta boxes
  */
 require_once get_template_directory() . '/inc/custom-meta-boxes.php';
+
 
 /**
  * Setup the WordPress core custom background feature.
@@ -204,6 +219,7 @@ function thsp_register_custom_background() {
 	}
 }
 add_action( 'after_setup_theme', 'thsp_register_custom_background' );
+
 
 /**
  * Register widgetized areas and update sidebar with default widgets
@@ -289,6 +305,7 @@ function thsp_widgets_init() {
 }
 add_action( 'widgets_init', 'thsp_widgets_init' );
 
+
 /**
  * Add pull out widget area to wp_footer hook
  */
@@ -303,6 +320,7 @@ function thsp_add_pull_out() {
 }
 add_action( 'wp_footer', 'thsp_add_pull_out' );
 
+
 /**
  * Add sub-header widget area to tha_header_after hook
  */
@@ -316,6 +334,7 @@ function thsp_add_sub_header() {
 	endif;
 }
 add_action( 'tha_header_after', 'thsp_add_sub_header', 10 );
+
 
 /**
  * Add sub-header widget area to tha_header_after hook
@@ -349,6 +368,7 @@ function thsp_add_above_footer() {
 	endif;
 }
 add_action( 'tha_footer_before', 'thsp_add_above_footer' );
+
 
 /**
  * Enqueue scripts and styles
@@ -424,10 +444,12 @@ function thsp_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'thsp_scripts' );
 
+
 /**
  * Implement the Custom Header feature
  */
 require( get_template_directory() . '/inc/custom-header.php' );
+
 
 /**
  * Add menu item descriptions to main menu
@@ -466,9 +488,8 @@ class THSP_Menu_With_Description extends Walker_Nav_Menu {
 }
 
 
-
 /**
- * Add Yoast breadcrumbs
+ * Add Yoast breadcrumbs to tha_content_top action hook
  *
  * Check if WooCommerce breadcrumbs are active and let them takeover in WooCommerce pages
  *

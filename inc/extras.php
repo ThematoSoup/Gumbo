@@ -188,6 +188,7 @@ function thsp_has_no_sidebar() {
 
 /**
  * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
+ *
  * @since	Gumbo 1.0
  */
 function thsp_enhanced_image_navigation( $url, $id ) {

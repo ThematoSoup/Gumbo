@@ -2,31 +2,45 @@
 /**
  * Edits to built-in WordPress widgets
  *
- * Notes:
- * ------
- * It's better to do this using hooks, if possible
- * Text widget uses 'widget_text' hook (wp-includes/default-widgets.php)
- * Check 'display_callback', 'update_callback', 'form_callback' and 'in_widget_form' in that same file
- *
  * @package		Gumbo
  * @since		Gumbo 1.0
- * @link		http://shibashake.com/wordpress-theme/wordpress-widget-system
- * @link		http://stackoverflow.com/questions/12351603/wordpress-add-config-option-to-all-widget-settings
  */
 
 
+/*
+ * Filters widget field values before passing them to the form
+ *
+ * @since Gumbo 1.0
+
 function thsp_widget_form_callback( $instance, $widget ) {
-	if( 'WP_Widget_Text' == get_class( $widget ) ) :
+	if ( 'WP_Widget_Text' == get_class( $widget ) ) :
 	endif;
 
 	return $instance;
 }
 add_filter( 'widget_form_callback', 'thsp_widget_form_callback', 5, 2 );
+*/
 
+
+/*
+ * Changes display of Text Widget if an icon needs to be shown
+ *
+ * @param	array		$instance	Widget instance
+ * @param	object		$widget		Widget object
+ * @param	array		$args		Widget arguments		
+ * @since	Gumbo 1.0
+ */
 function thsp_widget_display_callback( $instance, $widget, $args ) {
-	if( 'WP_Widget_Text' == get_class( $widget ) ) :
-		$icon_display = '<div class="thsp-text-widget-icon thsp-text-widget-icon-' . $instance['icon-size'] . '"><span class="genericon genericon-' . $instance['icon'] . '"></span></div>';
-		$args['before_title'] = $icon_display . $args['before_title'];
+	if( 'WP_Widget_Text' == get_class( $widget ) && isset( $instance['icon'] ) ) :
+		$icon_size = isset( $instance['icon-size'] ) ? $instance['icon-size'] : 'no-icon';
+		$valid_sizes = array( 64, 96, 128, 256 );
+		if ( in_array( $icon_size, $valid_sizes ) ) : // Check if icon size value is among whitelisted values
+			// Add class to the widget
+			$args['before_widget'] = preg_replace( '/class="/', "class=\"thsp-text-widget-centered ", $args['before_widget'], 1 );
+			$icon_display = '<div class="thsp-text-widget-icon thsp-text-widget-icon-' . $icon_size . '"><span class="genericon genericon-' . $instance['icon'] . '"></span></div>';
+			// Add the icon before widget title
+			$args['before_widget'] .= $icon_display;
+		endif;
 	endif;
 	
 	// Display the widget with custom $args
@@ -37,10 +51,26 @@ function thsp_widget_display_callback( $instance, $widget, $args ) {
 }
 add_filter( 'widget_display_callback', 'thsp_widget_display_callback', 5, 3 );
 
+
+/*
+ * Updates icon form fields to Text Widget
+ *
+ * @param	array		$instance		Widget instance
+ * @param	array		$new_instance	New widget settings
+ * @param	array		$old_instance	Old widget settings
+ * @param	object		$widget			Widget object
+ * @since	Gumbo 1.0
+ */
 function thsp_widget_update_callback( $instance, $new_instance, $old_instance, $widget ) {
-	if( 'WP_Widget_Text' == get_class( $widget ) ) :
-		$instance['icon'] = $new_instance['icon'];
-		$instance['icon-size'] = $new_instance['icon-size'];
+	if ( 'WP_Widget_Text' == get_class( $widget ) ) :
+		// Update icon
+		$valid_icons = thsp_get_genericons_icons();
+		if ( in_array( $new_instance['icon'], $valid_icons ) ) 
+			$instance['icon'] = $new_instance['icon'];
+		// Update icon size
+		$valid_sizes = array( 64, 96, 128, 256 );
+		if ( in_array( $new_instance['icon-size'], $valid_sizes ) )
+			$instance['icon-size'] = $new_instance['icon-size'];
 	endif;
 
 	return $instance;
@@ -49,26 +79,28 @@ add_filter( 'widget_update_callback', 'thsp_widget_update_callback', 5, 4 );
 
 
 /*
- * Add form fields, checks if it's text widget
+ * Adds icon form fields to Text Widget
  *
- * $widget = widget info (text, classes etc.)
- * $return = null
- * $instance = widget instance details
+ * @param	array		$widget		Widget object
+ * @param	boolean		$return		?
+ * @param	array		$instance	Widget instance
+ * @since	Gumbo 1.0
  */
 function thsp_in_widget_form( $widget, $return, $instance ) {
-	if( 'WP_Widget_Text' == get_class( $widget ) ) :
+	if ( 'WP_Widget_Text' == get_class( $widget ) ) :
 		$icon = isset( $instance['icon'] ) ? $instance['icon'] : '';
 		$icon_size = isset( $instance['icon-size'] ) ? $instance['icon-size'] : 'no-icon'; ?>
 		<p>
-			<label for="<?php echo $widget->get_field_id('icon-size'); ?>">Icon size:</label><br />
+			<label for="<?php echo $widget->get_field_id('icon-size'); ?>"><?php _e( 'Icon size:', 'gumbo' ); ?></label><br />
 			<select id="<?php echo $widget->get_field_id('icon-size'); ?>" name="<?php echo $widget->get_field_name('icon-size'); ?>">
-				<option value="no-icon" <?php selected( $icon_size, 'no-icon' ); ?>>No icon</option>
-				<option value="64" <?php selected( $icon_size, 64 ); ?>>64px</option>
-				<option value="128" <?php selected( $icon_size, 128 ); ?>>128px</option>
-				<option value="256" <?php selected( $icon_size, 256 ); ?>>256px</option>
+				<option value="no-icon" <?php selected( $icon_size, 'no-icon' ); ?>><?php _e( 'No icon', 'gumbo' ); ?></option>
+				<option value="64" <?php selected( $icon_size, 64 ); ?>><?php _e( '64px', 'gumbo' ); ?></option>
+				<option value="96" <?php selected( $icon_size, 96 ); ?>><?php _e( '96px', 'gumbo' ); ?></option>
+				<option value="128" <?php selected( $icon_size, 128 ); ?>><?php _e( '128px', 'gumbo' ); ?></option>
+				<option value="256" <?php selected( $icon_size, 256 ); ?>><?php _e( '256px', 'gumbo' ); ?></option>
 			</select>
 		</p>
-		<div>Select an icon:</div>
+		<div><?php _e( 'Select an icon:', 'gumbo' ); ?></div>
 		<p class="thsp-text-widget-icons">
 		<?php
 		$genericons = thsp_get_genericons_icons();
@@ -85,19 +117,25 @@ add_action( 'in_widget_form', 'thsp_in_widget_form', 5, 3 );
 
 
 /**
- * Enqueue Genericons in Widgets page
+ * Enqueue Genericons font in Widgets page
+ *
+ * @param	strong		$hook	Current admin screen hook
+ * @since	Gumbo 1.0
  */
 function thsp_admin_enqueue_genericons( $hook ) {
-    if( 'widgets.php' != $hook )
+    if ( 'widgets.php' != $hook )
         return;
 
-	// Add Genericons font, used in the main stylesheet.
 	wp_enqueue_style( 'genericons-admin', get_template_directory_uri() . '/fonts/genericons.css', array(), '3.0.1' );
 }
 add_action( 'admin_enqueue_scripts', 'thsp_admin_enqueue_genericons' );
 
 
-
+/**
+ * Adds custom CSS to style icon fields in Text Widget
+ *
+ * @since Gumbo 1.0
+ */
 function thsp_admin_text_widget_icon_css() { ?>
 	<style type="text/css">
 		.thsp-text-widget-icons { height: 156px; overflow: scroll; }
@@ -110,7 +148,15 @@ function thsp_admin_text_widget_icon_css() { ?>
 add_action( 'admin_head', 'thsp_admin_text_widget_icon_css' );
 
 
-// Helper function to get list of all Genericons icons
+// add_filter( 'dynamic_sidebar_params', 'thsp_dynamic_sidebar_params' );
+
+
+/**
+ * Returns list of all available icons
+ *
+ * @return	array		$genericons		Array of all available Genericons
+ * @since	Gumbo 1.0
+ */
 function thsp_get_genericons_icons() {
 	$genericons = array(
 		/* Post formats */
