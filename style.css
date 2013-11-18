@@ -69,12 +69,9 @@ and Blueprint http://www.blueprintcss.org/
 	13.	Forms
 	14.	Widgets
 	15.	Infinite scroll (Jetpack module)
-	16.	Steroids Plugin
-		- 16.1 Portfolio
-		- 16.2 FAQ
-	17.	WooCommerce
-	18. Sliders
-	19. Media Queries
+	16.	WooCommerce
+	17. Sliders
+	18. Media Queries
 	
 ---------------------------------------------------------------*/
 
@@ -1980,42 +1977,7 @@ article.comment {
 }
 
 
-/* 16. =Steroids Plugin
------------------------------------------------ */
-
-/* 16.1 Portfolio */
-.portfolio-project.layout-b .project-content {
-	float: left;
-	width: 72%;
-}
-.portfolio-project.layout-b .project-meta {
-	float: right;
-	width: 24%;
-}
-.portfolio-project.layout-b .project-testimonials {
-	clear: both;
-}
-.portfolio-project.layout-c .entry-content {
-	position: relative;
-	padding-right: 28%;
-}
-.portfolio-project.layout-c .project-meta {
-	position: absolute;
-	width: 24%;
-	top: 0;
-	right: 0;
-}
-/* 16.2 FAQ */
-.steroids-faqs dt {
-	font-size: 18px;
-	padding: 0.5em 0;
-}
-.steroids-faqs dd > :last-child {
-	margin-bottom: 0;
-}
-
-
-/* 17. =WooCommerce
+/* 16. =WooCommerce
 ----------------------------------------------- */
 
 body.woocommerce div.product div.images img,
@@ -2143,7 +2105,7 @@ body.woocommerce-page .upsells.products ul li.product.last {
 }
 
 
-/* 18. =Sliders
+/* 17. =Sliders
 ----------------------------------------------- */
 
 #top-slider .ls-wp-fullwidth-container {
@@ -2151,7 +2113,7 @@ body.woocommerce-page .upsells.products ul li.product.last {
 }
 
 
-/* 19. =Media Queries
+/* 18. =Media Queries
 ----------------------------------------------- */
 
 @media screen and (max-width: 800px) {

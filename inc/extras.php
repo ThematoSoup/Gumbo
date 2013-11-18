@@ -166,13 +166,7 @@ function thsp_get_current_layout() {
 function thsp_has_no_sidebar() {
 	global $post;
 	
-	// Check Steroids Portfolio
-	if ( is_singular( 'steroids_portfolio' ) && ! is_active_sidebar( 'steroids_portfolio-sidebar' ) ) :
-		return true;
-	// Check Steroids Landing Pages
-	elseif ( is_singular( 'steroids_landing' ) ) :
-		return true;
-	elseif ( ! is_active_sidebar( 'primary-sidebar' ) && ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) :
+	if ( ! is_active_sidebar( 'primary-sidebar' ) && ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) :
 		return true;
 	endif;
 	

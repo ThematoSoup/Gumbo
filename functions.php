@@ -139,14 +139,6 @@ require( get_template_directory() . '/inc/widgets.php' );
 
 
 /**
- * Steroids plugin compatibility
- */
-if ( in_array( 'steroids/steroids.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) :
-	require( get_template_directory() . '/inc/steroids.php' );
-endif;
-
-
-/**
  * Check if WooCommerce is active
  **/
 if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) :
