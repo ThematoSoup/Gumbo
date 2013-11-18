@@ -112,11 +112,6 @@ function thsp_setup() {
 	) );
 
 	/**
-	 * Enable support for Theme Hook Alliance hooks
-	 */
-	add_theme_support( 'tha_hooks', array( 'all' ) );
-
-	/**
 	 * Enable WooCommerce support
 	 */
 	add_theme_support( 'woocommerce' );
@@ -293,32 +288,8 @@ function thsp_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
-	register_sidebar( array(
-		'name' => __( 'Pull-out Widget Area', 'gumbo' ),
-		'description' => __( 'This widget area can be located at top, bottom, left or right of each page. To set its location go to Appearance > Theme Customizer.', 'gumbo' ),
-		'id' => 'pull-out-widget-area',
-		'before_widget' => '<aside id="%1$s" class="widget pull-out-widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
 }
 add_action( 'widgets_init', 'thsp_widgets_init' );
-
-
-/**
- * Add pull out widget area to wp_footer hook
- */
-function thsp_add_pull_out() {
-	$theme_options = thsp_cbp_get_options_values();
-	if ( is_active_sidebar( 'pull-out-widget-area' ) ) :
-		echo '<div id="pull-out-widget-area" class="flexible-widget-area ' . thsp_count_widgets( 'pull-out-widget-area' ) . '">';
-			dynamic_sidebar( 'pull-out-widget-area' );
-		echo '</div><!-- #pull-out-widget-area -->';
-		echo '<a href="#" id="pull-out-trigger">' . __( 'Click', 'gumbo' ) . '</a>';
-	endif;
-}
-add_action( 'wp_footer', 'thsp_add_pull_out' );
 
 
 /**
@@ -337,7 +308,7 @@ add_action( 'tha_header_after', 'thsp_add_sub_header', 10 );
 
 
 /**
- * Add sub-header widget area to tha_header_after hook
+ * Add slider to tha_header_after hook
  */
 function thsp_add_top_slider() {
 	global $post;

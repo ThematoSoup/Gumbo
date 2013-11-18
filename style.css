@@ -789,12 +789,7 @@ body.body-font-weight-300,
 	-webkit-font-smoothing: antialiased;
 }
 /* 3.1 Genericons */
-#pull-out-trigger:before {
-	-webkit-font-smoothing: antialiased;
-	display: inline-block;
-	font: normal 16px/1 Genericons;
-	vertical-align: text-bottom;
-}
+
 /* 3.2 Small Fonts */
 body.font-size-small,
 .font-size-small button,
@@ -1919,64 +1914,7 @@ article.comment {
 	width: 256px;
 	height: 256px;
 }
-/* 14.1 Pull-out widget area */
-#pull-out-widget-area {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 999;
-	background: #303030;
-	display: none;
-	padding: 0 20px;
-}
-#pull-out-trigger {
-	position: fixed;
-	top: 0;
-	right: 16px;
-	display: block;
-	background: #303030;
-	color: #fff;
-	text-decoration: none;
-	font-size: 20px;
-	line-height: 1;
-	font-weight: bold;
-	padding: 0.25em;
-}
-#pull-out-trigger:before {
-	content: '\f431';
-	font-size: 1.25em;
-	line-height: 0.8;
-}
-#pull-out-trigger.open:before {
-	content: '\f432';
-}
-#pull-out-widget-area .widget {
-	color: #ddd;
-}
-#pull-out-widget-area .widget a {
-	color: #fff;
-}
-#pull-out-widget-area .widget a {
-	text-decoration: underline;
-}
-#pull-out-widget-area .widget-title {
-	color: #fff;
-}
-#pull-out-widget-area .widget ul li {
-	border-color: #4f4f4f;
-	border-style: dotted;
-}
-#pull-out-widget-area .widget ul li:last-child {
-	border-bottom: none;
-}
-.admin-bar #pull-out-widget-area {
-	top: 28px;
-}
-.admin-bar #pull-out-trigger { 
-	top: 28px;
-}
-/* 14.2 Flexible widget areas */
+/* 14.1 Flexible widget areas */
 /* Number of widgets per row (1, 2, 3 or 4) changes depending on number of widgets used */
 .flexible-widget-area .widget {
 	margin: 20px 0;

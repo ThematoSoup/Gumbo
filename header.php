@@ -8,6 +8,7 @@
  * @since		Gumbo 1.0
  */
 ?><!DOCTYPE html>
+<?php tha_html_before(); ?>
 <html <?php language_attributes(); ?>>
 <head>
 <?php tha_head_top(); ?>

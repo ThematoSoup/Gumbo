@@ -27,7 +27,7 @@
 function thsp_custom_header_setup() {
 	$args = array(
 		'default-image'          => '',
-		'default-text-color'     => '',
+		'default-text-color'     => '#fff',
 		'width'                  => 1600,
 		'height'                 => 300,
 		'flex-height'            => true,

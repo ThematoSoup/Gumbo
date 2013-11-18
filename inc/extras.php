@@ -165,24 +165,25 @@ function thsp_get_current_layout() {
  */
 function thsp_has_no_sidebar() {
 	global $post;
-	$thsp_has_no_sidebar = false;
 	
-	// Check Portfolio
-	if ( is_singular( 'steroids_portfolio' ) && ! is_active_sidebar( 'steroids-portfolio-sidebar' ) ) :
-		$thsp_has_no_sidebar = true;
-	// Check other pages, make sure WooCommerce is disabled
+	// Check Steroids Portfolio
+	if ( is_singular( 'steroids_portfolio' ) && ! is_active_sidebar( 'steroids_portfolio-sidebar' ) ) :
+		return true;
+	// Check Steroids Landing Pages
+	elseif ( is_singular( 'steroids_landing' ) ) :
+		return true;
 	elseif ( ! is_active_sidebar( 'primary-sidebar' ) && ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) :
-		$thsp_has_no_sidebar = true;
+		return true;
 	endif;
 	
 	// If WooCommerce plugin is active, check if Store Sidebar has any widgets
 	if( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) && ! is_active_sidebar( 'store-sidebar' ) ) :
 		if( is_woocommerce() ) :
-			$thsp_has_no_sidebar = true;
+			return true;
 		endif;
 	endif;
 	
-	return $thsp_has_no_sidebar;
+	return false;
 }
 
 

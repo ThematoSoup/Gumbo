@@ -172,7 +172,7 @@ function thsp_theme_options_array() {
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
-						'label' => __( 'Navigation below posts', 'gumbo' ),
+						'label' => __( 'Enable navigation below posts', 'gumbo' ),
 						'type' => 'checkbox', // Checkbox field control
 						'priority' => 21
 					)
