@@ -340,7 +340,6 @@ function thsp_scripts() {
 	$theme_options			= thsp_cbp_get_options_values();
 	$theme_options_fields	= thsp_cbp_get_fields();
 	$body_font_value		= $theme_options['body_font'];
-	$body_font_weight		= $theme_options['body_font_weight'];
 	$heading_font_value		= $theme_options['heading_font'];
 	$body_font_options		= $theme_options_fields['thsp_typography_section']['fields']['body_font']['control_args']['choices'];
 	$heading_font_options	= $theme_options_fields['thsp_typography_section']['fields']['heading_font']['control_args']['choices'];
@@ -353,10 +352,10 @@ function thsp_scripts() {
 		$font_families = array();
 		
 		if ( $body_font_value == $heading_font_value ) : // Check if it's the same font
-			$font_families[] = $body_font_options[ $body_font_value ]['google_font'] . ':' . $body_font_weight . ',' . $body_font_weight . 'italic,700,700italic';
+			$font_families[] = $body_font_options[ $body_font_value ]['google_font'] . ':400,400italic,700,700italic';
 		else :
 			if ( isset( $body_font_options[ $body_font_value ]['google_font'] ) ) : // Check body font
-				$font_families[] = $body_font_options[ $body_font_value ]['google_font'] . ':' . $body_font_weight . ',' . $body_font_weight . 'italic';
+				$font_families[] = $body_font_options[ $body_font_value ]['google_font'] . ':400,400italic';
 			endif;
 			if ( isset( $heading_font_options[ $heading_font_value ]['google_font'] ) ) : // Check heading font
 				$font_families[] = $heading_font_options[ $heading_font_value ]['google_font'] . ':700,700italic';

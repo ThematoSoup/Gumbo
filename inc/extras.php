@@ -62,7 +62,6 @@ function thsp_body_classes( $classes ) {
 	$thsp_body_classes[] = 'scheme-' . $thsp_theme_options['color_scheme'];
 
 	// Typography classes
-	$thsp_body_classes[] = 'body-font-weight-' . $thsp_theme_options['body_font_weight'];
 	$thsp_body_classes[] = 'font-size-' . $thsp_theme_options['font_size'];
 		
 	// Check if custom primary color is used
