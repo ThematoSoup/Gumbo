@@ -1566,6 +1566,7 @@ object {
 	display: block;
 	overflow: hidden;
 	text-decoration: none;
+	color: #2e2e2e;
 }
 [class*="navigation"] .prev-post span.heading,
 [class*="navigation"] .next-post span.heading {
