@@ -11,9 +11,14 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php tha_entry_top(); ?>
 	
+	<?php
+	// Check if post contains a link, if not use post permalink 
+	$post_link = ( get_url_in_content( get_the_content() ) ? get_url_in_content( get_the_content() ) : get_permalink() ); 
+	?>
+	
 	<?php if ( get_the_title() ) : ?>
 		<header class="entry-header">
-			<?php the_title( '<h1 class="entry-title"><a href="' . esc_url( post_format_tools_url_grabber() ) . '" title="' . the_title_attribute( array( 'echo' => false ) ) . '">', ' <span class="meta-nav">&rarr;</span></a></h1>' ); ?>
+			<?php the_title( '<h1 class="entry-title"><a href="' . esc_url( $post_link ) . '" title="' . the_title_attribute( array( 'echo' => false ) ) . '">', ' <span class="meta-nav">&rarr;</span></a></h1>' ); ?>
 		</header><!-- .entry-header -->
 	<?php else : ?>
 		<div class="entry-content">

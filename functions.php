@@ -153,12 +153,6 @@ require( get_template_directory() . '/inc/libraries/customizer-boilerplate/custo
 
 
 /**
- * Post Format tools
- */
-require( get_template_directory() . '/inc/libraries/post-format-tools.php' );
-
-
-/**
  * Theme hooks
  */
 require( get_template_directory() . '/inc/libraries/tha/tha-theme-hooks.php' );

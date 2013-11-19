@@ -1302,9 +1302,7 @@ body.font-size-large,
 	margin: 0;	
 }
 .blog .format-image .entry-title,
-.archive .format-image .entry-title,
-.blog .format-gallery .entry-title,
-.archive .format-gallery .entry-title {
+.archive .format-image .entry-title {
 	margin: 0;
 	position: absolute;
 	bottom: 0;
