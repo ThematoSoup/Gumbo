@@ -775,16 +775,6 @@ body.scheme-dark #infinite-footer .container a {
 /* 3. =Typography
 ----------------------------------------------- */
 
-/* Body font weight */
-body.body-font-weight-300,
-.body-font-weight-300 button,
-.body-font-weight-300 input,
-.body-font-weight-300 select,
-.body-font-weight-300 textarea,
-.body-font-weight-300 .site-description {
-	font-weight: 300;
-	-webkit-font-smoothing: antialiased;
-}
 /* 3.1 Genericons */
 
 /* 3.2 Small Fonts */
