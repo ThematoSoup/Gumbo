@@ -28,10 +28,14 @@
 
 			<div class="footer-bottom clear">
 				<div class="site-info">
-					<?php do_action( 'gumbo_credits' ); ?>
-					<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'gumbo' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'gumbo' ), 'WordPress' ); ?></a>
-					<span class="sep"> | </span>
-					<?php printf( __( 'Theme: %1$s by %2$s.', 'gumbo' ), 'Gumbo', '<a href="http://thematosoup.com" rel="designer">ThematoSoup</a>' ); ?>
+					<?php
+					/*
+					 * Site credits
+					 *
+					 * @hooked	thsp_footer_credits
+					 */
+					do_action( 'gumbo_credits' ); 
+					?>
 				</div><!-- .site-info -->
 				
 				<?php

@@ -321,7 +321,7 @@ function thsp_theme_options_array() {
 			'fields' => array(
 				'body_font' => array(
 					'setting_args' => array(
-						'default' => 'Helvetica',
+						'default' => 'helvetica',
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',
@@ -335,7 +335,7 @@ function thsp_theme_options_array() {
 				),
 				'heading_font' => array(
 					'setting_args' => array(
-						'default' => 'Helvetica',
+						'default' => 'helvetica',
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',

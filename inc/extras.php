@@ -294,6 +294,16 @@ function thsp_internal_css() {
 		}
 	</style>
 	<?php endif;
+
+	// Custom background stretch
+	$bg_repeat = get_theme_mod( 'background_repeat' );	
+	if ( 'no-repeat' == $bg_repeat ) : ?>
+	<style type="text/css">
+		body.custom-background {
+			background-size: 100%;
+		}
+	</style>
+	<?php endif;
 }
 add_action( 'wp_head', 'thsp_internal_css' );
 
