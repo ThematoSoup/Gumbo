@@ -1612,7 +1612,11 @@ object {
 .page-numbers {
 	display: inline-block;
 	line-height: 1;
-	padding: 0.3em 0.5em;
+	height: 1em;
+	padding: 5px 8px;
+	box-sizing: content-box !important;
+	-moz-box-sizing: content-box;
+	overflow: visible !important;
 }
 .page-numbers.current {
 	color: #fff;
