@@ -64,10 +64,12 @@
 				<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'gumbo' ); ?>"><?php _e( 'Skip to content', 'gumbo' ); ?></a></div>
 		
 				<?php
+					$walker = new THSP_Menu_With_Description;
 					wp_nav_menu( array(
 						'theme_location'	=> 'primary',
 						'container'			=> '',
-						'menu_class'		=> 'menu inner'
+						'menu_class'		=> 'menu inner',
+						'walker'			=> $walker
 					) );
 				?>
 			</nav><!-- #site-navigation -->
