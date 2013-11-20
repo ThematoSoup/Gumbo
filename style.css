@@ -235,8 +235,7 @@ ol {
 }
 li > ul,
 li > ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin: 0.25em 0 0.5em 1.5em;
 }
 dt {
 	font-weight: bold;
