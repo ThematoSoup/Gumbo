@@ -878,6 +878,7 @@ body.font-size-large,
 .custom-background #page {
 	max-width: 1040px;
 	margin: 0 auto;
+	box-shadow: 0 0 20px rgba(0,0,0,0.05);
 }
 .inner {
 	max-width: 1040px;
@@ -959,6 +960,12 @@ body.font-size-large,
 	max-width: 1040px;
 	margin: 0 auto;
 }
+.site-header .header-image img {
+	max-height: 100px;
+	width: auto;
+	display: inline-block;
+	margin-bottom: 10px;
+}
 
 /* 5.1 With header image activated */
 .header-image.site-header hgroup {
@@ -970,7 +977,7 @@ body.font-size-large,
 }
 .site-header .site-title {
 	margin: 0 0 0.1em;
-	font-size: 48px;
+	font-size: 42px;
 }
 .site-header .site-title a {
 	text-decoration: none;
@@ -1199,6 +1206,9 @@ body.font-size-large,
 .entry-title {
 	margin: 0 0 0.5em;
 	clear: none;
+}
+.page-title {
+	margin: 0 0 0.5em;
 }
 #main #primary .entry-title a,
 #main #primary a .entry-title,
@@ -1648,7 +1658,7 @@ body.woocommerce-page #content nav.woocommerce-pagination ul li a:hover {
 #breadcrumbs,
 #main .woocommerce-breadcrumb {
 	font-size: 12px;
-	margin-bottom: 1em;
+	margin-bottom: 2em;
 }
 #main .woocommerce-breadcrumb {
 	font-weight: bold;
@@ -1746,6 +1756,7 @@ article.comment {
 #commentform label,
 .wpcf7 label {
 	display: block;
+	margin-bottom: 5px
 }
 #commentform input[type="text"],
 #commentform input[type="email"],
@@ -1761,9 +1772,11 @@ article.comment {
 .wpcf7 input[type="email"],
 .wpcf7 textarea,
 .protected-post-form input[type="password"] {
-	border: 1px solid #ddd;
+	border: 2px solid #f6f6f6;
 	border-radius: 0;
-	padding: 0.3em;
+	padding: 5px;
+	-webkit-transition: all 50ms linear;
+	transition: all 50ms linear;
 }
 #commentform textarea,
 .wpcf7 textarea {
@@ -1777,6 +1790,8 @@ article.comment {
 .wpcf7 textarea:focus,
 .protected-post-form input[type="password"]:focus {
 	outline: none;
+	background: #fdfdfd;
+	border-color: #e6e6e6;
 }
 #commentform #submit,
 .wpcf7 input[type="submit"],
@@ -1802,6 +1817,10 @@ article.comment {
 .protected-post-form input[type="submit"] {
 	padding: 0.55em;
 	margin-left: 0.5em;
+}
+label .required {
+	color: #f00;
+	font-weight: bold;
 }
 
 
@@ -2094,6 +2113,7 @@ body.woocommerce-page .upsells.products ul.products li.product.last,
 body.woocommerce-page .upsells.products ul li.product.last {
 	margin-right: 0;
 }
+
 
 
 /* 17. =Sliders
