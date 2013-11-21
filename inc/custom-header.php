@@ -68,7 +68,7 @@ function thsp_header_style() {
 
 	// If we get this far, we have custom styles.
 	?>
-	<style type="text/css" id="twentythirteen-header-css">
+	<style type="text/css" id="gumbo-header-css">
 	<?php
 		if ( ! empty( $header_image ) ) :
 	?>

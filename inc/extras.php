@@ -242,41 +242,38 @@ add_filter( 'the_password_form', 'thsp_custom_password_form' );
  * Internal CSS for accent color
  * @since	Gumbo 1.0
  */
-function thsp_internal_css() {
+function thsp_generated_css() {
 	// Get current theme options
-	$thsp_theme_options		= thsp_cbp_get_options_values();
-	$theme_options_fields	= thsp_cbp_get_fields();
-	$thsp_primary_color		= $thsp_theme_options['primary_color'];
-	$body_font_value		= $thsp_theme_options['body_font'];
-	$heading_font_value		= $thsp_theme_options['heading_font'];
-	$body_font_options		= $theme_options_fields['thsp_typography_section']['fields']['body_font']['control_args']['choices'];
-	$heading_font_options	= $theme_options_fields['thsp_typography_section']['fields']['heading_font']['control_args']['choices'];
+	$thsp_theme_options			= thsp_cbp_get_options_values();
+	$theme_options_fields		= thsp_cbp_get_fields();
+	$primary_color				= $thsp_theme_options['primary_color'];
+	$header_background_color	= $thsp_theme_options['header_background_color'];
+	$body_font_value			= $thsp_theme_options['body_font'];
+	$heading_font_value			= $thsp_theme_options['heading_font'];
+	$body_font_options			= $theme_options_fields['thsp_typography_section']['fields']['body_font']['control_args']['choices'];
+	$heading_font_options		= $theme_options_fields['thsp_typography_section']['fields']['heading_font']['control_args']['choices'];
+	$bg_repeat					= get_theme_mod( 'background_repeat' ); ?>
 	
-	// Fonts
-	if ( 'helvetica' != $thsp_heading_font || 'helvetica' != $thsp_body_font ) : ?>
-	<style type="text/css">
-		<?php if ( 'helvetica' != $body_font_value ) : ?>
+	<style type="text/css" id="gumbo-generated-css">
+	<?php if ( 'helvetica' != $body_font_value ) : // Body font ?>
 		body, button, input, select, textarea, .site-description {
 			font-family: <?php echo $body_font_options[ $body_font_value ]['font_family']; ?>;
 		}
-		<?php endif; ?>
-		<?php if ( 'helvetica' != $heading_font_value ) : ?>
+	<?php endif; ?>
+	
+	<?php if ( 'helvetica' != $heading_font_value ) : // Heading font ?>
 		h1, h2, h3, h4, h5, h6 {
 			font-family: <?php echo $heading_font_options[ $heading_font_value ]['font_family']; ?>;
 		}
-		<?php endif; ?>
-	</style>
-	<?php endif;
-	
-	// Colors
-	if ( isset( $thsp_primary_color ) && '' != $thsp_primary_color ) : ?>
-	<style type="text/css">
+	<?php endif; ?>
+
+	<?php if ( isset( $primary_color ) && '' != $primary_color ) : // Primary color ?>
 		.custom-primary-color .entry-content a,
 		.custom-primary-color .entry-summary a,
 		.custom-primary-color #comments a,
 		.custom-primary-color .widget a,
 		.custom-primary-color .star-rating {
-			color: <?php echo $thsp_primary_color; ?>
+			color: <?php echo $primary_color; ?>
 		}
 		.custom-primary-color #commentform #submit,
 		.custom-primary-color .comment-reply-link,
@@ -287,25 +284,25 @@ function thsp_internal_css() {
 		.custom-primary-color #main #content .woocommerce-pagination .current,
 		.custom-primary-color #main .more-link,
 		.custom-primary-color .navigation-main .sub-menu a:hover {
-			background: <?php echo $thsp_primary_color; ?>;
+			background: <?php echo $primary_color; ?>;
 		}
-		.custom-primary-color #masthead {
-			background-color: <?php echo $thsp_primary_color; ?> !important;
-		}
-	</style>
-	<?php endif;
+	<?php endif; ?>
 
-	// Custom background stretch
-	$bg_repeat = get_theme_mod( 'background_repeat' );	
-	if ( 'no-repeat' == $bg_repeat ) : ?>
-	<style type="text/css">
+	<?php if ( isset( $header_background_color ) && '' != $header_background_color ) : // Header background color ?>
+		#masthead {
+			background-color: <?php echo $header_background_color; ?> !important;
+		}
+	<?php endif; ?>
+	
+	<?php if ( 'no-repeat' == $bg_repeat ) : // Custom background stretch ?>
 		body.custom-background {
 			background-size: 100%;
 		}
+	<?php endif; ?>
 	</style>
-	<?php endif;
-}
-add_action( 'wp_head', 'thsp_internal_css' );
+
+<?php }
+add_action( 'wp_head', 'thsp_generated_css' );
 
 
 /**
