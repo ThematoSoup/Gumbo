@@ -12,46 +12,48 @@
 		</div><!-- .inner -->
 	</div><!-- #main -->
 
-	<?php tha_footer_before(); ?>
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="inner clear">
-			<?php tha_footer_top(); ?>
-			<?php
-			if ( is_active_sidebar( 'footer-widget-area' ) ) :
-				echo '<div id="footer-widgets" class="flexible-widget-area ' . thsp_count_widgets( 'footer-widget-area' ) . '">';
-					echo '<div class="clear">';
-					dynamic_sidebar( 'footer-widget-area' );
-					echo '</div>';
-				echo '</div><!-- #footer-widgets -->';
-			endif;
-			?>
-
-			<div class="footer-bottom clear">
-				<div class="site-info">
-					<?php
-					/*
-					 * Site credits
-					 *
-					 * @hooked	thsp_footer_credits
-					 */
-					do_action( 'gumbo_credits' ); 
-					?>
-				</div><!-- .site-info -->
-				
+	<?php if ( ! thsp_has_no_footer() ) : ?>
+		<?php tha_footer_before(); ?>
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			<div class="inner clear">
+				<?php tha_footer_top(); ?>
 				<?php
-					// Footer menu
-					wp_nav_menu( array(
-						'theme_location'	=> 'footer',
-						'container'			=> '',
-						'menu_class'		=> 'menu',
-						'depth'				=> 1
-					) );
+				if ( is_active_sidebar( 'footer-widget-area' ) ) :
+					echo '<div id="footer-widgets" class="flexible-widget-area ' . thsp_count_widgets( 'footer-widget-area' ) . '">';
+						echo '<div class="clear">';
+						dynamic_sidebar( 'footer-widget-area' );
+						echo '</div>';
+					echo '</div><!-- #footer-widgets -->';
+				endif;
 				?>
-			</div><!-- .footer-bottom -->
-			<?php tha_footer_bottom(); ?>
-		</div><!-- .inner -->
-	</footer><!-- #colophon -->
-	<?php tha_footer_after(); ?>
+	
+				<div class="footer-bottom clear">
+					<div class="site-info">
+						<?php
+						/*
+						 * Site credits
+						 *
+						 * @hooked	thsp_footer_credits
+						 */
+						do_action( 'gumbo_credits' ); 
+						?>
+					</div><!-- .site-info -->
+					
+					<?php
+						// Footer menu
+						wp_nav_menu( array(
+							'theme_location'	=> 'footer',
+							'container'			=> '',
+							'menu_class'		=> 'menu',
+							'depth'				=> 1
+						) );
+					?>
+				</div><!-- .footer-bottom -->
+				<?php tha_footer_bottom(); ?>
+			</div><!-- .inner -->
+		</footer><!-- #colophon -->
+		<?php tha_footer_after(); ?>
+	<?php endif; // footer check ?>
 </div><!-- #page -->
 
 <?php tha_body_bottom(); ?>

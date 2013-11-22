@@ -18,6 +18,56 @@ function thsp_metaboxes( $meta_boxes ) {
 	// Start with an underscore to hide fields from custom fields list
 	$prefix = '_thsp_';
 
+	// Posts metabox
+	$meta_boxes[] = array(
+		'id'			=> 'posts_metabox',
+		'title'			=> 'Post Details',
+		'pages'			=> array( 'post' ), // Post type
+		'context'		=> 'normal',
+		'priority'		=> 'high',
+		'show_names'	=> true, // Show field names on the left
+		'fields'		=> array(
+			array(
+				'name'		=> 'Do not show header for this post',
+				'desc'		=> 'If checked, header will not be displayed in single post view',
+				'id'		=> $prefix . 'has_no_header',
+				'type'		=> 'checkbox',
+			),
+			array(
+				'name'		=> 'Do not show footer for this post',
+				'desc'		=> 'If checked, footer will not be displayed in single post view',
+				'id'		=> $prefix . 'has_no_footer',
+				'type'		=> 'checkbox',
+			),
+			array(
+				'name'		=> 'Do not show sidebar for this post',
+				'desc'		=> 'If checked, sidebar will not be displayed in single post view',
+				'id'		=> $prefix . 'has_no_sidebar',
+				'type'		=> 'checkbox',
+			),
+			array(
+				'name'		=> 'Font size',
+				'desc'		=> 'If set, this option will override font size set in Theme Customizer',
+				'id'		=> $prefix . 'post_font_size',
+				'type'		=> 'radio',
+				'options'	=> array(
+					array(
+						'name'	=> 'Small',
+						'value'	=> 'small'
+					),
+					array(
+						'name'	=> 'Medium',
+						'value'	=> 'medium'
+					),
+					array(
+						'name'	=> 'Large',
+						'value'	=> 'large'
+					),
+				),
+			),
+		),
+	);
+
 	// Authors page template metabox
 	$meta_boxes[] = array(
 		'id'			=> 'authors_page_metabox',

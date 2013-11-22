@@ -17,6 +17,8 @@
  * - Custom password protected post form output
  * - Embedded CSS output
  * - Register Gumbo meta widget
+ * - Check if a post hides header
+ * - Check if a post hides footer
  *
  * @package Gumbo
  */
@@ -36,21 +38,29 @@ add_filter( 'wp_page_menu_args', 'thsp_page_menu_args' );
  * Adds custom classes to the array of body classes.
  */
 function thsp_body_classes( $classes ) {
+	global $post;
+	
+	// Get theme options values
+	$thsp_theme_options = thsp_cbp_get_options_values();
+
 	// Adds a class of group-blog to blogs with more than 1 published author
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
 	
-	// Get theme options values
-	$thsp_theme_options = thsp_cbp_get_options_values();
-
 	// Get layout class and add it to body_class array
 	$thsp_current_layout = thsp_get_current_layout();
 	$thsp_body_classes[] = $thsp_current_layout;
 
+	// Check if no sidebar
 	$thsp_has_no_sidebar = thsp_has_no_sidebar();
 	if ( $thsp_has_no_sidebar ) :
 		$thsp_body_classes[] = 'no-sidebar';
+	endif;
+
+	// Check if logo image exists
+	if ( '' != $thsp_theme_options['logo_image'] ) :
+		$thsp_body_classes[] = 'has-logo-image';
 	endif;
 	
 	// Adds a class id Post Aside is active
@@ -61,12 +71,28 @@ function thsp_body_classes( $classes ) {
 	// Color scheme class
 	$thsp_body_classes[] = 'scheme-' . $thsp_theme_options['color_scheme'];
 
-	// Typography classes
-	$thsp_body_classes[] = 'font-size-' . $thsp_theme_options['font_size'];
+	// Font size class
+	if ( is_single() && get_post_meta( $post->ID, '_thsp_post_font_size', true ) != $thsp_theme_options['font_size'] ) :
+		$font_size = get_post_meta( $post->ID, '_thsp_post_font_size', true );
+	else :
+		$font_size = $thsp_theme_options['font_size'];
+	endif; 
+	$thsp_body_classes[] = 'font-size-' . $font_size;
 		
 	// Check if custom primary color is used
 	if ( ! empty( $thsp_theme_options['primary_color'] ) ) :
 		$thsp_body_classes[] = 'custom-primary-color';
+	endif;
+	
+	// Check if header and footer are hidden in single post view
+	if ( is_single() ) :
+		if( get_post_meta( $post->ID, '_thsp_has_no_header', true ) ) :
+			$thsp_body_classes[] = 'has-no-header';
+		endif;
+		
+		if( get_post_meta( $post->ID, '_thsp_has_no_header', true ) ) :
+			$thsp_body_classes[] = 'has-no-footer';
+		endif;
 	endif;
 		
 	$classes = array_merge( $classes, $thsp_body_classes );
@@ -164,6 +190,10 @@ function thsp_get_current_layout() {
  */
 function thsp_has_no_sidebar() {
 	global $post;
+	
+	if ( is_single() && get_post_meta( $post->ID, '_thsp_has_no_sidebar', true ) ) :
+		return true;
+	endif;
 	
 	if ( ! is_active_sidebar( 'primary-sidebar' ) && ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) :
 		return true;
@@ -428,7 +458,7 @@ function thsp_count_widgets( $sidebar_id ) {
  * Used to get attachment object for logo image added through Theme Customizer
  *
  * @link	http://philipnewcomer.net/2012/11/get-the-attachment-id-from-an-image-url-in-wordpress/
- * @since Cazuela 1.0
+ * @since Gumbo 1.0
  */
 function thsp_get_logo_image( $attachment_url ) {
 	global $wpdb;
@@ -456,4 +486,38 @@ function thsp_get_logo_image( $attachment_url ) {
 	$attachment_array = wp_get_attachment_image_src( $attachment_id, 'full' );
 
 	return $attachment_array; 
+}
+
+
+/**
+ * Checks if post hides header
+ *
+ * @since	Gumbo 1.0
+ */
+function thsp_has_no_header() {
+	global $post;
+	$thsp_has_no_header = false;
+	
+	if ( is_single() && get_post_meta( $post->ID, '_thsp_has_no_header', true ) ) :
+		$thsp_has_no_header = true;
+	endif;
+		
+	return $thsp_has_no_header;
+}
+
+
+/**
+ * Checks if post hides footer
+ *
+ * @since	Gumbo 1.0
+ */
+function thsp_has_no_footer() {
+	global $post;
+	$thsp_has_no_header = false;
+	
+	if ( is_single() && get_post_meta( $post->ID, '_thsp_has_no_footer', true ) ) :
+		$thsp_has_no_header = true;
+	endif;
+		
+	return $thsp_has_no_header;
 }

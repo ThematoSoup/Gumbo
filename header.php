@@ -28,55 +28,57 @@
 <?php tha_body_top(); ?>
 
 <div id="page" class="hfeed site">	
-	<?php tha_header_before(); ?>		
-	<header id="masthead" class="site-header <?php echo thsp_header_classes(); ?>" role="banner">
-		<?php if ( has_nav_menu( 'top' ) ) : ?>
-		<nav id="top-navigation" role="navigation">
-			<?php
-				wp_nav_menu( array(
-					'theme_location'	=> 'top',
-					'container'			=> '',
-					'menu_class'		=> 'menu inner'
-				) );
-			?>
-		</nav><!-- #top-navigation -->
-		<?php endif; ?>
-
-		<div id="header-inner" class="clear">
-			<?php tha_header_top(); ?>
-			<hgroup>
+	<?php if ( ! thsp_has_no_header() ) : ?>
+		<?php tha_header_before(); ?>		
+		<header id="masthead" class="site-header <?php echo thsp_header_classes(); ?>" role="banner">
+			<?php if ( has_nav_menu( 'top' ) ) : ?>
+			<nav id="top-navigation" role="navigation">
 				<?php
-				// Get current theme options values
-				$thsp_theme_options = thsp_cbp_get_options_values();
-				if ( '' != $thsp_theme_options['logo_image'] ) :
-					$logo_image = thsp_get_logo_image( $thsp_theme_options['logo_image'] ); ?>
-					<a class="header-image" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-						<img src="<?php echo $logo_image[0]; ?>" width="<?php echo $logo_image[1]; ?>" height="<?php echo $logo_image[2]; ?>" alt="<?php bloginfo( 'name' ); ?>" />
-					</a>
-				<?php else : // if ( ! isset( $thsp_theme_options['logo_image'] ) ?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php endif; ?>
-				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-			</hgroup>
-		
-			<nav id="site-navigation" class="navigation-main" role="navigation">
-				<h1 class="menu-toggle"><?php _e( 'Menu', 'gumbo' ); ?></h1>
-				<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'gumbo' ); ?>"><?php _e( 'Skip to content', 'gumbo' ); ?></a></div>
-		
-				<?php
-					$walker = new THSP_Menu_With_Description;
 					wp_nav_menu( array(
-						'theme_location'	=> 'primary',
+						'theme_location'	=> 'top',
 						'container'			=> '',
-						'menu_class'		=> 'menu inner',
-						'walker'			=> $walker
+						'menu_class'		=> 'menu inner'
 					) );
 				?>
-			</nav><!-- #site-navigation -->
-			<?php tha_header_bottom(); ?>
-		</div><!-- .clear -->
-	</header><!-- #masthead -->
-	<?php tha_header_after(); ?>
+			</nav><!-- #top-navigation -->
+			<?php endif; ?>
+	
+			<div id="header-inner" class="clear">
+				<?php tha_header_top(); ?>
+				<hgroup>
+					<?php
+					// Get current theme options values
+					$thsp_theme_options = thsp_cbp_get_options_values();
+					if ( '' != $thsp_theme_options['logo_image'] ) :
+						$logo_image = thsp_get_logo_image( $thsp_theme_options['logo_image'] ); ?>
+						<a class="header-image" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+							<img src="<?php echo $logo_image[0]; ?>" width="<?php echo $logo_image[1]; ?>" height="<?php echo $logo_image[2]; ?>" alt="<?php bloginfo( 'name' ); ?>" />
+						</a>
+					<?php else : // if ( ! isset( $thsp_theme_options['logo_image'] ) ?>
+						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php endif; ?>
+					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+				</hgroup>
+			
+				<nav id="site-navigation" class="navigation-main" role="navigation">
+					<h1 class="menu-toggle"><?php _e( 'Menu', 'gumbo' ); ?></h1>
+					<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'gumbo' ); ?>"><?php _e( 'Skip to content', 'gumbo' ); ?></a></div>
+			
+					<?php
+						$walker = new THSP_Menu_With_Description;
+						wp_nav_menu( array(
+							'theme_location'	=> 'primary',
+							'container'			=> '',
+							'menu_class'		=> 'menu inner',
+							'walker'			=> $walker
+						) );
+					?>
+				</nav><!-- #site-navigation -->
+				<?php tha_header_bottom(); ?>
+			</div><!-- .clear -->
+		</header><!-- #masthead -->
+		<?php tha_header_after(); ?>
+	<?php endif; // header check ?>
 
 	<div id="main" class="site-main">
 		<div class="inner clear">
