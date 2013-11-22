@@ -17,7 +17,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php tha_entry_top(); ?>
 	
-	<?php if ( has_post_thumbnail() && 'standard' == get_post_format() ) : ?>
+	<?php if ( has_post_thumbnail() && false == get_post_format() ) : ?>
 		<a class="entry-thumbnail" href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'gumbo' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_post_thumbnail( 'thsp-archives-featured', array( 'class' => 'entry-featured') ); ?></a>
 	<?php endif; // has_post_thumbnail() ?>
 
