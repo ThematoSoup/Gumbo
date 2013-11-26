@@ -954,11 +954,6 @@ body.font-size-large,
 .attachment .entry-caption {
 	font-size: 14px;
 }
-.site-footer {
-	clear: both;
-	width: 100%;
-	padding: 20px 0;
-}
 
 
 /* 5. =Header
@@ -1374,6 +1369,11 @@ body.font-size-large,
 
 #colophon {
 	font-size: 14px;
+	clear: both;
+	width: 100%;
+}
+#footer-widgets {
+	padding-top: 20px;
 }
 #colophon,
 #infinite-footer .container {
@@ -1396,6 +1396,10 @@ body.font-size-large,
 }
 #colophon .widget ul li {
 	border-bottom-color: rgba(255,255,255,.1);
+}
+.footer-bottom {
+	padding: 10px;
+	background: rgba(0,0,0,0.25);
 }
 .site-info {
 	float: left;

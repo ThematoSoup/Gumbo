@@ -15,19 +15,19 @@
 	<?php if ( ! thsp_has_no_footer() ) : ?>
 		<?php tha_footer_before(); ?>
 		<footer id="colophon" class="site-footer" role="contentinfo">
-			<div class="inner clear">
-				<?php tha_footer_top(); ?>
-				<?php
-				if ( is_active_sidebar( 'footer-widget-area' ) ) :
-					echo '<div id="footer-widgets" class="flexible-widget-area ' . thsp_count_widgets( 'footer-widget-area' ) . '">';
-						echo '<div class="clear">';
-						dynamic_sidebar( 'footer-widget-area' );
-						echo '</div>';
-					echo '</div><!-- #footer-widgets -->';
-				endif;
-				?>
+			<?php tha_footer_top(); ?>
+			<?php
+			if ( is_active_sidebar( 'footer-widget-area' ) ) :
+				echo '<div id="footer-widgets" class="inner clear flexible-widget-area ' . thsp_count_widgets( 'footer-widget-area' ) . '">';
+					echo '<div class="clear">';
+					dynamic_sidebar( 'footer-widget-area' );
+					echo '</div>';
+				echo '</div><!-- #footer-widgets -->';
+			endif;
+			?>
 	
-				<div class="footer-bottom clear">
+			<div class="footer-bottom">
+				<div class="inner clear">
 					<div class="site-info">
 						<?php
 						/*
@@ -48,9 +48,9 @@
 							'depth'				=> 1
 						) );
 					?>
-				</div><!-- .footer-bottom -->
-				<?php tha_footer_bottom(); ?>
-			</div><!-- .inner -->
+				</div><!-- .clear -->
+			</div><!-- .footer-bottom -->
+			<?php tha_footer_bottom(); ?>
 		</footer><!-- #colophon -->
 		<?php tha_footer_after(); ?>
 	<?php endif; // footer check ?>
