@@ -62,6 +62,12 @@ function thsp_body_classes( $classes ) {
 	if ( '' != $thsp_theme_options['logo_image'] ) :
 		$thsp_body_classes[] = 'has-logo-image';
 	endif;
+
+	// Check header image
+	$header_image = get_header_image();
+	if ( ! empty( $header_image ) ) :
+		$thsp_body_classes[] = 'has-header-image';
+	endif;
 	
 	// Adds a class id Post Aside is active
 	if ( is_singular( 'post' ) && is_active_sidebar( 'post-aside' ) ) {
@@ -121,11 +127,6 @@ function thsp_header_classes() {
 	// Header layout
 	$thsp_theme_options = thsp_cbp_get_options_values();
 	$thsp_header_class = 'header-' . $thsp_theme_options['main_nav_placement'];
-	// Check header image
-	$header_image = get_header_image();
-	if ( ! empty( $header_image ) ) :
-		$thsp_header_class .= ' header-image';
-	endif;
 
 	return $thsp_header_class;
 }

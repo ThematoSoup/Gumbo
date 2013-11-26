@@ -43,7 +43,7 @@
 			</nav><!-- #top-navigation -->
 			<?php endif; ?>
 	
-			<div id="header-inner" class="clear">
+			<div class="clear">
 				<?php tha_header_top(); ?>
 				<hgroup>
 					<?php
@@ -51,9 +51,11 @@
 					$thsp_theme_options = thsp_cbp_get_options_values();
 					if ( '' != $thsp_theme_options['logo_image'] ) :
 						$logo_image = thsp_get_logo_image( $thsp_theme_options['logo_image'] ); ?>
-						<a class="header-image" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-							<img src="<?php echo $logo_image[0]; ?>" width="<?php echo $logo_image[1]; ?>" height="<?php echo $logo_image[2]; ?>" alt="<?php bloginfo( 'name' ); ?>" />
-						</a>
+						<h1 class="logo-image">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+								<img src="<?php echo $logo_image[0]; ?>" width="<?php echo $logo_image[1]; ?>" height="<?php echo $logo_image[2]; ?>" alt="<?php bloginfo( 'name' ); ?>" />
+							</a>
+						</h1>
 					<?php else : // if ( ! isset( $thsp_theme_options['logo_image'] ) ?>
 						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 					<?php endif; ?>

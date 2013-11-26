@@ -29,7 +29,7 @@ function thsp_custom_header_setup() {
 		'default-image'          => '',
 		'default-text-color'     => '#fff',
 		'width'                  => 1600,
-		'height'                 => 300,
+		'height'                 => 320,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'thsp_header_style',
 		'admin-head-callback'    => 'thsp_admin_header_style',
@@ -66,43 +66,36 @@ function thsp_header_style() {
 	if ( empty( $header_image ) && $text_color == get_theme_support( 'custom-header', 'default-text-color' ) )
 		return;
 
-	// If we get this far, we have custom styles.
-	?>
+	// If we get this far, we have custom styles. ?>
 	<style type="text/css" id="gumbo-header-css">
-	<?php
-		if ( ! empty( $header_image ) ) :
-	?>
-		#masthead.header-image  {
+	<?php if ( ! empty( $header_image ) ) :	?>
+		.has-header-image #masthead.header-nav-below hgroup  {
 			background-image: url(<?php header_image(); ?>);
-			background-attachment: fixed;
-			background-position: center top;
-			background-size: 1600px auto;
-			background-repeat: no-repeat;
+			min-height: <?php echo get_custom_header()->height; ?>px;
+			background-position: center;
+			background-size: cover;
 		}
-	<?php
-		endif;
-
-		// Has the text been hidden?
-		if ( ! display_header_text() ) :
-	?>
+		.has-header-image #masthead.header-nav-right  {
+			background-image: url(<?php header_image(); ?>);
+			min-height: <?php echo get_custom_header()->height; ?>px;
+			background-position: center;
+			background-size: cover;
+		}
+	<?php endif; ?>
+		
+	<?php if ( ! display_header_text() ) : // Has the text been hidden?	?>
 		.site-title,
 		.site-description {
 			position: absolute;
-			clip: rect(1px 1px 1px 1px); /* IE7 */
 			clip: rect(1px, 1px, 1px, 1px);
 		}
-	<?php
-			if ( empty( $header_image ) ) :
-	?>
+		<?php if ( empty( $header_image ) ) : ?>
 		.site-header .home-link {
 			min-height: 0;
 		}
-	<?php
-			endif;
+		<?php endif; ?>
 
-		// If the user has set a custom color for the text, use that.
-		elseif ( $text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) :
-	?>
+	<?php elseif ( $text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) : // If the user has set a custom color for the text, use that. ?>
 		.site-header .site-title,
 		.site-header .site-title a,
 		.site-header .site-description,

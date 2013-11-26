@@ -701,8 +701,8 @@ body.scheme-dark #infinite-footer .container a {
 .scheme-dark #above-footer {
 	border-bottom: 1px solid #2c2c2c;
 }
-.scheme-dark #masthead.header-image #top-navigation,
-.scheme-dark #masthead.header-image #site-navigation {
+.scheme-dark #masthead.has-header-image #top-navigation,
+.scheme-dark #masthead.has-header-image #site-navigation {
 	border-bottom: none;
 }
 .scheme-dark #main .sticky {
@@ -886,7 +886,7 @@ body.font-size-large,
 .inner {
 	max-width: 1040px;
 	margin: 0 auto;
-	padding: 0 30px;
+	padding: 0 20px;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 }
@@ -965,28 +965,38 @@ body.font-size-large,
 ----------------------------------------------- */
 
 .site-header hgroup {
-	padding: 40px 20px;
-	max-width: 1040px;
-	margin: 0 auto;
+	padding-top: 60px;
+	padding-bottom: 60px;
 }
-.site-header .header-image img {
-	max-height: 100px;
-	width: auto;
-	display: inline-block;
+.site-header .logo-image {
 	margin-bottom: 10px;
+	height: 100px;
 }
-
-/* 5.1 With header image activated */
-.header-image.site-header hgroup {
-	padding: 0 20px;
-	min-height: 240px;
+.site-header .logo-image a {
+	display: inline-block;
+	height: 100px;
 }
-.header-image .site-title {
-	padding: 70px 0 0;
+.site-header .logo-image img {
+	display: inline-block;
+	height: 100px;
+	width: auto;
+}
+.site-header .logo-image,
+.site-header .site-title,
+.site-header .site-description {
+	max-width: 1040px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 20px;
+	padding-right: 20px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 }
 .site-header .site-title {
-	margin: 0 0 0.1em;
 	font-size: 42px;
+	line-height: 48px;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 .site-header .site-title a {
 	text-decoration: none;
@@ -994,9 +1004,26 @@ body.font-size-large,
 }
 .site-header .site-description {
 	color: #fff;
-	margin: 0;
 	font-size: 16px;
+	line-height: 20px;
 	font-weight: normal;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/* 5.1 With header image activated */
+.has-header-image .site-header hgroup {
+	padding-top: 110px;
+	padding-bottom: 0;
+}
+.has-header-image.has-logo-image .site-header hgroup {
+	padding-top: 90px;
+}
+.has-header-image .site-title {
+
+}
+.has-header-image .header-image {
+
 }
 
 /* 5.2 Compact header (navigation on the right side) */
@@ -1005,19 +1032,35 @@ body.font-size-large,
 	max-width: 1040px;
 	margin: 0 auto;
 }
+.site-header.header-nav-right {
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
 .site-header.header-nav-right hgroup {
 	float: left;
 	width: 30%;
 	padding-left: 0;
+	padding-bottom: 0;
+	padding-top: 0;
 }
 .header-nav-right .navigation-main {
 	float: right;
 	width: 70%;
-	padding-top: 50px;
 	background: none;
+	padding-right: 10px;
 }
-.header-image.header-nav-right .navigation-main {
-	padding-top: 80px;
+.has-header-image .header-nav-right {
+	padding-top: 110px;
+	padding-bottom: 0;
+}
+.has-header-image.has-logo-image .site-header.header-nav-right {
+	padding-top: 90px;	
+}
+.has-header-image.has-logo-image .site-header.header-nav-right hgroup {
+	padding-top: 0;
+}
+.has-header-image.has-logo-image .site-header.header-nav-right .navigation-main {
+	padding-top: 20px;
 }
 .header-nav-right .navigation-main ul {
 	text-align: right;
@@ -1168,7 +1211,7 @@ body.font-size-large,
 #top-navigation {
 	background: rgba(0,0,0,0.2);
 }
-#masthead.header-image #top-navigation {
+#masthead.has-header-image #top-navigation {
 	background: rgba(0,0,0,0.5);
 }
 #top-navigation ul {
@@ -1202,6 +1245,10 @@ body.font-size-large,
 .sticky {
 	border-bottom: 3px solid #303030;
 	padding: 30px;
+}
+.sticky .entry-thumbnail {
+	display: block;
+	margin: -30px -30px 30px;
 }
 .entry-header {
 	margin-bottom: 15px;
