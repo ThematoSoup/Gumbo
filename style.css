@@ -542,10 +542,6 @@ a:active {
 #main .widget a:hover {
 	color: #222;
 }
-#main a:active {
-	position: relative;
-	top: 2px;
-}
 .entry-meta,
 .entry-aside,
 .entry-meta a,
@@ -559,6 +555,15 @@ a:active {
 body.scheme-light {
 	background: #f0efec;
 	color: #282725;
+}
+.scheme-light #content .hentry {
+	background: #fff;
+	padding: 20px;
+	box-shadow: 3px 3px 0 rgba(0,0,0,0.05);
+}
+.scheme-light #content .hentry .entry-thumbnail {
+	margin: -20px -20px 30px;
+	display: block;
 }
 .scheme-light #main {
 	background: #f0efec;
@@ -596,7 +601,6 @@ body.scheme-light {
 }
 .scheme-light.blog .hentry,
 .scheme-light.archive .hentry {
-	border-color: rgba(0,0,0,.025);
 }
 .scheme-light h1,
 .scheme-light h2,
@@ -648,6 +652,15 @@ body.scheme-light {
 .scheme-light #main #breadcrumbs a,
 .scheme-light #main .woocommerce-breadcrumb a  {
 	color: #6d6c66;
+}
+.scheme-light #content .masonry-brick {
+	padding: 15px;
+}
+.scheme-light #content .masonry-brick .entry-thumb {
+	margin: -15px -15px 20px;
+}
+.scheme-light .masonry-brick .entry-footer .entry-meta {
+	margin-bottom: 0;
 }
 
 /* 2.3 Dark */
