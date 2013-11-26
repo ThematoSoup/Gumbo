@@ -43,7 +43,7 @@ add_action( 'customize_preview_init', 'gumbo_customize_preview_js' );
  * under which theme options are stored
  *
  * @link	https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate
- * @since	Cazuela 1.0
+ * @since	Gumbo 1.0
  */
 add_filter( 'thsp_cbp_option', 'thsp_edit_cbp_option_name', 1 );
 function thsp_edit_cbp_option_name() {
@@ -56,7 +56,7 @@ function thsp_edit_cbp_option_name() {
  *
  * @link	https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate
  * @return	string		Theme Customizer Boilerplate location path
- * @since	Cazuela 1.0
+ * @since	Gumbo 1.0
  */
 add_filter( 'thsp_cbp_directory_uri', 'thsp_edit_cbp_directory_uri', 1 );
 function thsp_edit_cbp_directory_uri() {	
@@ -70,7 +70,7 @@ function thsp_edit_cbp_directory_uri() {
  *
  * @link	https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate
  * @return	string			Menu link text
- * @since	Cazuela 1.0
+ * @since	Gumbo 1.0
  */
 add_filter( 'thsp_cbp_menu_link_text', 'thsp_customizer_menu_link_text', 1 );
 function thsp_customizer_menu_link_text() {
@@ -83,7 +83,7 @@ function thsp_customizer_menu_link_text() {
  *
  * @link	https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate
  * @return	array		Theme options
- * @since	Cazuela 1.0
+ * @since	Gumbo 1.0
  */
 add_filter( 'thsp_cbp_options_array', 'thsp_theme_options_array', 1 );
 function thsp_theme_options_array() {
@@ -397,7 +397,7 @@ function thsp_theme_options_array() {
  *
  * @link	https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate
  * @return	array	Built-in controls that need to be removed from Theme Customizer
- * @since	Cazuela 1.0
+ * @since	Gumbo 1.0
  */
 add_filter( 'tshp_cbp_remove_controls', 'thsp_theme_options_remove_controls', 1 );
 function thsp_theme_options_remove_controls() {

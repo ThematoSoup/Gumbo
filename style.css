@@ -495,7 +495,7 @@ a:active {
 ----------------------------------------------- */
 
 /* 2.1 White (default) */
-#masthead,
+#masthead hgroup,
 #commentform #submit,
 .comment-reply-link,
 .wpcf7 input[type="submit"],
@@ -558,11 +558,11 @@ body.scheme-light {
 }
 .scheme-light #content .hentry {
 	background: #fff;
-	padding: 20px;
+	padding: 30px;
 	box-shadow: 3px 3px 0 rgba(0,0,0,0.05);
 }
 .scheme-light #content .hentry .entry-thumbnail {
-	margin: -20px -20px 30px;
+	margin: -30px -30px 30px;
 	display: block;
 }
 .scheme-light #main {
@@ -574,7 +574,7 @@ body.scheme-light {
 .scheme-light .navigation-main li:hover a {
 	background: #3f3e38;
 }
-.scheme-light #masthead,
+.scheme-light #masthead hgroup,
 .scheme-light #commentform #submit,
 .scheme-light .comment-reply-link,
 .scheme-light .wpcf7 input[type="submit"],
@@ -692,7 +692,7 @@ body.scheme-dark,
 .scheme-dark #main #primary a:hover .entry-title {
 	color: #f9f9f9 !important;
 }
-body.scheme-dark #masthead,
+body.scheme-dark #masthead hgroup,
 body.scheme-dark #colophon {
 	background-color: #1f1f1f;
 }
