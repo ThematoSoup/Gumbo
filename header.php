@@ -62,6 +62,7 @@
 					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 				</hgroup>
 			
+				<?php if ( has_nav_menu( 'primary' ) ) : ?>
 				<nav id="site-navigation" class="navigation-main" role="navigation">
 					<h1 class="menu-toggle"><?php _e( 'Menu', 'gumbo' ); ?></h1>
 					<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'gumbo' ); ?>"><?php _e( 'Skip to content', 'gumbo' ); ?></a></div>
@@ -72,10 +73,12 @@
 							'theme_location'	=> 'primary',
 							'container'			=> '',
 							'menu_class'		=> 'menu inner',
+							'fallback_cb'		=> '',
 							'walker'			=> $walker
 						) );
 					?>
 				</nav><!-- #site-navigation -->
+				<?php endif; // Menu check ?>
 				<?php tha_header_bottom(); ?>
 			</div><!-- .clear -->
 		</header><!-- #masthead -->
