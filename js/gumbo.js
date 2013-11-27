@@ -11,4 +11,10 @@ jQuery( document ).ready( function( $ ) {
 			gutter:			30
 		});
 	}
+
+	if( $('.flexslider').length !== 0 ) {
+		$('.flexslider').flexslider({
+			animation: 'fade'
+		});
+	}
 });

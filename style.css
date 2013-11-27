@@ -71,7 +71,8 @@ and Blueprint http://www.blueprintcss.org/
 	15.	Infinite scroll (Jetpack module)
 	16.	WooCommerce
 	17. Sliders
-	18. Media Queries
+	18. Featured Content
+	19. Media Queries
 	
 ---------------------------------------------------------------*/
 
@@ -169,7 +170,6 @@ textarea {
 	font-family: sans-serif;
 	font-weight: normal;
 	line-height: 1.6;
-	-webkit-font-smoothing: antialiased;
 }
 /* 1.1 Headings */
 h1,
@@ -184,7 +184,6 @@ h6 {
 	margin: 1.25em 0 0.5em;
 	color: #2e2e2e;
 	font-weight: bold;
-	-webkit-font-smoothing: antialiased;
 }
 h1 {
 	font-size: 36px;
@@ -1056,8 +1055,8 @@ body.font-size-large,
 	margin: 0 auto;
 }
 .site-header.header-nav-right {
-	padding-top: 55px;
-	padding-bottom: 65px;
+	padding-top: 35px;
+	padding-bottom: 45px;
 }
 .site-header.header-nav-right hgroup {
 	float: left;
@@ -1264,6 +1263,7 @@ body.font-size-large,
 .blog .hentry,
 .archive .hentry {
 	padding-bottom: 30px;
+	margin-bottom: 60px;
 }
 .sticky {
 	border-bottom: 3px solid #303030;
@@ -2212,7 +2212,99 @@ body.woocommerce-page .upsells.products ul li.product.last {
 }
 
 
-/* 18. =Media Queries
+/* 18. =Featured Content
+----------------------------------------------- */
+
+#featured-content {
+	margin: 50px auto 10px;
+	padding: 0 20px;
+	max-width: 1040px;
+	background: none;
+	border: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-o-border-radius: 0;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-o-box-shadow: none;
+	box-shadow: none;
+}
+#featured-content .slides li {
+	position: relative;
+}
+#featured-content .flex-control-paging {
+	width: auto;
+	bottom: auto;
+	top: 15px;
+	text-align: right;
+	right: 35px;
+	z-index: 10;
+}
+#featured-content .flex-control-paging li {
+	text-align: left;
+	margin-right: 0;
+	margin-left: 8px;
+}
+#featured-content .flex-control-paging li a {
+	background: rgba(255,255,255,0.8);
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-o-box-shadow: none;
+	box-shadow: none;
+	width: 10px;
+	height: 10px;
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
+}
+#featured-content .flex-control-paging li a.flex-active {
+	background: rgba(0,0,0,0.5);
+}
+#featured-content .flex-direction-nav a {
+	font-size: 40px;
+	line-height: 40px;
+	height: 40px;
+	width: 40px;
+	text-align: center;
+	color: #fff;
+	text-shadow: 2px 2px 0 rgba(0,0,0,0.8);
+}
+#featured-content .flex-direction-nav a:before {
+	font-size: 40px;
+}
+#featured-content:hover .flex-prev {
+	left: 40px;
+}
+#featured-content:hover .flex-next {
+	right: 40px;
+}
+#featured-content .featured-content-text {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.9);
+	z-index: 10;
+	width: 100%;
+	padding: 30px;
+}
+#featured-content .featured-content-text .featured-post-title {
+	font-size: 40px;
+}
+#featured-content .featured-content-text .featured-post-excerpt {
+	font-size: 18px;
+}
+#featured-content .featured-content-text .featured-post-title,
+#featured-content .featured-content-text .featured-post-excerpt {
+	color: #fff;
+}
+#featured-content .slides a,
+#featured-content .slides img {
+	display: block;
+	max-height: 480px;
+}
+
+
+/* 19. =Media Queries
 ----------------------------------------------- */
 
 @media screen and (max-width: 800px) {

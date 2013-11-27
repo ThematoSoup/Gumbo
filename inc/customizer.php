@@ -322,6 +322,57 @@ function thsp_theme_options_array() {
 				),
 			) // End fields
 		),
+
+		// Section ID
+		'thsp_featured_section' => array(
+			'existing_section' => false,
+			'args' => array(
+				'title' => __( 'Featured Content', 'gumbo' ),
+				'description' => __( 'Set featured content for your site', 'gumbo' ),
+				'priority' => 15
+			),
+			'fields' => array(
+				'display_featured' => array(
+					'setting_args' => array(
+						'default' => true,
+						'type' => 'option',
+						'capability' => $thsp_cbp_capability,
+						'transport' => 'refresh',
+					),                                        
+					'control_args' => array(
+						'label' => __( 'Display featured posts in homepage', 'gumbo' ),
+						'type' => 'checkbox', // Checkbox field control
+						'priority' => 1
+					)
+				),
+				'featured_content_tag' => array(
+					'setting_args' => array(
+						'default' => '',
+						'type' => 'option',
+						'capability' => $thsp_cbp_capability,
+						'transport' => 'refresh',
+					),                                        
+					'control_args' => array(
+						'label' => __( 'Enter a tag to use for featured content', 'gumbo' ),
+						'type' => 'text', // Text field control
+						'priority' => 2
+					)
+				),                                
+				'featured_posts_count' => array(
+					'setting_args' => array(
+						'default' => 5,
+						'type' => 'option',
+						'capability' => $thsp_cbp_capability,
+						'transport' => 'refresh',
+					),                                        
+					'control_args' => array(
+						'label' => __( 'Number of featured posts', 'gumbo' ),
+						'type' => 'number', // Textarea control
+						'priority' => 3
+					)
+				),
+			) // End fields
+		),
 		
 		// Section ID
 		'thsp_typography_section' => array(
@@ -334,7 +385,7 @@ function thsp_theme_options_array() {
 			'fields' => array(
 				'body_font' => array(
 					'setting_args' => array(
-						'default' => 'helvetica',
+						'default' => 'rosario',
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',
@@ -348,7 +399,7 @@ function thsp_theme_options_array() {
 				),
 				'heading_font' => array(
 					'setting_args' => array(
-						'default' => 'helvetica',
+						'default' => 'rosario',
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',

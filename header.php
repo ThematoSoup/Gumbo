@@ -85,5 +85,11 @@
 		<?php tha_header_after(); ?>
 	<?php endif; // header check ?>
 
+	<?php
+	if ( is_home() && $thsp_theme_options['display_featured'] ) :
+		get_template_part( '/partials/featured', 'content' ); 
+	endif;
+	?>
+
 	<div id="main" class="site-main">
 		<div class="inner clear">

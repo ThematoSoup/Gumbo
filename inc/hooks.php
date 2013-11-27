@@ -65,7 +65,6 @@ function thsp_footer_credits() { ?>
 add_action( 'gumbo_credits', 'thsp_footer_credits', 10 );
 
 
-
 /**
  * Add Yoast breadcrumbs to tha_content_top action hook
  *

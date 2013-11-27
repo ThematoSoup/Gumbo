@@ -15,6 +15,7 @@
  * @package Gumbo
  */
 
+
 if ( ! function_exists( 'thsp_content_nav' ) ) :
 /**
  * Display navigation to next/previous pages when applicable
@@ -89,6 +90,7 @@ function thsp_content_nav( $nav_id ) {
 }
 endif; // thsp_content_nav
 
+
 if ( ! function_exists( 'thsp_comment' ) ) :
 /**
  * Template for comments and pingbacks.
@@ -140,6 +142,7 @@ function thsp_comment( $comment, $args, $depth ) {
 }
 endif; // ends check for thsp_comment()
 
+
 if ( ! function_exists( 'thsp_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
@@ -156,6 +159,7 @@ function thsp_posted_on() {
 	);
 }
 endif;
+
 
 /**
  * Template tag that displays an author in Authors page template
@@ -195,6 +199,7 @@ function thsp_display_an_author( $author ) { ?>
 	</li>
 <?php }
 
+
 /**
  * Returns true if a blog has more than 1 category
  */
@@ -220,6 +225,7 @@ function thsp_categorized_blog() {
 	}
 }
 
+
 /**
  * Flush out the transients used in thsp_categorized_blog
  */
@@ -229,3 +235,34 @@ function thsp_category_transient_flusher() {
 }
 add_action( 'edit_category', 'thsp_category_transient_flusher' );
 add_action( 'save_post', 'thsp_category_transient_flusher' );
+
+
+/**
+ * Returns true if a blog has more than 1 category
+ */
+function thsp_fetch_featured_posts() {
+	if ( false === ( $thsp_featured_posts = get_transient( 'thsp_featured_posts' ) ) ) {
+		// Get theme options values
+		$thsp_theme_options = thsp_cbp_get_options_values();
+		$featured_query_args = array(
+			'post_type'			=> 'post',
+			'posts_per_page'	=> $thsp_theme_options['featured_posts_count'],
+			'tag'				=> $thsp_theme_options['featured_content_tag']
+		);
+		$thsp_featured_posts = get_posts( $featured_query_args );
+
+		set_transient( 'thsp_featured_posts', $thsp_featured_posts );
+	}
+	
+	return $thsp_featured_posts;
+}
+
+
+/**
+ * Flush out the transient set in thsp_fetch_featured_posts
+ */
+function thsp_featured_posts_transient_flusher() {
+	delete_transient( 'thsp_featured_posts' );
+}
+add_action( 'save_post', 'thsp_featured_posts_transient_flusher' );
+add_action( 'customize_save', 'thsp_featured_posts_transient_flusher' );
