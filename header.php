@@ -43,7 +43,7 @@
 			</nav><!-- #top-navigation -->
 			<?php endif; ?>
 	
-			<div class="clear">
+			<div id="header-inner" class="clear">
 				<?php tha_header_top(); ?>
 				<hgroup>
 					<?php

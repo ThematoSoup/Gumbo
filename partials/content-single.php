@@ -12,11 +12,13 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class( $has_post_aside_class . ' clear' ); ?>>
 	
 	<header class="entry-header">
-		<h1 class="entry-title"><?php the_title(); ?></h1>
-	
 		<?php if ( false == get_post_format() && has_post_thumbnail() ) : ?>
-			<?php the_post_thumbnail( 'thsp-archives-featured', array( 'class' => 'entry-featured') ); ?>
+			<div class="entry-thumbnail">
+				<?php the_post_thumbnail( 'thsp-archives-featured', array( 'class' => 'entry-featured') ); ?>
+			</div>
 		<?php endif; // has_post_thumbnail() ?>
+
+		<h1 class="entry-title"><?php the_title(); ?></h1>
 	</header><!-- .entry-header -->
 
 	

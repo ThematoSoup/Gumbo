@@ -320,7 +320,7 @@ function thsp_generated_css() {
 	<?php endif; ?>
 
 	<?php if ( isset( $header_background_color ) && '' != $header_background_color ) : // Header background color ?>
-		#masthead hgroup {
+		#masthead {
 			background-color: <?php echo $header_background_color; ?> !important;
 		}
 	<?php endif; ?>
