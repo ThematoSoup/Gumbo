@@ -14,7 +14,8 @@ jQuery( document ).ready( function( $ ) {
 
 	if( $('.flexslider').length !== 0 ) {
 		$('.flexslider').flexslider({
-			animation: 'fade'
+			animation: 'fade',
+			directionNav: false
 		});
 	}
 });
