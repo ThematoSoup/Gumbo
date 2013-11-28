@@ -2292,6 +2292,7 @@ body.woocommerce-page .upsells.products ul li.product.last {
 }
 #featured-content .featured-content-text .featured-post-excerpt {
 	font-size: 18px;
+	line-height: 1.4;
 }
 #featured-content .featured-content-text .featured-post-title,
 #featured-content .featured-content-text .featured-post-excerpt {
