@@ -143,6 +143,40 @@ function thsp_comment( $comment, $args, $depth ) {
 endif; // ends check for thsp_comment()
 
 
+if ( ! function_exists( 'thsp_post_meta_top' ) ) :
+/**
+ * Prints HTML with post categories, if it's not a single category blog.
+ */
+function thsp_post_meta_top() {
+		/* translators: used between list items, there is a space after the comma */
+		$category_list = get_the_category_list( __( ', ', 'gumbo' ) );
+		echo '<div class="entry-meta entry-meta-top">';
+			if ( thsp_categorized_blog() ) :
+				echo '<span class="post-categories">' . $category_list . '</span>';
+			endif;
+			echo '<span class="post-time"><a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( get_the_time() ) . '" rel="bookmark"><time class="entry-date" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date() ) . '</time></a></span>';
+			echo '<span class="post-author author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( sprintf( __( 'View all posts by %s', 'gumbo' ), get_the_author() ) ) .'" rel="author">' . get_the_author() .'</a></span>';
+		echo '</div>';
+}
+endif;
+
+
+if ( ! function_exists( 'thsp_post_meta_bottom' ) ) :
+/**
+ * Prints HTML with post categories, if it's not a single category blog.
+ */
+function thsp_post_meta_bottom() {
+	/* translators: used between list items, there is a space after the comma */
+	$tag_list = get_the_tag_list( '', __( ', ', 'gumbo' ) );
+	if ( '' != $tag_list ) :
+		echo '<footer class="entry-meta entry-meta-bottom">';
+			echo '<span class="post-tags">' . $tag_list . '</span>';
+		echo '</footer>';
+	endif;
+}
+endif;
+
+
 if ( ! function_exists( 'thsp_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.

@@ -58,6 +58,7 @@ and Blueprint http://www.blueprintcss.org/
 	7.	 Entries
 		- 7.1 Post Aside Widget Area
 		- 7.2 Post Formats
+		- 7.2 Post Meta Icons
 	8.	Footer
 	9.	Page Templates
 		- 9.1 Authors
@@ -670,7 +671,7 @@ body.scheme-light {
 .scheme-light #content .masonry-brick .entry-thumb {
 	margin: -15px -15px 20px;
 }
-.scheme-light .masonry-brick .entry-footer .entry-meta {
+.scheme-light .masonry-brick footer.entry-meta {
 	margin-bottom: 0;
 }
 
@@ -1022,7 +1023,7 @@ body.font-size-large,
 .site-header .site-title,
 .site-header .site-description,
 .header-nav-right .navigation-main > ul > li > a {
-	text-shadow: 0 0 5px rgba(0,0,0,0.5);
+	text-shadow: 0 0 5px rgba(0,0,0,0.25);
 }
 .site-header .site-title {
 	font-size: 42px;
@@ -1398,6 +1399,57 @@ body.font-size-large,
 	background: rgba(0,0,0,0.5) !important;
 	color: #fff !important;
 	font-size: 30px;
+}
+/* 7.3 Post meta icons */
+.post-categories,
+.post-time,
+.post-author,
+.post-tags,
+.post-comments {
+	font-size: 14px;
+	line-height: 16px;
+	display: inline-block;
+	margin-right: 12px;
+}
+.entry-meta a {
+	text-decoration: none;
+	height: 16px;
+	display: inline-block;
+}
+.post-categories:before,
+.post-time:before,
+.post-author:before,
+.post-tags:before,
+.post-comments:before {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	-webkit-font-smoothing: antialiased;
+	font-size: 16px;
+	line-height: 1;
+	font-family: 'Genericons';
+	text-decoration: inherit;
+	font-weight: normal;
+	font-style: normal;
+	vertical-align: top;
+	margin-right: 1px;
+	position: relative;
+}
+.post-categories:before {
+	content: '\f301';
+}
+.post-time:before {
+	content: '\f303';
+	top: 1px;
+}
+.post-author:before {
+	content: '\f304';
+}
+.post-tags:before {
+	content: '\f302';
+}
+.post-comments:before {
+	content: '\f300';
 }
 
 
@@ -1930,9 +1982,6 @@ label .required {
 }
 .widget:last-child {
 	margin-bottom: 0;
-}
-.widget-title {
-	text-transform: uppercase;
 }
 /* Make sure select elements fit in widgets */
 .widget select {

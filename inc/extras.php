@@ -281,6 +281,8 @@ function thsp_generated_css() {
 	$header_background_color	= $thsp_theme_options['header_background_color'];
 	$body_font_value			= $thsp_theme_options['body_font'];
 	$heading_font_value			= $thsp_theme_options['heading_font'];
+	$heading_font_weight		= $thsp_theme_options['heading_weight'];
+	$heading_font_transform		= $thsp_theme_options['heading_uppercase'];
 	$body_font_options			= $theme_options_fields['thsp_typography_section']['fields']['body_font']['control_args']['choices'];
 	$heading_font_options		= $theme_options_fields['thsp_typography_section']['fields']['heading_font']['control_args']['choices'];
 	$bg_repeat					= get_theme_mod( 'background_repeat' ); ?>
@@ -295,6 +297,18 @@ function thsp_generated_css() {
 	<?php if ( 'helvetica' != $heading_font_value ) : // Heading font ?>
 		h1, h2, h3, h4, h5, h6 {
 			font-family: <?php echo $heading_font_options[ $heading_font_value ]['font_family']; ?>;
+		}
+	<?php endif; ?>
+
+	<?php if ( ! $heading_font_weight ) : // Heading font not bold ?>
+		h1, h2, h3, h4, h5, h6 {
+			font-weight: normal;
+		}
+	<?php endif; ?>
+
+	<?php if ( $heading_font_transform ) : // Heading font not bold ?>
+		h1, h2, h3, h4, h5, h6 {
+			text-transform: uppercase;
 		}
 	<?php endif; ?>
 

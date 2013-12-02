@@ -379,38 +379,10 @@ function thsp_theme_options_array() {
 			'existing_section' => false,
 			'args' => array(
 				'title' => __( 'Typography', 'gumbo' ),
-				'description' => __( 'Select fonts', 'gumbo' ),
+				'description' => __( 'Select fonts and their options', 'gumbo' ),
 				'priority' => 20
 			),
 			'fields' => array(
-				'body_font' => array(
-					'setting_args' => array(
-						'default' => 'rosario',
-						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
-						'transport' => 'refresh',
-					), // End setting args			
-					'control_args' => array(
-						'label' => __( 'Body font', 'gumbo' ),
-						'type' => 'select', // Image replacement radios
-						'choices' => $font_choices,
-						'priority' => 1
-					) // End control args
-				),
-				'heading_font' => array(
-					'setting_args' => array(
-						'default' => 'rosario',
-						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
-						'transport' => 'refresh',
-					), // End setting args			
-					'control_args' => array(
-						'label' => __( 'Heading font', 'gumbo' ),
-						'type' => 'select',
-						'choices' => $font_choices,
-						'priority' => 1
-					) // End control args
-				),
 				'font_size' => array(
 					'setting_args' => array(
 						'default' => 'medium',
@@ -432,8 +404,62 @@ function thsp_theme_options_array() {
 								'label' => 'Large'
 							)
 						),
-						'priority' => 1
+						'priority' => 10
 					) // End control args
+				),
+				'body_font' => array(
+					'setting_args' => array(
+						'default' => 'rosario',
+						'type' => 'option',
+						'capability' => $thsp_cbp_capability,
+						'transport' => 'refresh',
+					), // End setting args			
+					'control_args' => array(
+						'label' => __( 'Body font', 'gumbo' ),
+						'type' => 'select', // Image replacement radios
+						'choices' => $font_choices,
+						'priority' => 20
+					) // End control args
+				),
+				'heading_font' => array(
+					'setting_args' => array(
+						'default' => 'rosario',
+						'type' => 'option',
+						'capability' => $thsp_cbp_capability,
+						'transport' => 'refresh',
+					), // End setting args			
+					'control_args' => array(
+						'label' => __( 'Heading font', 'gumbo' ),
+						'type' => 'select',
+						'choices' => $font_choices,
+						'priority' => 30
+					) // End control args
+				),
+				'heading_weight' => array(
+					'setting_args' => array(
+						'default' => true,
+						'type' => 'option',
+						'capability' => $thsp_cbp_capability,
+						'transport' => 'refresh',
+					),					
+					'control_args' => array(
+						'label' => __( 'Make headings bold', 'gumbo' ),
+						'type' => 'checkbox', // Checkbox field control
+						'priority' => 40
+					)
+				),
+				'heading_uppercase' => array(
+					'setting_args' => array(
+						'default' => false,
+						'type' => 'option',
+						'capability' => $thsp_cbp_capability,
+						'transport' => 'refresh',
+					),					
+					'control_args' => array(
+						'label' => __( 'Make headings uppercase', 'gumbo' ),
+						'type' => 'checkbox', // Checkbox field control
+						'priority' => 50
+					)
 				),
 			) // End fields
 		)

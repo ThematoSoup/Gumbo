@@ -288,6 +288,7 @@ function thsp_scripts() {
 	$heading_font_value		= $theme_options['heading_font'];
 	$body_font_options		= $theme_options_fields['thsp_typography_section']['fields']['body_font']['control_args']['choices'];
 	$heading_font_options	= $theme_options_fields['thsp_typography_section']['fields']['heading_font']['control_args']['choices'];
+	$heading_font_weight	= $thsp_theme_options['heading_weight'] ? '700,700italic' : '400,400italic';
     
 	/*
 	 * Check if Google Fonts are needed
@@ -303,7 +304,7 @@ function thsp_scripts() {
 				$font_families[] = $body_font_options[ $body_font_value ]['google_font'] . ':400,400italic';
 			endif;
 			if ( isset( $heading_font_options[ $heading_font_value ]['google_font'] ) ) : // Check heading font
-				$font_families[] = $heading_font_options[ $heading_font_value ]['google_font'] . ':700,700italic';
+				$font_families[] = $heading_font_options[ $heading_font_value ]['google_font'] . ':' . $heading_font_weight;
 			endif;
 		endif;
 		

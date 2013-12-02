@@ -69,15 +69,19 @@ get_header(); ?>
 						<?php echo wp_trim_words( get_the_excerpt(), 20, '&hellip;' ); ?>
 					</div><!-- .entry-summary -->
 
-					<footer class="entry-footer">
-						<div class="entry-meta">
-							<?php echo human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) . ' ago'; ?>
+					<footer class="entry-meta entry-meta-bottom">
+						<span class="post-time"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr( get_the_time() ); ?>" rel="bookmark">
+							<?php
+							printf(
+								__( '%1$s ago' ),
+								human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) )
+							);
+							?>
+						</a></span>
 							
-							<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-								<span class="sep"> | </span>
-								<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'gumbo' ), __( '1 Comment', 'gumbo' ), __( '% Comments', 'gumbo' ) ); ?></span>
-							<?php endif; ?>
-						</div><!-- .entry-meta -->					
+						<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
+							<span class="post-comments"><?php comments_popup_link( __( 'Leave a comment', 'gumbo' ), __( '1 Comment', 'gumbo' ), __( '% Comments', 'gumbo' ) ); ?></span>
+						<?php endif; ?>
 					</footer><!-- .entry-footer -->
 				</article><!-- #post-<?php the_ID(); ?> -->
 				

@@ -17,26 +17,16 @@
 				<?php the_post_thumbnail( 'thsp-archives-featured', array( 'class' => 'entry-featured') ); ?>
 			</div>
 		<?php endif; // has_post_thumbnail() ?>
-
+		
 		<h1 class="entry-title"><?php the_title(); ?></h1>
+
+		<?php thsp_post_meta_top(); ?>
 	</header><!-- .entry-header -->
 
 	
 	<div class="entry-main">
-		<?php tha_entry_top(); ?>
-		<header class="entry-meta">
-			<?php if ( is_active_sidebar( 'post-top' ) ) : ?>
-			<div class="entry-top">
-				<?php dynamic_sidebar( 'post-top' ); ?>
-			</div><!-- .entry-aside -->
-			<?php
-			else :
-				thsp_posted_on();
-			endif;
-			?>
-		</header><!-- .entry-meta -->
-
 		<div class="entry-content">
+			<?php tha_entry_top(); ?>
 			<?php the_content(); ?>
 			<?php
 				wp_link_pages( array(
@@ -46,10 +36,13 @@
 					'link_after'	=> '</span>'
 				) );
 			?>
+			<?php tha_entry_bottom(); ?>
 		</div><!-- .entry-content -->
 	
-		<?php tha_entry_bottom(); ?>
+		<?php thsp_post_meta_bottom(); ?>
+	
 		<footer class="entry-meta">
+			
 			<?php
 				/* translators: used between list items, there is a space after the comma */
 				$category_list = get_the_category_list( __( ', ', 'gumbo' ) );
