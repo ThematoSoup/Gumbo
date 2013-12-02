@@ -565,9 +565,16 @@ body.scheme-light {
 	display: block;
 }
 .scheme-light.single #content,
-.scheme-light.page #content {
+.scheme-light.page #content{
 	background: #fff;
 	padding: 30px;
+}
+.scheme-light.page-template-page-templatestemplate-masonry-php #content .post {
+	background: #fff;
+}
+.scheme-light.page-template-page-templatestemplate-masonry-php #content {
+	background: none;
+	padding: 0;
 }
 .scheme-light #main {
 	background: #f0efec;
