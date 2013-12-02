@@ -718,6 +718,9 @@ body.scheme-dark #infinite-footer .container a {
 .scheme-dark #above-footer {
 	border-bottom: 1px solid #2c2c2c;
 }
+.scheme-dark #masthead.header-nav-right #site-navigation {
+	border-bottom: none;	
+}
 .scheme-dark #masthead.has-header-image #top-navigation,
 .scheme-dark #masthead.has-header-image #site-navigation {
 	border-bottom: none;
@@ -740,7 +743,6 @@ body.scheme-dark #infinite-footer .container a {
 }
 .scheme-dark .navigation-main li:hover a {
 	background: #f9f9f9;
-	color: #303030 !important;
 }
 /* Links */
 .scheme-dark .entry-content a,
@@ -2274,7 +2276,7 @@ body.woocommerce-page .upsells.products ul li.product.last {
 }
 #featured-content:hover .flex-prev {
 	left: 40px;
-}
+}	
 #featured-content:hover .flex-next {
 	right: 40px;
 }
