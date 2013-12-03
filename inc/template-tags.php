@@ -156,6 +156,11 @@ function thsp_post_meta_top() {
 			endif;
 			echo '<span class="post-time"><a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( get_the_time() ) . '" rel="bookmark"><time class="entry-date" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date() ) . '</time></a></span>';
 			echo '<span class="post-author author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( sprintf( __( 'View all posts by %s', 'gumbo' ), get_the_author() ) ) .'" rel="author">' . get_the_author() .'</a></span>';
+			if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) :
+				echo '<span class="post-comments">';
+				comments_popup_link( __( 'Leave a comment', 'gumbo' ), __( '1 Comment', 'gumbo' ), __( '% Comments', 'gumbo' ) );
+				echo '</span>';
+			endif;
 		echo '</div>';
 }
 endif;
@@ -168,29 +173,29 @@ if ( ! function_exists( 'thsp_post_meta_bottom' ) ) :
 function thsp_post_meta_bottom() {
 	/* translators: used between list items, there is a space after the comma */
 	$tag_list = get_the_tag_list( '', __( ', ', 'gumbo' ) );
-	if ( '' != $tag_list ) :
-		echo '<footer class="entry-meta entry-meta-bottom">';
+	echo '<footer class="entry-meta entry-meta-bottom">';
+		if ( '' != $tag_list ) :
 			echo '<span class="post-tags">' . $tag_list . '</span>';
-		echo '</footer>';
-	endif;
+		endif;
+		edit_post_link( __( 'Edit', 'gumbo' ), '<span class="post-edit">', '</span>' );
+	echo '</footer>';
 }
 endif;
 
-
-if ( ! function_exists( 'thsp_posted_on' ) ) :
+if ( ! function_exists( 'thsp_post_meta_bottom_compact' ) ) :
 /**
- * Prints HTML with meta information for the current post-date/time and author.
+ * Prints HTML with post categories, if it's not a single category blog.
  */
-function thsp_posted_on() {
-	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'gumbo' ),
-		esc_url( get_permalink() ),
-		esc_attr( get_the_time() ),
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'gumbo' ), get_the_author() ) ),
-		get_the_author()
-	);
+function thsp_post_meta_bottom_compact() {
+	echo '<footer class="entry-meta entry-meta-bottom">';
+		echo '<span class="post-time"><a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( get_the_time() ) . '" rel="bookmark"><time class="entry-date" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date() ) . '</time></a></span>';
+		if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) :
+			echo '<span class="post-comments">';
+			comments_popup_link( __( 'Leave a comment', 'gumbo' ), __( '1 Comment', 'gumbo' ), __( '% Comments', 'gumbo' ) );
+			echo '</span>';
+		endif;
+		edit_post_link( __( 'Edit', 'gumbo' ), '<span class="post-edit">', '</span>' );
+	echo '</footer>';
 }
 endif;
 

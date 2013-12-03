@@ -671,7 +671,7 @@ body.scheme-light {
 .scheme-light #content .masonry-brick .entry-thumb {
 	margin: -15px -15px 20px;
 }
-.scheme-light .masonry-brick footer.entry-meta {
+.scheme-light .entry-meta:last-child {
 	margin-bottom: 0;
 }
 
@@ -1371,9 +1371,11 @@ body.font-size-large,
 .blog .format-image .entry-header,
 .archive .format-image .entry-header,
 .blog .format-gallery .entry-header,
-.archive .format-gallery .entry-header {
+.archive .format-gallery .entry-header,
+.blog .format-video .entry-header,
+.archive .format-video .entry-header {
 	position: relative;
-	margin-bottom: 0.5em; 
+	margin-bottom: 1.25em; 
 }
 .blog .format-image .entry-featured,
 .archive .format-image .entry-featured,
@@ -1405,7 +1407,8 @@ body.font-size-large,
 .post-time,
 .post-author,
 .post-tags,
-.post-comments {
+.post-comments,
+.post-edit {
 	font-size: 14px;
 	line-height: 16px;
 	display: inline-block;
@@ -1420,7 +1423,8 @@ body.font-size-large,
 .post-time:before,
 .post-author:before,
 .post-tags:before,
-.post-comments:before {
+.post-comments:before,
+.post-edit:before {
 	display: inline-block;
 	width: 16px;
 	height: 16px;
@@ -1450,6 +1454,9 @@ body.font-size-large,
 }
 .post-comments:before {
 	content: '\f300';
+}
+.post-edit:before {
+	content: '\f411';
 }
 
 
