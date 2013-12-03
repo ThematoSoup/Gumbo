@@ -210,45 +210,6 @@ add_filter( 'cmb_meta_boxes', 'thsp_metaboxes' );
 
 
 /**
- * Define the metabox and field configurations.
- *
- * @param  array $meta_boxes
- * @return array
- */
-function thsp_slider_metaboxes( $meta_boxes ) {
-	// Start with an underscore to hide fields from custom fields list
-	$prefix = '_thsp_slider_';
-
-	// Slider related meta box
-	$meta_boxes[] = array(
-		'id'			=> 'slider_metabox',
-		'title'			=> 'Slider',
-		'pages'			=> array( 'post', 'page' ), // Post type
-		'context'		=> 'side',
-		'priority'		=> 'default',
-		'show_names'	=> true, // Show field names on the left
-		'fields'		=> array(
-			array(
-				'name'    => 'Layer Slider',
-				'desc'    => 'Enter Layer Slider ID',
-				'id'      => $prefix . 'layer',
-				'type'    => 'text_small',
-			),
-			array(
-				'name'    => 'Revolution Slider',
-				'desc'    => 'Enter Revolution Slider alias',
-				'id'      => $prefix . 'revolution',
-				'type'    => 'text_small',
-			),
-		),
-	);
-
-	return $meta_boxes;
-}
-add_filter( 'cmb_meta_boxes', 'thsp_slider_metaboxes' );
-
-
-/**
  * Initialize the metabox class.
  */
 function thsp_initialize_cmb_meta_boxes() {
