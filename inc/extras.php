@@ -126,9 +126,12 @@ add_filter( 'post_class', 'thsp_post_classes' );
 function thsp_header_classes() {
 	// Header layout
 	$thsp_theme_options = thsp_cbp_get_options_values();
-	$thsp_header_class = 'header-' . $thsp_theme_options['main_nav_placement'];
+	$thsp_header_classes = 'header-' . $thsp_theme_options['main_nav_placement'];
+	if ( has_nav_menu( 'top' ) ) :
+	$thsp_header_classes .= ' has-top-menu';
+	endif;
 
-	return $thsp_header_class;
+	return $thsp_header_classes;
 }
 
 
