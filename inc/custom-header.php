@@ -69,7 +69,8 @@ function thsp_header_style() {
 	// If we get this far, we have custom styles. ?>
 	<style type="text/css" id="gumbo-header-css">
 	<?php if ( ! empty( $header_image ) ) :	?>
-		.has-header-image #masthead.header-nav-below hgroup  {
+		.has-header-image #masthead.header-nav-below hgroup,
+		.has-header-image #masthead.header-nav-below-centered hgroup  {
 			background-image: url(<?php header_image(); ?>);
 			min-height: <?php echo get_custom_header()->height; ?>px;
 			background-position: center;

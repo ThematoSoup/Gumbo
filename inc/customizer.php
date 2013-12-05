@@ -303,25 +303,31 @@ function thsp_theme_options_array() {
 						'priority' => 2
 					) // End control args
 				),
-				'main_nav_placement' => array(
+				'header_layout' => array(
 					'setting_args' => array(
-						'default' => 'nav-below',
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',
+						'std' => 'nav-below',
 					), // End setting args			
 					'control_args' => array(
 						'label' => __( 'Header layout', 'gumbo' ),
-						'type' => 'radio', // Image radio replacement
+						'type' => 'images_radio', // Image radio replacement
 						'choices' => array(
-							'nav-right' => array(
-								'label' => __( 'Next to title and tagline', 'gumbo' )
-							),
 							'nav-below' =>  array(
-								'label' => __( 'Below title and tagline', 'gumbo' )
+								'label' => __( 'Navigation below title and tagline', 'gumbo' ),
+								'image_src' => get_template_directory_uri() . '/images/theme-options/nav-below.png'
+							),
+							'nav-below-centered' =>  array(
+								'label' => __( 'Navigation below title and tagline, centered', 'gumbo' ),
+								'image_src' => get_template_directory_uri() . '/images/theme-options/nav-below-centered.png'
+							),							
+							'nav-right' => array(
+								'label' => __( 'Navigation next to title and tagline', 'gumbo' ),
+								'image_src' => get_template_directory_uri() . '/images/theme-options/nav-right.png'
 							),
 						),					
-						'priority' => 2
+						'priority' => 3
 					) // End control args
 				),
 			) // End fields
