@@ -7,7 +7,7 @@
  */
 ?>
 
-<?php if ( is_active_sidebar( 'primary-sidebar' ) && ! get_post_meta( $post->ID, '_thsp_has_no_sidebar', true ) ) : // Only render this sidebar in not in single column layout ?>
+<?php if ( is_active_sidebar( 'primary-sidebar' ) && 'no-sidebar' != thsp_get_current_layout() ) : // Only render this sidebar in not in single column layout ?>
 	<?php tha_sidebars_before(); ?>
 	<div id="secondary" class="widget-area" role="complementary">
 		<?php tha_sidebar_top(); ?>

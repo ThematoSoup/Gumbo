@@ -174,7 +174,7 @@ require( get_template_directory() . '/inc/customizer.php' );
 /**
  * Custom meta boxes
  */
-require_once get_template_directory() . '/inc/custom-meta-boxes.php';
+require_once get_template_directory() . '/inc/meta-boxes.php';
 
 
 /**

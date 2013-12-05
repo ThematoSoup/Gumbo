@@ -925,7 +925,7 @@ body.font-size-large,
 	word-wrap: break-word;
 }
 #main {
-	padding: 40px 0;
+	padding: 60px 0;
 }
 .has-no-header #main {
 	padding-top: 80px;
@@ -1055,13 +1055,13 @@ body.font-size-large,
 	padding-bottom: 0;
 }
 .has-header-image .site-header.has-top-menu hgroup {
-	padding-top: 145px;
+	padding-top: 120px;
 }
 .has-header-image.has-logo-image .site-header hgroup {
-	padding-top: 90px;
+	padding-top: 70px;
 }
 .has-header-image.has-logo-image .site-header.has-top-menu hgroup {
-	padding-top: 125px;
+	padding-top: 100px;
 }
 
 /* 5.2 Compact header (navigation on the right side) */
