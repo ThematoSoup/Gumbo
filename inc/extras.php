@@ -180,7 +180,7 @@ function thsp_get_current_layout() {
 	 * Returns an array with two values that can be changed using
 	 * 'thsp_current_layout' filter hook
 	 *
-	 * returns	$current_layout		string		sidebar-right / sidebar-left
+	 * returns	$current_layout		string		sidebar-right / sidebar-left / no-sidebar
 	 */
 	return apply_filters( 'thsp_current_layout', $current_layout );
 }

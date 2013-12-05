@@ -295,6 +295,10 @@ function thsp_theme_options_array() {
 								'label' => __( 'Left sidebar', 'gumbo' ),
 								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-pc.png'
 							),
+							'no-sidebar' => array(
+								'label' => __( 'No sidebar', 'gumbo' ),
+								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-c.png'
+							),
 						),					
 						'priority' => 2
 					) // End control args
@@ -307,7 +311,7 @@ function thsp_theme_options_array() {
 						'transport' => 'refresh',
 					), // End setting args			
 					'control_args' => array(
-						'label' => __( 'Main navigation placement', 'gumbo' ),
+						'label' => __( 'Header layout', 'gumbo' ),
 						'type' => 'radio', // Image radio replacement
 						'choices' => array(
 							'nav-right' => array(

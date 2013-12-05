@@ -17,6 +17,8 @@
 function thsp_metaboxes( $meta_boxes ) {
 	// Start with an underscore to hide fields from custom fields list
 	$prefix = '_thsp_';
+	$thsp_theme_options = thsp_cbp_get_options_values();
+	$default_layout = $thsp_theme_options['default_layout'];
 
 	// Posts metabox
 	$meta_boxes[] = array(
@@ -28,6 +30,27 @@ function thsp_metaboxes( $meta_boxes ) {
 		'show_names'	=> true, // Show field names on the left
 		'fields'		=> array(
 			array(
+				'name'		=> 'Post layout',
+				'desc'		=> '',
+				'id'		=> $prefix . 'post_layout',
+				'type'		=> 'radio',
+				'std'		=> $default_layout,
+				'options'	=> array(
+					array(
+						'name'	=> 'Right sidebar',
+						'value'	=> 'sidebar-right'
+					),
+					array(
+						'name'	=> 'Left sidebar',
+						'value'	=> 'sidebar-left'
+					),
+					array(
+						'name'	=> 'No sidebar',
+						'value'	=> 'no-sidebar'
+					),
+				),
+			),
+			array(
 				'name'		=> 'Do not show header for this post',
 				'desc'		=> 'If checked, header will not be displayed in single post view',
 				'id'		=> $prefix . 'has_no_header',
@@ -37,12 +60,6 @@ function thsp_metaboxes( $meta_boxes ) {
 				'name'		=> 'Do not show footer for this post',
 				'desc'		=> 'If checked, footer will not be displayed in single post view',
 				'id'		=> $prefix . 'has_no_footer',
-				'type'		=> 'checkbox',
-			),
-			array(
-				'name'		=> 'Do not show sidebar for this post',
-				'desc'		=> 'If checked, sidebar will not be displayed in single post view',
-				'id'		=> $prefix . 'has_no_sidebar',
 				'type'		=> 'checkbox',
 			),
 			array(

@@ -132,16 +132,18 @@ function thsp_admin_header_style() {
 		position: absolute;
 	}
 	#headimg h1 {
-		top: 70px;
+		top: 65px;
 		font-size: 48px;
 		left: 40px;
+		line-height: 1;
+		margin: 0 0 0.25em;
 	}
 	#headimg h1 a {
 		text-decoration: none;
 	}
 	#desc {
 		position: absolute;
-		top: 140px;
+		top: 115px;
 		left: 40px;
 		font-size: 16px;
 	}
