@@ -24,7 +24,7 @@ function thsp_metaboxes( $meta_boxes ) {
 	$meta_boxes[] = array(
 		'id'			=> 'posts_metabox',
 		'title'			=> 'Post Details',
-		'pages'			=> array( 'post' ), // Post type
+		'pages'			=> array( 'post', 'page' ), // Post type
 		'context'		=> 'normal',
 		'priority'		=> 'high',
 		'show_names'	=> true, // Show field names on the left
