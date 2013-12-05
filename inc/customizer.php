@@ -175,7 +175,7 @@ function thsp_theme_options_array() {
 			'fields' => array(
 				'color_scheme' => array(
 					'setting_args' => array(
-						'default' => 'white',
+						'std' => 'white',
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',
@@ -199,7 +199,7 @@ function thsp_theme_options_array() {
 				),
 				'primary_color' => array(
 					'setting_args' => array(
-						'default' => '',
+						'std' => '',
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',
@@ -212,7 +212,7 @@ function thsp_theme_options_array() {
 				),
 				'header_background_color' => array(
 					'setting_args' => array(
-						'default' => '',
+						'std' => '',
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',
@@ -253,7 +253,7 @@ function thsp_theme_options_array() {
 			'fields' => array(
 				'post_navigation_below' => array(
 					'setting_args' => array(
-						'default' => true,
+						'std' => true,
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',
@@ -278,7 +278,7 @@ function thsp_theme_options_array() {
 			'fields' => array(
 				'default_layout' => array(
 					'setting_args' => array(
-						'default' => 'sidebar-right',
+						'std' => 'sidebar-right',
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',
@@ -344,7 +344,7 @@ function thsp_theme_options_array() {
 			'fields' => array(
 				'display_featured' => array(
 					'setting_args' => array(
-						'default' => true,
+						'std' => false,
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',
@@ -357,7 +357,7 @@ function thsp_theme_options_array() {
 				),
 				'featured_content_tag' => array(
 					'setting_args' => array(
-						'default' => '',
+						'std' => '',
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',
@@ -370,7 +370,7 @@ function thsp_theme_options_array() {
 				),                                
 				'featured_posts_count' => array(
 					'setting_args' => array(
-						'default' => 5,
+						'std' => 5,
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',
@@ -395,7 +395,7 @@ function thsp_theme_options_array() {
 			'fields' => array(
 				'font_size' => array(
 					'setting_args' => array(
-						'default' => 'medium',
+						'std' => 'medium',
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',
@@ -419,7 +419,7 @@ function thsp_theme_options_array() {
 				),
 				'body_font' => array(
 					'setting_args' => array(
-						'default' => 'rosario',
+						'std' => 'rosario',
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',
@@ -433,7 +433,7 @@ function thsp_theme_options_array() {
 				),
 				'heading_font' => array(
 					'setting_args' => array(
-						'default' => 'rosario',
+						'std' => 'rosario',
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',
@@ -447,7 +447,7 @@ function thsp_theme_options_array() {
 				),
 				'heading_weight' => array(
 					'setting_args' => array(
-						'default' => true,
+						'std' => true,
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',
@@ -460,7 +460,7 @@ function thsp_theme_options_array() {
 				),
 				'heading_uppercase' => array(
 					'setting_args' => array(
-						'default' => false,
+						'std' => false,
 						'type' => 'option',
 						'capability' => $thsp_cbp_capability,
 						'transport' => 'refresh',

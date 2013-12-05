@@ -81,4 +81,4 @@ function thsp_add_yoast_breadcrumbs() {
 		yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
 	endif;	
 }
-// add_action( 'tha_content_before', 'thsp_add_yoast_breadcrumbs', 10 );
+add_action( 'tha_content_before', 'thsp_add_yoast_breadcrumbs', 10 );

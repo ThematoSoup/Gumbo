@@ -8,9 +8,10 @@
 ?>
 
 <?php
-// Grab featured posts
+// Grab featured posts, check if they need to be displayed
 $featured_posts = thsp_fetch_featured_posts();
-if ( ! empty( $featured_posts ) ) : ?>
+$thsp_theme_options = thsp_cbp_get_options_values();
+if ( ! empty( $featured_posts ) && $thsp_theme_options['display_featured'] && != $thsp_theme_options['featured_content_tag'] ) : ?>
 
 	<div id="featured-content" class="inner flexslider">
 		<ul class="slides">
