@@ -170,11 +170,15 @@ function thsp_get_current_layout() {
 	$thsp_theme_options = thsp_cbp_get_options_values();
 
 	// Check if in single post/page view and if layout custom field value exists
-	if ( is_singular() && get_post_meta( $post->ID, '_thsp_post_layout', true ) ) {
+	if ( is_singular() && get_post_meta( $post->ID, '_thsp_post_layout', true ) ) :
 		$current_layout = get_post_meta( $post->ID, '_thsp_post_layout', true );
-	} else {
+	else :
 		$current_layout = $thsp_theme_options['default_layout'];
-	}
+	endif;
+	
+	if ( is_404() ) :
+		$current_layout = 'no-sidebar';
+	endif;
 
 	/*
 	 * Returns an array with two values that can be changed using

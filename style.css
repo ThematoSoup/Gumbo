@@ -59,6 +59,7 @@ and Blueprint http://www.blueprintcss.org/
 		- 7.1 Post Aside Widget Area
 		- 7.2 Post Formats
 		- 7.2 Post Meta Icons
+		- 7.3 404
 	8.	Footer
 	9.	Page Templates
 		- 9.1 Authors
@@ -1584,6 +1585,33 @@ body.font-size-large,
 }
 .post-edit:before {
 	content: '\f411';
+}
+/* 7.4 404 */
+.widgets-404 {
+	margin: 2em 0;
+}
+.widgets-404 .widget {
+	float: left;
+	width: 33.333%;
+}
+.widgets-404 .widget:first-child {
+	padding-right: 40px;
+}
+.widgets-404 .widget:nth-child(2) {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.widgets-404 .widget:nth-child(3) {
+	padding-left: 40px;
+}
+.error404 #searchsubmit {
+	display: none;
+}
+.error404 #s {
+	width: 100%;
+	margin-bottom: 2em;
+	margin-top: 0.25em;
+	padding: 0.25em;
 }
 
 
