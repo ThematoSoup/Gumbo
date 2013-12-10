@@ -427,10 +427,14 @@ a:focus,
 a:active {
 	color: #111;
 }
-#secondary a {
+#secondary a,
+#sub-header a,
+#above-footer a {
 	text-decoration: none;
 }
-#secondary a:hover {
+#secondary a:hover,
+#sub-header a:hover,
+#above-footer a:hover {
 	text-decoration: underline;
 }
 /* 1.5 Alignment */
@@ -752,6 +756,7 @@ body.scheme-dark #infinite-footer .container a {
 }
 .scheme-dark .navigation-main li:hover a {
 	background: #f9f9f9;
+	color: #303030 !important;
 }
 /* Links */
 .scheme-dark .entry-content a,
@@ -761,17 +766,17 @@ body.scheme-dark #infinite-footer .container a {
 .scheme-dark .star-rating {
 	color: #e56100;
 }
+.scheme-dark #main a:hover,
+.scheme-dark #sub-header a:hover,
+.scheme-dark #above-header a:hover {
+	color: #fff !important;
+}
 .scheme-dark #main #primary a:visited {
 	color: #7d7c76;
 }
 .scheme-dark #main #primary a:hover,
 .scheme-dark #main .widget a:hover {
-	color: #2f2e28;
-}
-.scheme-dark #main a:active {
-	background: #3f3e38;
-	color: #fff;
-	text-decoration: none;
+	text-decoration: underline;
 }
 .scheme-dark #main #breadcrumbs,
 .scheme-dark #main .woocommerce-breadcrumb {
@@ -2170,7 +2175,7 @@ label .required {
 .widget ul li {
 	display: block;
 	padding: 0.25em 0;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid rgba(0,0,0,0.075);
 }
 .widget ul li:last-child {
 	border-bottom: none;
@@ -2187,7 +2192,8 @@ label .required {
 }
 #wp-calendar th,
 #wp-calendar td {
-	border: 1px solid #eee;
+	border: 1px solid rgba(0,0,0,0.075);
+	border-collapse: separate;
 	text-align: center;
 }
 #wp-calendar tfoot td {
