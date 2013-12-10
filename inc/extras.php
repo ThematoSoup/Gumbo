@@ -443,7 +443,10 @@ class THSP_Post_Meta_Widget extends WP_Widget {
 <?php
 	}
 }
-add_action( 'widgets_init', function() { register_widget( 'THSP_Post_Meta_Widget' ); } );
+function thsp_register_post_meta_widget() {
+	register_widget( 'THSP_Post_Meta_Widget' );
+}
+add_action( 'widgets_init', 'thsp_register_post_meta_widget' );
 
 
 /**
