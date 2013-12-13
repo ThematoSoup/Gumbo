@@ -209,7 +209,7 @@ function thsp_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Footer Widget Area', 'gumbo' ),
+		'name'          => __( 'Footer', 'gumbo' ),
 		'id'            => 'footer-widget-area',
 		'description' => __( 'This widget area is located in site footer.', 'gumbo' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -218,7 +218,7 @@ function thsp_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 	register_sidebar( array(
-		'name' => __( 'Below Header Widget Area', 'gumbo' ),
+		'name' => __( 'Below Header', 'gumbo' ),
 		'description' => __( 'This widget area is located below site header.', 'gumbo' ),
 		'id' => 'sub-header-widget-area',
 		'before_widget' => '<aside id="%1$s" class="widget sub-header-widget %2$s">',
@@ -227,7 +227,7 @@ function thsp_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 	register_sidebar( array(
-		'name' => __( 'Above Footer Widget Area', 'gumbo' ),
+		'name' => __( 'Above Footer', 'gumbo' ),
 		'description' => __( 'This widget area is located above site footer.', 'gumbo' ),
 		'id' => 'above-footer-widget-area',
 		'before_widget' => '<aside id="%1$s" class="widget above-footer-widget %2$s">',
@@ -260,7 +260,7 @@ function thsp_widgets_init() {
 		'after_title'   => '</h4>',
 	) );
 	register_sidebar( array(
-		'name' => __( 'Widgetized Homepage Widget Area', 'gumbo' ),
+		'name' => __( 'Widgetized Homepage', 'gumbo' ),
 		'description' => __( 'This widget area is used in "Widgetized Homepage" page template', 'gumbo' ),
 		'id' => 'homepage-widget-area',
 		'before_widget' => '<aside id="%1$s" class="widget widgetized-homepage-widget %2$s">',
