@@ -37,7 +37,7 @@
 					wp_nav_menu( array(
 						'theme_location'	=> 'top',
 						'container'			=> '',
-						'menu_class'		=> 'menu inner'
+						'menu_class'		=> 'nav-menu menu inner'
 					) );
 				?>
 			</nav><!-- #top-navigation -->

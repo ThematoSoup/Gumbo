@@ -13,7 +13,7 @@
 
 	button.onclick = function() {
 		if ( -1 == menu.className.indexOf( 'nav-menu' ) )
-			menu.className = 'nav-menu';
+			menu.className = 'nav-menu menu inner';
 
 		if ( -1 != button.className.indexOf( 'toggled-on' ) ) {
 			button.className = button.className.replace( ' toggled-on', '' );
