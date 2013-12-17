@@ -1453,7 +1453,9 @@ body.font-size-large,
 #main #primary .entry-title a,
 #main #primary a .entry-title,
 #main #primary .entry-title a:hover,
-#main #primary a:hover .entry-title {
+#main #primary a:hover .entry-title,
+#main #primary .format-image .entry-header > a,
+#main #primary .format-image .entry-header > a:hover {
 	color: #2e2e2e;
 	background: none;
 	text-decoration: none;
@@ -1541,8 +1543,8 @@ body.font-size-large,
 	display: block;
 	margin: 0;	
 }
-.blog .format-image .entry-title,
-.archive .format-image .entry-title {
+.blog .format-image .entry-featured + .entry-title,
+.archive .format-image .entry-featured + .entry-title {
 	margin: 0;
 	position: absolute;
 	bottom: 0;
@@ -1818,13 +1820,14 @@ body.font-size-large,
 .wp-caption img[class*="wp-image-"] {
 	display: block;
 	margin: 1.2% auto 0;
-	max-width: 98%;
 }
 .wp-caption-text {
-	text-align: center;
+	text-align: right;
+	font-style: italic;
+	opacity: 0.75;
 }
 .wp-caption .wp-caption-text {
-	margin: 0.5em 0;
+	margin: 0.25em 0 0.75em;
 }
 .gallery {
 	margin-bottom: 30px !important;
@@ -2027,6 +2030,9 @@ body.woocommerce-page #content nav.woocommerce-pagination ul li span {
 /* 12. =Comments
 ----------------------------------------------- */
 
+#comments {
+	margin-top: 60px;
+}
 .comment-list {
 	margin: 0 0 40px;
 	list-style: none;

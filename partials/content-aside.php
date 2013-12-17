@@ -15,14 +15,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>		
 <?php tha_entry_top(); ?>
 
-	<?php if ( has_post_thumbnail() ) : ?>
-	<header class="entry-header">
-		<div class="entry-thumbnail">
-			<?php the_post_thumbnail( 'thsp-archives-featured', array( 'class' => 'entry-featured') ); ?>
-		</div>
-	</header><!-- .entry-header -->
-	<?php endif; // has_post_thumbnail() ?>
-
 	<div class="entry-content">
 		<?php the_content(); ?>
 	</div><!-- .entry-content -->
