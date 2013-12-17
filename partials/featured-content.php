@@ -17,7 +17,7 @@ if ( ! empty( $featured_posts ) && $thsp_theme_options['display_featured'] && ''
 		<ul class="slides">
 			<?php foreach ( $featured_posts as $featured_post ) : ?>
 			<?php
-			if ( has_post_thumbnail($thumbnail->ID)) :
+			if ( has_post_thumbnail( $featured_post->ID ) ) :
 			$featured_image = get_the_post_thumbnail( $featured_post->ID, 'thsp-featured-content' ); ?>
 			<li><a href="<?php echo get_permalink( $featured_post->ID ); ?>" title="<?php echo esc_attr( get_the_title( $featured_post->ID ) ); ?>">
 				<?php echo $featured_image; ?>

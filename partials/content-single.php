@@ -24,6 +24,11 @@
 		<?php thsp_post_meta_top(); ?>
 	</header><!-- .entry-header -->
 
+	<?php if ( false == get_post_format() && is_active_sidebar( 'post-aside' ) ) : ?>
+	<div class="entry-aside">
+		<?php dynamic_sidebar( 'post-aside' ); ?>
+	</div><!-- .entry-aside -->
+	<?php endif; // is_active_sidebar(); ?>
 	
 	<div class="entry-main">
 		<div class="entry-content">
@@ -41,12 +46,6 @@
 	</div><!-- .entry-main -->
 
 	<?php thsp_post_meta_bottom(); ?>
-
-	<?php if ( false == get_post_format() && is_active_sidebar( 'post-aside' ) ) : ?>
-	<div class="entry-aside">
-		<?php dynamic_sidebar( 'post-aside' ); ?>
-	</div><!-- .entry-aside -->
-	<?php endif; // is_active_sidebar(); ?>
 	
 <?php tha_entry_bottom(); ?>
 </article><!-- #post-## -->
