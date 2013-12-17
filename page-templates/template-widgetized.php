@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Widgetized Homepage
+ * Template Name: Widgetized Template
  *
  * Similar to 2012 homepage template
  *
