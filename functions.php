@@ -109,7 +109,8 @@ function thsp_setup() {
 		'quote',
 		'image',
 		'gallery',
-		'link'
+		'link',
+		'video'
 	) );
 
 	/**
