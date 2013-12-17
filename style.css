@@ -842,7 +842,7 @@ body.font-size-small,
 	font-size: 12px;
 }
 .font-size-small .menu-toggle {
-	font-size: 20px;
+	font-size: 16px;
 }
 .font-size-small .widget,
 .font-size-small #colophon,
@@ -898,7 +898,7 @@ body.font-size-large,
 	font-size: 20px;
 }
 .font-size-large .menu-toggle {
-	font-size: 28px;
+	font-size: 24px;
 }
 .font-size-large .widget,
 .font-size-large #colophon,
@@ -1222,15 +1222,22 @@ body.font-size-large,
 	display: none;
 	cursor: pointer;
 	margin-bottom: 0;
-	padding: 10px 0;
+	padding: 20px 0 0;
+	font-size: 20px;
 }
 .main-small-navigation {
 	text-align: center;
 }
 .main-small-navigation ul {
 	display: none;
-	margin: 0;
+	margin: 20px 0 0;
 	list-style: none;
+	text-align: center !important;
+}
+.main-small-navigation ul ul {
+	display: block;
+	margin: 0 0 20px;
+	font-size: 0.8em;
 }
 .main-small-navigation a {
 	text-decoration: none;
@@ -1248,6 +1255,18 @@ body.font-size-large,
 	}
 	.navigation-main ul {
 		display: none;
+	}
+	#site-navigation {
+		background: none;
+	}
+	#masthead hgroup {
+		padding: 0;
+	}
+	#masthead {
+		padding: 30px 0;
+	}
+	#masthead.has-top-menu {
+		padding-top: 60px;
 	}
 }
 /* 6.3 Compact Header Menu */
@@ -1322,6 +1341,9 @@ body.font-size-large,
 	padding: 5px 0;
 	line-height: 20px;
 	height: 20px;
+	display: inline-block;
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
 }
 #top-navigation #menu-social a[href*="twitter.com"],
 #top-navigation #menu-social a[href*="facebook.com"],
@@ -2571,10 +2593,14 @@ body.woocommerce-page .upsells.products ul li.product.last {
 @media screen and (max-width: 800px) {
 	/* Centered header layout */
 	#masthead hgroup,
-	#masthead .navigation-main {
-		width: auto;
+	#masthead .navigation-main,
+	#masthead #top-navigation ul {
+		width: 100%;
 		float: none;
 		text-align: center;
+	}
+	#masthead #top-navigation ul li {
+		margin: 0 0.4em;
 	}
 	.header-nav-right .navigation-main {
 		margin-left: 0;

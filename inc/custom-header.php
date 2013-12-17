@@ -101,7 +101,9 @@ function thsp_header_style() {
 		.site-header .site-title a,
 		.site-header .site-description,
 		.header-nav-right .navigation-main a,
-		#top-navigation a {
+		#top-navigation a,
+		.menu-toggle,
+		#masthead .main-small-navigation a {
 			color: #<?php echo esc_attr( $text_color ); ?> !important;
 		}
 	<?php endif; ?>
