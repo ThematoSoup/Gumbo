@@ -2536,6 +2536,8 @@ body.woocommerce-page .upsells.products ul li.product.last {
 	-moz-box-shadow: none;
 	-o-box-shadow: none;
 	box-shadow: none;
+	width: 10px;
+	height: 10px;
 	box-sizing: content-box;
 	-moz-box-sizing: content-box;
 }
