@@ -1,6 +1,6 @@
 <?php
 /**
- * Edits to built-in WordPress widgets
+ * Gumbo theme widgets
  *
  * @package		Gumbo
  * @since		Gumbo 1.0

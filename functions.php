@@ -245,22 +245,6 @@ function thsp_widgets_init() {
 		'after_title'   => '</h4>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Post Top', 'gumbo' ),
-		'id'            => 'post-top',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Post Bottom', 'gumbo' ),
-		'id'            => 'post-bottom',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
-	) );
-	register_sidebar( array(
 		'name' => __( 'Widgetized Homepage', 'gumbo' ),
 		'description' => __( 'This widget area is used in "Widgetized Homepage" page template', 'gumbo' ),
 		'id' => 'homepage-widget-area',
