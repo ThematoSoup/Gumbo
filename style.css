@@ -1926,14 +1926,18 @@ object {
 	margin-bottom: 0.3em;
 }
 [class*="navigation"] .prev-post,
-[class*="navigation"] .next-post {
+[class*="navigation"] .prev,
+[class*="navigation"] .next-post,
+[class*="navigation"] .next {
 	font-size: 14px;
 	width: 47%
 }
-[class*="navigation"] .prev-post {
+[class*="navigation"] .prev-post,
+[class*="navigation"] .prev {
 	float: left;
 }
-[class*="navigation"] .next-post {
+[class*="navigation"] .next-post,
+[class*="navigation"] .next {
 	float: right;
 	text-align: right;
 }

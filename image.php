@@ -25,7 +25,7 @@ get_header();
 						<div class="entry-meta">
 							<?php
 								$metadata = wp_get_attachment_metadata();
-								printf( __( '<span class="post-time entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span><br /> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>', 'gumbo' ),
+								printf( __( '<span class="post-time entry-date"><time class="entry-date" datetime="%1$s">%2$s</time></span><br /> <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%8$s</a>', 'gumbo' ),
 									esc_attr( get_the_date( 'c' ) ),
 									esc_html( get_the_date() ),
 									wp_get_attachment_url(),
@@ -40,7 +40,7 @@ get_header();
 						</div><!-- .entry-meta -->
 	
 						<nav role="navigation" id="image-navigation" class="navigation-image">
-							<div class="previous"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'gumbo' ) ); ?></div>
+							<div class="prev"><?php previous_image_link( false, __( '<span class="meta-nav">&larr;</span> Previous', 'gumbo' ) ); ?></div>
 							<div class="next"><?php next_image_link( false, __( 'Next <span class="meta-nav">&rarr;</span>', 'gumbo' ) ); ?></div>
 						</nav><!-- #image-navigation -->
 					</header><!-- .entry-header -->
