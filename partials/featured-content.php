@@ -23,7 +23,9 @@ if ( ! empty( $featured_posts ) && $thsp_theme_options['display_featured'] && ''
 				<?php echo $featured_image; ?>
 				<div class="featured-content-text">
 					<h2 class="featured-post-title"><?php echo get_the_title( $featured_post->ID ); ?></h2>
-					<div class="featured-post-excerpt"><?php echo get_the_excerpt( $featured_post->ID ); ?></div>
+					<?php if ( has_excerpt( $featured_post->ID ) ) : ?>
+					<div class="featured-post-excerpt"><?php echo $featured_post->post_excerpt; ?></div>
+					<?php endif; ?>
 				</div>
 			</a></li>
 			<?php endif; ?>
