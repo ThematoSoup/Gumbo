@@ -407,7 +407,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="search"] {
-	padding: 3px;
+	padding: 6px;
 }
 textarea {
 	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
