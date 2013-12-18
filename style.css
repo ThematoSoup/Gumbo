@@ -1998,11 +1998,14 @@ object {
 .navigation-paging {
 	text-align: center;
 }
-.page-numbers {
+.navigation-paging .page-numbers {
 	display: inline-block;
 	line-height: 1;
 	height: 1em;
+	font-size: 16px;
 	padding: 5px 8px;
+	float: none;
+	width: auto;
 	box-sizing: content-box !important;
 	-moz-box-sizing: content-box;
 	overflow: visible !important;
