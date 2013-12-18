@@ -26,6 +26,14 @@
 		}
 	};
 
+	window.onresize = function() {
+		if ( document.documentElement.clientWidth > 600 ) {
+			container.className = container.className.replace( 'main-small-navigation', 'navigation-main' );
+		} else {
+			container.className = container.className.replace( 'navigation-main', 'main-small-navigation' );
+		}
+	}
+
 	// Hide menu toggle button if menu is empty.
 	if ( ! menu.childNodes.length )
 		button.style.display = 'none';
