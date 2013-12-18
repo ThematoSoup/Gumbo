@@ -286,7 +286,7 @@ function thsp_scripts() {
 			$font_families[] = $body_font_options[ $body_font_value ]['google_font'] . ':400,400italic,700,700italic';
 		else :
 			if ( isset( $body_font_options[ $body_font_value ]['google_font'] ) ) : // Check body font
-				$font_families[] = $body_font_options[ $body_font_value ]['google_font'] . ':400,400italic';
+				$font_families[] = $body_font_options[ $body_font_value ]['google_font'] . ':400,400italic,700,700italic';
 			endif;
 			if ( isset( $heading_font_options[ $heading_font_value ]['google_font'] ) ) : // Check heading font
 				$font_families[] = $heading_font_options[ $heading_font_value ]['google_font'] . ':' . $heading_font_weight;
