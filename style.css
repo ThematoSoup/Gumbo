@@ -1728,6 +1728,9 @@ body.font-size-large,
 	display: inline-block;
 	margin-left: 2em;
 }
+#wpstats {
+	display: none;
+}
 
 
 /* 9. =Page Templates
