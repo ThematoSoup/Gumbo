@@ -102,8 +102,8 @@ function thsp_header_style() {
 		.site-header .site-description,
 		.header-nav-right .navigation-main a,
 		#top-navigation a,
-		.menu-toggle,
-		#masthead .main-small-navigation a {
+		.header-nav-right .menu-toggle,
+		#masthead.header-nav-right .main-small-navigation a {
 			color: #<?php echo esc_attr( $text_color ); ?> !important;
 		}
 		@media screen and (min-width: 601px) {
