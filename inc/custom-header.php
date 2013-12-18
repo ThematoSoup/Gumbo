@@ -106,6 +106,11 @@ function thsp_header_style() {
 		#masthead .main-small-navigation a {
 			color: #<?php echo esc_attr( $text_color ); ?> !important;
 		}
+		@media screen and (min-width: 601px) {
+			#masthead.header-nav-right .navigation-main > ul > li.current-menu-item {
+				border-bottom: 2px solid #<?php echo esc_attr( $text_color ); ?>;
+			}
+		}
 	<?php endif; ?>
 	</style>
 	<?php

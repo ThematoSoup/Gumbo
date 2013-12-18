@@ -1269,6 +1269,11 @@ body.font-size-large,
 		padding-top: 60px;
 	}
 }
+@media screen and (min-width: 601px) {
+	#masthead.header-nav-right .navigation-main > ul > li.current-menu-item {
+		border-bottom: 2px solid #fff;
+	}
+}
 /* 6.3 Compact Header Menu */
 .header-nav-right .navigation-main > ul > li {
 	margin-left: 25px;
