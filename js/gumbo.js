@@ -15,7 +15,7 @@ jQuery( document ).ready( function( $ ) {
 	if( $('.flexslider').length !== 0 ) {
 		$('.flexslider').flexslider({
 			animation: 'fade',
-			directionNav: false
+			directionNav: true
 		});
 	}
 });

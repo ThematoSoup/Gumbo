@@ -2529,6 +2529,7 @@ body.woocommerce-page .upsells.products ul li.product.last {
 #featured-content .slides li {
 	position: relative;
 }
+/* Paging navigation */
 #featured-content .flex-control-paging {
 	width: auto;
 	bottom: -30px;
@@ -2542,7 +2543,7 @@ body.woocommerce-page .upsells.products ul li.product.last {
 	margin-left: 8px;
 }
 #featured-content .flex-control-paging li a {
-	background: rgba(0,0,0,0.25);
+	background: rgba(0,0,0,0.15);
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	-o-box-shadow: none;
@@ -2555,23 +2556,46 @@ body.woocommerce-page .upsells.products ul li.product.last {
 #featured-content .flex-control-paging li a.flex-active {
 	background: rgba(0,0,0,0.9);
 }
+/* Direction navigation (previous/next) */
 #featured-content .flex-direction-nav a {
-	font-size: 40px;
-	line-height: 40px;
-	height: 40px;
-	width: 40px;
+	font-size: 32px;
+	line-height: 1em;
+	height: 32px;
+	width: 32px;
 	text-align: center;
 	color: #fff;
-	text-shadow: 2px 2px 0 rgba(0,0,0,0.8);
+	text-shadow: 1px 1px 0 #000;
 }
 #featured-content .flex-direction-nav a:before {
-	font-size: 40px;
+	font-size: 32px;
+	-webkit-font-smoothing: antialiased;
+	vertical-align: middle;
+}
+#featured-content .flex-prev,
+#featured-content .flex-next {
+	top: 50%;
+	margin-top: -16px;
 }
 #featured-content:hover .flex-prev {
-	left: 40px;
+	left: 30px;
+	text-shadow: 1px -1px 0 #000;
 }	
 #featured-content:hover .flex-next {
-	right: 40px;
+	right: 30px;
+}
+#featured-content:hover .flex-direction-nav a {
+	opacity: 1;
+}
+#featured-content .flex-prev:before {
+	font-family: 'Genericons';
+	content: '\f452';
+	transform: rotate(180deg);
+	-ms-transform: rotate(180deg); /* IE 9 */
+	-webkit-transform: rotate(180deg); /* Safari and Chrome */
+}
+#featured-content .flex-next:before {
+	font-family: 'Genericons';
+	content: '\f452';
 }
 #featured-content .featured-content-text {
 	position: absolute;
@@ -2580,7 +2604,7 @@ body.woocommerce-page .upsells.products ul li.product.last {
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.9);
 	z-index: 10;
 	width: 100%;
-	padding: 30px;
+	padding: 40px 50px;
 	background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.6))); /* Chrome,Safari4+ */
 	background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.6) 100%); /* Chrome10+,Safari5.1+ */
