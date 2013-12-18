@@ -1107,7 +1107,7 @@ body.font-size-large,
 	width: 300px;
 	padding-left: 0;
 	padding-bottom: 0;
-	padding-top: 0;
+	padding-top: 0 !important;
 }
 .header-nav-right .navigation-main {
 	margin-left: 320px;
@@ -1118,7 +1118,7 @@ body.font-size-large,
 	padding-bottom: 0;
 }
 .has-header-image .header-nav-right.has-top-menu {
-	padding-top: 145px;
+	padding-top: 125px;
 }
 .has-header-image.has-logo-image .site-header.header-nav-right {
 	padding-top: 90px;	
@@ -1216,6 +1216,31 @@ body.font-size-large,
 	opacity: 0.8;
 	font-size: 12px;
 	margin-top: 0.25em;
+}
+.menu-item-has-children > a {
+	position: relative;
+}
+.menu-item-has-children > a:before {
+	font-family: 'Genericons';
+	-webkit-font-smoothing: antialiased;
+	font-size: 10px;
+	content: '\f502';
+	display: inline-block;
+	margin-right: 5px;
+	top: 2px;
+	position: relative;
+}
+.sub-menu .menu-item-has-children > a {
+	padding-left: 20px;
+	padding-right: 35px;
+}
+.sub-menu .menu-item-has-children > a:before {
+	content: '\f501';
+	top: 50%;
+	margin-top: -5px;
+	right: 5px;
+	left: auto;
+	position: absolute;
 }
 /* 6.2 Small Menu */
 .menu-toggle {
@@ -1705,9 +1730,6 @@ body.font-size-large,
 #colophon a:hover,
 #infinite-footer .container a:hover {
 	text-decoration: underline;
-}
-#colophon .widget ul li {
-	border-bottom-color: rgba(255,255,255,.1);
 }
 .footer-bottom {
 	padding: 10px;
@@ -2245,16 +2267,10 @@ label .required {
 .widget ul li {
 	display: block;
 	padding: 0.25em 0;
-	border-bottom: 1px solid rgba(0,0,0,0.075);
-}
-.widget ul li:last-child {
-	border-bottom: none;
+	margin-bottom: 0.25em;
 }
 .widget ul.children {
 	margin: 0.25em 0 0 1em;
-}
-.widget ul.children li:first-child {
-	border-top: 1px solid #eee;	
 }
 /* Calendar */
 #wp-calendar {
@@ -2597,6 +2613,7 @@ body.woocommerce-page .upsells.products ul li.product.last {
 	font-family: 'Genericons';
 	content: '\f452';
 }
+/* Featured content text */
 #featured-content .featured-content-text {
 	position: absolute;
 	bottom: 0;
