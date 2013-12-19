@@ -53,22 +53,12 @@ function thsp_content_nav( $nav_id ) {
 			$previous_post = get_adjacent_post( false, '', true );
 			$next_post = get_adjacent_post( false, '', false );
 			echo '<div class="prev prev-post">';
-				echo '<a href="' . get_permalink( $previous_post->ID ) . '" title="' . sprintf( __( 'Previous post: %1$s', 'gumbo' ), esc_attr( get_the_title( $previous_post->ID ) ) ) . '">';
-					echo '<div class="clear">';
-						echo get_the_post_thumbnail( $previous_post->ID, 'thumbnail');
-						echo '<span class="heading">' . __( 'Previous post', 'gumbo' ) . '</span>';
-						echo '<div class="title previous-title">' . get_the_title( $previous_post->ID ) . '</div>';
-					echo '</div>';
-				echo '</a>';
+				echo '<span class="heading">' . __( 'Previous post', 'gumbo' ) . '</span>';
+				echo '<div class="title previous-title"><a href="' . get_permalink( $previous_post->ID ) . '" title="' . sprintf( __( 'Previous post: %1$s', 'gumbo' ), esc_attr( get_the_title( $previous_post->ID ) ) ) . '">' . get_the_title( $previous_post->ID ) . '</a></div>';
 			echo '</div>';
 			echo '<div class="next next-post">';
-				echo '<a href="' . get_permalink( $next_post->ID ) . '" title="' . sprintf( __( 'Next post: %1$s', 'gumbo' ), esc_attr( get_the_title( $next_post->ID ) ) ) . '">';
-					echo '<div class="clear">';
-						echo get_the_post_thumbnail( $next_post->ID, 'thumbnail');
-						echo '<span class="heading">' . __( 'Next post', 'gumbo' ) . '</span>';
-						echo '<div class="title next-title">' . get_the_title( $next_post->ID ) . '</div>';
-					echo '</div>';
-				echo '</a>';
+				echo '<span class="heading">' . __( 'Next post', 'gumbo' ) . '</span>';
+				echo '<div class="title next-title"><a href="' . get_permalink( $next_post->ID ) . '" title="' . sprintf( __( 'Next post: %1$s', 'gumbo' ), esc_attr( get_the_title( $next_post->ID ) ) ) . '">' . get_the_title( $next_post->ID ) . '</a></div>';
 			echo '</div>';
 		?>
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages

@@ -700,8 +700,8 @@ body.scheme-dark,
 .scheme-dark .page-numbers.current,
 .scheme-dark .page-links a:hover span,
 .scheme-dark .navigation-main .sub-menu a:hover {
-	background: #e56100;
-	color: #fff;
+	background: #f58120;
+	color: #111 !important;
 }
 .scheme-dark #main .more-link {
 	background: #e56100;
@@ -789,7 +789,7 @@ body.scheme-dark #infinite-footer .container a {
 	color: #fff !important;
 }
 .scheme-dark #main #primary a:visited {
-	color: #7d7c76;
+	color: #9d9c96;
 }
 .scheme-dark #main #primary a:hover,
 .scheme-dark #main .widget a:hover {
@@ -929,9 +929,16 @@ body.font-size-large,
 	padding: 0 20px;
 }
 .custom-background #page {
+	background: #fff;
 	max-width: 1040px;
 	margin: 0 auto;
 	box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+.scheme-light.custom-background #page {
+	background: #f0efec;
+}
+.scheme-dark.custom-background #page {
+	background: #191919;
 }
 .inner {
 	max-width: 1040px;
@@ -1369,6 +1376,9 @@ body.font-size-large,
 	list-style: none;
 	text-align: right;
 }
+.header-nav-below-centered #top-navigation ul {
+	text-align: center;
+}
 #top-navigation li {
 	display: inline-block;
 	font-size: 14px;
@@ -1519,8 +1529,25 @@ body.font-size-large,
 	margin: 0 0 0.5em;
 	clear: none;
 }
+.page-header {
+	margin-bottom: 60px;
+}
+.scheme-light .page-header {
+	background: #fff;
+	padding: 30px;
+}
+.page-header :last-child {
+	margin-bottom: 0;
+}
 .page-title {
+	font-size: 24px;
 	margin: 0 0 0.5em;
+}
+.font-size-small .page-title {
+	font-size: 20px;
+}
+.font-size-large .page-title {
+	font-size: 28px;
 }
 #main #primary .entry-title a,
 #main #primary a .entry-title,
@@ -1595,7 +1622,9 @@ body.font-size-large,
 	display: none;
 }
 .blog .format-status .entry-content,
-.archive .format-status .entry-content {
+.archive .format-status .entry-content,
+.blog .format-quote,
+.archive .format-quote {
 	font-size: 1.25em;
 }
 .blog .format-image .entry-header,
@@ -1827,9 +1856,15 @@ body.font-size-large,
   font-size: 14px;
 }
 /* 9.2 Masonry */
+#masonry-container {
+	margin: 60px 0;
+}
 .masonry-brick {
 	width: 300px;
 	margin-bottom: 30px;
+}
+.scheme-white .masonry-brick {
+	border-bottom: 1px solid #f6f6f6;
 }
 .masonry-brick .entry-header a {
 	text-decoration: none;
@@ -1920,6 +1955,8 @@ body.font-size-large,
 	text-align: right;
 	font-style: italic;
 	opacity: 0.75;
+	font-size: 0.8em;
+	line-height: 1.2;
 }
 .wp-caption .wp-caption-text {
 	margin: 0.25em 0 0.75em;
@@ -2030,20 +2067,6 @@ object {
 	float: right;
 	text-align: right;
 }
-[class*="navigation"] .prev-post img,
-[class*="navigation"] .next-post img {
-	display: block;
-	width: 80px;
-	height: 80px;
-}
-[class*="navigation"] .prev-post img {
-	float: left;
-	margin-right: 10px;
-}
-[class*="navigation"] .next-post img {
-	float: right;
-	margin-left: 10px;
-}
 [class*="navigation"] .previous-title,
 [class*="navigation"] .next-title {
 	clear: none;
@@ -2126,6 +2149,10 @@ body.woocommerce #content nav.woocommerce-pagination ul li span,
 body.woocommerce-page #content nav.woocommerce-pagination ul li a,
 body.woocommerce-page #content nav.woocommerce-pagination ul li span {
 	padding: 0.3em 0.5em;
+}
+/* Jetpack infinite scroll */
+#infinite-handle {
+	text-align: center;
 }
 
 
@@ -2736,8 +2763,15 @@ body.woocommerce-page .upsells.products ul li.product.last {
 	.sidebar-right #content,
 	.sidebar-left #primary,
 	.sidebar-left #content {
-		margin: 0;
+		margin-left: 0;
+		margin-right: 0;
 		float: none;
+	}
+	.sidebar-right #primary,
+	.sidebar-left #primary {
+		margin-bottom: 40px;
+		padding-bottom: 40px;
+		border-bottom: 1px solid rgba(0,0,0,0.05);
 	}
 	.sidebar-right #secondary,
 	.sidebar-left #secondary {
@@ -2757,9 +2791,16 @@ body.woocommerce-page .upsells.products ul li.product.last {
 	}
 }
 @media screen and (max-width: 600px) {
-	[class*="navigation"] .prev-post img,
-	[class*="navigation"] .next-post img {
-		display: none;
+	[class*="navigation"] .prev-post,
+	[class*="navigation"] .next-post {
+		float: none;
+		width: auto;
+		text-align: left;
+		margin-bottom: 1em;
+	}
+	[class*="navigation"] .prev-post {
+		padding-bottom: 1em;
+		border-bottom: 1px solid rgba(0,0,0,0.05);
 	}
 	.site-info,
 	.footer-bottom .menu {

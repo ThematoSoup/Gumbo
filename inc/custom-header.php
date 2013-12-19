@@ -103,7 +103,8 @@ function thsp_header_style() {
 		.header-nav-right .navigation-main a,
 		#top-navigation a,
 		.header-nav-right .menu-toggle,
-		#masthead.header-nav-right .main-small-navigation a {
+		#masthead.header-nav-right .main-small-navigation a,
+		.scheme-dark #masthead .main-small-navigation a {
 			color: #<?php echo esc_attr( $text_color ); ?> !important;
 		}
 		@media screen and (min-width: 601px) {

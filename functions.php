@@ -30,7 +30,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) )
-	$content_width = 660; /* pixels */
+	$content_width = 640; /* pixels */
 	
 
 /**
@@ -42,7 +42,7 @@ if ( ! isset( $content_width ) )
 function thsp_content_width() {
 	global $content_width;
 
-	if ( ! is_active_sidebar( 'primary-sidebar' ) && ( is_singular( 'post' ) || is_page() || is_archive() || is_404() || is_attachment() ) ) :
+	if ( thsp_has_no_sidebar() ) :
 		$content_width = 1000;
 	endif;
 }
@@ -120,6 +120,15 @@ function thsp_setup() {
 }
 endif; // thsp_setup
 add_action( 'after_setup_theme', 'thsp_setup' );
+
+
+/**
+ * Adds editor style
+ */
+function thsp_editor_style() {	
+	add_editor_style( 'css/editor-style.css' );
+}
+add_action( 'init', 'thsp_editor_style' );
 
 
 /**
@@ -257,13 +266,11 @@ function thsp_widgets_init() {
 add_action( 'widgets_init', 'thsp_widgets_init' );
 
 
-/**
- * Enqueue scripts and styles
+/*
+ * Return Google Fonts url
  */
-function thsp_scripts() {
+function thsp_google_fonts_url() {
 	/*
-	 * Enqueue Google Fonts
-	 *
 	 * Check if fonts set in theme options require loading
 	 * of Google scripts
 	 */
@@ -298,11 +305,22 @@ function thsp_scripts() {
 			'subset' => urlencode( 'latin,latin-ext' ),
 		);
 		$fonts_url = add_query_arg( $query_args, "//fonts.googleapis.com/css" );
+		
+		return $fonts_url;
+	else:
+		return false;
+	endif;	
+}
 
-		// Enqueue the font
+/**
+ * Enqueue scripts and styles
+ */
+function thsp_scripts() {
+	// Enqueue the font
+	if ( thsp_google_fonts_url() ) :
 		wp_enqueue_style(
 			'gumbo-fonts',
-			$fonts_url
+			thsp_google_fonts_url()
 		);
 	endif;
 	
@@ -329,6 +347,7 @@ function thsp_scripts() {
 	endif; 
 	
 	// Flex Slider for featured content
+	$theme_options = thsp_cbp_get_options_values();
 	if ( is_home() && $theme_options['display_featured'] ) :
 		wp_enqueue_style( 'flex-slider', get_template_directory_uri() . '/js/flexslider/flexslider.css', array(), '2.2.0' );
 		wp_enqueue_script( 'flex-slider', get_template_directory_uri() . '/js/flexslider/jquery.flexslider-min.js', array( 'jquery' ), '2.2.0' );

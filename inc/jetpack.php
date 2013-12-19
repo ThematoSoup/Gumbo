@@ -17,7 +17,7 @@ function thsp_infinite_scroll_setup() {
 		add_theme_support( 'infinite-scroll', array(
 			'container' 		=> 'content',
 			'footer'		    => 'main',
-			'type'				=> 'scroll',
+			'type'				=> 'click',
 			'render'			=> 'thsp_jetpack_render',
 			'posts_per_page'	=> 5
 		) );
