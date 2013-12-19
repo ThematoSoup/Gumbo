@@ -245,8 +245,8 @@ function thsp_widgets_init() {
 		'after_title'   => '</h4>',
 	) );
 	register_sidebar( array(
-		'name' => __( 'Widgetized Homepage', 'gumbo' ),
-		'description' => __( 'This widget area is used in "Widgetized Homepage" page template', 'gumbo' ),
+		'name' => __( 'Widgetized Template', 'gumbo' ),
+		'description' => __( 'This widget area is used in Widgetized Page Template', 'gumbo' ),
 		'id' => 'homepage-widget-area',
 		'before_widget' => '<aside id="%1$s" class="widget widgetized-homepage-widget %2$s">',
 		'after_widget'  => '</aside>',

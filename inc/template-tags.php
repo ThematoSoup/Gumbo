@@ -168,7 +168,7 @@ endif;
 
 if ( ! function_exists( 'thsp_post_meta_bottom' ) ) :
 /**
- * Prints HTML with post categories, if it's not a single category blog.
+ * Prints HTML with tags and edit link.
  */
 function thsp_post_meta_bottom() {
 	/* translators: used between list items, there is a space after the comma */

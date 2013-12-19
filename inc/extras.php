@@ -91,12 +91,12 @@ function thsp_body_classes( $classes ) {
 	endif;
 	
 	// Check if header and footer are hidden in single post view
-	if ( is_single() ) :
-		if( get_post_meta( $post->ID, '_thsp_has_no_header', true ) ) :
+	if ( is_single() || is_page() ) :
+		if(  get_post_meta( $post->ID, '_thsp_has_no_header', true ) ) :
 			$thsp_body_classes[] = 'has-no-header';
 		endif;
 		
-		if( get_post_meta( $post->ID, '_thsp_has_no_header', true ) ) :
+		if ( get_post_meta( $post->ID, '_thsp_has_no_footer', true ) ) :
 			$thsp_body_classes[] = 'has-no-footer';
 		endif;
 	endif;
@@ -446,7 +446,7 @@ function thsp_has_no_header() {
 	global $post;
 	$thsp_has_no_header = false;
 	
-	if ( is_single() && get_post_meta( $post->ID, '_thsp_has_no_header', true ) ) :
+	if ( is_singular() && get_post_meta( $post->ID, '_thsp_has_no_header', true ) ) :
 		$thsp_has_no_header = true;
 	endif;
 		
@@ -463,7 +463,7 @@ function thsp_has_no_footer() {
 	global $post;
 	$thsp_has_no_header = false;
 	
-	if ( is_single() && get_post_meta( $post->ID, '_thsp_has_no_footer', true ) ) :
+	if ( is_singular() && get_post_meta( $post->ID, '_thsp_has_no_footer', true ) ) :
 		$thsp_has_no_header = true;
 	endif;
 		
