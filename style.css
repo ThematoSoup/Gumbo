@@ -635,7 +635,9 @@ body.scheme-light {
 .scheme-light #main #primary .entry-title a:hover,
 .scheme-light #main #primary .entry-title a:visited,
 .scheme-light #main #primary a:hover .entry-title,
-.scheme-light #main #primary a:visited .entry-title {
+.scheme-light #main #primary a:visited .entry-title,
+.scheme-light #main #primary .author-name a,
+.scheme-light #main #primary .author-name a:hover {
 	color: #252422;
 }
 .scheme-light #colophon,
@@ -717,7 +719,9 @@ body.scheme-dark,
 .scheme-dark #main #primary .entry-title a,
 .scheme-dark #main #primary a .entry-title,
 .scheme-dark #main #primary .entry-title a:hover,
-.scheme-dark #main #primary a:hover .entry-title {
+.scheme-dark #main #primary a:hover .entry-title,
+.scheme-dark #main #primary .author-name a,
+.scheme-dark #main #primary .author-name a:hover {
 	color: #f9f9f9 !important;
 }
 body.scheme-dark #masthead,
@@ -1523,7 +1527,9 @@ body.font-size-large,
 #main #primary .entry-title a:hover,
 #main #primary a:hover .entry-title,
 #main #primary .format-image .entry-header > a,
-#main #primary .format-image .entry-header > a:hover {
+#main #primary .format-image .entry-header > a:hover,
+#main #primary .author-name a,
+#main #primary .author-name a:hover {
 	color: #2e2e2e;
 	background: none;
 	text-decoration: none;

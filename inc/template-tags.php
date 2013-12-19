@@ -212,7 +212,7 @@ function thsp_display_an_author( $author ) { ?>
 			<?php echo get_avatar( $author->ID, 96 ); ?>
 		</div><!-- .author-avatar -->
 		<div class="author-text">
-			<h2><?php echo get_the_author_meta( 'display_name', $author->ID ); ?></h2>
+			<h2 class="author-name"><a href="<?php echo get_author_posts_url( $author->ID ); ?>"><?php echo get_the_author_meta( 'display_name', $author->ID ); ?></a></h2>
 			<?php echo wpautop( get_the_author_meta( 'description', $author->ID ) ); ?>
 			
 			<!-- Latest posts by author -->
