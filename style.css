@@ -988,9 +988,7 @@ body.font-size-large,
 .page-template-page-templatestemplate-masonry-php #primary,
 .page-template-page-templatestemplate-masonry-php #content,
 .page-template-page-templatestemplate-widgetized-php #primary,
-.page-template-page-templatestemplate-widgetized-php #content,
-.page-template-page-templatestemplate-full-width-php #primary,
-.page-template-page-templatestemplate-full-width-php #content {
+.page-template-page-templatestemplate-widgetized-php #content {
 	margin: 0;
 	width: auto;
 	float: none;
