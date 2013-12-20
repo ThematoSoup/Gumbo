@@ -30,12 +30,12 @@ function thsp_metaboxes( $meta_boxes ) {
 		'show_names'	=> true, // Show field names on the left
 		'fields'		=> array(
 			array(
-				'name'		=> __( 'Layout', 'gumbo' ),
-				'desc'		=> '',
-				'id'		=> $prefix . 'post_layout',
-				'type'		=> 'radio',
-				'std'		=> $default_layout,
-				'options'	=> array(
+				'name'			=> __( 'Layout', 'gumbo' ),
+				'desc'			=> '',
+				'id'			=> $prefix . 'post_layout',
+				'type'			=> 'radio',
+				'std'			=> $default_layout,
+				'options'		=> array(
 					array(
 						'name'	=> __( 'Right sidebar', 'gumbo' ),
 						'value'	=> 'sidebar-right'

@@ -285,19 +285,19 @@ function thsp_theme_options_array() {
 					), // End setting args			
 					'control_args' => array(
 						'label' => __( 'Default page layout', 'gumbo' ),
-						'type' => 'images_radio', // Image radio replacement
+						'type' => 'radio', // Image radio replacement
 						'choices' => array(
 							'sidebar-right' =>  array(
 								'label' => __( 'Right sidebar', 'gumbo' ),
-								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-cp.png'
+								// 'image_src' => get_template_directory_uri() . '/images/theme-options/layout-cp.png'
 							),
 							'sidebar-left' => array(
 								'label' => __( 'Left sidebar', 'gumbo' ),
-								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-pc.png'
+								// 'image_src' => get_template_directory_uri() . '/images/theme-options/layout-pc.png'
 							),
 							'no-sidebar' => array(
 								'label' => __( 'No sidebar', 'gumbo' ),
-								'image_src' => get_template_directory_uri() . '/images/theme-options/layout-c.png'
+								// 'image_src' => get_template_directory_uri() . '/images/theme-options/layout-c.png'
 							),
 						),					
 						'priority' => 2
@@ -312,20 +312,20 @@ function thsp_theme_options_array() {
 					), // End setting args			
 					'control_args' => array(
 						'label' => __( 'Header layout', 'gumbo' ),
-						'type' => 'images_radio', // Image radio replacement
+						'type' => 'radio', // Image radio replacement
 						'choices' => array(
 							'nav-below' =>  array(
 								'label' => __( 'Navigation below title and tagline', 'gumbo' ),
-								'image_src' => get_template_directory_uri() . '/images/theme-options/nav-below.png'
+								// 'image_src' => get_template_directory_uri() . '/images/theme-options/nav-below.png'
 							),
-							'nav-below-centered' =>  array(
-								'label' => __( 'Navigation below title and tagline, centered', 'gumbo' ),
-								'image_src' => get_template_directory_uri() . '/images/theme-options/nav-below-centered.png'
-							),							
 							'nav-right' => array(
 								'label' => __( 'Navigation next to title and tagline', 'gumbo' ),
-								'image_src' => get_template_directory_uri() . '/images/theme-options/nav-right.png'
+								// 'image_src' => get_template_directory_uri() . '/images/theme-options/nav-right.png'
 							),
+							'nav-below-centered' =>  array(
+								'label' => __( 'Center aligned', 'gumbo' ),
+								// 'image_src' => get_template_directory_uri() . '/images/theme-options/nav-below-centered.png'
+							),							
 						),					
 						'priority' => 3
 					) // End control args
