@@ -2598,15 +2598,6 @@ body.woocommerce-page .upsells.products ul li.product.last {
 }
 
 
-
-/* 17. =Sliders
------------------------------------------------ */
-
-#top-slider .ls-wp-fullwidth-container {
-	margin-top: 0;
-}
-
-
 /* 18. =Featured Content
 ----------------------------------------------- */
 
@@ -2664,6 +2655,7 @@ body.woocommerce-page .upsells.products ul li.product.last {
 	text-align: center;
 	color: #fff;
 	text-shadow: 1px 1px 0 #000;
+	text-decoration: none;
 }
 #featured-content .flex-direction-nav a:before {
 	font-size: 32px;
