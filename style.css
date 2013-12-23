@@ -1239,6 +1239,7 @@ body.font-size-large,
 	opacity: 0.8;
 	font-size: 12px;
 	margin-top: 0.25em;
+	font-weight: 300;
 }
 .navigation-main .menu-item-has-children > a {
 	position: relative;
@@ -2269,7 +2270,7 @@ article.comment {
 .scheme-dark .wpcf7 input[type="email"],
 .scheme-dark .wpcf7 textarea,
 .scheme-dark .protected-post-form input[type="password"],
-#s {
+.scheme-dark #s {
 	background: #444;
 	border-color: #333;
 	color: #ddd;
