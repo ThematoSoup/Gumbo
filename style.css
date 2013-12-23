@@ -2602,9 +2602,7 @@ body.woocommerce-page .upsells.products ul li.product.last {
 ----------------------------------------------- */
 
 #featured-content {
-	margin: 60px auto 0;
-	padding: 0 20px;
-	max-width: 1040px;
+	margin: 0;
 	background: none;
 	border: none;
 	-webkit-border-radius: 0;
@@ -2621,10 +2619,10 @@ body.woocommerce-page .upsells.products ul li.product.last {
 }
 /* Paging navigation */
 #featured-content .flex-control-paging {
-	width: auto;
+	width: 100%;
 	bottom: -30px;
-	text-align: right;
-	right: 20px;
+	text-align: center;
+	left: 0;
 	z-index: 10;
 }
 #featured-content .flex-control-paging li {
