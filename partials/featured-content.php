@@ -13,7 +13,7 @@ $featured_posts = thsp_fetch_featured_posts();
 $thsp_theme_options = thsp_cbp_get_options_values();
 if ( ! empty( $featured_posts ) && $thsp_theme_options['display_featured'] && '' != $thsp_theme_options['featured_content_tag'] ) : ?>
 
-	<div id="featured-content" class="flexslider">
+	<div id="featured-content" class="flexslider <?php echo $thsp_theme_options['slider_width']; ?>">
 		<ul class="slides">
 			<?php foreach ( $featured_posts as $featured_post ) : ?>
 			<?php

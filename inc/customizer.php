@@ -381,6 +381,27 @@ function thsp_theme_options_array() {
 						'priority' => 3
 					)
 				),
+				'slider_width' => array(
+					'setting_args' => array(
+						'std' => 'full-width',
+						'type' => 'option',
+						'capability' => $thsp_cbp_capability,
+						'transport' => 'refresh',
+					), // End setting args			
+					'control_args' => array(
+						'label' => __( 'Featured content width', 'gumbo' ),
+						'type' => 'radio', // Radio control
+						'choices' => array(
+							'full-width' => array(
+								'label' => __( 'Full width', 'gumbo' ),
+							),
+							'content-width' => array(
+								'label' => __( 'Content width', 'gumbo'),
+							),
+						),
+						'priority' => 10
+					) // End control args
+				),
 			) // End fields
 		),
 		
