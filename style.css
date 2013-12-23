@@ -252,7 +252,7 @@ dfn, cite, em, i {
 	font-style: italic;
 }
 blockquote {
-	margin: 0 1.5em;
+	margin: 2em 1.5em;
 	padding-left: 1em;
 	border-left: 3px solid #666;
 	font-style: italic;
@@ -308,7 +308,7 @@ figure {
 	margin: 0;
 }
 table {
-	margin: 0 0 1.5em;
+	margin: 1.5em 0;
 	width: 100%;
 }
 th {
@@ -621,9 +621,6 @@ body.scheme-light {
 .scheme-light #main .sticky {
 	border: none;
 }
-.scheme-light.blog .hentry,
-.scheme-light.archive .hentry {
-}
 .scheme-light h1,
 .scheme-light h2,
 .scheme-light h3,
@@ -686,6 +683,10 @@ body.scheme-light {
 .scheme-light .entry-meta:last-child {
 	margin-bottom: 0;
 }
+.scheme-light #main th,
+.scheme-light #main td {
+	border-color: #d9d9d9;
+}
 
 /* 2.3 Dark */
 body.scheme-dark,
@@ -739,7 +740,6 @@ body.scheme-dark #infinite-footer .container a {
 .scheme-dark #above-footer {
 	background: #262626;
 }
-.scheme-dark #masthead #top-navigation,
 .scheme-dark #masthead #site-navigation,
 .scheme-dark #sub-header,
 .scheme-dark #main,
@@ -817,6 +817,13 @@ body.scheme-dark #infinite-footer .container a {
 .scheme-dark body.woocommerce #content nav.woocommerce-pagination ul li a:hover,
 .scheme-dark body.woocommerce-page #content nav.woocommerce-pagination ul li a:hover {
 	background: #444 !important;
+}
+.scheme-dark #main th,
+.scheme-dark #main td {
+	border-color: #444;
+}
+.scheme-dark pre {
+	background: #444;
 }
 
 
@@ -1543,6 +1550,14 @@ body.font-size-large,
 	font-size: 24px;
 	margin: 0 0 0.5em;
 }
+.hentry table {
+	border-collapse: collapse;
+}
+.hentry table th,
+.hentry table td {
+	border: 1px solid #eee;
+	padding: 5px;
+}
 .font-size-small .page-title {
 	font-size: 20px;
 }
@@ -2253,7 +2268,8 @@ article.comment {
 .scheme-dark .wpcf7 input[type="text"],
 .scheme-dark .wpcf7 input[type="email"],
 .scheme-dark .wpcf7 textarea,
-.scheme-dark .protected-post-form input[type="password"] {
+.scheme-dark .protected-post-form input[type="password"],
+#s {
 	background: #444;
 	border-color: #333;
 	color: #ddd;
@@ -2268,7 +2284,7 @@ article.comment {
 .wpcf7 input[type="text"]:focus,
 .wpcf7 input[type="email"]:focus,
 .wpcf7 textarea:focus,
-.protected-post-form input[type="password"]:focus {
+.protected-post-form input[type="password"]:focus, {
 	outline: none;
 	background: #fdfdfd;
 	border-color: #e6e6e6;
@@ -2279,7 +2295,8 @@ article.comment {
 .scheme-dark .wpcf7 input[type="text"]:focus,
 .scheme-dark .wpcf7 input[type="email"]:focus,
 .scheme-dark .wpcf7 textarea:focus,
-.scheme-dark .protected-post-form input[type="password"]:focus {
+.scheme-dark .protected-post-form input[type="password"]:focus,
+.scheme-dark #s:focus {
 	background: #ccc;
 	border-color: #555;
 	color: #111;
@@ -2361,7 +2378,7 @@ label .required {
 }
 #wp-calendar th,
 #wp-calendar td {
-	border: 1px solid rgba(0,0,0,0.075);
+	border: 1px solid #eee;
 	border-collapse: separate;
 	text-align: center;
 }
@@ -2599,6 +2616,16 @@ body.woocommerce-page .upsells.products ul li.product.last {
 .woocommerce .added_to_cart {
 	display: block !important;
 	margin-top: 0.25em;
+}
+body.woocommerce span.onsale,
+body.woocommerce-page span.onsale {
+	border-radius: 0;
+	line-height: 1.2;
+	min-height: 0;
+}
+body.woocommerce ul.products li.product .onsale,
+body.woocommerce-page ul.products li.product .onsale {
+	margin: 0;
 }
 
 
