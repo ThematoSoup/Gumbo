@@ -1266,6 +1266,13 @@ body.font-size-large,
 	left: auto;
 	position: absolute;
 }
+@media screen and (min-width: 801px) {
+	.header-nav-right .navigation-main .sub-menu .menu-item-has-children > a:before {
+		content: '\f503';
+		left: 5px;
+		right: auto;
+	}
+}
 /* 6.2 Small Menu */
 .menu-toggle {
 	display: none;
