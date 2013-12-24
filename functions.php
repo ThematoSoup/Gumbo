@@ -343,7 +343,8 @@ function thsp_scripts() {
 	
 	// Masonry script
 	if ( is_page_template( 'page-templates/template-masonry.php' ) ) :
-		wp_enqueue_script( 'gumbo-masonry', get_template_directory_uri() . '/js/masonry.pkgd.min.js', array( 'jquery' ), '3.1.0' );
+		wp_enqueue_script( 'gumbo-images-loaded', get_template_directory_uri() . '/js/imagesloaded.pkgd.js', array( 'jquery' ), '3.1.0' );
+		wp_enqueue_script( 'gumbo-masonry', get_template_directory_uri() . '/js/masonry.pkgd.min.js', array( 'jquery', 'gumbo-images-loaded' ), '3.1.0' );
 	endif; 
 	
 	// Flex Slider for featured content

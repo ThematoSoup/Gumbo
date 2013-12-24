@@ -6,9 +6,11 @@ jQuery( document ).ready( function( $ ) {
 		var $container = $('#masonry-container');
 		
 		// Homepage layout
-		$($container).masonry({
-			itemSelector:	'.masonry-brick',
-			gutter:			30
+		$container.imagesLoaded( function() {
+			$($container).masonry({
+				itemSelector:	'.masonry-brick',
+				gutter:			30
+			});
 		});
 	}
 
