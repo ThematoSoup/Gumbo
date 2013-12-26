@@ -2743,6 +2743,10 @@ body.woocommerce-page ul.products li.product .onsale {
 	transform: translate(-50%,-50%);
 	-ms-transform: translate(-50%,-50%); /* IE 9 */
 	-webkit-transform: translate(-50%,-50%); /* Safari and Chrome */
+	background: -webkit-radial-gradient(closest-corner, rgba(0,0,0,0.25), rgba(0,0,0,0)); /* Safari */
+	background: -o-radial-gradient(closest-side, rgba(0,0,0,0.25), rgba(0,0,0,0)); /* For Opera 11.1 to 12.0 */
+	background: -moz-radial-gradient(closest-side, rgba(0,0,0,0.25), rgba(0,0,0,0)); /* For Firefox 3.6 to 15 */
+	background: radial-gradient(closest-side, rgba(0,0,0,0.25), rgba(0,0,0,0)); /* Standard syntax */
 }
 #featured-content .featured-content-text .featured-post-title {
 	font-size: 40px;

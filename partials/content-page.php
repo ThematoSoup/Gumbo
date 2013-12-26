@@ -12,6 +12,12 @@
 <?php tha_entry_top(); ?>
 
 	<header class="entry-header">
+		<?php if ( false == get_post_format() && has_post_thumbnail() ) : ?>
+			<div class="entry-thumbnail">
+				<?php the_post_thumbnail( 'thsp-archives-featured', array( 'class' => 'entry-featured') ); ?>
+			</div>
+		<?php endif; // has_post_thumbnail() ?>
+
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 	</header><!-- .entry-header -->
 
