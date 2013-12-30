@@ -212,6 +212,7 @@ add_action( 'after_setup_theme', 'thsp_register_custom_background' );
 function thsp_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Primary Sidebar', 'gumbo' ),
+		'description'	=> __( 'Main widget area, used throughout your site.', 'gumbo' ),
 		'id'            => 'primary-sidebar',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -221,15 +222,15 @@ function thsp_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Footer', 'gumbo' ),
 		'id'            => 'footer-widget-area',
-		'description' => __( 'This widget area is located in site footer.', 'gumbo' ),
+		'description'	=> __( 'This widget area is located in site footer.', 'gumbo' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
 	register_sidebar( array(
-		'name' => __( 'Below Header', 'gumbo' ),
-		'description' => __( 'This widget area is located below site header.', 'gumbo' ),
+		'name'			=> __( 'Below Header', 'gumbo' ),
+		'description'	=> __( 'This widget area is located below site header.', 'gumbo' ),
 		'id' => 'sub-header-widget-area',
 		'before_widget' => '<aside id="%1$s" class="widget sub-header-widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -237,8 +238,8 @@ function thsp_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 	register_sidebar( array(
-		'name' => __( 'Above Footer', 'gumbo' ),
-		'description' => __( 'This widget area is located above site footer.', 'gumbo' ),
+		'name'			=> __( 'Above Footer', 'gumbo' ),
+		'description'	=> __( 'This widget area is located above site footer.', 'gumbo' ),
 		'id' => 'above-footer-widget-area',
 		'before_widget' => '<aside id="%1$s" class="widget above-footer-widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -247,6 +248,7 @@ function thsp_widgets_init() {
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Post Aside', 'gumbo' ),
+		'description'	=> __( 'Appears next to post content in posts with standard post format.', 'gumbo' ),
 		'id'            => 'post-aside',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',

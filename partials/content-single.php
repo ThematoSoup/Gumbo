@@ -12,23 +12,23 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class( $has_post_aside_class . ' clear' ); ?>>
 <?php tha_entry_top(); ?>
 	
-	<header class="entry-header">
-		<?php if ( false == get_post_format() && has_post_thumbnail() ) : ?>
-			<div class="entry-thumbnail">
-				<?php the_post_thumbnail( 'thsp-archives-featured', array( 'class' => 'entry-featured') ); ?>
-			</div>
-		<?php endif; // has_post_thumbnail() ?>
-		
-		<h1 class="entry-title"><?php the_title(); ?></h1>
-
-		<?php thsp_post_meta_top(); ?>
-	</header><!-- .entry-header -->
+	<?php if ( false == get_post_format() && has_post_thumbnail() ) : ?>
+		<div class="entry-thumbnail">
+			<?php the_post_thumbnail( 'thsp-archives-featured', array( 'class' => 'entry-featured') ); ?>
+		</div>
+	<?php endif; // has_post_thumbnail() ?>
 
 	<?php if ( false == get_post_format() && is_active_sidebar( 'post-aside' ) ) : ?>
 	<div class="entry-aside">
 		<?php dynamic_sidebar( 'post-aside' ); ?>
 	</div><!-- .entry-aside -->
 	<?php endif; // is_active_sidebar(); ?>
+
+	<header class="entry-header">		
+		<h1 class="entry-title"><?php the_title(); ?></h1>
+
+		<?php thsp_post_meta_top(); ?>
+	</header><!-- .entry-header -->
 	
 	<div class="entry-main">
 		<div class="entry-content">
