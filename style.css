@@ -1980,9 +1980,10 @@ body.font-size-large,
 	opacity: 0.75;
 	font-size: 0.8em;
 	line-height: 1.2;
+	padding: 0 5px;
 }
 .wp-caption .wp-caption-text {
-	margin: 0.25em 0 0.75em;
+	margin: 0.5em 0;
 }
 .gallery {
 	margin-bottom: 30px !important;
