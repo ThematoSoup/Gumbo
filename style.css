@@ -2772,6 +2772,10 @@ body.woocommerce-page ul.products li.product .onsale {
 	display: block;
 	max-height: 480px;
 }
+#featured-content.full-width .slides a,
+#featured-content.full-width .slides img {
+	max-height: none;
+}
 
 
 /* 19. =Media Queries
