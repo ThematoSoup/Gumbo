@@ -19,7 +19,6 @@ function thsp_metaboxes( $meta_boxes ) {
 	$prefix				= '_thsp_';
 	$thsp_theme_options	= thsp_cbp_get_options_values();
 	$default_layout		= $thsp_theme_options['default_layout'];
-	$default_font_size	= $thsp_theme_options['font_size'];
 
 	// Posts metabox
 	$meta_boxes[] = array(
@@ -67,7 +66,7 @@ function thsp_metaboxes( $meta_boxes ) {
 				'name'		=> __( 'Font size', 'gumbo' ),
 				'desc'		=> __( 'If set, this option will override font size set in Theme Customizer', 'gumbo' ),
 				'id'		=> $prefix . 'post_font_size',
-				'std'		=> $default_font_size,
+				'std'		=> '',
 				'type'		=> 'radio',
 				'options'	=> array(
 					array(

@@ -82,7 +82,7 @@ function thsp_body_classes( $classes ) {
 	$thsp_body_classes[] = 'scheme-' . $thsp_theme_options['color_scheme'];
 
 	// Font size class
-	if ( is_single() && get_post_meta( $post->ID, '_thsp_post_font_size', true ) != $thsp_theme_options['font_size'] ) :
+	if ( is_singular() && get_post_meta( $post->ID, '_thsp_post_font_size', true ) && get_post_meta( $post->ID, '_thsp_post_font_size', true ) != $thsp_theme_options['font_size'] ) :
 		$font_size = get_post_meta( $post->ID, '_thsp_post_font_size', true );
 	else :
 		$font_size = $thsp_theme_options['font_size'];
