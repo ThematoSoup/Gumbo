@@ -53,7 +53,7 @@ add_action( 'template_redirect', 'thsp_content_width' );
  * Add custom image size(s)
  */
 if ( function_exists( 'add_image_size' ) ) { 
-	add_image_size( 'thsp-archives-featured', 660, 9999 );
+	add_image_size( 'thsp-archives-featured', 660, 330, true );
 	add_image_size( 'thsp-featured-content', 1000, 480, true );
 	add_image_size( 'thsp-masonry', 300, 180, true );
 }
@@ -282,7 +282,7 @@ function thsp_google_fonts_url() {
 	$heading_font_value		= $theme_options['heading_font'];
 	$body_font_options		= $theme_options_fields['thsp_typography_section']['fields']['body_font']['control_args']['choices'];
 	$heading_font_options	= $theme_options_fields['thsp_typography_section']['fields']['heading_font']['control_args']['choices'];
-	$heading_font_weight	= $thsp_theme_options['heading_weight'] ? '700,700italic' : '400,400italic';
+	$heading_font_weight	= $theme_options['heading_weight'] ? '700,700italic' : '400,400italic';
     
 	/*
 	 * Check if Google Fonts are needed

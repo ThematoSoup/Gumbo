@@ -199,7 +199,7 @@ function thsp_get_current_layout() {
 function thsp_has_no_sidebar() {
 	global $post;
 	
-	if ( is_single() && get_post_meta( $post->ID, '_thsp_has_no_sidebar', true ) ) :
+	if ( is_singular() && get_post_meta( $post->ID, '_thsp_has_no_sidebar', true ) ) :
 		return true;
 	endif;
 	

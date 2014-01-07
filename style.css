@@ -2386,6 +2386,10 @@ label .required {
 .widget ul.children {
 	margin: 0.25em 0 0 1em;
 }
+.widget_recent_entries li span {
+	display: block;
+	font-size: 0.85em;
+}
 /* Calendar */
 #wp-calendar {
 	border-collapse: collapse;
