@@ -48,6 +48,10 @@ function thsp_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 	
+	// Content width
+	global $content_width;
+	$thsp_body_classes[] = 'content-' . $content_width;
+
 	// Get layout class and add it to body_class array
 	$thsp_current_layout = thsp_get_current_layout();
 	$thsp_body_classes[] = $thsp_current_layout;
@@ -199,7 +203,7 @@ function thsp_get_current_layout() {
 function thsp_has_no_sidebar() {
 	global $post;
 	
-	if ( is_singular() && get_post_meta( $post->ID, '_thsp_has_no_sidebar', true ) ) :
+	if ( is_singular() && 'no-sidebar' == get_post_meta( $post->ID, '_thsp_post_layout', true ) ) :
 		return true;
 	endif;
 	
