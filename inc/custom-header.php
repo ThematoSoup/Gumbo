@@ -141,7 +141,7 @@ function thsp_admin_header_style() {
 		position: absolute;
 	}
 	#headimg h1 {
-		top: 65px;
+		top: 45px;
 		font-size: 48px;
 		left: 40px;
 		line-height: 1;
@@ -152,7 +152,7 @@ function thsp_admin_header_style() {
 	}
 	#desc {
 		position: absolute;
-		top: 115px;
+		top: 95px;
 		left: 40px;
 		font-size: 16px;
 	}
