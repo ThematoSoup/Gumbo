@@ -2229,10 +2229,17 @@ article.comment {
 	top: 0;
 	left: 0;
 }
-.comment footer {
+.comment footer,
+.comment-content {
 	font-size: 14px;
 	line-height: 24px;
 	margin-bottom: 12px;
+}
+.comment footer .comment-author {
+	font-size: 16px;
+}
+.comment-content p {
+	margin-bottom: 0.8em;
 }
 .comment-content a {
 	word-wrap: break-word;
