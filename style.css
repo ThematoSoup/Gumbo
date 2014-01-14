@@ -2265,14 +2265,14 @@ article.comment {
 #commentform label,
 .wpcf7 label {
 	display: block;
-	margin-bottom: 5px
+	margin-bottom: 5px;
 }
 #commentform input[type="text"],
 #commentform input[type="email"],
 .wpcf7 input[type="text"],
 .wpcf7 input[type="email"],
 .protected-post-form input[type="password"] {
-	width: 50%;
+	width: 60%;
 }
 #commentform input[type="text"],
 #commentform input[type="email"],
@@ -2281,11 +2281,9 @@ article.comment {
 .wpcf7 input[type="email"],
 .wpcf7 textarea,
 .protected-post-form input[type="password"] {
-	border: 2px solid #f6f6f6;
+	border: 1px solid #e3e3e3;
 	border-radius: 0;
-	padding: 5px;
-	-webkit-transition: all 50ms linear;
-	transition: all 50ms linear;
+	padding: 8px;
 }
 .scheme-dark #commentform input[type="text"],
 .scheme-dark #commentform input[type="email"],
@@ -2309,10 +2307,10 @@ article.comment {
 .wpcf7 input[type="text"]:focus,
 .wpcf7 input[type="email"]:focus,
 .wpcf7 textarea:focus,
-.protected-post-form input[type="password"]:focus, {
+.protected-post-form input[type="password"]:focus {
 	outline: none;
-	background: #fdfdfd;
-	border-color: #e6e6e6;
+	background: #f9f9f9 !important;
+	border-color: #ccc;
 }
 .scheme-dark #commentform input[type="text"]:focus,
 .scheme-dark #commentform input[type="email"]:focus,
