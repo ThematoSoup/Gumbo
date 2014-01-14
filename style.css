@@ -1889,7 +1889,7 @@ body.font-size-large,
 }
 /* 9.2 Masonry */
 #masonry-container {
-	margin: 60px 0;
+	margin: 0 0 40px;
 }
 .masonry-brick {
 	width: 300px;
