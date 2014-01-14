@@ -2452,7 +2452,10 @@ label .required {
 	padding: 0 20px;
 }
 .widget-count-1 .widget {
-	padding: 0;
+	padding: 0 !important;
+	width: 100% !important;
+	float: none !important;
+	margin: 20px 0 !important;
 }
 /* Two per row */
 .per-row-2 .widget {
@@ -2907,7 +2910,7 @@ body.woocommerce-page ul.products li.product .onsale {
 		height: 0;
 	}
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
 	.flexible-widget-area .widget {
 		width: 100%;
 		float: none;
