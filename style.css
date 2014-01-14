@@ -2922,6 +2922,17 @@ body.woocommerce-page ul.products li.product .onsale {
 		display: none;
 		height: 0;
 	}
+	/* Post aside widget area */
+	#main .has-post-aside .entry-aside {
+		float: none;
+		width: auto;
+		margin-bottom: 20px;
+	}
+	#main .has-post-aside .entry-header,
+	#main .has-post-aside .entry-main,
+	#main .has-post-aside footer.entry-meta {
+		margin-left: 0;
+	}
 }
 @media screen and (max-width: 480px) {
 	.flexible-widget-area .widget {
