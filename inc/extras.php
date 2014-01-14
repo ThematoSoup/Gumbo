@@ -56,12 +56,6 @@ function thsp_body_classes( $classes ) {
 	$thsp_current_layout = thsp_get_current_layout();
 	$thsp_body_classes[] = $thsp_current_layout;
 
-	// Check if no sidebar
-	$thsp_has_no_sidebar = thsp_has_no_sidebar();
-	if ( $thsp_has_no_sidebar ) :
-		$thsp_body_classes[] = 'no-sidebar';
-	endif;
-
 	// Check if logo image exists
 	if ( '' != $thsp_theme_options['logo_image'] ) :
 		$thsp_body_classes[] = 'has-logo-image';

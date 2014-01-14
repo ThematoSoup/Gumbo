@@ -1640,10 +1640,18 @@ body.font-size-large,
 	float: left;
 	width: 140px;
 }
+.no-sidebar.has-post-aside .entry-aside {
+	width: 200px;
+}
 .has-post-aside .entry-header,
 .has-post-aside .entry-main,
 .has-post-aside footer.entry-meta {
 	margin-left: 160px;
+}
+.no-sidebar.has-post-aside .entry-header,
+.no-sidebar.has-post-aside .entry-main,
+.no-sidebar.has-post-aside footer.entry-meta {
+	margin-left: 240px;
 }
 .has-post-aside .entry-header .entry-meta {
 	clear: none;
