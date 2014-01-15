@@ -178,6 +178,10 @@ function thsp_get_current_layout() {
 		$current_layout = 'no-sidebar';
 	endif;
 
+	if ( thsp_has_no_sidebar() ) :
+		$current_layout = 'no-sidebar';
+	endif;
+	
 	/*
 	 * Returns an array with two values that can be changed using
 	 * 'thsp_current_layout' filter hook
