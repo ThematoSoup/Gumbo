@@ -188,6 +188,12 @@ require_once get_template_directory() . '/inc/meta-boxes.php';
 
 
 /**
+ * TGM plugin activation class
+ */
+require_once( get_template_directory() . '/inc/tgm.php' );
+
+
+/**
  * Setup the WordPress core custom background feature.
  *
  * Hooks into the after_setup_theme action.
@@ -231,7 +237,7 @@ function thsp_widgets_init() {
 	register_sidebar( array(
 		'name'			=> __( 'Below Header', 'gumbo' ),
 		'description'	=> __( 'This widget area is located below site header.', 'gumbo' ),
-		'id' => 'sub-header-widget-area',
+		'id'			=> 'sub-header-widget-area',
 		'before_widget' => '<aside id="%1$s" class="widget sub-header-widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -240,7 +246,7 @@ function thsp_widgets_init() {
 	register_sidebar( array(
 		'name'			=> __( 'Above Footer', 'gumbo' ),
 		'description'	=> __( 'This widget area is located above site footer.', 'gumbo' ),
-		'id' => 'above-footer-widget-area',
+		'id'			=> 'above-footer-widget-area',
 		'before_widget' => '<aside id="%1$s" class="widget above-footer-widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -256,14 +262,41 @@ function thsp_widgets_init() {
 		'after_title'   => '</h4>',
 	) );
 	register_sidebar( array(
-		'name' => __( 'Widgetized Template', 'gumbo' ),
-		'description' => __( 'This widget area is used in Widgetized Page Template', 'gumbo' ),
-		'id' => 'homepage-widget-area',
+		'name'			=> __( 'Widgetized Template', 'gumbo' ),
+		'description'	=> __( 'This widget area is used in Widgetized Page Template', 'gumbo' ),
+		'id'			=> 'homepage-widget-area',
 		'before_widget' => '<aside id="%1$s" class="widget widgetized-homepage-widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
+	
+	/*
+	 * If WooSidebars plugin is active, deregister their sidebars
+	 * then register them again with correct arguments
+	 */
+	if ( in_array( 'woosidebars/woosidebars.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) :
+		$custom_sidebars = get_posts( array(
+			'post_type' =>'sidebar',
+			'posts_per_page' => -1,
+			'suppress_filters' => 'false'
+		) );
+		if ( count( $custom_sidebars ) > 0 ) :
+			foreach ( $custom_sidebars as $k => $v ) :
+				$sidebar_id = $v->post_name;
+				unregister_sidebar( $sidebar_id );
+				register_sidebar( array(
+					'name'			=> $v->post_title,
+					'description'	=> $v->post_excerpt,
+					'id'			=> $sidebar_id,
+					'before_widget' => '<aside id="%1$s" class="widget widgetized-homepage-widget %2$s">',
+					'after_widget'  => '</aside>',
+					'before_title'  => '<h1 class="widget-title">',
+					'after_title'   => '</h1>',
+				) );
+			endforeach;
+		endif;
+	endif;
 }
 add_action( 'widgets_init', 'thsp_widgets_init' );
 

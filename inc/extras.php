@@ -195,23 +195,38 @@ function thsp_get_current_layout() {
 /**
  * Checks if current page has sidebar
  *
- * @return	boolean		$has_sidebar				
+ * @return	boolean				
  * @since	Gumbo 1.0
  */
 function thsp_has_no_sidebar() {
 	global $post;
+	/*
+	 * Get current sidebar
+	 * Checks post meta to see if default sidebar is being
+	 * overriden and WooSidebars plugin is active
+	 */
+	$current_sidebar = ( ( in_array( 'woosidebars/woosidebars.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) && is_singular() && get_post_meta( $post->ID, '_thsp_widget_area', true ) ) ? get_post_meta( $post->ID, '_thsp_widget_area', true ) : 'primary-sidebar' );
 	
+	/*
+	 * Check if No Sidebar option is checked in meta box
+	 */
 	if ( is_singular() && 'no-sidebar' == get_post_meta( $post->ID, '_thsp_post_layout', true ) ) :
 		return true;
 	endif;
 	
-	if ( ! is_active_sidebar( 'primary-sidebar' ) && ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) :
+	/*
+	 * Check for Primary or replacement sidebar if WooCommerce
+	 * is not active
+	 */
+	if ( ! is_active_sidebar( $current_sidebar ) && ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) :
 		return true;
 	endif;
 	
 	// If WooCommerce plugin is active, check if Store Sidebar has any widgets
-	if( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) && ! is_active_sidebar( 'store-sidebar' ) ) :
-		if( is_woocommerce() ) :
+	if( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) :
+		if( is_woocommerce() && ! is_active_sidebar( 'store-sidebar' ) ) :
+			return true;
+		elseif ( ! is_active_sidebar( $current_sidebar ) ) :
 			return true;
 		endif;
 	endif;

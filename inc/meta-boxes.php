@@ -20,7 +20,95 @@ function thsp_metaboxes( $meta_boxes ) {
 	$thsp_theme_options	= thsp_cbp_get_options_values();
 	$default_layout		= $thsp_theme_options['default_layout'];
 
-	// Posts metabox
+
+	// Posts and pages metabox
+	$layout_fields = array(
+		array(
+			'name'			=> __( 'Layout', 'gumbo' ),
+			'desc'			=> '',
+			'id'			=> $prefix . 'post_layout',
+			'type'			=> 'radio',
+			'std'			=> $default_layout,
+			'options'		=> array(
+				array(
+					'name'	=> __( 'Right sidebar', 'gumbo' ),
+					'value'	=> 'sidebar-right'
+				),
+				array(
+					'name'	=> __( 'Left sidebar', 'gumbo' ),
+					'value'	=> 'sidebar-left'
+				),
+				array(
+					'name'	=> __( 'No sidebar', 'gumbo' ),
+					'value'	=> 'no-sidebar'
+				),
+			),
+		),
+		array(
+			'name'		=> __( 'Do not show header for this post', 'gumbo' ),
+			'desc'		=> __( 'If checked, header will not be displayed', 'gumbo' ),
+			'id'		=> $prefix . 'has_no_header',
+			'type'		=> 'checkbox',
+		),
+		array(
+			'name'		=> __( 'Do not show footer for this post', 'gumbo' ),
+			'desc'		=> __( 'If checked, footer will not be displayed', 'gumbo' ),
+			'id'		=> $prefix . 'has_no_footer',
+			'type'		=> 'checkbox',
+		),
+		array(
+			'name'		=> __( 'Font size', 'gumbo' ),
+			'desc'		=> __( 'If set, this option will override font size set in Theme Customizer', 'gumbo' ),
+			'id'		=> $prefix . 'post_font_size',
+			'std'		=> '',
+			'type'		=> 'radio',
+			'options'	=> array(
+				array(
+					'name'	=> __( 'Small', 'gumbo' ),
+					'value'	=> 'small'
+				),
+				array(
+					'name'	=> __( 'Medium', 'gumbo' ),
+					'value'	=> 'medium'
+				),
+				array(
+					'name'	=> __( 'Large', 'gumbo' ),
+					'value'	=> 'large'
+				),
+			),
+		),
+	);
+			
+	if ( in_array( 'woosidebars/woosidebars.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) :
+		$widget_area_options = array(
+			array(
+				'name'	=> __( 'Default sidebar', 'gumbo' ),
+				'value'	=> false
+			)
+		);
+		$custom_sidebars = get_posts( array(
+			'post_type' =>'sidebar',
+			'posts_per_page' => -1,
+			'suppress_filters' => 'false'
+		) );
+		if ( count( $custom_sidebars ) > 0 ) :
+			foreach ( $custom_sidebars as $k => $v ) :
+				$widget_area_options[] = array(
+					'name'	=> $v->post_title,
+					'value'	=> $v->post_name,
+				);
+			endforeach;
+		endif;
+		$layout_fields[] = array(
+			'name'		=> __( 'Widget Area', 'gumbo' ),
+			'desc'		=> __( 'Select a widget area to display in the sidebar.', 'gumbo' ),
+			'id'		=> $prefix . 'widget_area',
+			'std'		=> false,
+			'type'		=> 'select',
+			'options'	=> $widget_area_options,
+		);
+	endif;
+	
 	$meta_boxes[] = array(
 		'id'			=> 'posts_metabox',
 		'title'			=> __( 'Layout Options', 'gumbo' ),
@@ -28,62 +116,7 @@ function thsp_metaboxes( $meta_boxes ) {
 		'context'		=> 'normal',
 		'priority'		=> 'high',
 		'show_names'	=> true, // Show field names on the left
-		'fields'		=> array(
-			array(
-				'name'			=> __( 'Layout', 'gumbo' ),
-				'desc'			=> '',
-				'id'			=> $prefix . 'post_layout',
-				'type'			=> 'radio',
-				'std'			=> $default_layout,
-				'options'		=> array(
-					array(
-						'name'	=> __( 'Right sidebar', 'gumbo' ),
-						'value'	=> 'sidebar-right'
-					),
-					array(
-						'name'	=> __( 'Left sidebar', 'gumbo' ),
-						'value'	=> 'sidebar-left'
-					),
-					array(
-						'name'	=> __( 'No sidebar', 'gumbo' ),
-						'value'	=> 'no-sidebar'
-					),
-				),
-			),
-			array(
-				'name'		=> __( 'Do not show header for this post', 'gumbo' ),
-				'desc'		=> __( 'If checked, header will not be displayed', 'gumbo' ),
-				'id'		=> $prefix . 'has_no_header',
-				'type'		=> 'checkbox',
-			),
-			array(
-				'name'		=> __( 'Do not show footer for this post', 'gumbo' ),
-				'desc'		=> __( 'If checked, footer will not be displayed', 'gumbo' ),
-				'id'		=> $prefix . 'has_no_footer',
-				'type'		=> 'checkbox',
-			),
-			array(
-				'name'		=> __( 'Font size', 'gumbo' ),
-				'desc'		=> __( 'If set, this option will override font size set in Theme Customizer', 'gumbo' ),
-				'id'		=> $prefix . 'post_font_size',
-				'std'		=> '',
-				'type'		=> 'radio',
-				'options'	=> array(
-					array(
-						'name'	=> __( 'Small', 'gumbo' ),
-						'value'	=> 'small'
-					),
-					array(
-						'name'	=> __( 'Medium', 'gumbo' ),
-						'value'	=> 'medium'
-					),
-					array(
-						'name'	=> __( 'Large', 'gumbo' ),
-						'value'	=> 'large'
-					),
-				),
-			),
-		),
+		'fields'		=> $layout_fields,
 	);
 
 	// Authors page template metabox
