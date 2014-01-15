@@ -2901,6 +2901,9 @@ body.woocommerce-page ul.products li.product .onsale {
 		margin-bottom: 0.5em;
 		text-align: center;
 	}
+	.footer-bottom .menu li {
+		margin: 0 0.75em;
+	}
 	/* WooCommerce */
 	.woocommerce #main ul.products li.product,
 	.woocommerce-page #main ul.products li.product {
