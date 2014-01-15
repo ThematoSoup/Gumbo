@@ -53,7 +53,7 @@ add_action( 'template_redirect', 'thsp_content_width' );
  * Add custom image size(s)
  */
 if ( function_exists( 'add_image_size' ) ) { 
-	add_image_size( 'thsp-archives-featured', 660, 330, true );
+	add_image_size( 'thsp-archives-featured', 640, 320, true );
 	add_image_size( 'thsp-featured-content', 1000, 480, true );
 	add_image_size( 'thsp-masonry', 300, 180, true );
 }
