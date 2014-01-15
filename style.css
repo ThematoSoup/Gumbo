@@ -2195,6 +2195,15 @@ body.woocommerce-page #content nav.woocommerce-pagination ul li span {
 #infinite-handle {
 	text-align: center;
 }
+#infinite-handle span {
+	background: #1e8ca3;
+}
+.scheme-light #infinite-handle span {
+	background: #d19d00;
+}
+.scheme-dark #infinite-handle span {
+	background: #e56100;
+}
 
 
 /* 12. =Comments

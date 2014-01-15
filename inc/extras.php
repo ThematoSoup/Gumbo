@@ -333,7 +333,8 @@ function thsp_generated_css() {
 		.custom-primary-color .page-links > span,
 		.custom-primary-color #main #content .woocommerce-pagination .current,
 		.custom-primary-color #main .more-link,
-		.custom-primary-color .navigation-main .sub-menu a:hover {
+		.custom-primary-color .navigation-main .sub-menu a:hover,
+		.custom-primary-color #infinite-handle span {
 			background: <?php echo $primary_color; ?>;
 		}
 	<?php endif; ?>
