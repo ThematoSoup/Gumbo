@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+	
+	<title>Gumbo WordPress theme documentation</title>
+	
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	
+	<!-- Custom styles for this template -->
+	<link href="css/jumbotron-narrow.css" rel="stylesheet">
+	
+	<!-- Just for debugging purposes. Don't actually copy this line! -->
+	<!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+	
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+	<div class="container">
+	
+		<div class="header">
+			<h3 class="text-muted">Gumbo Theme Documentation</h3>
+		</div>
+		
+		<div class="jumbotron">
+			<h1>Jumbotron heading</h1>
+			<p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+			<p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+		</div>
+		
+		<div class="documentation-section">
+			<h1>Installation</h1>
+
+			<h2>Installing WordPress</h2>
+			<p>WordPress is famous for its five minute installation. Easiest way to do it is by following steps described at WordPress Codex page:</p>
+			<p><a target="_blank" href="http://codex.wordpress.org/Installing_WordPress">http://codex.wordpress.org/Installing_WordPress</a></p>
+		
+			<h2>Installing Gumbo theme</h2>
+			<p>There are three ways to install a theme in WordPress:</p>
+			<ul>			
+				<li>Through WordPress admin pages</li>
+				<li>Through cPanel</li>
+				<li>Using FTP</li>
+			</ul>
+			<p>You can find out more about all three in detail at WordPress Codex page:</p>			
+			<p><a target="_blank" href="http://codex.wordpress.org/Using_Themes#Adding_New_Themes">http://codex.wordpress.org/Using_Themes#Adding_New_Themes</a></p>
+			
+			<h2>Installing plugins</h2>
+			<p>There are two ways to install a plugin in WordPress:</p>
+			<ul>
+				<li>Using built-in plugin installer</li>
+				<li>Using FTP</li>
+			</ul>
+			<p>You can find out more about both in detail at WordPress Codex page:</p>
+			<p><a target="_blank" href="http://codex.wordpress.org/Managing_Plugins#Installing_Plugins">http://codex.wordpress.org/Managing_Plugins#Installing_Plugins</a></p>
+			
+			<h2>Child theme</h2>
+			<p>A child theme (Gumbo Child) that is meant to help jumpstart your customization efforts is included. It’s very important to install and use it, because updating the theme almost never results in unexpected malfunctions. Also, all customization work is safely preserved.</p>			
+			<p>To find out more about child themes, visit the link:</p>
+			<p><a target="_blank" href="http://codex.wordpress.org/Child_Themes">http://codex.wordpress.org/Child_Themes</a></p>		
+		</div><!-- .documentation-section -->
+
+		<div class="documentation-section">
+			<h1>Theme Features</h1>
+
+			<h2>Responsive and Retina Ready</h2>
+			<p>In addition to being coded with WordPress best practices in mind, Gumbo is responsive and will adapt to any screen size. Icons used throughout the theme are part of Genericons icon font and will look good regardless of device’s pixel density.</p>
+			<p>You can scan the code with your mobile device and see Gumbo in action.</p>
+			<img src="images/qrcode-gumbo.png" />
+
+			<h2>WooCommerce Support</h2>
+			<p>With Gumbo you can not only blog and showcase your photos or other digital art, you can also sell it. WooCommerce plugin (free) is required for this feature.</p>
+			<p><a target="_blank" href="http://docs.woothemes.com/document/installation/">http://docs.woothemes.com/document/installation/</a></p>
+			<img src="images/woocommerce-shop.jpg" />
+			<p>WooCommerce image settings are located in WooCommerce > Settings > Catalog. For best visual representation use these image sizes:</p>
+			<ul>
+				<li>Catalog images 250x250px</li>
+				<li>Single product image 500x500px‏</li>
+			</ul>
+
+			<h2>Masonry Layout</h2>
+			<p>You can use Gumbo’s Masonry page template to create Masonry (Pinterest-like) layout. Using Masonry page template is explained in Page Templates section.</p>
+			<img src="images/masonry.jpg" />
+
+			<h2>Translation Ready</h2>
+			<p>All text strings used in the theme are translatable. Translating them is very easy and requires no coding skills. You can use this guide:</p>
+			<p><a target="_blank" href="http://premium.wpmudev.org/blog/how-to-translate-a-wordpress-theme/">http://premium.wpmudev.org/blog/how-to-translate-a-wordpress-theme/</a></p>
+
+			<h2>THA Hooks</h2>
+			<p>Standardized Theme Hook Alliance hooks are used throughout the theme, making it very easy to customize it via a child theme or a plugin. If you’d rather not touch the code and just need to add some content to a specific location in your site, you can use THA Hooks Interface plugin to do so.</p>
+			<h3>THA Hooks Interface Plugin</h3>
+			<p>By installing the plugin, you’ll be able to  customize Gumbo from within dashboard by hooking into Theme Hook Alliance hooks.</p>
+			<img src="images/tha-hooks-plugin-settings.png" />
+			<p>Gumbo declares support for the following Theme Hook Alliance hooks:</p>
+			<ul>
+				<li>html</li>
+				<li>body</li>
+				<li>head</li>
+				<li>header</li>
+				<li>content</li>
+				<li>entry</li>
+				<li>comments</li>
+				<li>sidebar</li>
+				<li>footer</li>
+			</ul>
+			<p>THA Hooks Interface plugin allows you to easily alter theme functionality using dashboard interface.</p>
+
+			<h2>Social Menu</h2>
+			<p>The icons are typically placed on the homepage or in the header. These icons link directly to your social media space and social menu is a way to easily display your links in the top menu.</p>
+			<img src="images/social-icons.png" />
+			<p>To do this:</p>
+			<ol>
+				<li>Go to Appearance > Menu and create a menu with a name <strong>Social</strong></li>
+				<li>Enter your social network URLs (links) as menu items</li>
+				<li>You don’t need to give any Navigation labels, full URL to your social profiles will suffice.</li>
+				<li>Assign it to the Top Menu</li>
+			</ol>
+			image: social-menu-dashboard.png
+			<p>Supported social networks:</p>
+			<ul>
+				<li>Google+</li>
+				<li>Twitter</li>
+				<li>Facebook</li>
+				<li>Pinterest</li>
+				<li>WordPress</li>
+				<li>Vimeo</li>
+				<li>YouTube</li>
+				<li>Tumblr</li>
+				<li>Instagram</li>
+				<li>Path</li>
+				<li>Skype</li>
+				<li>Reddit</li>
+				<li>StumbleUpon</li>
+				<li>Dribbble</li>
+				<li>Github</li>	
+			</ul>
+
+			<h2>Widget Areas</h2>
+			<p>Gumbo has 6 widget areas:</p>
+			@todo: Widget Areas sceenshot (similar to one on http://thematosoupdemos.com/cazuela/features/widget-areas/)
+			<p>Widget areas:</p>
+			<ul>
+				<li>Primary sidebar</li>
+				<li>Below Header</li>
+				<li>Footer</li>
+				<li>Above Footer</li>
+				<li>Post Aside</li>
+				<li>Widgetized Template</li>
+			</ul>
+			<div class="flex-video">
+				<iframe width="1280" height="720" src="http://www.youtube.com/embed/rH7YCZrwJzk" frameborder="0" allowfullscreen></iframe>
+			</div>
+			<p>note: Store Sidebar is used with WooCommerce Store pages and is available once you install the WooCommerce plugin.</p>
+			<h3>Mighty Text Widget</h3>
+			<p>Since it’s the most used widget of them all, we’ve decided to add a new layer of functionality to the Text widget.</p>
+			<p>You can now select:</p>
+			<ol>
+				<li>Title</li>
+				<li>Text</li>
+				<li>
+					Icon size
+					<ul>
+						<li>No icon</li>
+						<li>64px</li>
+						<li>96px</li>
+						<li>128px</li>
+						<li>256px</li>
+					</ul>
+				</li>
+				<li>Variety of Genericons</li>
+			</ol>
+			<img src="images/text-widget.png" />
+
+			<h2>Infinite scroll (requires Jetpack plugin)</h2>
+			<p>If you use Jetpack plugin, by enabling its infinite scroll module you can activate this feature for blog archives. Infinite scroll will kick in instead of pagination, so discovering more of your content is just scroll away.</p>
+			<p>To do this go to Jetpack > Infinite Scroll > Activate. Once you do this click Configure. You’ll be redirected to Settings > Reading > To infinity and beyond. Enable it and that’s it.</p>
+		</div><!-- .documentation-section -->
+
+		<div class="documentation-section">
+			<h1>Theme options (Customizer)</h1>
+			<p>All Gumbo theme options can be set in Theme Customizer screen (Appearance > Customize). This way you can preview all the changes you make before you save them and make them visible to your site visitors as well.</p>
+			<img src="images/customizer-gumbo.png" />
+			<p>Theme Customizer options:</p>
+			<ul>
+				<li>Layout</li>
+				<li>Featured Content</li>
+				<li>Typography</li>
+				<li>Site Title &amp; Tagline</li>
+				<li>Colors</li>
+				<li>Header Image</li>
+				<li>Background Image</li>
+				<li>Navigation</li>
+				<li>Static Front Page</li>
+			</ul>
+
+			<h2>Typography</h2>
+			<p>You can pick from some of the most popular Google Fonts for your headings and body text. You can also set your headings to be bold or regular weight, as well as uppercase.</p>
+			<p>All typography options can be found in Typography section of Theme Customizer (Appearance > Customizer). As you select body and heading font in dropdowns on the left side you will be able to preview them on the right. Once you’re pleased with selection you made, save your changes and they will be visible to your site’s visitors.</p>
+			<img src="images/typography-customizer.png" />
+			<p>Fonts you’ll find are carefully picked and include:</p>
+			<ul>
+				<li>Helvetica</li>
+				<li>Georgia</li>
+				<li>Droid Serif</li>
+				<li>Arimo</li>
+				<li>Lato</li>
+				<li>Open Sans</li>
+				<li>Ubunto</li>
+				<li>Cabin</li>
+				<li>Istok Web</li>
+				<li>Noto Serif</li>
+				<li>Rosario</li>
+				<li>Tinos</li>
+				<li>Surce Sans Pro</li>
+				<li>Roboto</li>
+				<li>Titillium Web</li>
+			</ul>
+			<div class="flex-video">
+				<iframe width="1280" height="720" src="http://www.youtube.com/embed/BIzZGgdr7zQ" frameborder="0" allowfullscreen></iframe>
+			</div>
+
+			<h2>Custom backgrounds and boxed layout</h2>
+			<p>When you install Gumbo you can use a color or an image as your site’s background. Using either one will create “boxed layout” and both can be set from Theme Customizer or Custom Backgrounds administration page (Appearance > Background). This documentation explains only how to do it from Theme Customizer, if you’d like to use Custom Backgrounds admin page, use this guide:</p>
+			<p><a target="_blank" href="http://codex.wordpress.org/Appearance_Background_Screen">http://codex.wordpress.org/Appearance_Background_Screen</a></p>
+			<div class="flex-video">
+				<iframe width="1280" height="720" src="http://www.youtube.com/embed/IJWwTHEzeeU" frameborder="0" allowfullscreen></iframe>
+			</div>
+			<h3>Background image</h3>
+			<p>Once you’re at Theme Customizer Screen (Appearance > Customize), you can either upload a new image or select one of background images you have already uploaded. After you have selected the image you can choose its display options:</p>
+			<ul>
+				<li>
+					Position - this option allows you to position the background image on the Left (default), in the Center or on the Right of the page.
+					<ul>
+						<li>Repeat - this option determines if the background image is repeated. The choices are:</li>
+						<li>No repeat - the background image will be shown only once on the page.</li>
+						<li>Tile - the background image will be repeated both horizontally and vertically throughout the entire page.</li>
+						<li>Tile Horizontally - the background image will repeat only horizontally.</li>
+						<li>Tile Vertically - the background image will repeat only vertically.</li>
+					</ul>
+				<li>Attachment - this determines if you want the background image to scroll with the content or to stay “fixed” in place when the user scrolls down the page.</li>
+			</ul>
+			<p>After you have set your background image options, click Save &amp; Publish button to make them visible to your visitors.</p>
+			<img src="images/background-image.jpg" />
+			<p>You can remove a background image and go back to fluid layout by clicking “Remove Image” link and saving your options.</p>
+			<h3>Background color</h3>
+			<p>If you’d rather use a color background, you can set it from Theme Customizer’s Background Image section as well. Click the Select Color button, select a color from the color picker or enter a color’s HEX code and save your options.</p>
+			<p>You can remove a background color you previously set by clicking Clear button and saving your options.</p>
+
+			<h2>Custom header image/color</h2>
+			<p>If you’re like to add some more flavour to your site you can also custom header image that will be shown in all pages. This can be done from Custom Header admin page (Appearance > Header) and Theme Customizer.</p>
+			<div class="flex-video">
+				<iframe width="1280" height="720" src="http://www.youtube.com/embed/T2_JF4Ladhs" frameborder="0" allowfullscreen></iframe>
+			</div>
+			<p>To select header image(s) go to Custom Header admin page. There you will be able to upload new images or select them from your site’s Media Library. You can also select header text color, to make it more visible when shown on top of background image and decide whether you want to hide header text.</p>
+			<p>Images should be 1600x320 px or larger. If you upload a larger image, you will be able to crop it after uploading it.</p>
+			<img src="images/custom-header-image.jpg" />
+			<p>Once you have uploaded one or more header images, you can go to Theme Customizer and preview your site with each one of them selected. When you are happy with the results, click Save &amp; Publish.</p>
+			<p>You can also set custom header color using header background color picker.</p>
+			<img src="images/header-background-color.jpg" />
+
+			<h2>Custom navigation</h2>
+			<p>The theme has three navigation menu locations:</p>
+			<ul>
+				<li>Primary</li>
+				<li>Footer</li>
+				<li>Top (above header)</li>
+			</ul>
+			<p>To use them first you need to create some menus. You can create, edit and delete navigation menus in Appearance > Menus page. A new menu is created by clicking “create new menu” link in that page. Type in a name for your menu, click Create Menu button and you’ll be able to add links to it.</p>
+			<img src="images/menus-dashboard.png" />
+			<p>You can change the order and placement of menu items by dragging and dropping the items to change their order. To create sub-menus or “drop-down” style menus, drag individual items to the right to “nest” them under a given parent tab. You can undo this by dragging them to the left.</p>
+			<p>To add description to your menu items, use the “Description” field.</p>
+			<img src="images/menu-descriptions-dashboard.png" />
+			<p>The descriptions will appear on your website underneath your menu items.</p>
+			<img src="images/menu-descriptions.png" />
+			<p>Once you have created and saved your menu, you can assign it to one of three menu locations by switching to Manage Locations tabs in Appearance > Menus page. Header Menu will display submenus up to five levels deep, while Footer Menu and Top Menu are one dimensional and don’t display submenus.</p>
+			<p>Even though the theme has three menu locations, you can create as many menus as you like and use them in your site. For example, you can display them in one of widget areas using Custom Menu widget.</p>
+			<p>You can also assign menus to menu locations from Theme Customizer screen (Appearance > Customizer), but you must create the menus first in Appearance > Menus page.</p>
+			<img src="images/navigation-customizer.jpg" />
+			<p>To read more on how to work with menus in WordPress go to the official page:</p>
+			<p><a target="_blank" href="http://codex.wordpress.org/WordPress_Menu_User_Guide">http://codex.wordpress.org/WordPress_Menu_User_Guide</a></p>
+			<h3>Navigation below posts</h3>
+			<p>Navigation below posts allows easy navigation from within posts. It’s located below content and just above the comment area. You can control it via Customizer by ticking or unticking “Enable navigation below posts“.</p>
+			<img src="images/post-navigation.png" />
+			<h3>Breadcrumb navigation</h3>
+			<p>Gumbo theme supports WordPress SEO plugin. To enable its breadcrumb function, go to SEO > Internal links > Enable Breadcrumbs.</p>
+			<img src="images/wordpress-seo-breadcrumbs.png" />
+
+			<h2>Custom logo image</h2>
+			<p>You can add a custom logo image and use it instead of text based site title. This is also done from Theme Customizer screen.</p>
+			<p>Once at Theme Customizer screen, expand Site title and tagline section. There you’ll be able to upload a new image or select one you previously uploaded. Logo image height should be 100px and its width should be 300px or less.</p>
+			<img src="images/site-title-customizer.jpg" />
+			<p>If a logo image is used it will replace textual site title. You can remove logo image by clicking “Remove Image” link.</p>
+
+			<h2>Layout options</h2>
+			<p>There are three layouts you can choose from:</p>
+			<ul>
+				<li>Right sidebar</li>
+				<li>Left sidebar</li>
+				<li>No sidebar (full width)</li>
+			</ul>
+			<p>Default layout can be set and previewed in Layout section of Theme Customizer (Appearance > Customize).</p>
+			<h3>Right sidebar</h3>
+			<img src="images/right-sidebar-customizer.jpg" />
+			<h3>Left sidebar</h3>
+			<img src="images/left-sidebar-customizer.jpg" />
+			<h3>No sidebar</h3>
+			<img src="images/no-sidebar-customizer.jpg" />
+			<p>If you select “no sidebar” layout, your primary sidebar widgets will not be shown. You can use other widget areas to transfer the widgets.</p>
+			<div class="flex-video">
+				<iframe width="1280" height="720" src="http://www.youtube.com/embed/TJj5HrX_fPs" frameborder="0" allowfullscreen></iframe>
+			</div>
+
+			<h2>Different layout for each post/page</h2>
+			<p>After you’ve set your default layout you can override it on a post/page basis. That makes it possible to have a left sidebar post even though you’ve set your default layout to right or no sidebar. In addition to this you can hide header and footer and assign different sidebar to each post/page.</p>
+			<p>First you need to enable Layout Options in Screen Options.</p>
+			<img src="images/screen-options.png" />
+			<p>After you do this you’ll find Layout Options meta box underneath your post and pages.</p>
+			<img src="images/layout-options-meta-box.png" />
+			<p>There are several options you’re in control of:</p>
+			<ul>
+				<li>Layout (right, left or no sidebar)</li>
+				<li>Do not show header for this post (on or off)</li>
+				<li>Do not show footer for this post (on or off)</li>
+				<li>Font Size (small, medium, large)</li>
+			</ul>
+			<p>With these, you can create everything from landing pages using no header and no footer options,  to featured posts using no sidebar and large font size.</p>
+			<p>Note: Usage of free WooSidebars plugin is recommended if you’d like to use custom widget areas in certain posts of pages.</p>
+
+			<h2>Header Layouts</h2>
+			<p>Header layouts can also be found in Customizer > Layout. You can choose from three different layouts:</p>
+			<ul>
+				<li>
+					Navigation below title and tagline
+					<img src="images/header-navigation-below-title.jpg" />
+				</li>
+				<li>
+					Navigation next to title and tagline
+					<img src="images/header-navigation-next-to-title.jpg" />
+				</li>
+				<li>
+					Center aligned
+					<img src="images/centralized-header.jpg" />
+				</li>
+			</ul>
+
+			<h2>Color options</h2>
+			<p>Gumbo has three color schemes:</p>
+			<ul>
+				<li>White</li>
+				<li>Light</li>
+				<li>Dark</li>
+			</ul>
+			<p>In addition to this, you can use color pickers to set your site’s:</p>
+			<ul>
+				<li>Primary Color</li>
+				<li>Header Background Color</li>
+				<li>Header Text Color</li>
+				<li>Background Color</li>
+			</ul>
+			<div class="flex-video">
+				<iframe width="1280" height="720" src="http://www.youtube.com/embed/NdhMLouSNf8" frameborder="0" allowfullscreen></iframe>
+			</div>
+			<p>All color options are located in Colors section of Theme Customizer screen (Appearance > Customize).</p>
+			<ul>
+				<li>
+					Light color scheme
+					<img src="images/light-theme.jpg" />
+				</li>
+				<li>
+					Dark color scheme
+					<img src="images/dark-theme.jpg" />
+				</li>
+			</ul>
+
+			<h2>Featured content</h2>
+			<p>You can showcase your blog’s top posts by assigning them a predefined tag. It’s also possible to select number of posts shown in featured posts slider.</p>
+			<p>To do this, head over to Customizer > Featured Content and select the tag and number of posts that you wish to feature on your front page.</p>
+			<img src="images/featured-content-customizer.jpg" />
+			<p>There are two options for featured content width:</p>
+			<ul>
+				<li>Full width</li>
+				<li>Content width</li>
+			</ul>
+			<div class="flex-video">
+				<iframe width="1280" height="720" src="http://www.youtube.com/embed/p-O8vFCVKJg" frameborder="0" allowfullscreen></iframe>
+			</div>
+
+			<h2>Page templates</h2>
+			<img src="images/page-attributes.png" />
+			<p>You can set a custom page template to any page by using Template dropdown in Page Attributes meta box, located below the Publish button. Several page templates are available.</p>
+			<ul>
+				<li>Authors</li>
+				<li>Masonry</li>
+				<li>Sitemap</li>
+				<li>Widgetized page</li>
+			</ul>
+			<h3>Authors</h3>
+			<img src="images/authors-template.jpg" />
+			<p>Authors page settings let you tweak your Authors template. You can select the order of authors by their name or post count and show them in ascending or descending order.</p>
+			<img src="images/authors-page-settings.png" />
+			<h3>Masonry</h3>
+			<img src="images/masonry-page-template.jpg" />
+			<p>You can select how many posts per page you want to show, whether you want to hide the page title or you can exclude certain post categories.</p>
+			<img src="images/masonry-page-settings.png" />
+			<h3>HTML sitemap</h3>
+			<p>A page template every website should have. What easier way to allow readers to browse and find the piece they’re looking for, than creating a sitemap of your website.</p>
+			<img src="images/sitemap-template.png" />
+			<p>This HTML template is easy to create, by selecting Sitemap in Page Attributes.</p>
+			<h3>Widgetized page</h3>
+			<img src="images/widgetized-template-full.jpg" />
+			<p>Widgetized Template works together with Widgetized Page widget area and has some specific options, which you can enable in Screen Options of your page editor:</p>
+			<ul>
+				<li>Layout (right sidebar, left sidebar or no sidebar)</li>
+				<li>Showing or hiding header/footer</li>
+				<li>Font Size (small, medium, large)</li>
+				<li>Page title (show or hide)</li>
+				<li>Text position (relative to featured image or video)</li>
+				<li>Video URL (if you want video instead of an image)</li>
+			</ul>
+			<img src="images/widgetized-template-video.png" />
+			<p>You can also embed videos and display them above, below, right or left of the text.</p>
+			<img src="images/widgetized-template-settings.png" />
+
+			<h2>Post formats</h2>
+			<p>If you want to achieve that Tumblr-like blog layout, post formats are the way to go. Following post formats are available:</p>
+			<ul>
+				<li>Standard – Your normal, average, everyday blog post. This is the default styling for your theme.</li>
+				<li>Gallery – Usually will show a thumbnail from the blog post, as well as an excerpt of what the gallery is about.</li>
+				<li>Aside – These are brief snippets of text that aren’t quite whole blog posts. Useful for quick thoughts and anecdotes</li>
+				<li>Image — These posts highlight your images.</li>
+				<li>Status — Short updates about what you’re doing right now.</li>
+				<li>Quote — These posts highlight your blockquoted text in a bolder way than standard posts do.</li>
+				<li>Video — Just like Image posts these posts highlight your videos</li>
+			</ul>
+			<p>When you’re creating a new post or editing an existing one, use Format meta box, located below Publish button to set post’s format.</p>
+			<img src="images/post-formats-meta-box.png" />
+			<p>To read more on Post Formats, follow this link:</p>
+			<p><a target="_blank" href="http://codex.wordpress.org/Post_Formats">http://codex.wordpress.org/Post_Formats</a></p>
+
+			<h2>Featured images</h2>
+			<p>Featured images (or post thumbnails) are supported and used throughout the theme.</p>
+			<p>You can assign a featured image (post thumbnail) to any post or page. Edit the post or page you’d like to assign featured image to, then look for Featured Image meta box under the Publish meta box. If it’s not there, make sure Featured Image is checked in Screen Options (top right of the screen).</p>
+			<p>Click the “Set featured image” link, then use WordPress image uploader to upload a new image or pick one from Media Library. Once you have uploaded and selected the image, click Set featured image button.</p> 
+			<img src="images/featured-image-meta-box.jpg" />
+			<p>It’s best to use images at least 1000px wide if you’re using no sidebar layout or featured content area and at least 640px wide in layouts that have sidebar on right or left side.</p>
+			<p>This is how a post, with featured image set, may look.</p>
+			<img src="images/featured-image-post.jpg" />
+		</div><!-- .documentation-section -->
+
+		<div class="documentation-section">
+			<h1>Recommended Plugins</h1>
+
+			<h2>WooCommerce</h2>
+			<p>http://wordpress.org/plugins/woocommerce/</p>
+
+			<h2>WooSidebars</h2>
+			<p>http://wordpress.org/plugins/woosidebars/</p>
+
+			<h2>Jetpack by WordPress.com (or Slim Jetpack)</h2>
+			<p>http://wordpress.org/plugins/jetpack/</p>
+			<p>http://wordpress.org/plugins/slimjetpack/</p>
+
+			<h2>THA Hooks Interface</h2>
+			<p>http://wordpress.org/plugins/tha-hooks-interface/</p>
+
+			<h2>WordPress SEO</h2>
+			<p>http://wordpress.org/plugins/wordpress-seo/</p>
+		</div><!-- .documentation-section -->
+
+		<div class="documentation-section">
+			<h1>Credits</h1>
+		</div><!-- .documentation-section -->
+
+		<div class="footer">
+			<p>&copy; ThematoSoup 2013</p>
+		</div>
+	
+	</div> <!-- /container -->
+	
+	
+	<!-- Bootstrap core JavaScript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	
+</body>
+</html>
