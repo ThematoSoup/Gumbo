@@ -2956,6 +2956,16 @@ body.woocommerce-page ul.products li.product .onsale {
 	#main .has-post-aside footer.entry-meta {
 		margin-left: 0;
 	}
+	/* 404 */
+	#main .widgets-404 .widget {
+		float: none;
+		width: auto;
+		padding: 0;
+		margin-bottom: 40px;
+	}
+	.error404 #searchform #s {
+		width: 90%;
+	}
 }
 @media screen and (max-width: 480px) {
 	.flexible-widget-area .widget {

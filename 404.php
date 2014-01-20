@@ -26,7 +26,7 @@ get_header(); ?>
 						<?php get_search_form(); ?>
 					</div>
 					
-					<div class="widgets-404">
+					<div class="widgets-404 clear">
 						<?php the_widget( 'WP_Widget_Recent_Posts', 'number=5' ); ?>
 	
 						<?php if ( thsp_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
