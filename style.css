@@ -2224,6 +2224,13 @@ article.comment {
 	padding-left: 60px;
 	min-height: 48px;
 }
+.comment .reply {
+	margin-top: -10px;
+	margin-bottom: 40px;
+}
+.bypostauthor .reply {
+	margin-bottom: 0;
+}
 .comment-reply-link {
 	/* Background is equal to theme primary color and handled by embedded CSS */
 	display: inline-block;
@@ -2262,9 +2269,13 @@ article.comment {
 	word-wrap: break-word;
 }
 .bypostauthor {
-	background: #fcfcfc;
+	background: rgba(0,0,0,0.05);
 	padding: 12px;
-	border: 1px solid rgba(0,0,0,0.025);
+	border: 1px solid rgba(0,0,0,0.075);
+}
+.scheme-dark .bypostauthor {
+	background: rgba(255,255,255,0.05);
+	border-color: rgba(255,255,255,0.75);
 }
 /* Child comments */
 .comment-list .children {
