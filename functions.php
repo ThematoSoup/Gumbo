@@ -405,7 +405,7 @@ require( get_template_directory() . '/inc/custom-header.php' );
  * @link	http://www.wpbeginner.com/wp-themes/how-to-add-menu-descriptions-in-your-wordpress-themes/
  */
 class THSP_Menu_With_Description extends Walker_Nav_Menu {
-	function start_el( &$output, $item, $depth = 0, $args, $current_object_id = 0 ) {
+	function start_el( &$output, $item, $depth = 0, $args = array(), $current_object_id = 0 ) {
 		global $wp_query;
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 		
