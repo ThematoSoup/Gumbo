@@ -15,7 +15,7 @@
 	<?php if ( false == get_post_format() && has_post_thumbnail() ) : ?>
 		<div class="entry-thumbnail">
 			<?php
-			if ( 'no-sidebar' == thsp_get_current_layout() ) :
+			if ( 'no-sidebar' == get_post_meta( $post->ID, '_thsp_post_layout', true ) ) :
 				// Larger image if no sidebar
 				the_post_thumbnail( 'thsp-featured-content', array( 'class' => 'entry-featured') );
 			else :
