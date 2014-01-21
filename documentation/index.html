@@ -27,12 +27,12 @@
 	<![endif]-->
 </head>
 
-<body>
+<body id="top-element">
 
 	<div class="container">
 	
 		<div class="header">
-			<h3 class="text-muted">Gumbo Theme Documentation</h3>
+			<h1 class="text-muted">Gumbo Theme Documentation</h1>
 		</div>
 		
 		<!--
@@ -43,6 +43,10 @@
 		</div>
 		-->
 		
+		<div id="toc">
+			<ul></ul>
+		</div>
+
 		<div class="documentation-section">
 			<h1>Installation</h1>
 
@@ -485,6 +489,24 @@
 
 		<div class="documentation-section">
 			<h1>Credits</h1>
+
+			<h2>TGM Plugin Activation Class (GPL licence)</h2>
+			<p><a target="_blank" href="http://tgmpluginactivation.com/">http://tgmpluginactivation.com/</a></p>
+
+			<h2>THA Hooks (GPL licence)</h2>
+			<p><a target="_blank" href="https://github.com/zamoose/themehookalliance">https://github.com/zamoose/themehookalliance</a></p>
+
+			<h2>Custom Metaboxes and Fields for WordPress (GPL licence)</h2>
+			<p><a target="_blank" href="https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress">https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress</a></p>
+
+			<h2>WordPress Theme Customizer Boilerplate (GPL licence)</h2>
+			<p><a target="_blank" href="https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate">https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate</a></p>
+
+			<h2>jQuery (MIT licence)</h2>
+			<p><a target="_blank" href="http://jquery.com/">http://jquery.com/</a></p>
+
+			<h2>jQuery Masonry (MIT licence)</h2>
+			<p><a target="_blank" href="http://masonry.desandro.com/">http://masonry.desandro.com/</a></p>
 		</div><!-- .documentation-section -->
 
 		<div class="footer">
@@ -497,6 +519,22 @@
 	<!-- Bootstrap core JavaScript
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="js/jquery.tableofcontents.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("div#toc ul").tableOfContents(
+				null,
+				{
+					startLevel: 1,    // H2 and up
+					depth:      3,    // H2 through H3,
+					topLinks:   true, // Add "Top" Links to Each Header
+					topLinkClass: 'small'
+				}
+			);
+			$("div#toc").prepend( '<h3>Table of Contents</h3>' );
+		})
+	</script>
+
 </body>
 </html>

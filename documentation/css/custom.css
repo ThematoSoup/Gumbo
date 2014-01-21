@@ -66,7 +66,7 @@ body {
 	height: auto;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	border: 10px solid #eee;
+	border: 10px solid #f3f3f3;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	border-radius: 10px;
@@ -74,6 +74,14 @@ body {
 .documentation-section ul,
 .documentation-section ol {
 	margin: 15px 0 20px;
+}
+.documentation-section h1,
+.documentation-section h2,
+.documentation-section h3 {
+	padding-top: 1.5em;
+}
+.documentation-section h1 + h2 {
+	padding-top: 0;
 }
 .flex-video {
 	position: relative;
@@ -91,6 +99,15 @@ body {
 	left: 0;
 	width: 100%;
 	height: 100%;
+}
+#toc {
+	margin-bottom: 60px;
+}
+h1 a.small,
+h2 a.small,
+h3 a.small {
+	display: inline-block;
+	margin-left: 5px;
 }
 @media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px), only screen and (max-width: 767px) {
 	.flex-video {
