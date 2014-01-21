@@ -14,7 +14,14 @@
 	
 	<?php if ( false == get_post_format() && has_post_thumbnail() ) : ?>
 		<div class="entry-thumbnail">
-			<?php the_post_thumbnail( 'thsp-archives-featured', array( 'class' => 'entry-featured') ); ?>
+			<?php
+			if ( 'no-sidebar' != thsp_get_current_layout() ) :
+				// Larger image if no sidebar
+				the_post_thumbnail( 'thsp-featured-content', array( 'class' => 'entry-featured') );
+			else :
+				the_post_thumbnail( 'thsp-archives-featured', array( 'class' => 'entry-featured') );
+			endif;
+			?>
 		</div>
 	<?php endif; // has_post_thumbnail() ?>
 
