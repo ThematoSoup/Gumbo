@@ -29,7 +29,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( is_search() || 'excerpt' == $thsp_theme_options['post_archives_show'] ) : // Only display Excerpts for Search and if that option is selected ?>
+	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 		<div class="entry-summary">
 			<?php the_excerpt(); ?>
 		</div><!-- .entry-summary -->

@@ -50,16 +50,21 @@ function thsp_content_nav( $nav_id ) {
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 		<?php
-			$previous_post = get_adjacent_post( false, '', true );
-			$next_post = get_adjacent_post( false, '', false );
-			echo '<div class="prev prev-post">';
-				echo '<span class="heading">' . __( 'Previous post', 'gumbo' ) . '</span>';
-				echo '<div class="title previous-title"><a href="' . get_permalink( $previous_post->ID ) . '" title="' . sprintf( __( 'Previous post: %1$s', 'gumbo' ), esc_attr( get_the_title( $previous_post->ID ) ) ) . '">' . get_the_title( $previous_post->ID ) . '</a></div>';
-			echo '</div>';
-			echo '<div class="next next-post">';
-				echo '<span class="heading">' . __( 'Next post', 'gumbo' ) . '</span>';
-				echo '<div class="title next-title"><a href="' . get_permalink( $next_post->ID ) . '" title="' . sprintf( __( 'Next post: %1$s', 'gumbo' ), esc_attr( get_the_title( $next_post->ID ) ) ) . '">' . get_the_title( $next_post->ID ) . '</a></div>';
-			echo '</div>';
+			global $post;
+			$previous_post = get_previous_post();
+			$next_post = get_next_post();
+			if ( !empty( $previous_post ) ) :
+				echo '<div class="prev prev-post">';
+					echo '<span class="heading">' . __( 'Previous post', 'gumbo' ) . '</span>';
+					echo '<div class="title previous-title"><a href="' . get_permalink( $previous_post->ID ) . '" title="' . sprintf( __( 'Previous post: %1$s', 'gumbo' ), esc_attr( get_the_title( $previous_post->ID ) ) ) . '">' . get_the_title( $previous_post->ID ) . '</a></div>';
+				echo '</div>';
+			endif;
+			if ( !empty( $next_post ) ) :
+				echo '<div class="next next-post">';
+					echo '<span class="heading">' . __( 'Next post', 'gumbo' ) . '</span>';
+					echo '<div class="title next-title"><a href="' . get_permalink( $next_post->ID ) . '" title="' . sprintf( __( 'Next post: %1$s', 'gumbo' ), esc_attr( get_the_title( $next_post->ID ) ) ) . '">' . get_the_title( $next_post->ID ) . '</a></div>';
+				echo '</div>';
+			endif;
 		?>
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages
 		global $wp_query;

@@ -423,8 +423,12 @@ function thsp_count_widgets( $sidebar_id ) {
  * Retrieves the attachment ID from the file URL
  * Used to get attachment object for logo image added through Theme Customizer
  *
- * @link	http://philipnewcomer.net/2012/11/get-the-attachment-id-from-an-image-url-in-wordpress/
- * @since Gumbo 1.0
+ * @link		http://philipnewcomer.net/2012/11/get-the-attachment-id-from-an-image-url-in-wordpress/
+ * @return 		$attachment_array	array
+ *				[0] - URL
+ *				[1] - width
+ *				[2] - height
+ * @since		Gumbo 1.0
  */
 function thsp_get_logo_image( $attachment_url ) {
 	global $wpdb;

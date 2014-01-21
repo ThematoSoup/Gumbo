@@ -10,7 +10,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<section id="primary" class="content-area">
 		<?php tha_content_before(); ?>
 		<div id="content" class="site-content" role="main">
 			<?php tha_content_top(); ?>
@@ -30,14 +30,14 @@ get_header(); ?>
 						<?php the_widget( 'WP_Widget_Recent_Posts', 'number=5' ); ?>
 	
 						<?php if ( thsp_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
-						<div class="widget widget_categories">
-							<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'gumbo' ); ?></h2>
-							<ul>
-								<?php wp_list_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'show_count' => 1, 'title_li' => '', 'number' => 5 ) ); ?>
-							</ul>
-						</div><!-- .widget -->
+							<div class="widget widget_categories">
+								<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'gumbo' ); ?></h2>
+								<ul>
+									<?php wp_list_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'show_count' => 1, 'title_li' => '', 'number' => 5 ) ); ?>
+								</ul>
+							</div><!-- .widget -->
 						<?php else :
-						the_widget( 'WP_Widget_Tag_Cloud' );
+							the_widget( 'WP_Widget_Tag_Cloud' );
 						endif; ?>
 	
 						<?php
@@ -52,6 +52,6 @@ get_header(); ?>
 			<?php tha_content_bottom(); ?>
 		</div><!-- #content -->
 		<?php tha_content_after(); ?>
-	</div><!-- #primary -->
+	</section><!-- #primary -->
 
 <?php get_footer(); ?>
