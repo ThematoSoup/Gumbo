@@ -66,6 +66,14 @@ body {
 	height: auto;
 	margin-top: 20px;
 	margin-bottom: 20px;
+	border: 10px solid #eee;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border-radius: 10px;
+}
+.documentation-section ul,
+.documentation-section ol {
+	margin: 15px 0 20px;
 }
 .flex-video {
 	position: relative;
