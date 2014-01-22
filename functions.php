@@ -9,18 +9,13 @@
  * - Content width
  * - Add image size(s)
  * - Theme setup
- *   -- Template tags
- *   -- Extras
- *   -- Customizer
- *   -- Languages
- *   -- Feed links
- *   -- Post thumbnail support
- *   -- Register menus
- *   -- Post formats support
- * - Add menu item descriptions to main menu
+ * - Load editor style
+ * - Load required files
  * - Register custom background
- * - Enqueue scripts and styles
  * - Register custom header
+ * - Retrieve Google Fonts URL
+ * - Enqueue scripts and styles
+ * - Add menu item descriptions to main menu
  *
  * @package		Gumbo
  * @since		Gumbo 1.0
@@ -57,12 +52,6 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'thsp-featured-content', 1000, 480, true );
 	add_image_size( 'thsp-masonry', 300, 180, true );
 }
-
-
-/*
- * Load Jetpack compatibility file.
- */
-require( get_template_directory() . '/inc/jetpack.php' );
 
 
 if ( ! function_exists( 'thsp_setup' ) ) :
@@ -131,6 +120,12 @@ function thsp_editor_style() {
 add_action( 'init', 'thsp_editor_style' );
 
 
+/*
+ * Load Jetpack compatibility file.
+ */
+require( get_template_directory() . '/inc/jetpack.php' );
+
+
 /**
  * Custom template tags for this theme.
  */
@@ -164,6 +159,13 @@ require( get_template_directory() . '/inc/libraries/customizer-boilerplate/custo
 
 
 /**
+ * Customizer options
+ */
+require( get_template_directory() . '/inc/customizer.php' );
+
+
+
+/**
  * THA hooks
  */
 require( get_template_directory() . '/inc/libraries/tha/tha-theme-hooks.php' );
@@ -173,12 +175,6 @@ require( get_template_directory() . '/inc/libraries/tha/tha-theme-hooks.php' );
  * Add functions to theme hooks
  */
 require( get_template_directory() . '/inc/hooks.php' );
-
-
-/**
- * Customizer options
- */
-require( get_template_directory() . '/inc/customizer.php' );
 
 
 /**
@@ -210,6 +206,12 @@ function thsp_register_custom_background() {
 	add_theme_support( 'custom-background', $args );
 }
 add_action( 'after_setup_theme', 'thsp_register_custom_background' );
+
+
+/**
+ * Implement the Custom Header feature
+ */
+require( get_template_directory() . '/inc/custom-header.php' );
 
 
 /**
@@ -392,12 +394,6 @@ function thsp_scripts() {
 	wp_enqueue_script( 'gumbo', get_template_directory_uri() . '/js/gumbo.js', array( 'jquery' ), '1.0.0' );
 }
 add_action( 'wp_enqueue_scripts', 'thsp_scripts' );
-
-
-/**
- * Implement the Custom Header feature
- */
-require( get_template_directory() . '/inc/custom-header.php' );
 
 
 /**

@@ -7,16 +7,16 @@
  * ========
  *
  * - Add Home link to wp_page_menu()
- * - Custom body classes
- * - Custom post classes
- * - Custom menu item classes
+ * - Body classes
+ * - Post classes
+ * - Header classes
+ * - Menu item classes
  * - Get current layout helper function
  * - Check if a sidebar exists helper function
  * - Enhanced image navigation
  * - Custom wp_title, using filter hook
  * - Custom password protected post form output
  * - Embedded CSS output
- * - Register Gumbo meta widget
  * - Check if a post hides header
  * - Check if a post hides footer
  *

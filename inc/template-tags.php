@@ -8,9 +8,11 @@
  *
  * - Content navigation
  * - Comment callback
- * - Posted on
+ * - Post meta callbacks
  * - Categorized blog check
  * - Categorized blog transient flusher
+ * - Featured posts callback
+ * - Featured posts transient flusher
  *
  * @package Gumbo
  */

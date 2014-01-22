@@ -1,0 +1,15 @@
+/*
+ Theme Name:   Gumbo Child Theme
+ Theme URI:    http://gumbotheme.com
+ Description:  Child theme for Gumbo theme by ThematoSoup
+ Author:       ThematoSoup
+ Author URI:   http://thematosoup.com
+ Template:     gumbo
+ Version:      1.0.0
+ Text Domain:  gumbo-child
+*/
+
+@import url('../gumbo/style.css');
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
