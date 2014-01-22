@@ -25,7 +25,7 @@ require_once get_template_directory() . '/inc/libraries/tgm-plugin-activation/cl
  * This function is hooked into tgmpa_init, which is fired within the
  * TGM_Plugin_Activation class constructor.
  */
-function nifty_register_required_plugins() {
+function gumbo_register_required_plugins() {
 	
 	/**
 	* Array of plugin arrays. Required keys are name, slug and required.
@@ -33,21 +33,17 @@ function nifty_register_required_plugins() {
 	*/
 	$plugins = array(
 	
-		// This is an example of how to include a plugin pre-packaged with a theme
-		/*
 		array(
 			'name'                  => 'Envato WordPress Toolkit', // The plugin name
 			'slug'                  => 'envato-wordpress-toolkit-master', // The plugin slug (typically the folder name)
 			'source'                => get_template_directory() . '/inc/plugins/envato-wordpress-toolkit-master.zip', // The plugin source
-			'required'              => true, // If false, the plugin is only 'recommended' instead of required
+			'required'              => false, // If false, the plugin is only 'recommended' instead of required
 			'version'               => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
 			'force_activation'      => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
 			'force_deactivation'    => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
 			'external_url'          => '', // If set, overrides default API URL and points to an external URL
 		),
-		*/
 		
-		// This is an example of how to include a plugin from the WordPress Plugin Repository
 		array(
 			'name'      => 'WordPress SEO',
 			'slug'      => 'wordpress-seo',
@@ -67,7 +63,7 @@ function nifty_register_required_plugins() {
 	);
 	
 	// Change this to your theme text domain, used for internationalising strings
-	$theme_text_domain = 'nifty';
+	$theme_text_domain = 'gumbo';
 	
 	/**
 	* Array of configuration settings. Amend each line as needed.
@@ -109,4 +105,4 @@ function nifty_register_required_plugins() {
 	tgmpa( $plugins, $config );
 	
 }
-add_action( 'tgmpa_register', 'nifty_register_required_plugins' );
+add_action( 'tgmpa_register', 'gumbo_register_required_plugins' );

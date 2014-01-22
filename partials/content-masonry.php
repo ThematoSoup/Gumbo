@@ -31,7 +31,7 @@
 		<span class="post-time"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php echo esc_attr( get_the_time() ); ?>" rel="bookmark">
 			<?php
 			printf(
-				__( '%1$s ago' ),
+				__( '%1$s ago', 'gumbo' ),
 				human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) )
 			);
 			?>

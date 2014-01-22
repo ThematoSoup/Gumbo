@@ -6,7 +6,17 @@
  * For full list of theme hooks, please check theme documentation
  */
 
+
+/**
+ * Adds a heading after header
+ */
 function gumbo_child_hook_example() {
 	echo '<h1>This will appear right after header</h1>';
 }
 add_action( 'tha_after_header', 'gumbo_child_hook_example' );
+
+
+/**
+ * Removes footer credits
+ */
+remove_action( 'gumbo_credits', 'thsp_footer_credits', 10 );
