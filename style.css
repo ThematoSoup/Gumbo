@@ -1021,6 +1021,13 @@ body.font-size-large,
 	font-size: 14px;
 }
 
+#sub-header .inner,
+#above-footer .inner {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
 /* 5. =Header
 ----------------------------------------------- */
 
