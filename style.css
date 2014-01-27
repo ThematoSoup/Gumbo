@@ -3010,6 +3010,9 @@ body.woocommerce-page ul.products li.product .onsale {
 		margin-bottom: 15px;
 		padding-bottom: 15px;
 	}
+	.font-size-large .entry-title {
+		font-size: 40px;
+	}
 }
 @media screen and (max-width: 480px) {
 	.flexible-widget-area .widget {
