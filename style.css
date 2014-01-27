@@ -1160,7 +1160,27 @@ body.font-size-large,
 	text-align: right;
 	font-weight: bold;
 }
-
+@media screen and (max-width: 800px) {
+	.has-header-image #masthead.header-nav-right {
+		padding: 40px 0 !important;
+		min-height: 0 !important;
+	}
+	.has-header-image #masthead.header-nav-right hgroup {
+		padding-top: 0 !important;
+	}
+	.has-header-image #masthead.header-nav-below hgroup,
+	.has-header-image #masthead.header-nav-below-centered hgroup {
+		min-height: 0 !important;
+		padding: 60px 0;
+	}
+}
+@media screen and (max-width: 600px) {
+	.has-header-image #masthead.header-nav-below hgroup,
+	.has-header-image #masthead.header-nav-below-centered hgroup {
+		min-height: 0 !important;
+		padding: 40px 0;
+	}
+}
 
 /* 6. =Menus
 ----------------------------------------------- */
@@ -1322,7 +1342,7 @@ body.font-size-large,
 		margin-top: 20px;
 	}
 	#masthead hgroup {
-		padding-top: 120px !important;
+		padding-top: 40px !important;
 	}
 	#masthead {
 		padding: 0;
