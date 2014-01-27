@@ -2110,6 +2110,28 @@ object {
 	text-decoration: none;
 	color: #2e2e2e;
 }
+[class*="navigation"] .prev-post .wp-post-image,
+[class*="navigation"] .next-post .wp-post-image {
+	display: block;
+	width: 60px;
+	height: 60px;
+}
+[class*="navigation"] .prev-post .wp-post-image {
+	float: left;
+	margin-right: 12px;
+}
+[class*="navigation"] .next-post .wp-post-image {
+	float: right;
+	margin-left: 12px;
+}
+[class*="navigation"] .prev-post.has-image .heading,
+[class*="navigation"] .prev-post.has-image .title {
+	margin-left: 72px;
+}
+[class*="navigation"] .next-post.has-image .heading,
+[class*="navigation"] .next-post.has-image .title {
+	margin-right: 72px;
+}
 [class*="navigation"] .prev-post span.heading,
 [class*="navigation"] .next-post span.heading {
 	display: block;
@@ -2950,6 +2972,16 @@ body.woocommerce-page ul.products li.product .onsale {
 	[class*="navigation"] .prev-post {
 		padding-bottom: 1em;
 		border-bottom: 1px solid rgba(0,0,0,0.05);
+	}
+	[class*="navigation"] .next-post .wp-post-image {
+		float: left;
+		margin-right: 12px;
+		margin-left: 0;
+	}
+	[class*="navigation"] .next-post.has-image .heading,
+	[class*="navigation"] .next-post.has-image .title {
+		margin-left: 72px;
+		margin-right: 0;
 	}
 	.site-info,
 	.footer-bottom .menu {
