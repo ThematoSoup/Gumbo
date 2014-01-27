@@ -1541,8 +1541,12 @@ body.font-size-large,
 }
 .blog .hentry,
 .archive .hentry {
-	padding-bottom: 30px;
-	margin-bottom: 60px;
+	padding-bottom: 40px;
+	margin-bottom: 40px;
+}
+.blog .hentry > :last-child,
+.archive .hentry > :last-child {
+	margin-bottom: 0;
 }
 .sticky {
 	border-bottom: 3px solid #303030;
@@ -2929,6 +2933,11 @@ body.woocommerce-page ul.products li.product .onsale {
 		padding: 0;
 		margin-bottom: 20px;
 	}
+	.blog .hentry,
+	.archive .hentry {
+		margin-bottom: 20px;
+		padding-bottom: 20px
+	}
 }
 @media screen and (max-width: 600px) {
 	[class*="navigation"] .prev-post,
@@ -2995,6 +3004,11 @@ body.woocommerce-page ul.products li.product .onsale {
 	}
 	.error404 #searchform #s {
 		width: 90%;
+	}
+	.blog .hentry,
+	.archive .hentry {
+		margin-bottom: 15px;
+		padding-bottom: 15px;
 	}
 }
 @media screen and (max-width: 480px) {

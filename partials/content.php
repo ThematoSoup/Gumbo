@@ -41,9 +41,7 @@
 	<?php endif; // is_search() ?>
 
 	<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
-	<footer class="entry-meta">
-			<?php thsp_post_meta_bottom(); ?>
-	</footer><!-- .entry-meta -->
+		<?php thsp_post_meta_bottom(); ?>
 	<?php endif; // End if 'post' == get_post_type() ?>
 		
 <?php tha_entry_bottom(); ?>
