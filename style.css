@@ -2901,6 +2901,14 @@ body.woocommerce-page ul.products li.product .onsale {
 	#featured-content .featured-content-text .featured-post-excerpt {
 		font-size: 14px;
 	}
+	/* Widgetized template single column */
+	#main #widgetized-homepage-aside,
+	#main .widgetized-homepage-text {
+		float: none;
+		width: auto;
+		padding: 0;
+		margin-bottom: 20px;
+	}
 }
 @media screen and (max-width: 600px) {
 	[class*="navigation"] .prev-post,
