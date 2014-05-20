@@ -25,7 +25,7 @@
 				echo '</div><!-- #footer-widgets -->';
 			endif;
 			?>
-	
+
 			<div class="footer-bottom">
 				<div class="inner clear">
 					<div class="site-info">
@@ -35,10 +35,10 @@
 						 *
 						 * @hooked	thsp_footer_credits
 						 */
-						do_action( 'gumbo_credits' ); 
+						do_action( 'gumbo_credits' );
 						?>
 					</div><!-- .site-info -->
-					
+
 					<?php
 						// Footer menu
 						wp_nav_menu( array(

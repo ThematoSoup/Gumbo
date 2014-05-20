@@ -5,7 +5,7 @@
  * @category YourThemeOrPlugin
  * @package  Metaboxes
  * @license  http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
- * @link     https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress
+ * @link     https://github.com/webdevstudios/Custom-Metaboxes-and-Fields-for-WordPress
  */
 
 add_filter( 'cmb_meta_boxes', 'cmb_sample_metaboxes' );
@@ -20,6 +20,9 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 	// Start with an underscore to hide fields from custom fields list
 	$prefix = '_cmb_';
 
+	/**
+	 * Sample metabox to demonstrate each field type included
+	 */
 	$meta_boxes['test_metabox'] = array(
 		'id'         => 'test_metabox',
 		'title'      => __( 'Test Metabox', 'cmb' ),
@@ -30,12 +33,15 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 		// 'cmb_styles' => true, // Enqueue the CMB stylesheet on the frontend
 		'fields'     => array(
 			array(
-				'name' => __( 'Test Text', 'cmb' ),
-				'desc' => __( 'field description (optional)', 'cmb' ),
-				'id'   => $prefix . 'test_text',
-				'type' => 'text',
-				// 'repeatable' => true,
-				// 'on_front' => false, // Optionally designate a field to wp-admin only
+				'name'       => __( 'Test Text', 'cmb' ),
+				'desc'       => __( 'field description (optional)', 'cmb' ),
+				'id'         => $prefix . 'test_text',
+				'type'       => 'text',
+				'show_on_cb' => 'cmb_test_text_show_on_cb', // function should return a bool value
+				// 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
+				// 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
+				// 'on_front'        => false, // Optionally designate a field to wp-admin only
+				// 'repeatable'      => true,
 			),
 			array(
 				'name' => __( 'Test Text Small', 'cmb' ),
@@ -97,26 +103,29 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 				'id'   => $prefix . 'test_datetime_timestamp',
 				'type' => 'text_datetime_timestamp',
 			),
+			// This text_datetime_timestamp_timezone field type
+			// is only compatible with PHP versions 5.3 or above.
+			// Feel free to uncomment and use if your server meets the requirement
+			// array(
+			// 	'name' => __( 'Test Date/Time Picker/Time zone Combo (serialized DateTime object)', 'cmb' ),
+			// 	'desc' => __( 'field description (optional)', 'cmb' ),
+			// 	'id'   => $prefix . 'test_datetime_timestamp_timezone',
+			// 	'type' => 'text_datetime_timestamp_timezone',
+			// ),
 			array(
-				'name' => __( 'Test Date/Time Picker/Time zone Combo (serialized DateTime object)', 'cmb' ),
+				'name' => __( 'Test Money', 'cmb' ),
 				'desc' => __( 'field description (optional)', 'cmb' ),
-				'id'   => $prefix . 'test_datetime_timestamp_timezone',
-				'type' => 'text_datetime_timestamp_timezone',
-			),
-			array(
-				'name'   => __( 'Test Money', 'cmb' ),
-				'desc'   => __( 'field description (optional)', 'cmb' ),
-				'id'     => $prefix . 'test_textmoney',
-				'type'   => 'text_money',
-				// 'before' => '£', // override '$' symbol if needed
+				'id'   => $prefix . 'test_textmoney',
+				'type' => 'text_money',
+				// 'before'     => '£', // override '$' symbol if needed
 				// 'repeatable' => true,
 			),
 			array(
-				'name' => __( 'Test Color Picker', 'cmb' ),
-				'desc' => __( 'field description (optional)', 'cmb' ),
-				'id'   => $prefix . 'test_colorpicker',
-				'type' => 'colorpicker',
-				'std'  => '#ffffff'
+				'name'    => __( 'Test Color Picker', 'cmb' ),
+				'desc'    => __( 'field description (optional)', 'cmb' ),
+				'id'      => $prefix . 'test_colorpicker',
+				'type'    => 'colorpicker',
+				'default' => '#ffffff'
 			),
 			array(
 				'name' => __( 'Test Text Area', 'cmb' ),
@@ -148,9 +157,9 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 				'id'      => $prefix . 'test_select',
 				'type'    => 'select',
 				'options' => array(
-					array( 'name' => __( 'Option One', 'cmb' ), 'value' => 'standard', ),
-					array( 'name' => __( 'Option Two', 'cmb' ), 'value' => 'custom', ),
-					array( 'name' => __( 'Option Three', 'cmb' ), 'value' => 'none', ),
+					'standard' => __( 'Option One', 'cmb' ),
+					'custom'   => __( 'Option Two', 'cmb' ),
+					'none'     => __( 'Option Three', 'cmb' ),
 				),
 			),
 			array(
@@ -159,9 +168,9 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 				'id'      => $prefix . 'test_radio_inline',
 				'type'    => 'radio_inline',
 				'options' => array(
-					array( 'name' => __( 'Option One', 'cmb' ), 'value' => 'standard', ),
-					array( 'name' => __( 'Option Two', 'cmb' ), 'value' => 'custom', ),
-					array( 'name' => __( 'Option Three', 'cmb' ), 'value' => 'none', ),
+					'standard' => __( 'Option One', 'cmb' ),
+					'custom'   => __( 'Option Two', 'cmb' ),
+					'none'     => __( 'Option Three', 'cmb' ),
 				),
 			),
 			array(
@@ -170,9 +179,9 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 				'id'      => $prefix . 'test_radio',
 				'type'    => 'radio',
 				'options' => array(
-					array( 'name' => __( 'Option One', 'cmb' ), 'value' => 'standard', ),
-					array( 'name' => __( 'Option Two', 'cmb' ), 'value' => 'custom', ),
-					array( 'name' => __( 'Option Three', 'cmb' ), 'value' => 'none', ),
+					'option1' => __( 'Option One', 'cmb' ),
+					'option2' => __( 'Option Two', 'cmb' ),
+					'option3' => __( 'Option Three', 'cmb' ),
 				),
 			),
 			array(
@@ -181,6 +190,7 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 				'id'       => $prefix . 'text_taxonomy_radio',
 				'type'     => 'taxonomy_radio',
 				'taxonomy' => 'category', // Taxonomy Slug
+				// 'inline'  => true, // Toggles display to inline
 			),
 			array(
 				'name'     => __( 'Test Taxonomy Select', 'cmb' ),
@@ -190,11 +200,12 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 				'taxonomy' => 'category', // Taxonomy Slug
 			),
 			array(
-				'name'		=> __( 'Test Taxonomy Multi Checkbox', 'cmb' ),
-				'desc'		=> __( 'field description (optional)', 'cmb' ),
-				'id'		=> $prefix . 'test_multitaxonomy',
-				'type'		=> 'taxonomy_multicheck',
-				'taxonomy'	=> 'post_tag', // Taxonomy Slug
+				'name'     => __( 'Test Taxonomy Multi Checkbox', 'cmb' ),
+				'desc'     => __( 'field description (optional)', 'cmb' ),
+				'id'       => $prefix . 'test_multitaxonomy',
+				'type'     => 'taxonomy_multicheck',
+				'taxonomy' => 'post_tag', // Taxonomy Slug
+				// 'inline'  => true, // Toggles display to inline
 			),
 			array(
 				'name' => __( 'Test Checkbox', 'cmb' ),
@@ -212,13 +223,14 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 					'check2' => __( 'Check Two', 'cmb' ),
 					'check3' => __( 'Check Three', 'cmb' ),
 				),
+				// 'inline'  => true, // Toggles display to inline
 			),
 			array(
 				'name'    => __( 'Test wysiwyg', 'cmb' ),
 				'desc'    => __( 'field description (optional)', 'cmb' ),
 				'id'      => $prefix . 'test_wysiwyg',
 				'type'    => 'wysiwyg',
-				'options' => array(	'textarea_rows' => 5, ),
+				'options' => array( 'textarea_rows' => 5, ),
 			),
 			array(
 				'name' => __( 'Test Image', 'cmb' ),
@@ -227,10 +239,11 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 				'type' => 'file',
 			),
 			array(
-				'name' => __( 'Multiple Files', 'cmb' ),
-				'desc' => __( 'Upload or add multiple images/attachments.', 'cmb' ),
-				'id'   => $prefix . 'test_file_list',
-				'type' => 'file_list',
+				'name'         => __( 'Multiple Files', 'cmb' ),
+				'desc'         => __( 'Upload or add multiple images/attachments.', 'cmb' ),
+				'id'           => $prefix . 'test_file_list',
+				'type'         => 'file_list',
+				'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
 			),
 			array(
 				'name' => __( 'oEmbed', 'cmb' ),
@@ -241,6 +254,9 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 		),
 	);
 
+	/**
+	 * Metabox to be displayed on a single page ID
+	 */
 	$meta_boxes['about_page_metabox'] = array(
 		'id'         => 'about_page_metabox',
 		'title'      => __( 'About Page Metabox', 'cmb' ),
@@ -249,14 +265,61 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 		'priority'   => 'high',
 		'show_names' => true, // Show field names on the left
 		'show_on'    => array( 'key' => 'id', 'value' => array( 2, ), ), // Specific post IDs to display this metabox
-		'fields' => array(
+		'fields'     => array(
 			array(
 				'name' => __( 'Test Text', 'cmb' ),
 				'desc' => __( 'field description (optional)', 'cmb' ),
-				'id'   => $prefix . 'test_text',
+				'id'   => $prefix . '_about_test_text',
 				'type' => 'text',
 			),
 		)
+	);
+
+	/**
+	 * Repeatable Field Groups
+	 */
+	$meta_boxes['field_group'] = array(
+		'id'         => 'field_group',
+		'title'      => __( 'Repeating Field Group', 'cmb' ),
+		'pages'      => array( 'page', ),
+		'fields'     => array(
+			array(
+				'id'          => $prefix . 'repeat_group',
+				'type'        => 'group',
+				'description' => __( 'Generates reusable form entries', 'cmb' ),
+				'options'     => array(
+					'group_title'   => __( 'Entry {#}', 'cmb' ), // {#} gets replaced by row number
+					'add_button'    => __( 'Add Another Entry', 'cmb' ),
+					'remove_button' => __( 'Remove Entry', 'cmb' ),
+					'sortable'      => true, // beta
+				),
+				// Fields array works the same, except id's only need to be unique for this group. Prefix is not needed.
+				'fields'      => array(
+					array(
+						'name' => 'Entry Title',
+						'id'   => 'title',
+						'type' => 'text',
+						// 'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
+					),
+					array(
+						'name' => 'Description',
+						'description' => 'Write a short description for this entry',
+						'id'   => 'description',
+						'type' => 'textarea_small',
+					),
+					array(
+						'name' => 'Entry Image',
+						'id'   => 'image',
+						'type' => 'file',
+					),
+					array(
+						'name' => 'Image Caption',
+						'id'   => 'image_caption',
+						'type' => 'text',
+					),
+				),
+			),
+		),
 	);
 
 	/**
@@ -267,20 +330,20 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 		'title'      => __( 'User Profile Metabox', 'cmb' ),
 		'pages'      => array( 'user' ), // Tells CMB to use user_meta vs post_meta
 		'show_names' => true,
-		// 'cmb_styles' => true, // Show cmb bundled styles.. not needed on user profile page
+		'cmb_styles' => false, // Show cmb bundled styles.. not needed on user profile page
 		'fields'     => array(
 			array(
-				'name' => __( 'Extra Info', 'cmb' ),
-				'desc' => __( 'field description (optional)', 'cmb' ),
-				'id'   => $prefix . 'exta_info',
-				'type' => 'title',
+				'name'     => __( 'Extra Info', 'cmb' ),
+				'desc'     => __( 'field description (optional)', 'cmb' ),
+				'id'       => $prefix . 'exta_info',
+				'type'     => 'title',
 				'on_front' => false,
 			),
 			array(
-				'name' => __( 'Avatar', 'cmb' ),
-				'desc' => __( 'field description (optional)', 'cmb' ),
-				'id'   => $prefix . 'avatar',
-				'type' => 'file',
+				'name'    => __( 'Avatar', 'cmb' ),
+				'desc'    => __( 'field description (optional)', 'cmb' ),
+				'id'      => $prefix . 'avatar',
+				'type'    => 'file',
 				'save_id' => true,
 			),
 			array(
@@ -312,6 +375,25 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 				'desc' => __( 'field description (optional)', 'cmb' ),
 				'id'   => $prefix . 'user_text_field',
 				'type' => 'text',
+			),
+		)
+	);
+
+	/**
+	 * Metabox for an options page. Will not be added automatically, but needs to be called with
+	 * the `cmb_metabox_form` helper function. See wiki for more info.
+	 */
+	$meta_boxes['options_page'] = array(
+		'id'      => 'options_page',
+		'title'   => __( 'Theme Options Metabox', 'cmb' ),
+		'show_on' => array( 'key' => 'options-page', 'value' => array( $prefix . 'theme_options', ), ),
+		'fields'  => array(
+			array(
+				'name'    => __( 'Site Background Color', 'cmb' ),
+				'desc'    => __( 'field description (optional)', 'cmb' ),
+				'id'      => $prefix . 'bg_color',
+				'type'    => 'colorpicker',
+				'default' => '#ffffff'
 			),
 		)
 	);
