@@ -41,7 +41,7 @@ get_header(); ?>
 			<div id="masonry-container" class="clear">
 				<?php
 				/* Start the Loop */
-				$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+				$paged = ( get_query_var( 'page' ) ) ? get_query_var( 'page' ) : 1;
 				$numposts = ( get_post_meta( $post->ID, '_thsp_posts_per_page', true ) ? get_post_meta( $post->ID, '_thsp_posts_per_page', true ) : get_option( 'posts_per_page' ) );
 				$args = array(
 					'posts_per_page'		=> $numposts,
