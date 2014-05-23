@@ -6,7 +6,7 @@ Thank you for using Gumbo by ThematoSoup
 
 Whether you're running a personal, business, school, politics, military, sports or a how-to blog, a minimalist, elegant and simple WordPress template will make sure your message gets delivered in the best possible way.
 
-[Gumbo][1] is a blogging WordPress theme easy to setup and customize. It's created with two things in mind:
+[Gumbo][http://gumbotheme.com] is a blogging WordPress theme easy to setup and customize. It's created with two things in mind:
 * Minimalism
 * WordPress best practices
 
@@ -22,7 +22,7 @@ Give it a go and start blogging in no time.
 Gumbo Features
 ----------------
 
-Gumbo is an amazingly flexible and powerful free blogging theme developed by [ThematoSoup][2]. It is responsive and retina ready. It comes with:
+Gumbo is an amazingly flexible and powerful free blogging theme developed by [ThematoSoup][http://thematosoup.com]. It is responsive and retina ready. It comes with:
 * 3 page layouts (left sidebar, right sidebar, no sidebar)
 * 4 page templates (masonry, authors, widgetized, sitemap)
 * 6 widget areas (primary
@@ -140,7 +140,7 @@ Static Front Page is where you choose what to show on your home page, as well as
 Documentation & Support
 -----------------------
 
-If you experience any issues, you can read our extensive [online documentation][5]. For any support requests, please use our dedicated [support forums][6].
+If you experience any issues, you can read our extensive [online documentation][http://docs.thematosoup.com]. For any support requests, please use our dedicated [support forums][http://support.thematosoup.com].
 
 
 Theme Customizer Boilerplate
@@ -162,11 +162,4 @@ It's GPL so yes you can base your Themes on Gumbo, but they need to use a GPL li
 All derivative Themes must be different from the original work, which includes the Theme design as well as all the codes
 from Gumbo Theme.
 
-You can show us your appreciation by following WordPress.org best practices yourself and connecting with [ThematoSoup][2] on [Facebook][3] or [Twitter][4].
-
-[1] http://gumbotheme.com
-[2] http://thematosoup.com
-[3] https://www.facebook.com/thematosoup
-[4] https://twitter.com/thematosoup
-[5] http://docs.thematosoup.com
-[6] http://support.thematosoup.com
+You can show us your appreciation by following WordPress.org best practices yourself and connecting with [ThematoSoup][http://thematosoup.com] on [Facebook][https://www.facebook.com/thematosoup] or [Twitter][https://twitter.com/thematosoup].
