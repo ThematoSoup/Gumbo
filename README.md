@@ -140,7 +140,7 @@ Static Front Page is where you choose what to show on your home page, as well as
 Documentation & Support
 -----------------------
 
-If you experience any issues, you can read our extensive [online documentation][http://docs.thematosoup.com]. For any support requests, please use our dedicated [support forums][http://support.thematosoup.com].
+If you experience any issues, you can read our extensive [online documentation][http://docs.thematosoup.com] or check out [video tutorials][https://www.youtube.com/playlist?list=PLpuFMIjzqmYtZyxTtFYg8Yf2YEej7pCp3]. For any support requests, please use our dedicated [support forums][http://support.thematosoup.com].
 
 
 Theme Customizer Boilerplate
@@ -159,7 +159,6 @@ Theme Re-Distribution
 
 It's GPL so yes you can base your Themes on Gumbo, but they need to use a GPL license, too.
 
-All derivative Themes must be different from the original work, which includes the Theme design as well as all the codes
-from Gumbo Theme.
+All derivative Themes must be different from the original work, which includes the Theme design as well as all the codes from Gumbo Theme.
 
 You can show us your appreciation by following WordPress.org best practices yourself and connecting with [ThematoSoup][http://thematosoup.com] on [Facebook][https://www.facebook.com/thematosoup] or [Twitter][https://twitter.com/thematosoup].

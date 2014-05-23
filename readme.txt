@@ -140,7 +140,7 @@ Static Front Page is where you choose what to show on your home page, as well as
 Documentation & Support
 -----------------------
 
-If you experience any issues, you can read our extensive [online documentation][5]. For any support requests, please use our dedicated [support forums][6].
+If you experience any issues, you can read our extensive [online documentation][5] or view [video tutorials][7]. For any support requests, please use our dedicated [support forums][6].
 
 
 Theme Customizer Boilerplate
@@ -170,3 +170,4 @@ You can show us your appreciation by following WordPress.org best practices your
 [4] https://twitter.com/thematosoup
 [5] http://docs.thematosoup.com
 [6] http://support.thematosoup.com
+[7] https://www.youtube.com/playlist?list=PLpuFMIjzqmYtZyxTtFYg8Yf2YEej7pCp3
