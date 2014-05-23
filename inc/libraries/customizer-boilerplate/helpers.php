@@ -85,9 +85,9 @@ function thsp_cbp_get_options_values() {
  * 
  * Returns an array that holds default values for all options
  * 
- * @uses	thsp_get_theme_customizer_fields()	defined in /customizer/options.php
- * @return	array	$thsp_option_defaults		Default values for all options
- * @since	Theme_Customizer_Boilerplate 1.0
+ * @uses    thsp_get_theme_customizer_fields()   defined in /customizer/options.php
+ * @return  array     $thsp_option_defaults      Default values for all options
+ * @since   Theme_Customizer_Boilerplate 1.0
  */
 function thsp_cbp_get_options_defaults() {
 

@@ -65,20 +65,6 @@ function thsp_edit_cbp_directory_uri() {
 
 
 /**
- * Hooking into Theme Customizer Boilerplate to set Menu link text
- * https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate
- *
- * @link	https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate
- * @return	string			Menu link text
- * @since	Gumbo 1.0
- */
-add_filter( 'thsp_cbp_menu_link_text', 'thsp_customizer_menu_link_text', 1 );
-function thsp_customizer_menu_link_text() {
-	return __( 'Theme Customizer', 'gumbo' );
-}
-
-
-/**
  * Options array for Theme Customizer Boilerplate
  *
  * @link	https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate
@@ -510,6 +496,7 @@ function thsp_theme_options_array() {
 add_filter( 'tshp_cbp_remove_controls', 'thsp_theme_options_remove_controls', 1 );
 function thsp_theme_options_remove_controls() {
 	$thsp_cbp_remove_controls = array(
+		'blogname'
 	);
 	
 	return $thsp_cbp_remove_controls;

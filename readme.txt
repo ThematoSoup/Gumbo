@@ -12,7 +12,7 @@ Whether you're running a personal, business, school, politics, military, sports 
 
 If you're looking for a premium WordPress theme that focuses on ease of use, your content and customer support, you're in the right spot.
 
-Gumbo is using all the latest WordPress standards so it√≠s:
+Gumbo is using all the latest WordPress standards so itís:
 * Stable
 * Future proof
 * Secure

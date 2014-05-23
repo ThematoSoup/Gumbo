@@ -3,12 +3,12 @@
 /**
  * Theme Customizer Boilerplate
  *
- * @package		Theme_Customizer_Boilerplate
- * @copyright	Copyright (c) 2012, Slobodan Manic
- * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
- * @author		Slobodan Manic
+ * @package     Theme_Customizer_Boilerplate
+ * @copyright   Copyright (c) 2012, Slobodan Manic
+ * @license     http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
+ * @author      Slobodan Manic
  *
- * @since		Theme_Customizer_Boilerplate 1.0
+ * @since       Theme_Customizer_Boilerplate 1.0
 
 	License:
 	
