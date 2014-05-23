@@ -863,6 +863,9 @@ body.font-size-small,
 .font-size-small .menu-toggle {
 	font-size: 16px;
 }
+.font-size-small .menu-toggle:before {
+	font-size: 12px;
+}
 .font-size-small .widget,
 .font-size-small #colophon,
 .font-size-small .navigation-main .sub-menu,
@@ -1301,6 +1304,15 @@ body.font-size-large,
 	margin-bottom: 0;
 	padding: 10px;
 	font-size: 20px;
+}
+.menu-toggle:before {
+	font-family: Genericons;
+	color: #fff;
+	content: "\f419";
+	display: inline-block;
+	margin-right: 8px;
+	font-size: 16px;
+	line-height: 20px;
 }
 .main-small-navigation {
 	text-align: center;
