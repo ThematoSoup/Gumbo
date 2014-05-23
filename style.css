@@ -2444,16 +2444,19 @@ label .required {
 	max-width: 100%;
 }
 /* Search widget */
-.widget_search #s {
+.widget_search #s,
+.widget_product_search #s {
 	width: 100%;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 }
-.widget_search #s:focus {
+.widget_search #s:focus,
+.widget_product_search #s:focus {
 	border-color: #bbb;
 	background: #fdfdfd;
 }
-.widget_search .submit {
+.widget_search .submit,
+.widget_product_search #searchsubmit {
 	display: none;
 }
 /* Lists */
