@@ -87,7 +87,7 @@
 	<?php endif; // header check ?>
 
 	<?php
-	if ( is_home() && ! is_paged() && $thsp_theme_options['display_featured'] ) :
+	if ( is_front_page() && ! is_paged() && $thsp_theme_options['display_featured'] ) :
 		get_template_part( '/partials/featured', 'content' ); 
 	endif;
 	?>

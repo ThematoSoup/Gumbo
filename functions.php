@@ -386,7 +386,7 @@ function thsp_scripts() {
 	
 	// Flex Slider for featured content
 	$theme_options = thsp_cbp_get_options_values();
-	if ( is_home() && $theme_options['display_featured'] ) :
+	if ( is_front_page() && $theme_options['display_featured'] ) :
 		wp_enqueue_style( 'flex-slider', get_template_directory_uri() . '/js/flexslider/flexslider.css', array(), '2.2.0' );
 		wp_enqueue_script( 'flex-slider', get_template_directory_uri() . '/js/flexslider/jquery.flexslider-min.js', array( 'jquery' ), '2.2.0' );
 	endif; 
