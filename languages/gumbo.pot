@@ -1,0 +1,1271 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gumbo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-05-29 12:08+0100\n"
+"PO-Revision-Date: 2014-05-29 12:10+0100\n"
+"Last-Translator: Slobodan Manic <slobodan.manic@gmail.com>\n"
+"Language-Team: ThematoSoup\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr__;esc_attr_e;esc_html__;esc_html_e;_x;"
+"_ex;esc_attr_x;esc_html_x;_n;_nx;_n_loop;_nx_loop\n"
+"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:20
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:24
+msgid ""
+"It looks like nothing was found at this location. Maybe try search or one of "
+"the links below?"
+msgstr ""
+
+#: 404.php:34
+msgid "Most Used Categories"
+msgstr ""
+
+#: 404.php:45
+msgid "Try looking in the monthly archives."
+msgstr ""
+
+#: archive.php:24
+#, php-format
+msgid "Category Archives: %s"
+msgstr ""
+
+#: archive.php:27
+#, php-format
+msgid "Tag Archives: %s"
+msgstr ""
+
+#: archive.php:34
+#, php-format
+msgid "Author Archives: %s"
+msgstr ""
+
+#: archive.php:42
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: archive.php:45
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: archive.php:48
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: archive.php:51
+msgid "Asides"
+msgstr ""
+
+#: archive.php:54
+msgid "Images"
+msgstr ""
+
+#: archive.php:57
+msgid "Videos"
+msgstr ""
+
+#: archive.php:60
+msgid "Quotes"
+msgstr ""
+
+#: archive.php:63
+msgid "Links"
+msgstr ""
+
+#: archive.php:66
+msgid "Archives"
+msgstr ""
+
+#: comments.php:33
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgstr ""
+
+#: comments.php:40 comments.php:60
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:41 comments.php:61
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:42 comments.php:62
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:72
+msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:87
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:88
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:89
+msgid "Top Menu"
+msgstr ""
+
+#: functions.php:222
+msgid "Primary Sidebar"
+msgstr ""
+
+#: functions.php:223
+msgid "Main widget area, used throughout your site."
+msgstr ""
+
+#: functions.php:231
+msgid "Footer"
+msgstr ""
+
+#: functions.php:233
+msgid "This widget area is located in site footer."
+msgstr ""
+
+#: functions.php:240
+msgid "Below Header"
+msgstr ""
+
+#: functions.php:241
+msgid "This widget area is located below site header."
+msgstr ""
+
+#: functions.php:249
+msgid "Above Footer"
+msgstr ""
+
+#: functions.php:250
+msgid "This widget area is located above site footer."
+msgstr ""
+
+#: functions.php:258
+msgid "Post Aside"
+msgstr ""
+
+#: functions.php:259
+msgid "Appears next to post content in posts with standard post format."
+msgstr ""
+
+#: functions.php:267
+msgid "Widgetized Template"
+msgstr ""
+
+#: functions.php:268
+msgid "This widget area is used in Widgetized Page Template"
+msgstr ""
+
+#: header.php:68
+msgid "Menu"
+msgstr ""
+
+#: header.php:69
+msgid "Skip to content"
+msgstr ""
+
+#: image.php:28
+#, php-format
+msgid ""
+"<span class=\"post-time entry-date\"><time class=\"entry-date\" datetime="
+"\"%1$s\">%2$s</time></span><br /> <a href=\"%3$s\" title=\"Link to full-size "
+"image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" "
+"rel=\"gallery\">%8$s</a>"
+msgstr ""
+
+#: image.php:39 image.php:112 inc/template-tags.php:111
+#: inc/template-tags.php:132 inc/template-tags.php:184
+#: inc/template-tags.php:201 page-templates/template-authors.php:59
+#: page-templates/template-masonry.php:33
+#: page-templates/template-sitemap.php:113
+#: page-templates/template-widgetized.php:50 partials/content-page.php:35
+msgid "Edit"
+msgstr ""
+
+#: image.php:43
+msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+msgstr ""
+
+#: image.php:44
+msgid "Next <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: image.php:98 page-templates/template-authors.php:30
+#: page-templates/template-masonry.php:31
+#: page-templates/template-sitemap.php:27
+#: page-templates/template-widgetized.php:48 partials/content-link.php:28
+#: partials/content-page.php:33 partials/content-single.php:45
+#: partials/content.php:39
+msgid "Pages:"
+msgstr ""
+
+#: image.php:104
+#, php-format
+msgid ""
+"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a "
+"comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
+"title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr ""
+
+#: image.php:106
+#, php-format
+msgid ""
+"Comments are closed, but you can leave a trackback: <a class=\"trackback-link"
+"\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback"
+"\">Trackback URL</a>."
+msgstr ""
+
+#: image.php:108
+msgid ""
+"Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond"
+"\" title=\"Post a comment\">post a comment</a>."
+msgstr ""
+
+#: image.php:110
+msgid "Both comments and trackbacks are currently closed."
+msgstr ""
+
+#: no-results.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: no-results.php:20
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: no-results.php:24
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: no-results.php:29
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: search.php:21
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:10 searchform.php:12
+msgid "Search"
+msgstr ""
+
+#: searchform.php:11
+msgid "Search &hellip;"
+msgstr ""
+
+#: inc/customizer.php:170
+msgid "Color Scheme"
+msgstr ""
+
+#: inc/customizer.php:194
+msgid "Primary Color"
+msgstr ""
+
+#: inc/customizer.php:207
+msgid "Header Background Color"
+msgstr ""
+
+#: inc/customizer.php:227
+msgid "Logo"
+msgstr ""
+
+#: inc/customizer.php:248
+msgid "Enable navigation below posts"
+msgstr ""
+
+#: inc/customizer.php:260 inc/meta-boxes.php:28
+msgid "Layout"
+msgstr ""
+
+#: inc/customizer.php:261
+msgid "Set default page layout"
+msgstr ""
+
+#: inc/customizer.php:273
+msgid "Default page layout"
+msgstr ""
+
+#: inc/customizer.php:277 inc/meta-boxes.php:35
+msgid "Right sidebar"
+msgstr ""
+
+#: inc/customizer.php:281 inc/meta-boxes.php:39
+msgid "Left sidebar"
+msgstr ""
+
+#: inc/customizer.php:285 inc/meta-boxes.php:43
+msgid "No sidebar"
+msgstr ""
+
+#: inc/customizer.php:300
+msgid "Header layout"
+msgstr ""
+
+#: inc/customizer.php:304
+msgid "Navigation below title and tagline"
+msgstr ""
+
+#: inc/customizer.php:308
+msgid "Navigation next to title and tagline"
+msgstr ""
+
+#: inc/customizer.php:312
+msgid "Center aligned"
+msgstr ""
+
+#: inc/customizer.php:326
+msgid "Featured Content"
+msgstr ""
+
+#: inc/customizer.php:327
+msgid "Set featured content for your site"
+msgstr ""
+
+#: inc/customizer.php:339
+msgid "Display featured posts in homepage"
+msgstr ""
+
+#: inc/customizer.php:352
+msgid "Enter a tag to use for featured content"
+msgstr ""
+
+#: inc/customizer.php:365
+msgid "Number of featured posts"
+msgstr ""
+
+#: inc/customizer.php:378
+msgid "Featured content width"
+msgstr ""
+
+#: inc/customizer.php:382
+msgid "Full width"
+msgstr ""
+
+#: inc/customizer.php:385
+msgid "Content width"
+msgstr ""
+
+#: inc/customizer.php:398
+msgid "Typography"
+msgstr ""
+
+#: inc/customizer.php:399
+msgid "Select fonts and their options"
+msgstr ""
+
+#: inc/customizer.php:411 inc/meta-boxes.php:61
+msgid "Font size"
+msgstr ""
+
+#: inc/customizer.php:435
+msgid "Body font"
+msgstr ""
+
+#: inc/customizer.php:449
+msgid "Heading font"
+msgstr ""
+
+#: inc/customizer.php:463
+msgid "Make headings bold"
+msgstr ""
+
+#: inc/customizer.php:476
+msgid "Make headings uppercase"
+msgstr ""
+
+#: inc/extras.php:276
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: inc/extras.php:290
+msgid ""
+"This post is password protected. To view it please enter your password below:"
+msgstr ""
+
+#: inc/extras.php:290
+msgid "Password"
+msgstr ""
+
+#: inc/extras.php:290
+msgid "Submit"
+msgstr ""
+
+#: inc/hooks.php:61
+msgid "A Semantic Personal Publishing Platform"
+msgstr ""
+
+#: inc/hooks.php:61
+#, php-format
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: inc/hooks.php:63
+#, php-format
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: inc/meta-boxes.php:49
+msgid "Do not show header for this post"
+msgstr ""
+
+#: inc/meta-boxes.php:50
+msgid "If checked, header will not be displayed"
+msgstr ""
+
+#: inc/meta-boxes.php:55
+msgid "Do not show footer for this post"
+msgstr ""
+
+#: inc/meta-boxes.php:56
+msgid "If checked, footer will not be displayed"
+msgstr ""
+
+#: inc/meta-boxes.php:62
+msgid "If set, this option will override font size set in Theme Customizer"
+msgstr ""
+
+#: inc/meta-boxes.php:68
+msgid "Small"
+msgstr ""
+
+#: inc/meta-boxes.php:72
+msgid "Medium"
+msgstr ""
+
+#: inc/meta-boxes.php:76
+msgid "Large"
+msgstr ""
+
+#: inc/meta-boxes.php:86
+msgid "Default sidebar"
+msgstr ""
+
+#: inc/meta-boxes.php:104
+msgid "Widget Area"
+msgstr ""
+
+#: inc/meta-boxes.php:105
+msgid "Select a widget area to display in the sidebar."
+msgstr ""
+
+#: inc/meta-boxes.php:115
+msgid "Layout Options"
+msgstr ""
+
+#: inc/meta-boxes.php:126
+msgid "Authors Page Settings"
+msgstr ""
+
+#: inc/meta-boxes.php:137
+msgid "Order authors by"
+msgstr ""
+
+#: inc/meta-boxes.php:143
+msgid "Post count"
+msgstr ""
+
+#: inc/meta-boxes.php:147
+msgid "Name"
+msgstr ""
+
+#: inc/meta-boxes.php:153
+msgid "Order"
+msgstr ""
+
+#: inc/meta-boxes.php:159
+msgid "Ascending"
+msgstr ""
+
+#: inc/meta-boxes.php:163
+msgid "Descending"
+msgstr ""
+
+#: inc/meta-boxes.php:174
+msgid "Masonry Page Settings"
+msgstr ""
+
+#: inc/meta-boxes.php:185
+msgid "Posts per page"
+msgstr ""
+
+#: inc/meta-boxes.php:186
+msgid ""
+"Default number of posts per page (set in General > Reading) will be used if "
+"this is empty."
+msgstr ""
+
+#: inc/meta-boxes.php:191 inc/meta-boxes.php:220
+msgid "Hide page title"
+msgstr ""
+
+#: inc/meta-boxes.php:192 inc/meta-boxes.php:221
+msgid "Check if you'd like to hide this page's title"
+msgstr ""
+
+#: inc/meta-boxes.php:197
+msgid "Excluded categories"
+msgstr ""
+
+#: inc/meta-boxes.php:198
+msgid "Select which categories to exclude"
+msgstr ""
+
+#: inc/meta-boxes.php:209
+msgid "Widgetized Page Settings"
+msgstr ""
+
+#: inc/meta-boxes.php:226
+msgid "Text position"
+msgstr ""
+
+#: inc/meta-boxes.php:227
+msgid "Relative to featured image, video or slider"
+msgstr ""
+
+#: inc/meta-boxes.php:232
+msgid "Top"
+msgstr ""
+
+#: inc/meta-boxes.php:236
+msgid "Right"
+msgstr ""
+
+#: inc/meta-boxes.php:240
+msgid "Bottom"
+msgstr ""
+
+#: inc/meta-boxes.php:244
+msgid "Left"
+msgstr ""
+
+#: inc/meta-boxes.php:251
+msgid "Video URL"
+msgstr ""
+
+#: inc/meta-boxes.php:252
+msgid "You can use video instead of Featured Image"
+msgstr ""
+
+#: inc/template-tags.php:51 page-templates/template-masonry.php:61
+msgid "Post navigation"
+msgstr ""
+
+#: inc/template-tags.php:60
+#, php-format
+msgid "Previous post: %1$s"
+msgstr ""
+
+#: inc/template-tags.php:63
+msgid "Previous post"
+msgstr ""
+
+#: inc/template-tags.php:69
+#, php-format
+msgid "Next post: %1$s"
+msgstr ""
+
+#: inc/template-tags.php:72
+msgid "Next post"
+msgstr ""
+
+#: inc/template-tags.php:111
+msgid "Pingback:"
+msgstr ""
+
+#: inc/template-tags.php:121
+#, php-format
+msgid "%s <span class=\"says\">says:</span>"
+msgstr ""
+
+#: inc/template-tags.php:124
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/template-tags.php:130
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: inc/template-tags.php:156 inc/template-tags.php:179
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:162
+#, php-format
+msgid "View all posts by %s"
+msgstr ""
+
+#: inc/template-tags.php:165 inc/template-tags.php:198
+#: partials/content-masonry.php:41
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/template-tags.php:165 inc/template-tags.php:198
+#: partials/content-masonry.php:41
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:165 inc/template-tags.php:198
+#: partials/content-masonry.php:41
+msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:230
+msgid "Latest posts"
+msgstr ""
+
+#: inc/template-tags.php:233 partials/content-gallery.php:16
+#: partials/content-image.php:15 partials/content.php:21
+#: partials/content.php:25
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: inc/tgm.php:71
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:196
+msgid "Install Required Plugins"
+msgstr ""
+
+#: inc/tgm.php:72
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:197
+msgid "Install Plugins"
+msgstr ""
+
+#: inc/tgm.php:73
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:198
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: inc/tgm.php:74
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: inc/tgm.php:85
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:210
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: inc/tgm.php:86
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:212
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1951
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: inc/tgm.php:87
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: inc/widgets.php:94
+msgid "Icon size:"
+msgstr ""
+
+#: inc/widgets.php:96
+msgid "No icon"
+msgstr ""
+
+#: inc/widgets.php:97
+msgid "64px"
+msgstr ""
+
+#: inc/widgets.php:98
+msgid "96px"
+msgstr ""
+
+#: inc/widgets.php:99
+msgid "128px"
+msgstr ""
+
+#: inc/widgets.php:100
+msgid "256px"
+msgstr ""
+
+#: inc/widgets.php:103
+msgid "Select an icon:"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:28
+msgid "Test Metabox"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:36
+#: inc/libraries/cmb/example-functions.php:270
+msgid "Test Text"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:37
+#: inc/libraries/cmb/example-functions.php:48
+#: inc/libraries/cmb/example-functions.php:55
+#: inc/libraries/cmb/example-functions.php:62
+#: inc/libraries/cmb/example-functions.php:70
+#: inc/libraries/cmb/example-functions.php:77
+#: inc/libraries/cmb/example-functions.php:89
+#: inc/libraries/cmb/example-functions.php:95
+#: inc/libraries/cmb/example-functions.php:102
+#: inc/libraries/cmb/example-functions.php:117
+#: inc/libraries/cmb/example-functions.php:125
+#: inc/libraries/cmb/example-functions.php:132
+#: inc/libraries/cmb/example-functions.php:138
+#: inc/libraries/cmb/example-functions.php:144
+#: inc/libraries/cmb/example-functions.php:156
+#: inc/libraries/cmb/example-functions.php:167
+#: inc/libraries/cmb/example-functions.php:178
+#: inc/libraries/cmb/example-functions.php:189
+#: inc/libraries/cmb/example-functions.php:197
+#: inc/libraries/cmb/example-functions.php:204
+#: inc/libraries/cmb/example-functions.php:212
+#: inc/libraries/cmb/example-functions.php:218
+#: inc/libraries/cmb/example-functions.php:230
+#: inc/libraries/cmb/example-functions.php:271
+#: inc/libraries/cmb/example-functions.php:337
+#: inc/libraries/cmb/example-functions.php:344
+#: inc/libraries/cmb/example-functions.php:351
+#: inc/libraries/cmb/example-functions.php:357
+#: inc/libraries/cmb/example-functions.php:363
+#: inc/libraries/cmb/example-functions.php:369
+#: inc/libraries/cmb/example-functions.php:375
+#: inc/libraries/cmb/example-functions.php:393
+msgid "field description (optional)"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:47
+msgid "Test Text Small"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:54
+msgid "Test Text Medium"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:61
+msgid "Website URL"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:69
+msgid "Test Text Email"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:76
+msgid "Test Time"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:82
+#: inc/libraries/cmb/example-functions.php:83
+msgid "Time zone"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:88
+msgid "Test Date Picker"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:94
+msgid "Test Date Picker (UNIX timestamp)"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:101
+msgid "Test Date/Time Picker Combo (UNIX timestamp)"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:116
+msgid "Test Money"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:124
+msgid "Test Color Picker"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:131
+msgid "Test Text Area"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:137
+msgid "Test Text Area Small"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:143
+msgid "Test Text Area for Code"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:149
+msgid "Test Title Weeeee"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:150
+msgid "This is a title description"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:155
+msgid "Test Select"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:160
+#: inc/libraries/cmb/example-functions.php:171
+#: inc/libraries/cmb/example-functions.php:182
+msgid "Option One"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:161
+#: inc/libraries/cmb/example-functions.php:172
+#: inc/libraries/cmb/example-functions.php:183
+msgid "Option Two"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:162
+#: inc/libraries/cmb/example-functions.php:173
+#: inc/libraries/cmb/example-functions.php:184
+msgid "Option Three"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:166
+msgid "Test Radio inline"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:177
+msgid "Test Radio"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:188
+msgid "Test Taxonomy Radio"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:196
+msgid "Test Taxonomy Select"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:203
+msgid "Test Taxonomy Multi Checkbox"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:211
+msgid "Test Checkbox"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:217
+msgid "Test Multi Checkbox"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:222
+msgid "Check One"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:223
+msgid "Check Two"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:224
+msgid "Check Three"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:229
+msgid "Test wysiwyg"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:236
+msgid "Test Image"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:237
+msgid "Upload an image or enter a URL."
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:242
+msgid "Multiple Files"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:243
+msgid "Upload or add multiple images/attachments."
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:249
+msgid "oEmbed"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:250
+msgid ""
+"Enter a youtube, twitter, or instagram URL. Supports services listed at <a "
+"href=\"http://codex.wordpress.org/Embeds\">http://codex.wordpress.org/"
+"Embeds</a>."
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:262
+msgid "About Page Metabox"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:283
+msgid "Repeating Field Group"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:289
+msgid "Generates reusable form entries"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:291
+msgid "Entry {#}"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:292
+msgid "Add Another Entry"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:293
+msgid "Remove Entry"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:330
+msgid "User Profile Metabox"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:336
+msgid "Extra Info"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:343
+msgid "Avatar"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:350
+msgid "Facebook URL"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:356
+msgid "Twitter URL"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:362
+msgid "Google+ URL"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:368
+msgid "Linkedin URL"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:374
+msgid "User Field"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:388
+msgid "Theme Options Metabox"
+msgstr ""
+
+#: inc/libraries/cmb/example-functions.php:392
+msgid "Site Background Color"
+msgstr ""
+
+#: inc/libraries/cmb/init.php:258
+msgid "Clear"
+msgstr ""
+
+#: inc/libraries/cmb/init.php:259
+msgid "Default"
+msgstr ""
+
+#: inc/libraries/cmb/init.php:260
+msgid "Select Color"
+msgstr ""
+
+#: inc/libraries/cmb/init.php:261
+msgid "Current Color"
+msgstr ""
+
+#: inc/libraries/cmb/init.php:288
+msgid "Select / Deselect All"
+msgstr ""
+
+#: inc/libraries/cmb/init.php:1177
+msgid "Save"
+msgstr ""
+
+#: inc/libraries/cmb/helpers/cmb_Meta_Box_ajax.php:47
+msgid "Please Try Again"
+msgstr ""
+
+#: inc/libraries/cmb/helpers/cmb_Meta_Box_ajax.php:131
+msgid "Remove Embed"
+msgstr ""
+
+#: inc/libraries/cmb/helpers/cmb_Meta_Box_ajax.php:134
+#, php-format
+msgid "No oEmbed Results Found for %s. View more info at"
+msgstr ""
+
+#: inc/libraries/cmb/helpers/cmb_Meta_Box_field.php:459
+msgid "Add Group"
+msgstr ""
+
+#: inc/libraries/cmb/helpers/cmb_Meta_Box_field.php:460
+msgid "Remove Group"
+msgstr ""
+
+#: inc/libraries/cmb/helpers/cmb_Meta_Box_types.php:250
+msgid "Add Row"
+msgstr ""
+
+#: inc/libraries/cmb/helpers/cmb_Meta_Box_types.php:306
+#: inc/libraries/cmb/helpers/cmb_Meta_Box_types.php:706
+#: inc/libraries/cmb/helpers/cmb_Meta_Box_types.php:768
+msgid "Remove"
+msgstr ""
+
+#: inc/libraries/cmb/helpers/cmb_Meta_Box_types.php:601
+#: inc/libraries/cmb/helpers/cmb_Meta_Box_types.php:635
+msgid "No terms"
+msgstr ""
+
+#: inc/libraries/cmb/helpers/cmb_Meta_Box_types.php:674
+#: inc/libraries/cmb/helpers/cmb_Meta_Box_types.php:728
+msgid "Add or Upload File"
+msgstr ""
+
+#: inc/libraries/cmb/helpers/cmb_Meta_Box_types.php:695
+#: inc/libraries/cmb/helpers/cmb_Meta_Box_types.php:760
+msgid "Remove Image"
+msgstr ""
+
+#: inc/libraries/cmb/helpers/cmb_Meta_Box_types.php:706
+#: inc/libraries/cmb/helpers/cmb_Meta_Box_types.php:768
+msgid "File:"
+msgstr ""
+
+#: inc/libraries/cmb/helpers/cmb_Meta_Box_types.php:706
+#: inc/libraries/cmb/helpers/cmb_Meta_Box_types.php:768
+msgid "Download"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:199
+msgid "Something went wrong."
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:211
+msgid "Return to the dashboard"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:213
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1638
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:214
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:215
+msgid "Dismiss this notice"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:544
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:2168
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1174
+msgid "Private Repository"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1177
+msgid "Pre-Packaged"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1182
+msgid "WordPress Repository"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1185
+msgid "Required"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1185
+msgid "Recommended"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1188
+msgid "Not Installed"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1190
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1290
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1398
+msgid "Install"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1312
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1399
+msgid "Activate"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1361
+#, php-format
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1377
+msgid "Plugin"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1378
+msgid "Source"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1379
+msgid "Type"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1380
+msgid "Status"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1508
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1616
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1934
+msgid "Install package not available."
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1935
+#, php-format
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1936
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1937
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1938
+msgid "Plugin install failed."
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1939
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:1950
+msgid "Plugin activation failed."
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:2064
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:2065
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:2065
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:2074
+msgid "Show Details"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:2065
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:2074
+msgid "Hide Details"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:2066
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:2067
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:2071
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:2072
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:2073
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:2074
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:2075
+msgid "All installations have been completed."
+msgstr ""
+
+#: inc/libraries/tgm-plugin-activation/class-tgm-plugin-activation.php:2076
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/woocommerce/woocommerce.php:29
+msgid "Store Sidebar"
+msgstr ""
+
+#: inc/woocommerce/woocommerce.php:30
+msgid "This widget area is used with WooCommerce store pages."
+msgstr ""
+
+#: page-templates/template-sitemap.php:31
+msgid "Authors"
+msgstr ""
+
+#: page-templates/template-sitemap.php:44
+msgid "Pages"
+msgstr ""
+
+#: page-templates/template-sitemap.php:59
+msgid "Posts"
+msgstr ""
+
+#: partials/content-gallery.php:16
+msgid "images"
+msgstr ""
+
+#: partials/content-masonry.php:34
+#, php-format
+msgid "%1$s ago"
+msgstr ""
+
+#: partials/content.php:38
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
