@@ -312,13 +312,13 @@ function thsp_generated_css() {
 	$bg_repeat					= get_theme_mod( 'background_repeat' ); ?>
 	
 	<style type="text/css" id="gumbo-generated-css">
-	<?php if ( 'helvetica' != $body_font_value ) : // Body font ?>
+	<?php if ( isset( $body_font_value ) && 'helvetica' != $body_font_value ) : // Body font ?>
 		body, button, input, select, textarea, .site-description {
 			font-family: <?php echo $body_font_options[ $body_font_value ]['font_family']; ?>;
 		}
 	<?php endif; ?>
 	
-	<?php if ( 'helvetica' != $heading_font_value ) : // Heading font ?>
+	<?php if ( isset( $heading_font_value ) && 'helvetica' != $heading_font_value ) : // Heading font ?>
 		h1, h2, h3, h4, h5, h6 {
 			font-family: <?php echo $heading_font_options[ $heading_font_value ]['font_family']; ?>;
 		}
