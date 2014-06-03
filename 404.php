@@ -29,7 +29,7 @@ get_header(); ?>
 					<div class="widgets-404 clear">
 						<?php the_widget( 'WP_Widget_Recent_Posts', 'number=5' ); ?>
 	
-						<?php if ( thsp_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
+						<?php if ( gumbo_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
 							<div class="widget widget_categories">
 								<h2 class="widgettitle"><?php _e( 'Most Used Categories', 'gumbo' ); ?></h2>
 								<ul>

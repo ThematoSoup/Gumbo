@@ -32,8 +32,8 @@ get_header(); ?>
 						<!-- Authors template code -->
 						<?php
 						// Get custom fields that determine how authors are ordered
-						$orderby_value = get_post_meta( $post->ID, '_thsp_authors_query_orderby', true ) ? get_post_meta( $post->ID, '_thsp_authors_query_orderby', true ) : 'display_name';
-						$order_value = get_post_meta( $post->ID, '_thsp_authors_query_order', true ) ? get_post_meta( $post->ID, '_thsp_authors_query_order', true ) : 'ASC';
+						$orderby_value = get_post_meta( $post->ID, '_gumbo_authors_query_orderby', true ) ? get_post_meta( $post->ID, '_gumbo_authors_query_orderby', true ) : 'display_name';
+						$order_value = get_post_meta( $post->ID, '_gumbo_authors_query_order', true ) ? get_post_meta( $post->ID, '_gumbo_authors_query_order', true ) : 'ASC';
 						?>
 						
 						<ul id="authors-list">
@@ -50,7 +50,7 @@ get_header(); ?>
 							// Display authors
 							foreach ( $displayed_authors as $displayed_author ) {
 								// Template tag, defined in /inc/template-tags.php
-								thsp_display_an_author( $displayed_author );
+								gumbo_display_an_author( $displayed_author );
 							}
 						?>
 						</ul><!-- #authors-list -->

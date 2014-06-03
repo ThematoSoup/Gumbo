@@ -24,7 +24,7 @@ add_action( 'woocommerce_after_main_content', 'my_theme_wrapper_end', 10 );
 
 
 // Register Store Sidebar
-function thsp_woocommerce_widgets_init() {
+function gumbo_woocommerce_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Store Sidebar', 'gumbo' ),
 		'description' => __( 'This widget area is used with WooCommerce store pages.', 'gumbo' ),
@@ -35,7 +35,7 @@ function thsp_woocommerce_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 }
-add_action( 'widgets_init', 'thsp_woocommerce_widgets_init' );
+add_action( 'widgets_init', 'gumbo_woocommerce_widgets_init' );
 
 
 // Replace sidebar (function is pluggable)
@@ -45,12 +45,12 @@ function woocommerce_get_sidebar() {
 
 
 // Disable Jetpack Infinite Scroll on WooCommerce pages
-function thsp_woocommerce_disable_infinite_scroll() {
+function gumbo_woocommerce_disable_infinite_scroll() {
     $supported = current_theme_supports( 'infinite-scroll' ) && ( is_home() || is_archive() ) && ( ! is_woocommerce() );
 
     return $supported;
 }
-add_filter( 'infinite_scroll_archive_supported', 'thsp_woocommerce_disable_infinite_scroll' );
+add_filter( 'infinite_scroll_archive_supported', 'gumbo_woocommerce_disable_infinite_scroll' );
 
 
 /**

@@ -11,7 +11,7 @@
 
 <?php 
 	// Get theme options
-	$thsp_theme_options = thsp_cbp_get_options_values(); 
+	$gumbo_theme_options = thsp_cbp_get_options_values(); 
 ?>
 <?php tha_entry_before(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -25,7 +25,7 @@
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'gumbo' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
-			<?php thsp_post_meta_top(); ?>
+			<?php gumbo_post_meta_top(); ?>
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
@@ -41,7 +41,7 @@
 	<?php endif; // is_search() ?>
 
 	<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
-		<?php thsp_post_meta_bottom(); ?>
+		<?php gumbo_post_meta_bottom(); ?>
 	<?php endif; // End if 'post' == get_post_type() ?>
 		
 <?php tha_entry_bottom(); ?>

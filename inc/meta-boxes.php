@@ -14,12 +14,12 @@
  * @param  array $meta_boxes
  * @return array
  */
-function thsp_metaboxes( $meta_boxes ) {
+function gumbo_metaboxes( $meta_boxes ) {
 	// Start with an underscore to hide fields from custom fields list
-	$prefix				= '_thsp_';
-	$thsp_theme_options	= thsp_cbp_get_options_values();
-	$default_layout		= $thsp_theme_options['default_layout'];
-	$default_font_size	= $thsp_theme_options['font_size'];
+	$prefix               = '_gumbo_';
+	$gumbo_theme_options  = thsp_cbp_get_options_values();
+	$default_layout       = $gumbo_theme_options['default_layout'];
+	$default_font_size    = $gumbo_theme_options['font_size'];
 
 
 	// Posts and pages metabox
@@ -258,14 +258,14 @@ function thsp_metaboxes( $meta_boxes ) {
 
 	return $meta_boxes;
 }
-add_filter( 'cmb_meta_boxes', 'thsp_metaboxes' );
+add_filter( 'cmb_meta_boxes', 'gumbo_metaboxes' );
 
 
 /**
  * Initialize the metabox class.
  */
-function thsp_initialize_cmb_meta_boxes() {
+function gumbo_initialize_cmb_meta_boxes() {
 	if ( ! class_exists( 'cmb_Meta_Box' ) )
 		require_once get_template_directory() . '/inc/libraries/cmb/init.php';
 }
-add_action( 'init', 'thsp_initialize_cmb_meta_boxes', 9999 );
+add_action( 'init', 'gumbo_initialize_cmb_meta_boxes', 9999 );

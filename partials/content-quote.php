@@ -15,7 +15,7 @@
 		<?php the_content(); ?>
 	</div><!-- .entry-content -->
 
-	<?php thsp_post_meta_bottom_compact(); ?>
+	<?php gumbo_post_meta_bottom_compact(); ?>
 			
 <?php tha_entry_bottom(); ?>
 </article><!-- #post-<?php the_ID(); ?> -->

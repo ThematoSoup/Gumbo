@@ -9,7 +9,7 @@
 
 <?php 
 	// Get theme options
-	$thsp_theme_options = thsp_cbp_get_options_values(); 
+	$gumbo_theme_options = thsp_cbp_get_options_values(); 
 ?>
 <?php tha_entry_before(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>		
@@ -19,7 +19,7 @@
 		<?php the_content(); ?>
 	</div><!-- .entry-content -->
 	
-	<?php thsp_post_meta_bottom_compact(); ?>
+	<?php gumbo_post_meta_bottom_compact(); ?>
 	
 <?php tha_entry_bottom(); ?>	
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -27,21 +27,21 @@
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  */
-function thsp_page_menu_args( $args ) {
+function gumbo_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'thsp_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'gumbo_page_menu_args' );
 
 
 /**
  * Adds custom classes to the array of body classes.
  */
-function thsp_body_classes( $classes ) {
+function gumbo_body_classes( $classes ) {
 	global $post;
 	
 	// Get theme options values
-	$thsp_theme_options = thsp_cbp_get_options_values();
+	$gumbo_theme_options = thsp_cbp_get_options_values();
 
 	// Adds a class of group-blog to blogs with more than 1 published author
 	if ( is_multi_author() ) {
@@ -50,93 +50,93 @@ function thsp_body_classes( $classes ) {
 	
 	// Content width
 	global $content_width;
-	$thsp_body_classes[] = 'content-' . $content_width;
+	$gumbo_body_classes[] = 'content-' . $content_width;
 
 	// Get layout class and add it to body_class array
-	$thsp_current_layout = thsp_get_current_layout();
-	$thsp_body_classes[] = $thsp_current_layout;
+	$gumbo_current_layout = gumbo_get_current_layout();
+	$gumbo_body_classes[] = $gumbo_current_layout;
 
 	// Check if logo image exists
-	if ( '' != $thsp_theme_options['logo_image'] ) :
-		$thsp_body_classes[] = 'has-logo-image';
+	if ( '' != $gumbo_theme_options['logo_image'] ) :
+		$gumbo_body_classes[] = 'has-logo-image';
 	endif;
 
 	// Check header image
 	$header_image = get_header_image();
 	if ( ! empty( $header_image ) ) :
-		$thsp_body_classes[] = 'has-header-image';
+		$gumbo_body_classes[] = 'has-header-image';
 	endif;
 	
 	// Adds a class id Post Aside is active
 	if ( is_singular( 'post' ) && is_active_sidebar( 'post-aside' ) ) {
-		$thsp_body_classes[] = 'post-aside';
+		$gumbo_body_classes[] = 'post-aside';
 	}
 
 	// Color scheme class
-	$thsp_body_classes[] = 'scheme-' . $thsp_theme_options['color_scheme'];
+	$gumbo_body_classes[] = 'scheme-' . $gumbo_theme_options['color_scheme'];
 
 	// Font size class
-	if ( is_singular() && get_post_meta( $post->ID, '_thsp_post_font_size', true ) && get_post_meta( $post->ID, '_thsp_post_font_size', true ) != $thsp_theme_options['font_size'] ) :
-		$font_size = get_post_meta( $post->ID, '_thsp_post_font_size', true );
+	if ( is_singular() && get_post_meta( $post->ID, '_gumbo_post_font_size', true ) && get_post_meta( $post->ID, '_gumbo_post_font_size', true ) != $gumbo_theme_options['font_size'] ) :
+		$font_size = get_post_meta( $post->ID, '_gumbo_post_font_size', true );
 	else :
-		$font_size = $thsp_theme_options['font_size'];
+		$font_size = $gumbo_theme_options['font_size'];
 	endif; 
-	$thsp_body_classes[] = 'font-size-' . $font_size;
+	$gumbo_body_classes[] = 'font-size-' . $font_size;
 		
 	// Check if custom primary color is used
-	if ( ! empty( $thsp_theme_options['primary_color'] ) ) :
-		$thsp_body_classes[] = 'custom-primary-color';
+	if ( ! empty( $gumbo_theme_options['primary_color'] ) ) :
+		$gumbo_body_classes[] = 'custom-primary-color';
 	endif;
 	
 	// Check if header and footer are hidden in single post view
 	if ( is_single() || is_page() ) :
-		if(  get_post_meta( $post->ID, '_thsp_has_no_header', true ) ) :
-			$thsp_body_classes[] = 'has-no-header';
+		if(  get_post_meta( $post->ID, '_gumbo_has_no_header', true ) ) :
+			$gumbo_body_classes[] = 'has-no-header';
 		endif;
 		
-		if ( get_post_meta( $post->ID, '_thsp_has_no_footer', true ) ) :
-			$thsp_body_classes[] = 'has-no-footer';
+		if ( get_post_meta( $post->ID, '_gumbo_has_no_footer', true ) ) :
+			$gumbo_body_classes[] = 'has-no-footer';
 		endif;
 	endif;
 		
-	$classes = array_merge( $classes, $thsp_body_classes );
+	$classes = array_merge( $classes, $gumbo_body_classes );
 	return $classes;
 }
-add_filter( 'body_class', 'thsp_body_classes' );
+add_filter( 'body_class', 'gumbo_body_classes' );
 
 
 /**
  * Adds custom classes to the array of post classes.
  */
-function thsp_post_classes( $classes ) {
+function gumbo_post_classes( $classes ) {
 	if( current_theme_supports('post-thumbnails' ) )
 		if( has_post_thumbnail() )
 			$classes[] = "has-featured-image";
 	
 	return $classes;
 }
-add_filter( 'post_class', 'thsp_post_classes' );
+add_filter( 'post_class', 'gumbo_post_classes' );
 
 
 /**
  * Returns classes added to header element.
  */
-function thsp_header_classes() {
+function gumbo_header_classes() {
 	// Header layout
-	$thsp_theme_options = thsp_cbp_get_options_values();
-	$thsp_header_classes = 'header-' . $thsp_theme_options['header_layout'];
+	$gumbo_theme_options = thsp_cbp_get_options_values();
+	$gumbo_header_classes = 'header-' . $gumbo_theme_options['header_layout'];
 	if ( has_nav_menu( 'top' ) ) :
-	$thsp_header_classes .= ' has-top-menu';
+	$gumbo_header_classes .= ' has-top-menu';
 	endif;
 
-	return $thsp_header_classes;
+	return $gumbo_header_classes;
 }
 
 
 /**
  * Adds custom classes to the array of menu item classes.
  */
-function thsp_custom_menu_item_classes( $classes, $item ) {
+function gumbo_custom_menu_item_classes( $classes, $item ) {
 	$children = get_posts( array(
 		'meta_query' => array (
 		array(
@@ -151,7 +151,7 @@ function thsp_custom_menu_item_classes( $classes, $item ) {
 	
 	return $classes;
 }
-add_filter( 'nav_menu_css_class', 'thsp_custom_menu_item_classes', 10, 2 );
+add_filter( 'nav_menu_css_class', 'gumbo_custom_menu_item_classes', 10, 2 );
 
 
 /**
@@ -161,34 +161,34 @@ add_filter( 'nav_menu_css_class', 'thsp_custom_menu_item_classes', 10, 2 );
  * @return	array	$current_layout				Layout options for current page
  * @since	Gumbo 1.0
  */
-function thsp_get_current_layout() {
+function gumbo_get_current_layout() {
 	global $post;
 
 	// Get current theme options values
-	$thsp_theme_options = thsp_cbp_get_options_values();
+	$gumbo_theme_options = thsp_cbp_get_options_values();
 
 	// Check if in single post/page view and if layout custom field value exists
-	if ( is_singular() && get_post_meta( $post->ID, '_thsp_post_layout', true ) ) :
-		$current_layout = get_post_meta( $post->ID, '_thsp_post_layout', true );
+	if ( is_singular() && get_post_meta( $post->ID, '_gumbo_post_layout', true ) ) :
+		$current_layout = get_post_meta( $post->ID, '_gumbo_post_layout', true );
 	else :
-		$current_layout = $thsp_theme_options['default_layout'];
+		$current_layout = $gumbo_theme_options['default_layout'];
 	endif;
 	
 	if ( is_404() ) :
 		$current_layout = 'no-sidebar';
 	endif;
 
-	if ( thsp_has_no_sidebar() ) :
+	if ( gumbo_has_no_sidebar() ) :
 		$current_layout = 'no-sidebar';
 	endif;
 	
 	/*
 	 * Returns an array with two values that can be changed using
-	 * 'thsp_current_layout' filter hook
+	 * 'gumbo_current_layout' filter hook
 	 *
 	 * returns	$current_layout		string		sidebar-right / sidebar-left / no-sidebar
 	 */
-	return apply_filters( 'thsp_current_layout', $current_layout );
+	return apply_filters( 'gumbo_current_layout', $current_layout );
 }
 
 
@@ -198,19 +198,19 @@ function thsp_get_current_layout() {
  * @return	boolean				
  * @since	Gumbo 1.0
  */
-function thsp_has_no_sidebar() {
+function gumbo_has_no_sidebar() {
 	global $post;
 	/*
 	 * Get current sidebar
 	 * Checks post meta to see if default sidebar is being
 	 * overriden and WooSidebars plugin is active
 	 */
-	$current_sidebar = ( ( in_array( 'woosidebars/woosidebars.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) && is_singular() && get_post_meta( $post->ID, '_thsp_widget_area', true ) ) ? get_post_meta( $post->ID, '_thsp_widget_area', true ) : 'primary-sidebar' );
+	$current_sidebar = ( ( in_array( 'woosidebars/woosidebars.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) && is_singular() && get_post_meta( $post->ID, '_gumbo_widget_area', true ) ) ? get_post_meta( $post->ID, '_gumbo_widget_area', true ) : 'primary-sidebar' );
 	
 	/*
 	 * Check if No Sidebar option is checked in meta box
 	 */
-	if ( is_singular() && 'no-sidebar' == get_post_meta( $post->ID, '_thsp_post_layout', true ) ) :
+	if ( is_singular() && 'no-sidebar' == get_post_meta( $post->ID, '_gumbo_post_layout', true ) ) :
 		return true;
 	endif;
 	
@@ -240,7 +240,7 @@ function thsp_has_no_sidebar() {
  *
  * @since	Gumbo 1.0
  */
-function thsp_enhanced_image_navigation( $url, $id ) {
+function gumbo_enhanced_image_navigation( $url, $id ) {
 	if ( ! is_attachment() && ! wp_attachment_is_image( $id ) )
 		return $url;
 
@@ -250,14 +250,14 @@ function thsp_enhanced_image_navigation( $url, $id ) {
 
 	return $url;
 }
-add_filter( 'attachment_link', 'thsp_enhanced_image_navigation', 10, 2 );
+add_filter( 'attachment_link', 'gumbo_enhanced_image_navigation', 10, 2 );
 
 
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
  * @since	Gumbo 1.0
  */
-function thsp_wp_title( $title, $sep ) {
+function gumbo_wp_title( $title, $sep ) {
 	global $page, $paged;
 
 	if ( is_feed() )
@@ -277,38 +277,38 @@ function thsp_wp_title( $title, $sep ) {
 
 	return $title;
 }
-add_filter( 'wp_title', 'thsp_wp_title', 10, 2 );
+add_filter( 'wp_title', 'gumbo_wp_title', 10, 2 );
 
 
 /**
  * Change password protected form output
  * @since	Gumbo 1.0
  */
-function thsp_custom_password_form() {
+function gumbo_custom_password_form() {
 	global $post;
 	$label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
 	$form_output = '<form class="protected-post-form" action="' . get_option('siteurl') . '/wp-pass.php" method="post"><p>' . __( 'This post is password protected. To view it please enter your password below:', 'gumbo' ) . ' </p><label class="pass-label" for="' . $label . '">' . __( 'Password', 'gumbo' ) . ' </label><input name="post_password" id="' . $label . '" type="password" /><input type="submit" name="Submit" class="button" value="' . esc_attr__( "Submit" ) . '" /></form>';
 	return $form_output;
 }
-add_filter( 'the_password_form', 'thsp_custom_password_form' );
+add_filter( 'the_password_form', 'gumbo_custom_password_form' );
 
 
 /**
  * Internal CSS for accent color
  * @since	Gumbo 1.0
  */
-function thsp_generated_css() {
+function gumbo_generated_css() {
 	// Get current theme options
-	$thsp_theme_options			= thsp_cbp_get_options_values();
+	$gumbo_theme_options			= thsp_cbp_get_options_values();
 	$theme_options_fields		= thsp_cbp_get_fields();
-	$primary_color				= $thsp_theme_options['primary_color'];
-	$header_background_color	= $thsp_theme_options['header_background_color'];
-	$body_font_value			= $thsp_theme_options['body_font'];
-	$heading_font_value			= $thsp_theme_options['heading_font'];
-	$heading_font_weight		= $thsp_theme_options['heading_weight'];
-	$heading_font_transform		= $thsp_theme_options['heading_uppercase'];
-	$body_font_options			= $theme_options_fields['thsp_typography_section']['fields']['body_font']['control_args']['choices'];
-	$heading_font_options		= $theme_options_fields['thsp_typography_section']['fields']['heading_font']['control_args']['choices'];
+	$primary_color				= $gumbo_theme_options['primary_color'];
+	$header_background_color	= $gumbo_theme_options['header_background_color'];
+	$body_font_value			= $gumbo_theme_options['body_font'];
+	$heading_font_value			= $gumbo_theme_options['heading_font'];
+	$heading_font_weight		= $gumbo_theme_options['heading_weight'];
+	$heading_font_transform		= $gumbo_theme_options['heading_uppercase'];
+	$body_font_options			= $theme_options_fields['gumbo_typography_section']['fields']['body_font']['control_args']['choices'];
+	$heading_font_options		= $theme_options_fields['gumbo_typography_section']['fields']['heading_font']['control_args']['choices'];
 	$bg_repeat					= get_theme_mod( 'background_repeat' ); ?>
 	
 	<style type="text/css" id="gumbo-generated-css">
@@ -372,7 +372,7 @@ function thsp_generated_css() {
 	</style>
 
 <?php }
-add_action( 'wp_head', 'thsp_generated_css' );
+add_action( 'wp_head', 'gumbo_generated_css' );
 
 
 /**
@@ -381,7 +381,7 @@ add_action( 'wp_head', 'thsp_generated_css' );
  * @link	http://24ways.org/2010/calculating-color-contrast/
  * @since	Gumbo 1.0
  */
-function thsp_get_color_contrast( $hexcolor ){
+function gumbo_get_color_contrast( $hexcolor ){
 	$r = hexdec( substr( $hexcolor, 0, 2 ) );
 	$g = hexdec( substr( $hexcolor, 2, 2 ) );
 	$b = hexdec( substr( $hexcolor, 4, 2 ) );
@@ -397,7 +397,7 @@ function thsp_get_color_contrast( $hexcolor ){
  * @uses	wp_get_sidebars_widgets()		http://codex.wordpress.org/Function_Reference/wp_get_sidebars_widgets
  * @since	Gumbo 1.0
  */
-function thsp_count_widgets( $sidebar_id ) {
+function gumbo_count_widgets( $sidebar_id ) {
 	/* 
 	 * Count widgets in footer widget area
 	 * Used to set widget width based on total count
@@ -430,7 +430,7 @@ function thsp_count_widgets( $sidebar_id ) {
  *				[2] - height
  * @since		Gumbo 1.0
  */
-function thsp_get_logo_image( $attachment_url ) {
+function gumbo_get_logo_image( $attachment_url ) {
 	global $wpdb;
 	$attachment_id = false;
  
@@ -464,15 +464,15 @@ function thsp_get_logo_image( $attachment_url ) {
  *
  * @since	Gumbo 1.0
  */
-function thsp_has_no_header() {
+function gumbo_has_no_header() {
 	global $post;
-	$thsp_has_no_header = false;
+	$gumbo_has_no_header = false;
 	
-	if ( is_singular() && get_post_meta( $post->ID, '_thsp_has_no_header', true ) ) :
-		$thsp_has_no_header = true;
+	if ( is_singular() && get_post_meta( $post->ID, '_gumbo_has_no_header', true ) ) :
+		$gumbo_has_no_header = true;
 	endif;
 		
-	return $thsp_has_no_header;
+	return $gumbo_has_no_header;
 }
 
 
@@ -481,13 +481,13 @@ function thsp_has_no_header() {
  *
  * @since	Gumbo 1.0
  */
-function thsp_has_no_footer() {
+function gumbo_has_no_footer() {
 	global $post;
-	$thsp_has_no_header = false;
+	$gumbo_has_no_header = false;
 	
-	if ( is_singular() && get_post_meta( $post->ID, '_thsp_has_no_footer', true ) ) :
-		$thsp_has_no_header = true;
+	if ( is_singular() && get_post_meta( $post->ID, '_gumbo_has_no_footer', true ) ) :
+		$gumbo_has_no_header = true;
 	endif;
 		
-	return $thsp_has_no_header;
+	return $gumbo_has_no_header;
 }

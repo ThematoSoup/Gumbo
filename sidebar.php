@@ -12,8 +12,8 @@
 ?>
 
 <?php
-$current_sidebar = ( in_array( 'woosidebars/woosidebars.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) && get_post_meta( $post->ID, '_thsp_widget_area', true ) ? get_post_meta( $post->ID, '_thsp_widget_area', true ) : 'primary-sidebar' );
-if ( is_active_sidebar( $current_sidebar ) && 'no-sidebar' != thsp_get_current_layout() ) : // Only render this sidebar in not in single column layout ?>
+$current_sidebar = ( in_array( 'woosidebars/woosidebars.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) && get_post_meta( $post->ID, '_gumbo_widget_area', true ) ? get_post_meta( $post->ID, '_gumbo_widget_area', true ) : 'primary-sidebar' );
+if ( is_active_sidebar( $current_sidebar ) && 'no-sidebar' != gumbo_get_current_layout() ) : // Only render this sidebar in not in single column layout ?>
 	<?php tha_sidebars_before(); ?>
 	<div id="secondary" class="widget-area" role="complementary">
 		<?php tha_sidebar_top(); ?>

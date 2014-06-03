@@ -20,7 +20,7 @@ get_header(); ?>
 				<?php tha_entry_before(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<?php tha_entry_top(); ?>
-					<?php if ( ! get_post_meta( $post->ID, '_thsp_hide_title', true ) ) : // Check if hide title option is checked ?>
+					<?php if ( ! get_post_meta( $post->ID, '_gumbo_hide_title', true ) ) : // Check if hide title option is checked ?>
 					<header class="entry-header">
 						<h1 class="entry-title"><?php the_title(); ?></h1>
 					</header><!-- .entry-header -->
@@ -42,7 +42,7 @@ get_header(); ?>
 				<?php
 				/* Start the Loop */
 				$paged = ( get_query_var( 'page' ) ) ? get_query_var( 'page' ) : 1;
-				$numposts = ( get_post_meta( $post->ID, '_thsp_posts_per_page', true ) ? get_post_meta( $post->ID, '_thsp_posts_per_page', true ) : get_option( 'posts_per_page' ) );
+				$numposts = ( get_post_meta( $post->ID, '_gumbo_posts_per_page', true ) ? get_post_meta( $post->ID, '_gumbo_posts_per_page', true ) : get_option( 'posts_per_page' ) );
 				$args = array(
 					'posts_per_page'		=> $numposts,
 					'paged'					=> $paged,

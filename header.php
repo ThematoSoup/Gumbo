@@ -28,9 +28,9 @@
 <?php tha_body_top(); ?>
 
 <div id="page" class="hfeed site">	
-	<?php if ( ! thsp_has_no_header() ) : ?>
+	<?php if ( ! gumbo_has_no_header() ) : ?>
 		<?php tha_header_before(); ?>		
-		<header id="masthead" class="site-header <?php echo thsp_header_classes(); ?>" role="banner">
+		<header id="masthead" class="site-header <?php echo gumbo_header_classes(); ?>" role="banner">
 			<?php if ( has_nav_menu( 'top' ) ) : ?>
 			<nav id="top-navigation" role="navigation">
 				<?php
@@ -49,15 +49,15 @@
 				<hgroup>
 					<?php
 					// Get current theme options values
-					$thsp_theme_options = thsp_cbp_get_options_values();
-					if ( '' != $thsp_theme_options['logo_image'] ) :
-						$logo_image = thsp_get_logo_image( $thsp_theme_options['logo_image'] ); ?>
+					$gumbo_theme_options = thsp_cbp_get_options_values();
+					if ( '' != $gumbo_theme_options['logo_image'] ) :
+						$logo_image = gumbo_get_logo_image( $gumbo_theme_options['logo_image'] ); ?>
 						<h1 class="logo-image">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 								<img src="<?php echo $logo_image[0]; ?>" width="<?php echo $logo_image[1]; ?>" height="<?php echo $logo_image[2]; ?>" alt="<?php bloginfo( 'name' ); ?>" />
 							</a>
 						</h1>
-					<?php else : // if ( ! isset( $thsp_theme_options['logo_image'] ) ?>
+					<?php else : // if ( ! isset( $gumbo_theme_options['logo_image'] ) ?>
 						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 					<?php endif; ?>
 					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
@@ -69,7 +69,7 @@
 					<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'gumbo' ); ?>"><?php _e( 'Skip to content', 'gumbo' ); ?></a></div>
 			
 					<?php
-						$walker = new THSP_Menu_With_Description;
+						$walker = new gumbo_Menu_With_Description;
 						wp_nav_menu( array(
 							'theme_location'	=> 'primary',
 							'container'			=> '',
@@ -87,7 +87,7 @@
 	<?php endif; // header check ?>
 
 	<?php
-	if ( is_front_page() && ! is_paged() && $thsp_theme_options['display_featured'] ) :
+	if ( is_front_page() && ! is_paged() && $gumbo_theme_options['display_featured'] ) :
 		get_template_part( '/partials/featured', 'content' ); 
 	endif;
 	?>

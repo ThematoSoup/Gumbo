@@ -35,7 +35,7 @@ get_header(); ?>
 	
 				<?php endwhile; ?>
 	
-				<?php thsp_content_nav( 'nav-below' ); ?>
+				<?php gumbo_content_nav( 'nav-below' ); ?>
 	
 			<?php else : ?>
 	

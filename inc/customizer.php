@@ -45,9 +45,9 @@ add_action( 'customize_preview_init', 'gumbo_customize_preview_js' );
  * @link	https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate
  * @since	Gumbo 1.0
  */
-add_filter( 'thsp_cbp_option', 'thsp_edit_cbp_option_name', 1 );
-function thsp_edit_cbp_option_name() {
-	return 'thsp_gumbo_options';
+add_filter( 'thsp_cbp_option', 'gumbo_edit_cbp_option_name', 1 );
+function gumbo_edit_cbp_option_name() {
+	return 'gumbo_options';
 }
 
 
@@ -58,8 +58,8 @@ function thsp_edit_cbp_option_name() {
  * @return	string		Theme Customizer Boilerplate location path
  * @since	Gumbo 1.0
  */
-add_filter( 'thsp_cbp_directory_uri', 'thsp_edit_cbp_directory_uri', 1 );
-function thsp_edit_cbp_directory_uri() {	
+add_filter( 'thsp_cbp_directory_uri', 'gumbo_edit_cbp_directory_uri', 1 );
+function gumbo_edit_cbp_directory_uri() {	
 	return get_template_directory_uri() . '/inc/libraries/customizer-boilerplate';	
 }
 
@@ -71,10 +71,10 @@ function thsp_edit_cbp_directory_uri() {
  * @return	array		Theme options
  * @since	Gumbo 1.0
  */
-add_filter( 'thsp_cbp_options_array', 'thsp_theme_options_array', 1 );
-function thsp_theme_options_array() {
+add_filter( 'thsp_cbp_options_array', 'gumbo_theme_options_array', 1 );
+function gumbo_theme_options_array() {
 	// Using helper function to get default required capability
-	$thsp_cbp_capability = thsp_cbp_capability();
+	$gumbo_cbp_capability = thsp_cbp_capability();
 
 	// Using same font options for body and heading fonts
 	$font_choices = array(
@@ -161,9 +161,9 @@ function thsp_theme_options_array() {
 			'fields' => array(
 				'color_scheme' => array(
 					'setting_args' => array(
-						'std' => 'white',
+						'default' => 'white',
 						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
+						'capability' => $gumbo_cbp_capability,
 						'transport' => 'refresh',
 					), // End setting args			
 					'control_args' => array(
@@ -185,9 +185,9 @@ function thsp_theme_options_array() {
 				),
 				'primary_color' => array(
 					'setting_args' => array(
-						'std' => '',
+						'default' => '',
 						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
+						'capability' => $gumbo_cbp_capability,
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
@@ -198,9 +198,9 @@ function thsp_theme_options_array() {
 				),
 				'header_background_color' => array(
 					'setting_args' => array(
-						'std' => '',
+						'default' => '',
 						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
+						'capability' => $gumbo_cbp_capability,
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
@@ -220,7 +220,7 @@ function thsp_theme_options_array() {
 				'logo_image' => array(
 					'setting_args' => array(
 						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
+						'capability' => $gumbo_cbp_capability,
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
@@ -239,9 +239,9 @@ function thsp_theme_options_array() {
 			'fields' => array(
 				'post_navigation_below' => array(
 					'setting_args' => array(
-						'std' => true,
+						'default' => true,
 						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
+						'capability' => $gumbo_cbp_capability,
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
@@ -254,7 +254,7 @@ function thsp_theme_options_array() {
 		), // End section
 
 		// Section ID
-		'thsp_layout_section' => array(
+		'gumbo_layout_section' => array(
 			'existing_section' => false,
 			'args' => array(
 				'title' => __( 'Layout', 'gumbo' ),
@@ -264,9 +264,9 @@ function thsp_theme_options_array() {
 			'fields' => array(
 				'default_layout' => array(
 					'setting_args' => array(
-						'std' => 'sidebar-right',
+						'default' => 'sidebar-right',
 						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
+						'capability' => $gumbo_cbp_capability,
 						'transport' => 'refresh',
 					), // End setting args			
 					'control_args' => array(
@@ -292,9 +292,9 @@ function thsp_theme_options_array() {
 				'header_layout' => array(
 					'setting_args' => array(
 						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
+						'capability' => $gumbo_cbp_capability,
 						'transport' => 'refresh',
-						'std' => 'nav-below',
+						'default' => 'nav-below',
 					), // End setting args			
 					'control_args' => array(
 						'label' => __( 'Header layout', 'gumbo' ),
@@ -320,7 +320,7 @@ function thsp_theme_options_array() {
 		),
 
 		// Section ID
-		'thsp_featured_section' => array(
+		'gumbo_featured_section' => array(
 			'existing_section' => false,
 			'args' => array(
 				'title' => __( 'Featured Content', 'gumbo' ),
@@ -330,9 +330,9 @@ function thsp_theme_options_array() {
 			'fields' => array(
 				'display_featured' => array(
 					'setting_args' => array(
-						'std' => false,
+						'default' => false,
 						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
+						'capability' => $gumbo_cbp_capability,
 						'transport' => 'refresh',
 					),                                        
 					'control_args' => array(
@@ -343,9 +343,9 @@ function thsp_theme_options_array() {
 				),
 				'featured_content_tag' => array(
 					'setting_args' => array(
-						'std' => '',
+						'default' => '',
 						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
+						'capability' => $gumbo_cbp_capability,
 						'transport' => 'refresh',
 					),                                        
 					'control_args' => array(
@@ -356,9 +356,9 @@ function thsp_theme_options_array() {
 				),                                
 				'featured_posts_count' => array(
 					'setting_args' => array(
-						'std' => 5,
+						'default' => 5,
 						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
+						'capability' => $gumbo_cbp_capability,
 						'transport' => 'refresh',
 					),                                        
 					'control_args' => array(
@@ -369,9 +369,9 @@ function thsp_theme_options_array() {
 				),
 				'slider_width' => array(
 					'setting_args' => array(
-						'std' => 'full-width',
+						'default' => 'full-width',
 						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
+						'capability' => $gumbo_cbp_capability,
 						'transport' => 'refresh',
 					), // End setting args			
 					'control_args' => array(
@@ -392,7 +392,7 @@ function thsp_theme_options_array() {
 		),
 		
 		// Section ID
-		'thsp_typography_section' => array(
+		'gumbo_typography_section' => array(
 			'existing_section' => false,
 			'args' => array(
 				'title' => __( 'Typography', 'gumbo' ),
@@ -402,9 +402,9 @@ function thsp_theme_options_array() {
 			'fields' => array(
 				'font_size' => array(
 					'setting_args' => array(
-						'std' => 'medium',
+						'default' => 'medium',
 						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
+						'capability' => $gumbo_cbp_capability,
 						'transport' => 'refresh',
 					), // End setting args			
 					'control_args' => array(
@@ -426,9 +426,9 @@ function thsp_theme_options_array() {
 				),
 				'body_font' => array(
 					'setting_args' => array(
-						'std' => 'rosario',
+						'default' => 'rosario',
 						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
+						'capability' => $gumbo_cbp_capability,
 						'transport' => 'refresh',
 					), // End setting args			
 					'control_args' => array(
@@ -440,9 +440,9 @@ function thsp_theme_options_array() {
 				),
 				'heading_font' => array(
 					'setting_args' => array(
-						'std' => 'rosario',
+						'default' => 'rosario',
 						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
+						'capability' => $gumbo_cbp_capability,
 						'transport' => 'refresh',
 					), // End setting args			
 					'control_args' => array(
@@ -454,9 +454,9 @@ function thsp_theme_options_array() {
 				),
 				'heading_weight' => array(
 					'setting_args' => array(
-						'std' => true,
+						'default' => true,
 						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
+						'capability' => $gumbo_cbp_capability,
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
@@ -467,9 +467,9 @@ function thsp_theme_options_array() {
 				),
 				'heading_uppercase' => array(
 					'setting_args' => array(
-						'std' => false,
+						'default' => false,
 						'type' => 'option',
-						'capability' => $thsp_cbp_capability,
+						'capability' => $gumbo_cbp_capability,
 						'transport' => 'refresh',
 					),					
 					'control_args' => array(
@@ -493,11 +493,11 @@ function thsp_theme_options_array() {
  * @return	array	Built-in controls that need to be removed from Theme Customizer
  * @since	Gumbo 1.0
  */
-add_filter( 'tshp_cbp_remove_controls', 'thsp_theme_options_remove_controls', 1 );
-function thsp_theme_options_remove_controls() {
-	$thsp_cbp_remove_controls = array(
+add_filter( 'tshp_cbp_remove_controls', 'gumbo_theme_options_remove_controls', 1 );
+function gumbo_theme_options_remove_controls() {
+	$gumbo_cbp_remove_controls = array(
 		'blogname'
 	);
 	
-	return $thsp_cbp_remove_controls;
+	return $gumbo_cbp_remove_controls;
 }

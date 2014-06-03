@@ -280,7 +280,7 @@ class cmb_Meta_Box {
 			'ajaxurl'         => admin_url( '/admin-ajax.php' ),
 			'up_arrow'        => '[ ↑ ]&nbsp;',
 			'down_arrow'      => '&nbsp;[ ↓ ]',
-			'check_toggle'    => __( 'Select / Deselect All', 'cmb' ),
+			'check_toggle'    => __( 'Select / Deselect All', 'gumbo' ),
 		) ) );
 
 		wp_register_style( 'cmb-styles', CMB_META_BOX_URL . 'style'. $min .'.css', $styles );

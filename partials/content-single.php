@@ -15,7 +15,7 @@
 	<?php if ( false == get_post_format() && has_post_thumbnail() ) : ?>
 		<div class="entry-thumbnail">
 			<?php
-			if ( 'no-sidebar' == get_post_meta( $post->ID, '_thsp_post_layout', true ) ) :
+			if ( 'no-sidebar' == get_post_meta( $post->ID, '_gumbo_post_layout', true ) ) :
 				// Larger image if no sidebar
 				the_post_thumbnail( 'thsp-featured-content', array( 'class' => 'entry-featured') );
 			else :
@@ -34,7 +34,7 @@
 	<header class="entry-header">		
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 
-		<?php thsp_post_meta_top(); ?>
+		<?php gumbo_post_meta_top(); ?>
 	</header><!-- .entry-header -->
 	
 	<div class="entry-main">
@@ -52,7 +52,7 @@
 	
 	</div><!-- .entry-main -->
 
-	<?php thsp_post_meta_bottom(); ?>
+	<?php gumbo_post_meta_bottom(); ?>
 	
 <?php tha_entry_bottom(); ?>
 </article><!-- #post-## -->

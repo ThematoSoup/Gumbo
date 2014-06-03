@@ -15,7 +15,7 @@ get_header(); ?>
 		<div id="content" class="site-content" role="main">
 			<?php tha_content_top(); ?>
 
-			<?php $widgetized_text_position = ( get_post_meta( $post->ID, '_thsp_widgetized_text_position', true ) ? get_post_meta( $post->ID, '_thsp_widgetized_text_position', true ) : 'left' ); ?>
+			<?php $widgetized_text_position = ( get_post_meta( $post->ID, '_gumbo_widgetized_text_position', true ) ? get_post_meta( $post->ID, '_gumbo_widgetized_text_position', true ) : 'left' ); ?>
 			<div id="widgetized-homepage-top" class="widgetized-text-<?php echo $widgetized_text_position; ?> clear">
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php tha_entry_before(); ?>
@@ -23,9 +23,9 @@ get_header(); ?>
 				<?php if ( 'right' == $widgetized_text_position || 'bottom' == $widgetized_text_position ) : ?>
 				<div id="widgetized-homepage-aside">
 				<?php
-				if ( get_post_meta( $post->ID, '_thsp_video_url', true ) ) :
+				if ( get_post_meta( $post->ID, '_gumbo_video_url', true ) ) :
 					echo '<div class="widgetized-homepage-video-container">';
-					echo wp_oembed_get( get_post_meta( $post->ID, '_thsp_video_url', true ) );
+					echo wp_oembed_get( get_post_meta( $post->ID, '_gumbo_video_url', true ) );
 					echo '</div>';
 				elseif ( has_post_thumbnail() ) :
 					the_post_thumbnail( 'large' );
@@ -37,7 +37,7 @@ get_header(); ?>
 				<!-- Page title and content -->
 				<article id="post-<?php the_ID(); ?>" <?php post_class( 'widgetized-homepage-text' ); ?>>
 					<?php tha_entry_top(); ?>
-					<?php if ( ! get_post_meta( $post->ID, '_thsp_hide_title', true ) ) : // Check if hide title option is checked ?>
+					<?php if ( ! get_post_meta( $post->ID, '_gumbo_hide_title', true ) ) : // Check if hide title option is checked ?>
 					<header class="entry-header">
 						<h1 class="entry-title"><?php the_title(); ?></h1>
 					</header><!-- .entry-header -->
@@ -55,9 +55,9 @@ get_header(); ?>
 				<?php if ( 'left' == $widgetized_text_position || 'top' == $widgetized_text_position ) : ?>
 				<div id="widgetized-homepage-aside">
 				<?php
-				if ( get_post_meta( $post->ID, '_thsp_video_url', true ) ) :
+				if ( get_post_meta( $post->ID, '_gumbo_video_url', true ) ) :
 					echo '<div class="widgetized-homepage-video-container">';
-					echo wp_oembed_get( get_post_meta( $post->ID, '_thsp_video_url', true ) );
+					echo wp_oembed_get( get_post_meta( $post->ID, '_gumbo_video_url', true ) );
 					echo '</div>';
 				elseif ( has_post_thumbnail() ) :
 					the_post_thumbnail( 'large' );
@@ -71,8 +71,8 @@ get_header(); ?>
 			</div><!-- #widgetized-homepage-top -->
 
 			<?php if ( is_active_sidebar( 'homepage-widget-area' ) ) : ?>
-			<?php $widgets_per_row = ( get_post_meta( $post->ID, '_thsp_widgetized_widgets_per_row', true ) ? get_post_meta( $post->ID, '_thsp_widgetized_widgets_per_row', true ) : 4 ); ?>
-			<div id="widgetized-homepage-widgets" class="flexible-widget-area <?php echo thsp_count_widgets( 'homepage-widget-area' ); ?>">
+			<?php $widgets_per_row = ( get_post_meta( $post->ID, '_gumbo_widgetized_widgets_per_row', true ) ? get_post_meta( $post->ID, '_gumbo_widgetized_widgets_per_row', true ) : 4 ); ?>
+			<div id="widgetized-homepage-widgets" class="flexible-widget-area <?php echo gumbo_count_widgets( 'homepage-widget-area' ); ?>">
 				<?php dynamic_sidebar( 'homepage-widget-area' ); ?>
 			</div><!-- #widgetized-homepage-widgets -->
 			<?php endif; ?>

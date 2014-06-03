@@ -18,11 +18,11 @@
  */
 
 
-if ( ! function_exists( 'thsp_content_nav' ) ) :
+if ( ! function_exists( 'gumbo_content_nav' ) ) :
 /**
  * Display navigation to next/previous pages when applicable
  */
-function thsp_content_nav( $nav_id ) {
+function gumbo_content_nav( $nav_id ) {
 	global $wp_query, $post;
 
 	// Get current theme options
@@ -92,16 +92,16 @@ function thsp_content_nav( $nav_id ) {
 	</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
 	<?php
 }
-endif; // thsp_content_nav
+endif; // gumbo_content_nav
 
 
-if ( ! function_exists( 'thsp_comment' ) ) :
+if ( ! function_exists( 'gumbo_comment' ) ) :
 /**
  * Template for comments and pingbacks.
  *
  * Used as a callback by wp_list_comments() for displaying the comments.
  */
-function thsp_comment( $comment, $args, $depth ) {
+function gumbo_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
@@ -144,18 +144,18 @@ function thsp_comment( $comment, $args, $depth ) {
 			break;
 	endswitch;
 }
-endif; // ends check for thsp_comment()
+endif; // ends check for gumbo_comment()
 
 
-if ( ! function_exists( 'thsp_post_meta_top' ) ) :
+if ( ! function_exists( 'gumbo_post_meta_top' ) ) :
 /**
  * Prints HTML with post categories, if it's not a single category blog.
  */
-function thsp_post_meta_top() {
+function gumbo_post_meta_top() {
 		/* translators: used between list items, there is a space after the comma */
 		$category_list = get_the_category_list( __( ', ', 'gumbo' ) );
 		echo '<div class="entry-meta entry-meta-top">';
-			if ( thsp_categorized_blog() ) :
+			if ( gumbo_categorized_blog() ) :
 				echo '<span class="post-categories">' . $category_list . '</span>';
 			endif;
 			echo '<span class="post-time"><a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( get_the_time() ) . '" rel="bookmark"><time class="entry-date" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date() ) . '</time></a></span>';
@@ -170,11 +170,11 @@ function thsp_post_meta_top() {
 endif;
 
 
-if ( ! function_exists( 'thsp_post_meta_bottom' ) ) :
+if ( ! function_exists( 'gumbo_post_meta_bottom' ) ) :
 /**
  * Prints HTML with tags and edit link.
  */
-function thsp_post_meta_bottom() {
+function gumbo_post_meta_bottom() {
 	/* translators: used between list items, there is a space after the comma */
 	$tag_list = get_the_tag_list( '', __( ', ', 'gumbo' ) );
 	echo '<footer class="entry-meta entry-meta-bottom">';
@@ -186,11 +186,11 @@ function thsp_post_meta_bottom() {
 }
 endif;
 
-if ( ! function_exists( 'thsp_post_meta_bottom_compact' ) ) :
+if ( ! function_exists( 'gumbo_post_meta_bottom_compact' ) ) :
 /**
  * Prints HTML with post categories, if it's not a single category blog.
  */
-function thsp_post_meta_bottom_compact() {
+function gumbo_post_meta_bottom_compact() {
 	echo '<footer class="entry-meta entry-meta-bottom">';
 		echo '<span class="post-time"><a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( get_the_time() ) . '" rel="bookmark"><time class="entry-date" datetime="' . esc_attr( get_the_date( 'c' ) ) . '">' . esc_html( get_the_date() ) . '</time></a></span>';
 		if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) :
@@ -210,7 +210,7 @@ endif;
  * @param	$author			Author object
  * @since 	Gumbo 1.0
  */
-function thsp_display_an_author( $author ) { ?>
+function gumbo_display_an_author( $author ) { ?>
 	<li class="clear">
 		<div class="author-avatar">
 			<?php echo get_avatar( $author->ID, 96 ); ?>
@@ -246,7 +246,7 @@ function thsp_display_an_author( $author ) { ?>
 /**
  * Returns true if a blog has more than 1 category
  */
-function thsp_categorized_blog() {
+function gumbo_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
 		// Create an array of all the categories that are attached to posts
 		$all_the_cool_cats = get_categories( array(
@@ -260,52 +260,52 @@ function thsp_categorized_blog() {
 	}
 
 	if ( '1' != $all_the_cool_cats ) {
-		// This blog has more than 1 category so thsp_categorized_blog should return true
+		// This blog has more than 1 category so gumbo_categorized_blog should return true
 		return true;
 	} else {
-		// This blog has only 1 category so thsp_categorized_blog should return false
+		// This blog has only 1 category so gumbo_categorized_blog should return false
 		return false;
 	}
 }
 
 
 /**
- * Flush out the transients used in thsp_categorized_blog
+ * Flush out the transients used in gumbo_categorized_blog
  */
-function thsp_category_transient_flusher() {
+function gumbo_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( 'all_the_cool_cats' );
 }
-add_action( 'edit_category', 'thsp_category_transient_flusher' );
-add_action( 'save_post', 'thsp_category_transient_flusher' );
+add_action( 'edit_category', 'gumbo_category_transient_flusher' );
+add_action( 'save_post', 'gumbo_category_transient_flusher' );
 
 
 /**
  * Returns true if a blog has more than 1 category
  */
-function thsp_fetch_featured_posts() {
-	if ( false === ( $thsp_featured_posts = get_transient( 'thsp_featured_posts' ) ) ) {
+function gumbo_fetch_featured_posts() {
+	if ( false === ( $gumbo_featured_posts = get_transient( 'gumbo_featured_posts' ) ) ) {
 		// Get theme options values
-		$thsp_theme_options = thsp_cbp_get_options_values();
+		$gumbo_theme_options = thsp_cbp_get_options_values();
 		$featured_query_args = array(
 			'post_type'			=> 'post',
-			'posts_per_page'	=> $thsp_theme_options['featured_posts_count'],
-			'tag'				=> $thsp_theme_options['featured_content_tag']
+			'posts_per_page'	=> $gumbo_theme_options['featured_posts_count'],
+			'tag'				=> $gumbo_theme_options['featured_content_tag']
 		);
-		$thsp_featured_posts = get_posts( $featured_query_args );
+		$gumbo_featured_posts = get_posts( $featured_query_args );
 
-		set_transient( 'thsp_featured_posts', $thsp_featured_posts );
+		set_transient( 'gumbo_featured_posts', $gumbo_featured_posts );
 	}
 	
-	return $thsp_featured_posts;
+	return $gumbo_featured_posts;
 }
 
 
 /**
- * Flush out the transient set in thsp_fetch_featured_posts
+ * Flush out the transient set in gumbo_fetch_featured_posts
  */
-function thsp_featured_posts_transient_flusher() {
-	delete_transient( 'thsp_featured_posts' );
+function gumbo_featured_posts_transient_flusher() {
+	delete_transient( 'gumbo_featured_posts' );
 }
-add_action( 'save_post', 'thsp_featured_posts_transient_flusher' );
-add_action( 'customize_save', 'thsp_featured_posts_transient_flusher' );
+add_action( 'save_post', 'gumbo_featured_posts_transient_flusher' );
+add_action( 'customize_save', 'gumbo_featured_posts_transient_flusher' );

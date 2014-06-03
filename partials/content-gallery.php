@@ -20,7 +20,7 @@
 		<?php echo get_post_gallery( $post, true ); ?>
 	</div><!-- .entry-summary -->
 	
-	<?php thsp_post_meta_bottom_compact(); ?>
+	<?php gumbo_post_meta_bottom_compact(); ?>
 		
 <?php tha_entry_bottom(); ?>
 </article><!-- #post-<?php the_ID(); ?> -->

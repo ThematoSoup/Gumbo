@@ -13,39 +13,39 @@
  *
  * Use add_theme_support to register support for WordPress 3.4+
  *
- * @uses     thsp_header_style()
- * @uses     thsp_admin_header_style()
- * @uses     thsp_admin_header_image()
+ * @uses     gumbo_header_style()
+ * @uses     gumbo_admin_header_style()
+ * @uses     gumbo_admin_header_image()
  *
  * @package  Gumbo
  * @since    Gumbo 1.0
  */
-function thsp_custom_header_setup() {
+function gumbo_custom_header_setup() {
 	$args = array(
 		'default-image'          => '',
 		'default-text-color'     => '#fff',
 		'width'                  => 1600,
 		'height'                 => 320,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'thsp_header_style',
-		'admin-head-callback'    => 'thsp_admin_header_style',
-		'admin-preview-callback' => 'thsp_admin_header_image',
+		'wp-head-callback'       => 'gumbo_header_style',
+		'admin-head-callback'    => 'gumbo_admin_header_style',
+		'admin-preview-callback' => 'gumbo_admin_header_image',
 	);
 
-	$args = apply_filters( 'thsp_custom_header_args', $args );
+	$args = apply_filters( 'gumbo_custom_header_args', $args );
 
 	add_theme_support( 'custom-header', $args );
 }
-add_action( 'after_setup_theme', 'thsp_custom_header_setup' );
+add_action( 'after_setup_theme', 'gumbo_custom_header_setup' );
 
 
-if ( ! function_exists( 'thsp_header_style' ) ) :
+if ( ! function_exists( 'gumbo_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see thsp_custom_header_setup().
+ * @see gumbo_custom_header_setup().
  */
-function thsp_header_style() {
+function gumbo_header_style() {
 	$header_image = get_header_image();
 	$text_color   = get_header_textcolor();
 
@@ -103,15 +103,15 @@ function thsp_header_style() {
 	</style>
 	<?php
 }
-endif; // thsp_header_style
+endif; // gumbo_header_style
 
-if ( ! function_exists( 'thsp_admin_header_style' ) ) :
+if ( ! function_exists( 'gumbo_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * @see thsp_custom_header_setup().
+ * @see gumbo_custom_header_setup().
  */
-function thsp_admin_header_style() {
+function gumbo_admin_header_style() {
 ?>
 	<style type="text/css">
 	.appearance_page_custom-header #headimg {
@@ -146,15 +146,15 @@ function thsp_admin_header_style() {
 	</style>
 <?php
 }
-endif; // thsp_admin_header_style
+endif; // gumbo_admin_header_style
 
-if ( ! function_exists( 'thsp_admin_header_image' ) ) :
+if ( ! function_exists( 'gumbo_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * @see thsp_custom_header_setup().
+ * @see gumbo_custom_header_setup().
  */
-function thsp_admin_header_image() { ?>
+function gumbo_admin_header_image() { ?>
 	<div id="headimg">
 		<?php
 		if ( 'blank' == get_header_textcolor() || '' == get_header_textcolor() )
@@ -170,4 +170,4 @@ function thsp_admin_header_image() { ?>
 		<?php endif; ?>
 	</div>
 <?php }
-endif; // thsp_admin_header_image
+endif; // gumbo_admin_header_image

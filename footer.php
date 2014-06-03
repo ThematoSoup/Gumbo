@@ -12,13 +12,13 @@
 		</div><!-- .inner -->
 	</div><!-- #main -->
 
-	<?php if ( ! thsp_has_no_footer() ) : ?>
+	<?php if ( ! gumbo_has_no_footer() ) : ?>
 		<?php tha_footer_before(); ?>
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<?php tha_footer_top(); ?>
 			<?php
 			if ( is_active_sidebar( 'footer-widget-area' ) ) :
-				echo '<div id="footer-widgets" class="inner clear flexible-widget-area ' . thsp_count_widgets( 'footer-widget-area' ) . '">';
+				echo '<div id="footer-widgets" class="inner clear flexible-widget-area ' . gumbo_count_widgets( 'footer-widget-area' ) . '">';
 					echo '<div class="clear">';
 					dynamic_sidebar( 'footer-widget-area' );
 					echo '</div>';
@@ -33,7 +33,7 @@
 						/*
 						 * Site credits
 						 *
-						 * @hooked	thsp_footer_credits
+						 * @hooked	gumbo_footer_credits
 						 */
 						do_action( 'gumbo_credits' );
 						?>

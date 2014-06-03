@@ -59,18 +59,18 @@ get_header(); ?>
 							<h2 id="posts"><?php _e( 'Posts', 'gumbo' ); ?></h2>
 							<?php
 							// Add categories you'd like to exclude in the exclude here
-							$thsp_sitemap_cats = get_categories();
-							foreach ( $thsp_sitemap_cats as $thsp_sitemap_cat ) :
-								echo '<h3>' . $thsp_sitemap_cat->cat_name . '</h3>';
-								echo wpautop( $thsp_sitemap_cat->description );
+							$gumbo_sitemap_cats = get_categories();
+							foreach ( $gumbo_sitemap_cats as $gumbo_sitemap_cat ) :
+								echo '<h3>' . $gumbo_sitemap_cat->cat_name . '</h3>';
+								echo wpautop( $gumbo_sitemap_cat->description );
 								echo '<ul>';
-								$thsp_sitemap_posts_args = array(
+								$gumbo_sitemap_posts_args = array(
 									'posts_per_page'	=> -1,
-									'cat'				=> $thsp_sitemap_cat->cat_ID
+									'cat'				=> $gumbo_sitemap_cat->cat_ID
 								);
-								$thsp_sitemap_cat_posts = new WP_Query( $thsp_sitemap_posts_args );
-								while( $thsp_sitemap_cat_posts->have_posts() ) :
-									$thsp_sitemap_cat_posts->the_post();
+								$gumbo_sitemap_cat_posts = new WP_Query( $gumbo_sitemap_posts_args );
+								while( $gumbo_sitemap_cat_posts->have_posts() ) :
+									$gumbo_sitemap_cat_posts->the_post();
 									echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
 								endwhile;
 								echo '</ul>';
@@ -89,17 +89,17 @@ get_header(); ?>
 						$custom_post_types = get_post_types( $cpt_args, $cpt_output, $cpt_operator ); 
 						foreach ( $custom_post_types  as $custom_post_type ) :						
 							$custom_post_type_object = get_post_type_object( $custom_post_type );
-							$thsp_custom_post_type_args = array(
+							$gumbo_custom_post_type_args = array(
 								'post_type'			=> $custom_post_type_object->name,
 								'posts_per_page'	=> -1
 							);
-							$thsp_custom_post_type_posts = new WP_Query( $thsp_custom_post_type_args );
-							if ( $thsp_custom_post_type_posts->have_posts() ) :
+							$gumbo_custom_post_type_posts = new WP_Query( $gumbo_custom_post_type_args );
+							if ( $gumbo_custom_post_type_posts->have_posts() ) :
 								echo '<div id="sitemap-' . $custom_post_type_object->name . '" class="sitemap-section">';
 									echo '<h2>' . $custom_post_type_object->labels->name . '</h2>';
 										echo '<ul>';
-										while ( $thsp_custom_post_type_posts->have_posts() ) :
-											$thsp_custom_post_type_posts->the_post();
+										while ( $gumbo_custom_post_type_posts->have_posts() ) :
+											$gumbo_custom_post_type_posts->the_post();
 											echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
 										endwhile;
 									echo '</ul>';

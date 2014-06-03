@@ -34,14 +34,14 @@ if ( ! isset( $content_width ) )
  * @since Gumbo 1.0
  * @return void
  */
-function thsp_content_width() {
+function gumbo_content_width() {
 	global $content_width;
 
-	if ( thsp_has_no_sidebar() ) :
+	if ( gumbo_has_no_sidebar() ) :
 		$content_width = 1000;
 	endif;
 }
-add_action( 'template_redirect', 'thsp_content_width' );
+add_action( 'template_redirect', 'gumbo_content_width' );
 
 
 /**
@@ -54,7 +54,7 @@ if ( function_exists( 'add_image_size' ) ) {
 }
 
 
-if ( ! function_exists( 'thsp_setup' ) ) :
+if ( ! function_exists( 'gumbo_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -62,7 +62,7 @@ if ( ! function_exists( 'thsp_setup' ) ) :
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  */
-function thsp_setup() {
+function gumbo_setup() {
 
 	/**
 	 * Make theme available for translation
@@ -107,17 +107,17 @@ function thsp_setup() {
 	 */
 	add_theme_support( 'woocommerce' );
 }
-endif; // thsp_setup
-add_action( 'after_setup_theme', 'thsp_setup' );
+endif; // gumbo_setup
+add_action( 'after_setup_theme', 'gumbo_setup' );
 
 
 /**
  * Adds editor style
  */
-function thsp_editor_style() {	
+function gumbo_editor_style() {	
 	add_editor_style( 'css/editor-style.css' );
 }
-add_action( 'init', 'thsp_editor_style' );
+add_action( 'init', 'gumbo_editor_style' );
 
 
 /*
@@ -194,18 +194,18 @@ require_once( get_template_directory() . '/inc/tgm.php' );
  *
  * Hooks into the after_setup_theme action.
  */
-function thsp_register_custom_background() {
+function gumbo_register_custom_background() {
 	$args = array(
 		'default-color'		=> '',
 		'default-image'		=> '',
-		// 'wp-head-callback'	=> 'thsp_custom_background_cb',
+		// 'wp-head-callback'	=> 'gumbo_custom_background_cb',
 	);
 
-	$args = apply_filters( 'thsp_custom_background_args', $args );
+	$args = apply_filters( 'gumbo_custom_background_args', $args );
 
 	add_theme_support( 'custom-background', $args );
 }
-add_action( 'after_setup_theme', 'thsp_register_custom_background' );
+add_action( 'after_setup_theme', 'gumbo_register_custom_background' );
 
 
 /**
@@ -217,7 +217,7 @@ require( get_template_directory() . '/inc/custom-header.php' );
 /**
  * Register widgetized areas and update sidebar with default widgets
  */
-function thsp_widgets_init() {
+function gumbo_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Primary Sidebar', 'gumbo' ),
 		'description'	=> __( 'Main widget area, used throughout your site.', 'gumbo' ),
@@ -300,13 +300,13 @@ function thsp_widgets_init() {
 		endif;
 	endif;
 }
-add_action( 'widgets_init', 'thsp_widgets_init' );
+add_action( 'widgets_init', 'gumbo_widgets_init' );
 
 
 /*
  * Return Google Fonts url
  */
-function thsp_google_fonts_url() {
+function gumbo_google_fonts_url() {
 	/*
 	 * Check if fonts set in theme options require loading
 	 * of Google scripts
@@ -315,8 +315,8 @@ function thsp_google_fonts_url() {
 	$theme_options_fields	= thsp_cbp_get_fields();
 	$body_font_value		= $theme_options['body_font'];
 	$heading_font_value		= $theme_options['heading_font'];
-	$body_font_options		= $theme_options_fields['thsp_typography_section']['fields']['body_font']['control_args']['choices'];
-	$heading_font_options	= $theme_options_fields['thsp_typography_section']['fields']['heading_font']['control_args']['choices'];
+	$body_font_options		= $theme_options_fields['gumbo_typography_section']['fields']['body_font']['control_args']['choices'];
+	$heading_font_options	= $theme_options_fields['gumbo_typography_section']['fields']['heading_font']['control_args']['choices'];
 	$heading_font_weight	= $theme_options['heading_weight'] ? '700,700italic' : '400,400italic';
     
 	/*
@@ -352,12 +352,12 @@ function thsp_google_fonts_url() {
 /**
  * Enqueue scripts and styles
  */
-function thsp_scripts() {
+function gumbo_scripts() {
 	// Enqueue the font
-	if ( thsp_google_fonts_url() ) :
+	if ( gumbo_google_fonts_url() ) :
 		wp_enqueue_style(
 			'gumbo-fonts',
-			thsp_google_fonts_url()
+			gumbo_google_fonts_url()
 		);
 	endif;
 	
@@ -393,14 +393,14 @@ function thsp_scripts() {
 	
 	wp_enqueue_script( 'gumbo', get_template_directory_uri() . '/js/gumbo.js', array( 'jquery' ), '1.0.0' );
 }
-add_action( 'wp_enqueue_scripts', 'thsp_scripts' );
+add_action( 'wp_enqueue_scripts', 'gumbo_scripts' );
 
 
 /**
  * Add menu item descriptions to main menu
  * @link	http://www.wpbeginner.com/wp-themes/how-to-add-menu-descriptions-in-your-wordpress-themes/
  */
-class THSP_Menu_With_Description extends Walker_Nav_Menu {
+class gumbo_Menu_With_Description extends Walker_Nav_Menu {
 	function start_el( &$output, $item, $depth = 0, $args = array(), $current_object_id = 0 ) {
 		global $wp_query;
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
