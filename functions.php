@@ -19,14 +19,7 @@
  *
  * @package		Gumbo
  * @since		Gumbo 1.0
- */
-
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) )
-	$content_width = 640; /* pixels */
-	
+ */	
 
 /**
  * Adjusts content_width value in single column layouts
@@ -63,6 +56,12 @@ if ( ! function_exists( 'gumbo_setup' ) ) :
  * support post thumbnails.
  */
 function gumbo_setup() {
+
+	/**
+	 * Set the content width based on the theme's design and stylesheet.
+	 */
+	if ( ! isset( $content_width ) )
+		$content_width = 640; /* pixels */
 
 	/**
 	 * Make theme available for translation

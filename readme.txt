@@ -145,7 +145,17 @@ If you experience any issues, you can read our extensive [online documentation][
 
 Theme Customizer Boilerplate
 ----------------------------
-The theme uses Theme Customizer Boilerplate (GPL licenced) to handle its Customizer options. It is a drop-in code library that can be used to speed up theme development process. You can find out more about Theme Customizer boilerplate at its Github project page.
+The theme uses Theme Customizer Boilerplate (GPL licenced) to handle its Customizer options. It is a drop-in code library that can be used to speed up theme development process. You can find out more about [Theme Customizer Boilerplate][9] at its Github project page.
+
+
+Custom Metaboxes and Fields for WordPress
+-----------------------------------------
+The theme uses Custom Metaboxes and Fields for WordPress library (GPL licenced) to handle its metaboxes. It is a drop-in code library that can be used to speed up theme development process. You can find out more about [Custom Metaboxes and Fields for WordPress library][10] at its Github project page.
+
+
+Theme Hook Alliance
+-------------------
+The theme uses Theme Hook Alliance (GPL licenced) to handle its metaboxes. It is a drop-in code library that aids adding standardized theme hooks. You can find out more about [Theme Hook Alliance][11] at its Github project page.
 
 
 License
@@ -157,12 +167,18 @@ The theme is under GPLv2. However some parts aren't, for example, jQuery and jQu
 Theme Re-Distribution
 ---------------------
 
-It's GPL so yes you can base your Themes on Gumbo, but they need to use a GPL license, too.
+Gumbo is distributed under the terms of the GNU GPL so yes you can base your Themes on Gumbo, but they need to use a GPL license, too.
 
-All derivative Themes must be different from the original work, which includes the Theme design as well as all the codes
-from Gumbo Theme.
+All derivative Themes must be different from the original work, which includes the Theme design as well as all the code from Gumbo Theme.
 
 You can show us your appreciation by following WordPress.org best practices yourself and connecting with [ThematoSoup][2] on [Facebook][3] or [Twitter][4].
+
+
+Copyright
+---------
+
+Gumbo WordPress Theme, Copyright 2014 [ThematoSoup][2].
+Screenshot photo, Copyright 2014 [Slobodan Manic][8].
 
 [1] http://gumbotheme.com
 [2] http://thematosoup.com
@@ -171,3 +187,7 @@ You can show us your appreciation by following WordPress.org best practices your
 [5] http://docs.thematosoup.com
 [6] http://support.thematosoup.com
 [7] https://www.youtube.com/playlist?list=PLpuFMIjzqmYtZyxTtFYg8Yf2YEej7pCp3
+[8] http://slobodanmanic.com
+[9] https://github.com/slobodan/WordPress-Theme-Customizer-Boilerplate
+[10] https://github.com/WebDevStudios/Custom-Metaboxes-and-Fields-for-WordPress
+[11] https://github.com/zamoose/themehookalliance
