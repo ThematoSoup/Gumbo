@@ -151,7 +151,14 @@ The theme uses Theme Customizer Boilerplate (GPL licenced) to handle its Customi
 License
 -------
 
-The theme is under GPLv2. However some parts aren't, for example, jQuery and jQuery Masonry which are licensed under MIT License, but still compatible with GPL. You can see License.txt for more information. All other parts are GPLv2 or later.
+The theme is under GPLv2. However some parts aren't, for example, jQuery and jQuery Masonry which are licensed under MIT License, but still compatible with GPL. You can see License.txt for more information. All other parts are GPLv2 or later:
+
+* Custom Metaboxes and Fields for WordPress - GPLv2
+* Theme Customizer Boilerplate - GPLv2
+* TGM Plugin Activation - GPLv2
+* FlexSlider - GPLv2
+* jQuery - MIT
+* jQuery Masonry - MIT
 
 
 Theme Re-Distribution
