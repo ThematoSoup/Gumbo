@@ -53,27 +53,33 @@ function gumbo_content_nav( $nav_id ) {
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 		<?php
 			$previous_post = get_adjacent_post( false, '', true );
-			$prev_post_class = ( has_post_thumbnail( $previous_post->ID ) ? 'has-image' : '' );
 			$next_post = get_adjacent_post( false, '', false );
-			$next_post_class = ( has_post_thumbnail( $next_post->ID ) ? 'has-image' : '' );
-			echo '<div class="prev prev-post ' . $prev_post_class . '">';
-				echo '<a href="' . get_permalink( $previous_post->ID ) . '" title="' . sprintf( __( 'Previous post: %1$s', 'gumbo' ), esc_attr( get_the_title( $previous_post->ID ) ) ) . '">';
-					echo '<div class="clear">';
-						echo get_the_post_thumbnail( $previous_post->ID, 'thumbnail');
-						echo '<span class="heading">' . __( 'Previous post', 'gumbo' ) . '</span>';
-						echo '<div class="title previous-title">' . get_the_title( $previous_post->ID ) . '</div>';
-					echo '</div>';
-				echo '</a>';
-			echo '</div>';
-			echo '<div class="next next-post ' . $next_post_class . '">';
-				echo '<a href="' . get_permalink( $next_post->ID ) . '" title="' . sprintf( __( 'Next post: %1$s', 'gumbo' ), esc_attr( get_the_title( $next_post->ID ) ) ) . '">';
-					echo '<div class="clear">';
-						echo get_the_post_thumbnail( $next_post->ID, 'thumbnail');
-						echo '<span class="heading">' . __( 'Next post', 'gumbo' ) . '</span>';
-						echo '<div class="title next-title">' . get_the_title( $next_post->ID ) . '</div>';
-					echo '</div>';
-				echo '</a>';
-			echo '</div>';
+			
+			if ( $previous_post ) {
+				$prev_post_class = ( has_post_thumbnail( $previous_post->ID ) ? 'has-image' : '' );
+				echo '<div class="prev prev-post ' . $prev_post_class . '">';
+					echo '<a href="' . get_permalink( $previous_post->ID ) . '" title="' . sprintf( __( 'Previous post: %1$s', 'gumbo' ), esc_attr( get_the_title( $previous_post->ID ) ) ) . '">';
+						echo '<div class="clear">';
+							echo get_the_post_thumbnail( $previous_post->ID, 'thumbnail');
+							echo '<span class="heading">' . __( 'Previous post', 'gumbo' ) . '</span>';
+							echo '<div class="title previous-title">' . get_the_title( $previous_post->ID ) . '</div>';
+						echo '</div>';
+					echo '</a>';
+				echo '</div>';
+			}
+
+			if ( $next_post ) {
+				$next_post_class = ( has_post_thumbnail( $next_post->ID ) ? 'has-image' : '' );
+				echo '<div class="next next-post ' . $next_post_class . '">';
+					echo '<a href="' . get_permalink( $next_post->ID ) . '" title="' . sprintf( __( 'Next post: %1$s', 'gumbo' ), esc_attr( get_the_title( $next_post->ID ) ) ) . '">';
+						echo '<div class="clear">';
+							echo get_the_post_thumbnail( $next_post->ID, 'thumbnail');
+							echo '<span class="heading">' . __( 'Next post', 'gumbo' ) . '</span>';
+							echo '<div class="title next-title">' . get_the_title( $next_post->ID ) . '</div>';
+						echo '</div>';
+					echo '</a>';
+				echo '</div>';
+			}
 		?>
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages
 		global $wp_query;
