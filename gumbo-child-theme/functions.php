@@ -19,4 +19,7 @@ add_action( 'tha_after_header', 'gumbo_child_hook_example' );
 /**
  * Removes footer credits
  */
-remove_action( 'gumbo_credits', 'gumbo_footer_credits', 10 );
+function gumbo_child_remove_credits() {
+	remove_action( 'gumbo_credits', 'gumbo_footer_credits', 10 );
+}
+add_action( 'init', 'gumbo_child_remove_credits' );
